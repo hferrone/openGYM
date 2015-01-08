@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PickSportTableViewController : UITableViewController
+@interface PickSportTableViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate>
 
 @end

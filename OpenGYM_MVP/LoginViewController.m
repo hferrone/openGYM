@@ -7,31 +7,65 @@
 //
 
 #import "LoginViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface LoginViewController ()
+
+@property (weak, nonatomic) IBOutlet UIButton *btn;
+@property (weak, nonatomic) NSString *forgotPasswordEmail;
+@property (weak, nonatomic) IBOutlet UITextField *passwordRecoveryEmail;
 
 @end
 
 @implementation LoginViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    _btn.layer.borderColor = [UIColor whiteColor].CGColor;
+    _btn.layer.borderWidth = 2;
+    _btn.layer.cornerRadius = 5;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(BOOL)prefersStatusBarHidden
+{
+    return true;
+}
+- (IBAction)singInOnButtonTapped:(UIButton*)sender
+{
+    [PFUser logInWithUsernameInBackground:_loginUsernameInput.text password:_loginPasswordInput.text block:^(PFUser *user, NSError *error)
+     {
+         if(!error)
+         {
+             NSLog(@"User logged in");
+             [self performSegueWithIdentifier:@"loginSegueID" sender:self];
+             
+             _loginUsernameInput.text = nil;
+             _loginPasswordInput.text = nil;
+         }
+         else{
+             UIAlertView *loginErrorAlert = [[UIAlertView alloc] initWithTitle:@"Sorry" message:@"Error logging in" delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles: nil];
+             [loginErrorAlert show];
+         }
+     }];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void)viewDidAppear:(BOOL)animated
+{
+    //keep me signed in code, working and tested
+    PFUser *user = [PFUser currentUser];
+    if(user.username != nil)
+    {
+        [self performSegueWithIdentifier:@"loginSegueID" sender:self];
+    }
 }
-*/
+
+- (IBAction)forgotPasswordOnButtonTapped:(UIButton *)sender
+{
+    [UIView animateWithDuration:0.3 animations:^{
+        self.passwordRecoveryOverlay.frame = self.view.frame;
+    }];
+}
 
 @end

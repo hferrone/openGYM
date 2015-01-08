@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
 
-@interface LoginViewController : UIViewController
+@interface LoginViewController : UIViewController <UIPopoverControllerDelegate>
+
+@property (weak, nonatomic) IBOutlet UITextField *loginUsernameInput;
+@property (weak, nonatomic) IBOutlet UITextField *loginPasswordInput;
+@property (weak, nonatomic) IBOutlet UIView *passwordRecoveryOverlay;
 
 @end

@@ -6,32 +6,27 @@
 //  Copyright (c) 2015 Harrison Ferrone. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "SelectSportViewController.h"
 
-@interface ViewController ()
+@interface SelectSportViewController ()
+@property (weak, nonatomic) IBOutlet UIButton *sportSelectButton;
 
 @end
 
-@implementation ViewController
+@implementation SelectSportViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    _sportSelectButton.layer.borderColor = [UIColor whiteColor].CGColor;
+    _sportSelectButton.layer.borderWidth = 2.0;
+    _sportSelectButton.layer.cornerRadius = 100;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)logout:(UIButton *)sender
+{
+    [PFUser logOut];
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

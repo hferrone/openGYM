@@ -10,4 +10,9 @@
 
 @implementation UIPopover
 
++(BOOL)_popoversDisabled
+{
+    return NO;
+}
+
 @end

@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-@interface UIPopover : NSObject
+@interface UIPopover : NSObject 
+
++ (BOOL)_popoversDisabled;
 
 @end
