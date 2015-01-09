@@ -12,8 +12,6 @@
 @interface LoginViewController ()
 
 @property (weak, nonatomic) IBOutlet UIButton *btn;
-@property (weak, nonatomic) NSString *forgotPasswordEmail;
-@property (weak, nonatomic) IBOutlet UITextField *passwordRecoveryEmail;
 
 @end
 
@@ -32,6 +30,13 @@
 {
     return true;
 }
+
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [_loginUsernameInput resignFirstResponder];
+    [_loginPasswordInput resignFirstResponder];
+}
+
 - (IBAction)singInOnButtonTapped:(UIButton*)sender
 {
     [PFUser logInWithUsernameInBackground:_loginUsernameInput.text password:_loginPasswordInput.text block:^(PFUser *user, NSError *error)
@@ -45,7 +50,7 @@
              _loginPasswordInput.text = nil;
          }
          else{
-             UIAlertView *loginErrorAlert = [[UIAlertView alloc] initWithTitle:@"Sorry" message:@"Error logging in" delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles: nil];
+             UIAlertView *loginErrorAlert = [[UIAlertView alloc] initWithTitle:@"Sorry" message:@"Your username or password are incorrect. Please re-enter." delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles: nil];
              [loginErrorAlert show];
          }
      }];
@@ -66,6 +71,12 @@
     [UIView animateWithDuration:0.3 animations:^{
         self.passwordRecoveryOverlay.frame = self.view.frame;
     }];
+}
+
+-(void)loginViewShowingLoggedInUser:(FBLoginView *)loginView
+{
+    NSLog(@"logged in");
+    [self performSegueWithIdentifier:@"loginSegueID" sender:self];
 }
 
 @end

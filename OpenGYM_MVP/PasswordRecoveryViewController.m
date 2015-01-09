@@ -10,6 +10,7 @@
 #import <Parse/Parse.h>
 
 @interface PasswordRecoveryViewController ()
+
 @property (weak, nonatomic) IBOutlet UITextField *passwordRecoveryEmail;
 
 @end
@@ -21,9 +22,25 @@
     [super viewDidLoad];
     
 }
+
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [_passwordRecoveryEmail resignFirstResponder];
+}
+
 - (IBAction)recoveryPasswordOnButtonTapped:(UIButton *)sender
 {
-    [PFUser requestPasswordResetForEmailInBackground:_passwordRecoveryEmail.text];
+    [PFUser requestPasswordResetForEmailInBackground:_passwordRecoveryEmail.text block:^(BOOL succeeded, NSError *error)
+    {
+       if(error)
+       {
+           UIAlertView *emptyFieldsAlert = [[UIAlertView alloc] initWithTitle:@"Stop!!!" message:@"Invalid email, please re-enter your email." delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
+           [emptyFieldsAlert show];
+       }
+       else{
+           [self performSegueWithIdentifier:@"passwordRecoverySuccessSegueID" sender:self];
+       }
+    }];
 }
 
 @end

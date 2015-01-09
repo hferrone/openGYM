@@ -20,6 +20,13 @@
     
 }
 
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [_registerUsernameInput resignFirstResponder];
+    [_registerEmailInput resignFirstResponder];
+    [_registerPasswordInput resignFirstResponder];
+}
+
 - (IBAction)registerOnButtonTapped:(UIButton *)sender
 {
     [self checkFieldCompletion];
@@ -29,7 +36,7 @@
 {
     if ([_registerUsernameInput.text isEqualToString:@""] || [_registerEmailInput.text isEqualToString:@""] || [_registerPasswordInput.text isEqualToString:@""])
     {
-        UIAlertView *emptyFieldsAlert = [[UIAlertView alloc] initWithTitle:@"Hold it" message:@"You missed a spot" delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
+        UIAlertView *emptyFieldsAlert = [[UIAlertView alloc] initWithTitle:@"Hold it" message:@"All fields must be filled out before we can complete your registration." delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
         [emptyFieldsAlert show];
     }
     else {

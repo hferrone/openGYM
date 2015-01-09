@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
+#import <FacebookSDK/FacebookSDK.h>
 
-@interface SelectSportViewController : UIViewController
+@interface SelectSportViewController : UIViewController <FBLoginViewDelegate>
+
+@property (weak, nonatomic) IBOutlet FBLoginView *loginView;
 
 @end

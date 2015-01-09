@@ -32,10 +32,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BCb-4Y-XiS">
-                                <rect key="frame" x="197" y="285" width="206" height="57"/>
+                                <rect key="frame" x="197" y="285" width="200" height="50"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.23999999999999999" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="57" id="dOa-X4-mZu"/>
+                                    <constraint firstAttribute="height" constant="50" id="dOa-X4-mZu"/>
                                 </constraints>
                                 <state key="normal" title="Sign In">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -62,19 +62,30 @@
                                     <constraint firstAttribute="width" constant="279" id="M6P-4g-Krc"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                             </textField>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P0f-Qx-1Lb" customClass="FBLoginView">
+                                <rect key="frame" x="197" y="456" width="200" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="iOH-S5-ZDm"/>
+                                </connections>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.55446065274154654" blue="0.075866345468679652" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="arn-1E-Mt6" firstAttribute="trailing" secondItem="BCb-4Y-XiS" secondAttribute="trailing" id="6pL-FN-zPy"/>
-                            <constraint firstItem="mgS-78-zSY" firstAttribute="top" secondItem="BCb-4Y-XiS" secondAttribute="bottom" constant="8" id="Kj1-fS-C6f"/>
+                            <constraint firstItem="arn-1E-Mt6" firstAttribute="trailing" secondItem="BCb-4Y-XiS" secondAttribute="trailing" constant="6" id="6pL-FN-zPy"/>
+                            <constraint firstItem="P0f-Qx-1Lb" firstAttribute="trailing" secondItem="BCb-4Y-XiS" secondAttribute="trailing" id="K3E-6T-KHQ"/>
+                            <constraint firstItem="mgS-78-zSY" firstAttribute="top" secondItem="BCb-4Y-XiS" secondAttribute="bottom" constant="15" id="Kj1-fS-C6f"/>
                             <constraint firstItem="arn-1E-Mt6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Kon-3n-n0r"/>
                             <constraint firstItem="arn-1E-Mt6" firstAttribute="leading" secondItem="BCb-4Y-XiS" secondAttribute="leading" id="L71-Hm-1eS"/>
                             <constraint firstItem="arn-1E-Mt6" firstAttribute="centerX" secondItem="mgS-78-zSY" secondAttribute="centerX" id="Mvc-qa-YZ6"/>
+                            <constraint firstItem="P0f-Qx-1Lb" firstAttribute="leading" secondItem="arn-1E-Mt6" secondAttribute="leading" id="NHs-u8-njE"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="P0f-Qx-1Lb" secondAttribute="bottom" constant="94" id="TLK-pv-26N"/>
+                            <constraint firstItem="P0f-Qx-1Lb" firstAttribute="top" secondItem="arn-1E-Mt6" secondAttribute="bottom" constant="38" id="WFn-2w-1jU"/>
                             <constraint firstItem="hHi-Jt-TAf" firstAttribute="trailing" secondItem="yD3-bh-UQL" secondAttribute="trailing" constant="1" id="ZC6-bH-EQe"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="arn-1E-Mt6" secondAttribute="bottom" constant="182" id="ZDr-7D-X5d"/>
-                            <constraint firstItem="BCb-4Y-XiS" firstAttribute="centerX" secondItem="yD3-bh-UQL" secondAttribute="centerX" id="cSs-BX-BoC"/>
+                            <constraint firstItem="BCb-4Y-XiS" firstAttribute="centerX" secondItem="yD3-bh-UQL" secondAttribute="centerX" constant="-2.5" id="cSs-BX-BoC"/>
                             <constraint firstItem="hHi-Jt-TAf" firstAttribute="leading" secondItem="yD3-bh-UQL" secondAttribute="leading" constant="1" id="d6O-LE-9Aa"/>
                             <constraint firstItem="BCb-4Y-XiS" firstAttribute="top" secondItem="yD3-bh-UQL" secondAttribute="bottom" constant="79" id="lyZ-D1-9mN"/>
                             <constraint firstItem="arn-1E-Mt6" firstAttribute="top" secondItem="mgS-78-zSY" secondAttribute="bottom" constant="8" id="ocn-8q-D6m"/>
@@ -119,12 +130,22 @@
                                 </state>
                                 <connections>
                                     <action selector="recoveryPasswordOnButtonTapped:" destination="JQW-Av-1U9" eventType="touchUpInside" id="slW-ya-eMz"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="wyc-vF-dKH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yJu-1X-bPs">
+                                <rect key="frame" x="242" y="291" width="116" height="30"/>
+                                <state key="normal" title="Return to Sign In">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="TiO-LL-1we"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="yJu-1X-bPs" firstAttribute="top" secondItem="OY1-m8-uf9" secondAttribute="bottom" constant="16" id="44U-s5-IOF"/>
+                            <constraint firstItem="yJu-1X-bPs" firstAttribute="centerX" secondItem="OY1-m8-uf9" secondAttribute="centerX" id="ED8-HX-KOz"/>
                             <constraint firstItem="OY1-m8-uf9" firstAttribute="centerX" secondItem="qEH-zF-FJ8" secondAttribute="centerX" id="L24-Ql-W5U"/>
                             <constraint firstItem="OY1-m8-uf9" firstAttribute="top" secondItem="qEH-zF-FJ8" secondAttribute="bottom" constant="36" id="Sln-ux-BMy"/>
                             <constraint firstItem="OY1-m8-uf9" firstAttribute="centerX" secondItem="Ria-jZ-VNT" secondAttribute="centerX" id="Uxo-e3-6Br"/>
@@ -133,6 +154,7 @@
                     </view>
                     <connections>
                         <outlet property="passwordRecoveryEmail" destination="qEH-zF-FJ8" id="nYE-Fs-Tq0"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="passwordRecoverySuccessSegueID" id="ov6-2E-tyj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="doa-Hy-jjf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -179,8 +201,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ejt-aw-xgH">
-                                <rect key="frame" x="247" y="351" width="107" height="30"/>
-                                <state key="normal" title="Return to Login">
+                                <rect key="frame" x="242" y="351" width="116" height="30"/>
+                                <state key="normal" title="Return to Sign In">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -270,7 +292,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="ov6-2E-tyj"/>
         <segue reference="qpx-p6-vYw"/>
-        <segue reference="tfM-nc-QPw"/>
     </inferredMetricsTieBreakers>
 </document>

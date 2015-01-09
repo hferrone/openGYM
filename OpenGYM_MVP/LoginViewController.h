@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
+#import <FacebookSDK/FacebookSDK.h>
 
-@interface LoginViewController : UIViewController <UIPopoverControllerDelegate>
+@interface LoginViewController : UIViewController <UIPopoverControllerDelegate, FBLoginViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *loginUsernameInput;
 @property (weak, nonatomic) IBOutlet UITextField *loginPasswordInput;

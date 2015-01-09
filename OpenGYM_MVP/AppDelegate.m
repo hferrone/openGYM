@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
+#import <FacebookSDK/FacebookSDK.h>
 
 @interface AppDelegate ()
 
@@ -18,9 +19,23 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [Parse setApplicationId:@"0sEv6s0GFEg6SeCAYEkJMbDZ9dWuCRPVjN0q5dqb"
-                  clientKey:@"0sBn8KjIL7SP7FXkmBetQgkojmPMEP9BrV50Tu9V"];
+    [Parse setApplicationId:@"4cePLYjXMVzUyi0jVuKRCOyVLutniV3Fs9vMhNAK"
+                  clientKey:@"NXAVnRKw1ua2DYUvO8FJjA6YglLAUOB9sgpLj8is"];
+    
+    // Override point for customization after application launch.
+    [FBLoginView class];
+
     return YES;
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+    // Call FBAppCall's handleOpenURL:sourceApplication to handle Facebook app responses
+    BOOL wasHandled = [FBAppCall handleOpenURL:url sourceApplication:sourceApplication];
+    
+    // You can add your app-specific url handling code here if needed
+    
+    return wasHandled;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
@@ -39,6 +54,9 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    
+    // Logs 'install' and 'app activate' App Events.
+    [FBAppEvents activateApp];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
