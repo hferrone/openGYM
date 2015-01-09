@@ -29,8 +29,14 @@
 		4A1073DC1A5C60B10089F080 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A1073DB1A5C60B10089F080 /* SystemConfiguration.framework */; };
 		4A1073DE1A5C60C30089F080 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A1073DD1A5C60C30089F080 /* libsqlite3.dylib */; };
 		4A1073E71A5C897E0089F080 /* SelectSportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A1073E61A5C897E0089F080 /* SelectSportViewController.m */; };
+		4A3B729F1A5F86E900D893E6 /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A3B729C1A5F86E900D893E6 /* TwitterKit.framework */; };
+		4A3B72A01A5F86E900D893E6 /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4A3B729D1A5F86E900D893E6 /* TwitterKitResources.bundle */; };
+		4A3B72A11A5F86E900D893E6 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A3B729E1A5F86E900D893E6 /* Fabric.framework */; };
 		4A65CECA1A5F164700C9BC3C /* PasswordRecoveryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A65CEC91A5F164700C9BC3C /* PasswordRecoveryViewController.m */; };
 		4ABABA3D1A5F70A700693BE0 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ABABA3C1A5F70A700693BE0 /* FacebookSDK.framework */; };
+		4AD09AF21A5F7D7800B46FA0 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AD09AF11A5F7D7800B46FA0 /* Social.framework */; };
+		4AD09AF41A5F7D8000B46FA0 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AD09AF31A5F7D8000B46FA0 /* Twitter.framework */; };
+		4AD09AF61A5F7D8900B46FA0 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AD09AF51A5F7D8900B46FA0 /* Accounts.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,9 +80,15 @@
 		4A1073DD1A5C60C30089F080 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		4A1073E51A5C897E0089F080 /* SelectSportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectSportViewController.h; sourceTree = "<group>"; };
 		4A1073E61A5C897E0089F080 /* SelectSportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectSportViewController.m; sourceTree = "<group>"; };
+		4A3B729C1A5F86E900D893E6 /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TwitterKit.framework; path = OpenGYM_MVP/TwitterKit.framework; sourceTree = "<group>"; };
+		4A3B729D1A5F86E900D893E6 /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = OpenGYM_MVP/TwitterKitResources.bundle; sourceTree = "<group>"; };
+		4A3B729E1A5F86E900D893E6 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = OpenGYM_MVP/Fabric.framework; sourceTree = "<group>"; };
 		4A65CEC81A5F164700C9BC3C /* PasswordRecoveryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswordRecoveryViewController.h; sourceTree = "<group>"; };
 		4A65CEC91A5F164700C9BC3C /* PasswordRecoveryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordRecoveryViewController.m; sourceTree = "<group>"; };
 		4ABABA3C1A5F70A700693BE0 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
+		4AD09AF11A5F7D7800B46FA0 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		4AD09AF31A5F7D8000B46FA0 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
+		4AD09AF51A5F7D8900B46FA0 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +96,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AD09AF61A5F7D8900B46FA0 /* Accounts.framework in Frameworks */,
+				4AD09AF41A5F7D8000B46FA0 /* Twitter.framework in Frameworks */,
+				4AD09AF21A5F7D7800B46FA0 /* Social.framework in Frameworks */,
+				4A3B72A11A5F86E900D893E6 /* Fabric.framework in Frameworks */,
 				4A1073DE1A5C60C30089F080 /* libsqlite3.dylib in Frameworks */,
 				4A1073DC1A5C60B10089F080 /* SystemConfiguration.framework in Frameworks */,
 				4A1073DA1A5C60AA0089F080 /* StoreKit.framework in Frameworks */,
@@ -98,6 +114,7 @@
 				4A1073BE1A5C5E9B0089F080 /* Parse.framework in Frameworks */,
 				4A1073BC1A5C5E930089F080 /* Bolts.framework in Frameworks */,
 				4ABABA3D1A5F70A700693BE0 /* FacebookSDK.framework in Frameworks */,
+				4A3B729F1A5F86E900D893E6 /* TwitterKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -180,6 +197,12 @@
 		4A1073B41A5C5CAB0089F080 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4A3B729E1A5F86E900D893E6 /* Fabric.framework */,
+				4A3B729C1A5F86E900D893E6 /* TwitterKit.framework */,
+				4A3B729D1A5F86E900D893E6 /* TwitterKitResources.bundle */,
+				4AD09AF51A5F7D8900B46FA0 /* Accounts.framework */,
+				4AD09AF31A5F7D8000B46FA0 /* Twitter.framework */,
+				4AD09AF11A5F7D7800B46FA0 /* Social.framework */,
 				4ABABA3C1A5F70A700693BE0 /* FacebookSDK.framework */,
 				4A1073DD1A5C60C30089F080 /* libsqlite3.dylib */,
 				4A1073DB1A5C60B10089F080 /* SystemConfiguration.framework */,
@@ -208,6 +231,7 @@
 				4A1073851A5C5C950089F080 /* Sources */,
 				4A1073861A5C5C950089F080 /* Frameworks */,
 				4A1073871A5C5C950089F080 /* Resources */,
+				4A3B72A21A5F8A6800D893E6 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -278,6 +302,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A3B72A01A5F86E900D893E6 /* TwitterKitResources.bundle in Resources */,
 				4A1073981A5C5C950089F080 /* Main.storyboard in Resources */,
 				4A10739D1A5C5C950089F080 /* LaunchScreen.xib in Resources */,
 				4A10739A1A5C5C950089F080 /* Images.xcassets in Resources */,
@@ -292,6 +317,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4A3B72A21A5F8A6800D893E6 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run d1f2eff25b0f854fb149966d533fb31531d380a1 8c3bac1937560661e2c1c21dd8e89fb0ca4c236f4c42e1e2cd94924d285faa23";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4A1073851A5C5C950089F080 /* Sources */ = {
@@ -431,6 +472,7 @@
 					"$(inherited)",
 					"/Users/hferrone1/Downloads/parse-library-1.6.1",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/OpenGYM_MVP",
 				);
 				INFOPLIST_FILE = OpenGYM_MVP/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -446,6 +488,7 @@
 					"$(inherited)",
 					"/Users/hferrone1/Downloads/parse-library-1.6.1",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/OpenGYM_MVP",
 				);
 				INFOPLIST_FILE = OpenGYM_MVP/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

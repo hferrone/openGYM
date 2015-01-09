@@ -8,6 +8,7 @@
 
 #import "LoginViewController.h"
 #import <QuartzCore/QuartzCore.h>
+#import <TwitterKit/TwitterKit.h>
 
 @interface LoginViewController ()
 
@@ -24,6 +25,20 @@
     _btn.layer.borderColor = [UIColor whiteColor].CGColor;
     _btn.layer.borderWidth = 2;
     _btn.layer.cornerRadius = 5;
+    
+    TWTRLogInButton* logInButton =  [TWTRLogInButton buttonWithLogInCompletion:^(TWTRSession* session, NSError* error)
+    {
+        if (session)
+        {
+            NSLog(@"signed in as %@", [session userName]);
+            [self performSegueWithIdentifier:@"loginSegueID" sender:self];
+
+        } else{
+            NSLog(@"error: %@", [error localizedDescription]);
+        }
+                                     }];
+    logInButton.frame = CGRectMake(75, 525, 215, 40);
+    [self.view addSubview:logInButton];
 }
 
 -(BOOL)prefersStatusBarHidden

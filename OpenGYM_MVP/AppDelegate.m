@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
 #import <FacebookSDK/FacebookSDK.h>
+#import <Fabric/Fabric.h>
+#import <TwitterKit/TwitterKit.h>
 
 @interface AppDelegate ()
 
@@ -24,6 +26,7 @@
     
     // Override point for customization after application launch.
     [FBLoginView class];
+    [Fabric with:@[TwitterKit]];
 
     return YES;
 }
