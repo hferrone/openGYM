@@ -83,9 +83,7 @@
 
 - (IBAction)forgotPasswordOnButtonTapped:(UIButton *)sender
 {
-    [UIView animateWithDuration:0.3 animations:^{
-        self.passwordRecoveryOverlay.frame = self.view.frame;
-    }];
+    self.passwordRecoveryOverlay.frame = self.view.frame;
 }
 
 -(void)loginViewShowingLoggedInUser:(FBLoginView *)loginView

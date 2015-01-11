@@ -29,6 +29,7 @@
 		4A1073DC1A5C60B10089F080 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A1073DB1A5C60B10089F080 /* SystemConfiguration.framework */; };
 		4A1073DE1A5C60C30089F080 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A1073DD1A5C60C30089F080 /* libsqlite3.dylib */; };
 		4A1073E71A5C897E0089F080 /* SelectSportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A1073E61A5C897E0089F080 /* SelectSportViewController.m */; };
+		4A2C3CD21A6306C70069BED1 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A2C3CD11A6306C70069BED1 /* MapKit.framework */; };
 		4A3B729F1A5F86E900D893E6 /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A3B729C1A5F86E900D893E6 /* TwitterKit.framework */; };
 		4A3B72A01A5F86E900D893E6 /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4A3B729D1A5F86E900D893E6 /* TwitterKitResources.bundle */; };
 		4A3B72A11A5F86E900D893E6 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A3B729E1A5F86E900D893E6 /* Fabric.framework */; };
@@ -80,6 +81,7 @@
 		4A1073DD1A5C60C30089F080 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		4A1073E51A5C897E0089F080 /* SelectSportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectSportViewController.h; sourceTree = "<group>"; };
 		4A1073E61A5C897E0089F080 /* SelectSportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectSportViewController.m; sourceTree = "<group>"; };
+		4A2C3CD11A6306C70069BED1 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		4A3B729C1A5F86E900D893E6 /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TwitterKit.framework; path = OpenGYM_MVP/TwitterKit.framework; sourceTree = "<group>"; };
 		4A3B729D1A5F86E900D893E6 /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = OpenGYM_MVP/TwitterKitResources.bundle; sourceTree = "<group>"; };
 		4A3B729E1A5F86E900D893E6 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = OpenGYM_MVP/Fabric.framework; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A2C3CD21A6306C70069BED1 /* MapKit.framework in Frameworks */,
 				4AD09AF61A5F7D8900B46FA0 /* Accounts.framework in Frameworks */,
 				4AD09AF41A5F7D8000B46FA0 /* Twitter.framework in Frameworks */,
 				4AD09AF21A5F7D7800B46FA0 /* Social.framework in Frameworks */,
@@ -197,6 +200,7 @@
 		4A1073B41A5C5CAB0089F080 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4A2C3CD11A6306C70069BED1 /* MapKit.framework */,
 				4A3B729E1A5F86E900D893E6 /* Fabric.framework */,
 				4A3B729C1A5F86E900D893E6 /* TwitterKit.framework */,
 				4A3B729D1A5F86E900D893E6 /* TwitterKitResources.bundle */,
