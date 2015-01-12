@@ -35,6 +35,7 @@
 		4A3B72A11A5F86E900D893E6 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A3B729E1A5F86E900D893E6 /* Fabric.framework */; };
 		4A65CECA1A5F164700C9BC3C /* PasswordRecoveryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A65CEC91A5F164700C9BC3C /* PasswordRecoveryViewController.m */; };
 		4ABABA3D1A5F70A700693BE0 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ABABA3C1A5F70A700693BE0 /* FacebookSDK.framework */; };
+		4AC2802B1A64508900092C0B /* MainMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC2802A1A64508900092C0B /* MainMapViewController.m */; };
 		4AD09AF21A5F7D7800B46FA0 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AD09AF11A5F7D7800B46FA0 /* Social.framework */; };
 		4AD09AF41A5F7D8000B46FA0 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AD09AF31A5F7D8000B46FA0 /* Twitter.framework */; };
 		4AD09AF61A5F7D8900B46FA0 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AD09AF51A5F7D8900B46FA0 /* Accounts.framework */; };
@@ -88,6 +89,8 @@
 		4A65CEC81A5F164700C9BC3C /* PasswordRecoveryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswordRecoveryViewController.h; sourceTree = "<group>"; };
 		4A65CEC91A5F164700C9BC3C /* PasswordRecoveryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordRecoveryViewController.m; sourceTree = "<group>"; };
 		4ABABA3C1A5F70A700693BE0 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
+		4AC280291A64508900092C0B /* MainMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMapViewController.h; sourceTree = "<group>"; };
+		4AC2802A1A64508900092C0B /* MainMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMapViewController.m; sourceTree = "<group>"; };
 		4AD09AF11A5F7D7800B46FA0 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		4AD09AF31A5F7D8000B46FA0 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		4AD09AF51A5F7D8900B46FA0 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
@@ -163,6 +166,8 @@
 				4A1073E61A5C897E0089F080 /* SelectSportViewController.m */,
 				4A1073B81A5C5CC90089F080 /* RegistrationViewController.h */,
 				4A1073B91A5C5CC90089F080 /* RegistrationViewController.m */,
+				4AC280291A64508900092C0B /* MainMapViewController.h */,
+				4AC2802A1A64508900092C0B /* MainMapViewController.m */,
 				4A1073961A5C5C950089F080 /* Main.storyboard */,
 				4A1073991A5C5C950089F080 /* Images.xcassets */,
 				4A10739B1A5C5C950089F080 /* LaunchScreen.xib */,
@@ -345,6 +350,7 @@
 			files = (
 				4A65CECA1A5F164700C9BC3C /* PasswordRecoveryViewController.m in Sources */,
 				4A1073E71A5C897E0089F080 /* SelectSportViewController.m in Sources */,
+				4AC2802B1A64508900092C0B /* MainMapViewController.m in Sources */,
 				4A1073921A5C5C950089F080 /* AppDelegate.m in Sources */,
 				4A1073BA1A5C5CC90089F080 /* RegistrationViewController.m in Sources */,
 				4A10738F1A5C5C950089F080 /* main.m in Sources */,
