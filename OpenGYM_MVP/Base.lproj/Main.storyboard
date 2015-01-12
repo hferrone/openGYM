@@ -273,7 +273,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="BBl-Wp-Hjs" kind="show" id="3x2-fA-6MS"/>
+                                    <segue destination="BBl-Wp-Hjs" kind="show" identifier="MapSegueID" id="3x2-fA-6MS"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -433,7 +433,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="2bN-4P-yvE"/>
+        <segue reference="tfM-nc-QPw"/>
         <segue reference="8Qw-1r-dRP"/>
     </inferredMetricsTieBreakers>
 </document>
