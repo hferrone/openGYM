@@ -45,24 +45,36 @@
 {
     self.sportSelected = sender.currentTitle;
     NSLog(@"%@", self.sportSelected);
+    [UIView animateWithDuration:0.3 animations:^{
+        self.sportSelectionPopoverView.frame = CGRectMake(600, 600, 5, 5);
+    }];
 }
 
 - (IBAction)baseballSelected:(UIButton *)sender
 {
     self.sportSelected = sender.currentTitle;
     NSLog(@"%@", self.sportSelected);
+    [UIView animateWithDuration:0.3 animations:^{
+        self.sportSelectionPopoverView.frame = CGRectMake(600, 600, 5, 5);
+    }];
 }
 
 - (IBAction)tennisSelected:(UIButton *)sender
 {
     self.sportSelected = sender.currentTitle;
     NSLog(@"%@", self.sportSelected);
+    [UIView animateWithDuration:0.3 animations:^{
+        self.sportSelectionPopoverView.frame = CGRectMake(600, 600, 5, 5);
+    }];
 }
 
 - (IBAction)footballSelected:(UIButton *)sender
 {
     self.sportSelected = sender.currentTitle;
     NSLog(@"%@", self.sportSelected);
+    [UIView animateWithDuration:0.3 animations:^{
+        self.sportSelectionPopoverView.frame = CGRectMake(600, 600, 5, 5);
+    }];
 }
 
 @end

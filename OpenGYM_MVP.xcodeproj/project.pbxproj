@@ -34,6 +34,7 @@
 		4A3B72A01A5F86E900D893E6 /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4A3B729D1A5F86E900D893E6 /* TwitterKitResources.bundle */; };
 		4A3B72A11A5F86E900D893E6 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A3B729E1A5F86E900D893E6 /* Fabric.framework */; };
 		4A65CECA1A5F164700C9BC3C /* PasswordRecoveryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A65CEC91A5F164700C9BC3C /* PasswordRecoveryViewController.m */; };
+		4AACB0131A647AF7005F4331 /* CreateEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AACB0121A647AF7005F4331 /* CreateEventViewController.m */; };
 		4ABABA3D1A5F70A700693BE0 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ABABA3C1A5F70A700693BE0 /* FacebookSDK.framework */; };
 		4AC2802B1A64508900092C0B /* MainMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC2802A1A64508900092C0B /* MainMapViewController.m */; };
 		4AD09AF21A5F7D7800B46FA0 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AD09AF11A5F7D7800B46FA0 /* Social.framework */; };
@@ -88,6 +89,8 @@
 		4A3B729E1A5F86E900D893E6 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = OpenGYM_MVP/Fabric.framework; sourceTree = "<group>"; };
 		4A65CEC81A5F164700C9BC3C /* PasswordRecoveryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswordRecoveryViewController.h; sourceTree = "<group>"; };
 		4A65CEC91A5F164700C9BC3C /* PasswordRecoveryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordRecoveryViewController.m; sourceTree = "<group>"; };
+		4AACB0111A647AF7005F4331 /* CreateEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateEventViewController.h; sourceTree = "<group>"; };
+		4AACB0121A647AF7005F4331 /* CreateEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateEventViewController.m; sourceTree = "<group>"; };
 		4ABABA3C1A5F70A700693BE0 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		4AC280291A64508900092C0B /* MainMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMapViewController.h; sourceTree = "<group>"; };
 		4AC2802A1A64508900092C0B /* MainMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMapViewController.m; sourceTree = "<group>"; };
@@ -160,14 +163,16 @@
 				4A1073911A5C5C950089F080 /* AppDelegate.m */,
 				4A1073B51A5C5CC00089F080 /* LoginViewController.h */,
 				4A1073B61A5C5CC00089F080 /* LoginViewController.m */,
+				4A1073B81A5C5CC90089F080 /* RegistrationViewController.h */,
+				4A1073B91A5C5CC90089F080 /* RegistrationViewController.m */,
 				4A65CEC81A5F164700C9BC3C /* PasswordRecoveryViewController.h */,
 				4A65CEC91A5F164700C9BC3C /* PasswordRecoveryViewController.m */,
 				4A1073E51A5C897E0089F080 /* SelectSportViewController.h */,
 				4A1073E61A5C897E0089F080 /* SelectSportViewController.m */,
-				4A1073B81A5C5CC90089F080 /* RegistrationViewController.h */,
-				4A1073B91A5C5CC90089F080 /* RegistrationViewController.m */,
 				4AC280291A64508900092C0B /* MainMapViewController.h */,
 				4AC2802A1A64508900092C0B /* MainMapViewController.m */,
+				4AACB0111A647AF7005F4331 /* CreateEventViewController.h */,
+				4AACB0121A647AF7005F4331 /* CreateEventViewController.m */,
 				4A1073961A5C5C950089F080 /* Main.storyboard */,
 				4A1073991A5C5C950089F080 /* Images.xcassets */,
 				4A10739B1A5C5C950089F080 /* LaunchScreen.xib */,
@@ -351,6 +356,7 @@
 				4A65CECA1A5F164700C9BC3C /* PasswordRecoveryViewController.m in Sources */,
 				4A1073E71A5C897E0089F080 /* SelectSportViewController.m in Sources */,
 				4AC2802B1A64508900092C0B /* MainMapViewController.m in Sources */,
+				4AACB0131A647AF7005F4331 /* CreateEventViewController.m in Sources */,
 				4A1073921A5C5C950089F080 /* AppDelegate.m in Sources */,
 				4A1073BA1A5C5CC90089F080 /* RegistrationViewController.m in Sources */,
 				4A10738F1A5C5C950089F080 /* main.m in Sources */,
