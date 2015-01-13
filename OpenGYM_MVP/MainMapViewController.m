@@ -46,9 +46,8 @@
     }];
 }
 
-- (IBAction)basketballSelected:(UIButton *)sender
+-(void)queryBySportSelected
 {
-    self.sportSelected = sender.currentTitle;
     NSLog(@"%@", self.sportSelected);
     [UIView animateWithDuration:0.3 animations:^{
         self.sportSelectionPopoverView.frame = CGRectMake(600, 600, 5, 5);
@@ -66,40 +65,34 @@
      }];
 }
 
+- (IBAction)basketballSelected:(UIButton *)sender
+{
+    self.sportSelected = sender.currentTitle;
+    [self queryBySportSelected];
+}
+
 - (IBAction)soccerSelected:(UIButton *)sender
 {
     self.sportSelected = sender.currentTitle;
-    NSLog(@"%@", self.sportSelected);
-    [UIView animateWithDuration:0.3 animations:^{
-        self.sportSelectionPopoverView.frame = CGRectMake(600, 600, 5, 5);
-    }];
+    [self queryBySportSelected];
 }
 
 - (IBAction)baseballSelected:(UIButton *)sender
 {
     self.sportSelected = sender.currentTitle;
-    NSLog(@"%@", self.sportSelected);
-    [UIView animateWithDuration:0.3 animations:^{
-        self.sportSelectionPopoverView.frame = CGRectMake(600, 600, 5, 5);
-    }];
+    [self queryBySportSelected];
 }
 
 - (IBAction)tennisSelected:(UIButton *)sender
 {
     self.sportSelected = sender.currentTitle;
-    NSLog(@"%@", self.sportSelected);
-    [UIView animateWithDuration:0.3 animations:^{
-        self.sportSelectionPopoverView.frame = CGRectMake(600, 600, 5, 5);
-    }];
+    [self queryBySportSelected];
 }
 
 - (IBAction)footballSelected:(UIButton *)sender
 {
     self.sportSelected = sender.currentTitle;
-    NSLog(@"%@", self.sportSelected);
-    [UIView animateWithDuration:0.3 animations:^{
-        self.sportSelectionPopoverView.frame = CGRectMake(600, 600, 5, 5);
-    }];
+    [self queryBySportSelected];
 }
 
 @end
