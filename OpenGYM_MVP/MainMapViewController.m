@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *basketballSelectedButton;
 @property (weak, nonatomic) NSString *sportSelected;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
+@property (weak, nonatomic) NSString *addressString;
 
 @end
 
@@ -26,35 +27,16 @@
 {
     [super viewDidLoad];
     
-    PFQuery *query = [PFQuery queryWithClassName:@"Event"];
-    [query whereKey:@"sport" equalTo:@"Basketball"];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
-    {
-        for(PFObject *object in objects)
-        {
-            NSLog(@"%@", object[@"address"]);
-        }
-    }];
-    
-    NSString *location = @"some address, state, and zip";
-    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
-    [geocoder geocodeAddressString:location
-                 completionHandler:^(NSArray* placemarks, NSError* error){
-                     if (placemarks && placemarks.count > 0) {
-                         CLPlacemark *topResult = [placemarks objectAtIndex:0];
-                         MKPlacemark *placemark = [[MKPlacemark alloc] initWithPlacemark:topResult];
-                         
-                         MKCoordinateRegion region = self.mapView.region;
-                         region.center = placemark.region.center;
-                         region.span.longitudeDelta /= 8.0;
-                         region.span.latitudeDelta /= 8.0;
-                         
-                         [self.mapView setRegion:region animated:YES];
-                         [self.mapView addAnnotation:placemark];
-                     }
-                 }
-     ];
-    
+//    PFQuery *query = [PFQuery queryWithClassName:@"Event"];
+//    [query whereKey:@"sport" equalTo:@"Basketball"];
+//    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
+//    {
+//        for(PFObject *object in objects)
+//        {
+//            self.addressString = object[@"address"];
+//            NSLog(@"%@", object[@"address"]);
+//        }
+//    }];
 }
 
 - (IBAction)overlayOnButtonTapped:(UIButton *)sender
@@ -71,6 +53,17 @@
     [UIView animateWithDuration:0.3 animations:^{
         self.sportSelectionPopoverView.frame = CGRectMake(600, 600, 5, 5);
     }];
+    
+    PFQuery *query = [PFQuery queryWithClassName:@"Event"];
+    [query whereKey:@"sport" equalTo:self.sportSelected];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
+     {
+         for(PFObject *object in objects)
+         {
+             self.addressString = object[@"address"];
+             NSLog(@"%@", object[@"address"]);
+         }
+     }];
 }
 
 - (IBAction)soccerSelected:(UIButton *)sender
