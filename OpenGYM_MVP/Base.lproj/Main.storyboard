@@ -482,16 +482,14 @@
                                     <!--2015-01-12 22:03:30 +0000-->
                                 </date>
                             </datePicker>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Time" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YYX-TK-4nD">
-                                <rect key="frame" x="207" y="429" width="187" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KBv-xn-PjC">
                                 <rect key="frame" x="254" y="493" width="92" height="30"/>
                                 <state key="normal" title="Submit Event">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="submitEventOnButtonTapped:" destination="zcK-A9-Bnm" eventType="touchUpInside" id="G2e-m6-b4y"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vV6-jW-dUs">
                                 <rect key="frame" x="283" y="531" width="35" height="30"/>
@@ -505,25 +503,28 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="I9w-9G-g7Y" firstAttribute="centerX" secondItem="YYX-TK-4nD" secondAttribute="centerX" id="2CB-Sm-Keq"/>
-                            <constraint firstItem="UGl-i7-fYW" firstAttribute="leading" secondItem="YYX-TK-4nD" secondAttribute="leading" id="2eQ-hs-68r"/>
                             <constraint firstItem="aIP-YJ-ICT" firstAttribute="leading" secondItem="UGl-i7-fYW" secondAttribute="leading" id="6p6-LS-DFA"/>
-                            <constraint firstItem="KBv-xn-PjC" firstAttribute="top" secondItem="YYX-TK-4nD" secondAttribute="bottom" constant="34" id="EAT-4N-aZE"/>
+                            <constraint firstItem="zHo-Ua-HTD" firstAttribute="top" secondItem="meK-rq-19s" secondAttribute="bottom" constant="69" id="9ah-S1-qxu"/>
                             <constraint firstItem="I9w-9G-g7Y" firstAttribute="top" secondItem="UGl-i7-fYW" secondAttribute="bottom" constant="22" id="IAp-vP-qTh"/>
                             <constraint firstItem="UGl-i7-fYW" firstAttribute="trailing" secondItem="aIP-YJ-ICT" secondAttribute="trailing" id="Nfb-sO-WEV"/>
                             <constraint firstItem="aIP-YJ-ICT" firstAttribute="top" secondItem="zHo-Ua-HTD" secondAttribute="bottom" constant="39" id="Pu5-0I-6Uk"/>
-                            <constraint firstItem="UGl-i7-fYW" firstAttribute="trailing" secondItem="YYX-TK-4nD" secondAttribute="trailing" id="Waa-u7-CbM"/>
+                            <constraint firstItem="KBv-xn-PjC" firstAttribute="centerX" secondItem="I9w-9G-g7Y" secondAttribute="centerX" id="V43-Pm-ulv"/>
                             <constraint firstItem="gKU-Xt-2js" firstAttribute="top" secondItem="KBv-xn-PjC" secondAttribute="bottom" constant="77" id="Z7N-Sc-6ts"/>
-                            <constraint firstItem="YYX-TK-4nD" firstAttribute="top" secondItem="I9w-9G-g7Y" secondAttribute="bottom" constant="19" id="bjp-1U-5TF"/>
-                            <constraint firstItem="KBv-xn-PjC" firstAttribute="centerX" secondItem="YYX-TK-4nD" secondAttribute="centerX" id="djK-he-8c5"/>
                             <constraint firstItem="zHo-Ua-HTD" firstAttribute="centerX" secondItem="K3j-ws-oUG" secondAttribute="centerX" id="e1v-90-QBI"/>
                             <constraint firstItem="vV6-jW-dUs" firstAttribute="top" secondItem="KBv-xn-PjC" secondAttribute="bottom" constant="8" symbolic="YES" id="g7N-va-SBN"/>
                             <constraint firstItem="zHo-Ua-HTD" firstAttribute="trailing" secondItem="aIP-YJ-ICT" secondAttribute="trailing" id="ht6-cP-uej"/>
                             <constraint firstItem="zHo-Ua-HTD" firstAttribute="leading" secondItem="aIP-YJ-ICT" secondAttribute="leading" id="jVZ-BI-aZV"/>
                             <constraint firstItem="vV6-jW-dUs" firstAttribute="centerX" secondItem="KBv-xn-PjC" secondAttribute="centerX" id="t1S-vS-1iI"/>
+                            <constraint firstItem="UGl-i7-fYW" firstAttribute="centerX" secondItem="I9w-9G-g7Y" secondAttribute="centerX" id="vAu-u8-bbg"/>
                             <constraint firstItem="UGl-i7-fYW" firstAttribute="top" secondItem="aIP-YJ-ICT" secondAttribute="bottom" constant="8" symbolic="YES" id="zFj-JB-9Yf"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="eventAddress" destination="aIP-YJ-ICT" id="74b-L1-aor"/>
+                        <outlet property="eventAddress2" destination="UGl-i7-fYW" id="g3t-ho-85S"/>
+                        <outlet property="eventDateTime" destination="I9w-9G-g7Y" id="bcu-FS-2KA"/>
+                        <outlet property="eventSport" destination="zHo-Ua-HTD" id="M9a-xU-drk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cXM-1H-MHg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -531,8 +532,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="8Qw-1r-dRP"/>
         <segue reference="tfM-nc-QPw"/>
-        <segue reference="3x2-fA-6MS"/>
+        <segue reference="8Qw-1r-dRP"/>
+        <segue reference="JQE-3a-yfV"/>
     </inferredMetricsTieBreakers>
 </document>
