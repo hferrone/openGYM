@@ -436,6 +436,7 @@
                     </view>
                     <connections>
                         <outlet property="basketballSelectedButton" destination="Wb4-hM-aBN" id="5kk-wI-TN2"/>
+                        <outlet property="mapView" destination="TWf-vs-PAJ" id="Rkm-ei-Zlx"/>
                         <outlet property="sportSelectionPopoverView" destination="BpO-q7-GYF" id="tFk-eD-d2x"/>
                     </connections>
                 </viewController>
