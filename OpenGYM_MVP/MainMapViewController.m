@@ -18,6 +18,8 @@
 @property (weak, nonatomic) NSString *sportSelected;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) NSString *addressString;
+@property (weak, nonatomic) CLPlacemark *topResult;
+@property MKPlacemark *placemark;
 
 @end
 
@@ -28,13 +30,32 @@
     [super viewDidLoad];
     
 //    PFQuery *query = [PFQuery queryWithClassName:@"Event"];
-//    [query whereKey:@"sport" equalTo:@"Basketball"];
 //    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
 //    {
 //        for(PFObject *object in objects)
 //        {
 //            self.addressString = object[@"address"];
-//            NSLog(@"%@", object[@"address"]);
+//            NSString *new = [self.addressString stringByAppendingString:@" Chicago, IL"];
+//            NSLog(@"%@", self.addressString);
+//            
+//            NSString *location = new;
+//            CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+//            [geocoder geocodeAddressString:location
+//                         completionHandler:^(NSArray* placemarks, NSError* error){
+//                             if (placemarks && placemarks.count > 0) {
+//                                 CLPlacemark *topResult = [placemarks objectAtIndex:0];
+//                                 MKPlacemark *placemark = [[MKPlacemark alloc] initWithPlacemark:topResult];
+//                                 
+//                                 MKCoordinateRegion region = self.mapView.region;
+//                                 region.center = placemark.region.center;
+//                                 region.span.longitudeDelta /= 8.0;
+//                                 region.span.latitudeDelta /= 8.0;
+//                                 
+//                                 [self.mapView setRegion:region animated:YES];
+//                                 [self.mapView addAnnotation:placemark];
+//                             }
+//                         }
+//             ];
 //        }
 //    }];
 }
@@ -60,7 +81,28 @@
          for(PFObject *object in objects)
          {
              self.addressString = object[@"address"];
+             NSString *new = [self.addressString stringByAppendingString:@" Chicago, IL"];
+
              NSLog(@"%@", object[@"address"]);
+             
+             NSString *location = new;
+             CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+             [geocoder geocodeAddressString:location
+                          completionHandler:^(NSArray* placemarks, NSError* error){
+                              for(CLPlacemark *place in placemarks)
+                              {
+                                  MKPointAnnotation *annotation = [MKPointAnnotation new];
+                                  annotation.coordinate = place.location.coordinate;
+                                  
+                                  if([self.sportSelected isEqualToString:@"Basketball"])
+                                  {
+                                      
+                                  }
+                                  
+                                  [self.mapView addAnnotation:annotation];
+                              }
+                          }
+              ];
          }
      }];
 }
