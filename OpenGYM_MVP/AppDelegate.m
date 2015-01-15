@@ -21,6 +21,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    //initialize Parse framework 
     [Parse setApplicationId:@"4cePLYjXMVzUyi0jVuKRCOyVLutniV3Fs9vMhNAK"
                   clientKey:@"NXAVnRKw1ua2DYUvO8FJjA6YglLAUOB9sgpLj8is"];
     

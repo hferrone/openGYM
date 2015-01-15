@@ -20,6 +20,7 @@
     
 }
 
+//dismissing keyboard at touch
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [_registerUsernameInput resignFirstResponder];
@@ -27,11 +28,13 @@
     [_registerPasswordInput resignFirstResponder];
 }
 
+//register new user method
 - (IBAction)registerOnButtonTapped:(UIButton *)sender
 {
     [self checkFieldCompletion];
 }
 
+//check for all fields being complete
 -(void)checkFieldCompletion
 {
     if ([_registerUsernameInput.text isEqualToString:@""] || [_registerEmailInput.text isEqualToString:@""] || [_registerPasswordInput.text isEqualToString:@""])
@@ -44,6 +47,7 @@
     }
 }
 
+//Parse user registration 
 -(void)registerNewUser
 {
     PFUser *newUser = [PFUser user];

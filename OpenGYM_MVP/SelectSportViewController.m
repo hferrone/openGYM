@@ -19,11 +19,13 @@
 {
     [super viewDidLoad];
     
+    //button customization
     _sportSelectButton.layer.borderColor = [UIColor whiteColor].CGColor;
     _sportSelectButton.layer.borderWidth = 2.0;
     _sportSelectButton.layer.cornerRadius = 100;
 }
 
+//logout for testing purposes (Facebook and Parse)
 - (IBAction)logout:(UIButton *)sender
 {
     FBSession* session = [FBSession activeSession];

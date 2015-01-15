@@ -23,11 +23,13 @@
     
 }
 
+//dismiss keyboard on touch
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [_passwordRecoveryEmail resignFirstResponder];
 }
 
+//Parse password recovery
 - (IBAction)recoveryPasswordOnButtonTapped:(UIButton *)sender
 {
     [PFUser requestPasswordResetForEmailInBackground:_passwordRecoveryEmail.text block:^(BOOL succeeded, NSError *error)

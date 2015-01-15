@@ -22,10 +22,12 @@
 {
     [super viewDidLoad];
     
+    //button customization
     _btn.layer.borderColor = [UIColor whiteColor].CGColor;
     _btn.layer.borderWidth = 2;
     _btn.layer.cornerRadius = 5;
     
+    //Twitter login
     TWTRLogInButton* logInButton =  [TWTRLogInButton buttonWithLogInCompletion:^(TWTRSession* session, NSError* error)
     {
         if (session)
@@ -41,19 +43,23 @@
     [self.view addSubview:logInButton];
 }
 
+//hide status bar per design
 -(BOOL)prefersStatusBarHidden
 {
     return true;
 }
 
+//dismiss keyboard on touch
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [_loginUsernameInput resignFirstResponder];
     [_loginPasswordInput resignFirstResponder];
 }
 
+//sign in method
 - (IBAction)singInOnButtonTapped:(UIButton*)sender
 {
+    //Parse User query
     [PFUser logInWithUsernameInBackground:_loginUsernameInput.text password:_loginPasswordInput.text block:^(PFUser *user, NSError *error)
      {
          if(!error)
@@ -71,9 +77,9 @@
      }];
 }
 
+//keep me signed in code, working and tested
 -(void)viewDidAppear:(BOOL)animated
 {
-    //keep me signed in code, working and tested
     PFUser *user = [PFUser currentUser];
     if(user.username != nil)
     {
@@ -81,11 +87,13 @@
     }
 }
 
+//password overlay animation
 - (IBAction)forgotPasswordOnButtonTapped:(UIButton *)sender
 {
     self.passwordRecoveryOverlay.frame = self.view.frame;
 }
 
+//Facebook SDK logging in segueing into the app
 -(void)loginViewShowingLoggedInUser:(FBLoginView *)loginView
 {
     NSLog(@"logged in");

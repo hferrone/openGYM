@@ -456,10 +456,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Sport" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zHo-Ua-HTD">
-                                <rect key="frame" x="207" y="89" width="187" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Event Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Iph-FA-krf">
+                                <rect key="frame" x="207" y="120" width="187" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="187" id="FXf-ca-g56"/>
+                                    <constraint firstAttribute="width" constant="187" id="Fjh-za-yRP"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -501,14 +501,23 @@
                                     <segue destination="BBl-Wp-Hjs" kind="show" id="JQE-3a-yfV"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Sport" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zHo-Ua-HTD">
+                                <rect key="frame" x="207" y="82" width="187" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="187" id="FXf-ca-g56"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Iph-FA-krf" firstAttribute="top" secondItem="zHo-Ua-HTD" secondAttribute="bottom" constant="8" symbolic="YES" id="5bo-w9-FFB"/>
                             <constraint firstItem="aIP-YJ-ICT" firstAttribute="leading" secondItem="UGl-i7-fYW" secondAttribute="leading" id="6p6-LS-DFA"/>
-                            <constraint firstItem="zHo-Ua-HTD" firstAttribute="top" secondItem="meK-rq-19s" secondAttribute="bottom" constant="69" id="9ah-S1-qxu"/>
+                            <constraint firstItem="zHo-Ua-HTD" firstAttribute="top" secondItem="meK-rq-19s" secondAttribute="bottom" constant="62" id="9ah-S1-qxu"/>
                             <constraint firstItem="I9w-9G-g7Y" firstAttribute="top" secondItem="UGl-i7-fYW" secondAttribute="bottom" constant="22" id="IAp-vP-qTh"/>
                             <constraint firstItem="UGl-i7-fYW" firstAttribute="trailing" secondItem="aIP-YJ-ICT" secondAttribute="trailing" id="Nfb-sO-WEV"/>
-                            <constraint firstItem="aIP-YJ-ICT" firstAttribute="top" secondItem="zHo-Ua-HTD" secondAttribute="bottom" constant="39" id="Pu5-0I-6Uk"/>
+                            <constraint firstItem="aIP-YJ-ICT" firstAttribute="top" secondItem="zHo-Ua-HTD" secondAttribute="bottom" constant="46" id="Pu5-0I-6Uk"/>
                             <constraint firstItem="KBv-xn-PjC" firstAttribute="centerX" secondItem="I9w-9G-g7Y" secondAttribute="centerX" id="V43-Pm-ulv"/>
                             <constraint firstItem="gKU-Xt-2js" firstAttribute="top" secondItem="KBv-xn-PjC" secondAttribute="bottom" constant="77" id="Z7N-Sc-6ts"/>
                             <constraint firstItem="zHo-Ua-HTD" firstAttribute="centerX" secondItem="K3j-ws-oUG" secondAttribute="centerX" id="e1v-90-QBI"/>
@@ -517,6 +526,7 @@
                             <constraint firstItem="zHo-Ua-HTD" firstAttribute="leading" secondItem="aIP-YJ-ICT" secondAttribute="leading" id="jVZ-BI-aZV"/>
                             <constraint firstItem="vV6-jW-dUs" firstAttribute="centerX" secondItem="KBv-xn-PjC" secondAttribute="centerX" id="t1S-vS-1iI"/>
                             <constraint firstItem="UGl-i7-fYW" firstAttribute="centerX" secondItem="I9w-9G-g7Y" secondAttribute="centerX" id="vAu-u8-bbg"/>
+                            <constraint firstItem="Iph-FA-krf" firstAttribute="leading" secondItem="zHo-Ua-HTD" secondAttribute="leading" id="yHG-kB-J3d"/>
                             <constraint firstItem="UGl-i7-fYW" firstAttribute="top" secondItem="aIP-YJ-ICT" secondAttribute="bottom" constant="8" symbolic="YES" id="zFj-JB-9Yf"/>
                         </constraints>
                     </view>
@@ -524,6 +534,7 @@
                         <outlet property="eventAddress" destination="aIP-YJ-ICT" id="74b-L1-aor"/>
                         <outlet property="eventAddress2" destination="UGl-i7-fYW" id="g3t-ho-85S"/>
                         <outlet property="eventDateTime" destination="I9w-9G-g7Y" id="bcu-FS-2KA"/>
+                        <outlet property="eventName" destination="Iph-FA-krf" id="jcB-Uu-MRc"/>
                         <outlet property="eventSport" destination="zHo-Ua-HTD" id="M9a-xU-drk"/>
                     </connections>
                 </viewController>

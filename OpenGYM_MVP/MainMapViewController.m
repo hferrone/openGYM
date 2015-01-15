@@ -11,6 +11,8 @@
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
 
+#define METERS_PER_MILE 1609.344
+
 @interface MainMapViewController ()
 
 @property (weak, nonatomic) IBOutlet UIView *sportSelectionPopoverView;
@@ -24,8 +26,8 @@
 @property (weak, nonatomic) CLPlacemark *topResult;
 @property MKPlacemark *placemark;
 
-@property NSArray *allEventsArray;
-@property NSArray *basketballEventArray;
+@property NSMutableArray *allEvents;
+@property NSMutableArray *basketballEventArray;
 @property NSMutableArray *soccerEventArray;
 @property NSMutableArray *baseballEventArray;
 @property NSMutableArray *tennisEventArray;
@@ -39,6 +41,47 @@
 {
     [super viewDidLoad];
     
+    PFQuery *query = [PFQuery queryWithClassName:@"Event"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
+    {
+       for(PFObject *object in objects)
+       {
+           self.addressString = object[@"address"];
+           NSString *new = [self.addressString stringByAppendingString:@" Chicago, IL"];
+           
+           NSLog(@"%@", object[@"address"]);
+           
+           NSString *location = new;
+           CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+           [geocoder geocodeAddressString:location completionHandler:^(NSArray *placemarks, NSError *error)
+           {
+               for(CLPlacemark *place in placemarks)
+               {
+                   MKPointAnnotation *annotation = [MKPointAnnotation new];
+                   annotation.coordinate = place.location.coordinate;
+                   annotation.title = object[@"title"];
+                   self.allEvents = [NSMutableArray arrayWithObject:annotation];
+                   [self.mapView addAnnotations:self.allEvents];
+               }
+           }];
+       }
+    }];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [self performSelector:@selector(zoomInOnLoad) withObject:nil afterDelay:2];
+}
+
+-(void)zoomInOnLoad
+{
+    CLLocationCoordinate2D zoomLocation;
+    zoomLocation.latitude = 41.850033;
+    zoomLocation.longitude= -87.650052;
+    
+    MKCoordinateRegion viewRegion = MKCoordinateRegionMake(zoomLocation, MKCoordinateSpanMake(0.4, 0.4));
+    
+    [_mapView setRegion:viewRegion animated:YES];
 }
 
 - (IBAction)overlayOnButtonTapped:(UIButton *)sender
@@ -77,6 +120,7 @@
                               {
                                   MKPointAnnotation *annotation = [MKPointAnnotation new];
                                   annotation.coordinate = place.location.coordinate;
+                                  annotation.title = object[@"title"];
                                   
                                   if([self.sportSelected isEqualToString:@"Basketball"])
                                   {
