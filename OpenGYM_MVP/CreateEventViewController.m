@@ -42,7 +42,6 @@
     self.eventName.text = nil;
     self.eventAddress.text = nil;
     self.eventAddress2.text = nil;
-    //self.eventDateTime.date = nil;
 }
 
 @end
