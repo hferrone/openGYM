@@ -40,7 +40,7 @@
     [FBSession setActiveSession:nil];
     
     NSHTTPCookieStorage* cookies = [NSHTTPCookieStorage sharedHTTPCookieStorage];
-    NSArray* facebookCookies = [cookies cookiesForURL:[NSURL         URLWithString:@"https://facebook.com/"]];
+    NSArray* facebookCookies = [cookies cookiesForURL:[NSURL URLWithString:@"https://facebook.com/"]];
     
     for (NSHTTPCookie* cookie in facebookCookies) {
         [cookies deleteCookie:cookie];
