@@ -34,6 +34,8 @@
 		4A3B72A01A5F86E900D893E6 /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4A3B729D1A5F86E900D893E6 /* TwitterKitResources.bundle */; };
 		4A3B72A11A5F86E900D893E6 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A3B729E1A5F86E900D893E6 /* Fabric.framework */; };
 		4A65CECA1A5F164700C9BC3C /* PasswordRecoveryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A65CEC91A5F164700C9BC3C /* PasswordRecoveryViewController.m */; };
+		4A7B39A41A6979230066B811 /* SlideOutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A7B39A31A6979230066B811 /* SlideOutViewController.m */; };
+		4A7B39A81A697BA80066B811 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A7B39A71A697BA80066B811 /* SWRevealViewController.m */; };
 		4AACB0131A647AF7005F4331 /* CreateEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AACB0121A647AF7005F4331 /* CreateEventViewController.m */; };
 		4ABABA3D1A5F70A700693BE0 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ABABA3C1A5F70A700693BE0 /* FacebookSDK.framework */; };
 		4AC2802B1A64508900092C0B /* MainMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC2802A1A64508900092C0B /* MainMapViewController.m */; };
@@ -89,6 +91,10 @@
 		4A3B729E1A5F86E900D893E6 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = OpenGYM_MVP/Fabric.framework; sourceTree = "<group>"; };
 		4A65CEC81A5F164700C9BC3C /* PasswordRecoveryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswordRecoveryViewController.h; sourceTree = "<group>"; };
 		4A65CEC91A5F164700C9BC3C /* PasswordRecoveryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordRecoveryViewController.m; sourceTree = "<group>"; };
+		4A7B39A21A6979230066B811 /* SlideOutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideOutViewController.h; sourceTree = "<group>"; };
+		4A7B39A31A6979230066B811 /* SlideOutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideOutViewController.m; sourceTree = "<group>"; };
+		4A7B39A61A697BA80066B811 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		4A7B39A71A697BA80066B811 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		4AACB0111A647AF7005F4331 /* CreateEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateEventViewController.h; sourceTree = "<group>"; };
 		4AACB0121A647AF7005F4331 /* CreateEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateEventViewController.m; sourceTree = "<group>"; };
 		4ABABA3C1A5F70A700693BE0 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
@@ -159,6 +165,7 @@
 		4A10738B1A5C5C950089F080 /* OpenGYM_MVP */ = {
 			isa = PBXGroup;
 			children = (
+				4A7B39A51A697B710066B811 /* SWRevealController */,
 				4A1073901A5C5C950089F080 /* AppDelegate.h */,
 				4A1073911A5C5C950089F080 /* AppDelegate.m */,
 				4A1073B51A5C5CC00089F080 /* LoginViewController.h */,
@@ -173,6 +180,8 @@
 				4AC2802A1A64508900092C0B /* MainMapViewController.m */,
 				4AACB0111A647AF7005F4331 /* CreateEventViewController.h */,
 				4AACB0121A647AF7005F4331 /* CreateEventViewController.m */,
+				4A7B39A21A6979230066B811 /* SlideOutViewController.h */,
+				4A7B39A31A6979230066B811 /* SlideOutViewController.m */,
 				4A1073961A5C5C950089F080 /* Main.storyboard */,
 				4A1073991A5C5C950089F080 /* Images.xcassets */,
 				4A10739B1A5C5C950089F080 /* LaunchScreen.xib */,
@@ -233,6 +242,15 @@
 				4A1073BB1A5C5E930089F080 /* Bolts.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4A7B39A51A697B710066B811 /* SWRevealController */ = {
+			isa = PBXGroup;
+			children = (
+				4A7B39A61A697BA80066B811 /* SWRevealViewController.h */,
+				4A7B39A71A697BA80066B811 /* SWRevealViewController.m */,
+			);
+			name = SWRevealController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -357,9 +375,11 @@
 				4A65CECA1A5F164700C9BC3C /* PasswordRecoveryViewController.m in Sources */,
 				4A1073E71A5C897E0089F080 /* SelectSportViewController.m in Sources */,
 				4AC2802B1A64508900092C0B /* MainMapViewController.m in Sources */,
+				4A7B39A41A6979230066B811 /* SlideOutViewController.m in Sources */,
 				4AACB0131A647AF7005F4331 /* CreateEventViewController.m in Sources */,
 				4A1073921A5C5C950089F080 /* AppDelegate.m in Sources */,
 				4A1073BA1A5C5CC90089F080 /* RegistrationViewController.m in Sources */,
+				4A7B39A81A697BA80066B811 /* SWRevealViewController.m in Sources */,
 				4A10738F1A5C5C950089F080 /* main.m in Sources */,
 				4A1073B71A5C5CC00089F080 /* LoginViewController.m in Sources */,
 			);
