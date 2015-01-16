@@ -25,6 +25,12 @@
     
 }
 
+//hide status bar per design
+-(BOOL)prefersStatusBarHidden
+{
+    return true;
+}
+
 //event creation information to Parse
 - (IBAction)submitEventOnButtonTapped:(UIButton *)sender
 {

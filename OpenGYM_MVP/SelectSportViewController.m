@@ -25,6 +25,12 @@
     _sportSelectButton.layer.cornerRadius = 100;
 }
 
+//hide status bar per design
+-(BOOL)prefersStatusBarHidden
+{
+    return true;
+}
+
 //logout for testing purposes (Facebook and Parse)
 - (IBAction)logout:(UIButton *)sender
 {

@@ -20,6 +20,12 @@
     
 }
 
+//hide status bar per design
+-(BOOL)prefersStatusBarHidden
+{
+    return true;
+}
+
 //dismissing keyboard at touch
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {

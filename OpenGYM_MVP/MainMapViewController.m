@@ -73,6 +73,12 @@
     [self performSelector:@selector(zoomInOnLoad) withObject:nil afterDelay:2];
 }
 
+//hide status bar per design
+-(BOOL)prefersStatusBarHidden
+{
+    return true;
+}
+
 -(void)zoomInOnLoad
 {
     CLLocationCoordinate2D zoomLocation;
