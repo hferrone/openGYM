@@ -7,6 +7,7 @@
 //
 
 #import "MainMapViewController.h"
+#import "SWRevealViewController.h"
 #import <Parse/Parse.h>
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
@@ -33,6 +34,8 @@
 @property NSMutableArray *tennisEventArray;
 @property NSMutableArray *footballEventArray;
 
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
+
 @end
 
 @implementation MainMapViewController
@@ -40,6 +43,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    SWRevealViewController *revealViewController = self.revealViewController;
+    if ( revealViewController )
+    {
+        [self.sidebarButton setTarget: self.revealViewController];
+        [self.sidebarButton setAction: @selector( revealToggle: )];
+        [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+    }
     
     PFQuery *query = [PFQuery queryWithClassName:@"Event"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
