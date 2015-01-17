@@ -293,7 +293,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jam-rI-JXI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2032" y="1124"/>
+            <point key="canvasLocation" x="2478" y="1098"/>
         </scene>
         <!--Reveal View Controller-->
         <scene sceneID="w2T-Ml-0vw">
@@ -315,7 +315,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C5G-e4-ijW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2745" y="1124"/>
+            <point key="canvasLocation" x="3987" y="1098"/>
         </scene>
         <!--Map View-->
         <scene sceneID="v9o-wv-UoM">
@@ -467,7 +467,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U3c-TC-h80" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3483" y="1124"/>
+            <point key="canvasLocation" x="4725" y="1098"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="Rc6-gC-Aee">
@@ -484,7 +484,7 @@
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6oc-nZ-U1h">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                 <items>
-                                    <navigationItem id="G7V-1Y-dn0">
+                                    <navigationItem title="Profile" id="G7V-1Y-dn0">
                                         <barButtonItem key="leftBarButtonItem" image="reveal-icon" id="A84-rG-FZV"/>
                                     </navigationItem>
                                 </items>
@@ -498,7 +498,91 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YYs-CF-oNH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3483" y="2592"/>
+            <point key="canvasLocation" x="5857" y="3134"/>
+        </scene>
+        <!--My Games View Controller-->
+        <scene sceneID="j5o-yQ-gvs">
+            <objects>
+                <viewController id="9Af-6I-8Nu" customClass="MyGamesViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HSc-M5-aLM"/>
+                        <viewControllerLayoutGuide type="bottom" id="PWD-3C-WjN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="o4C-I0-rdv">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i9m-y4-j8J">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="My Games" id="ZCT-RT-dap">
+                                        <barButtonItem key="leftBarButtonItem" image="reveal-icon" id="ODx-Ki-PO4"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rdr-5c-5kt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3667" y="3134"/>
+        </scene>
+        <!--Home View Controller-->
+        <scene sceneID="s61-cW-P8i">
+            <objects>
+                <viewController id="hDk-cC-mX7" customClass="HomeViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lLX-eA-OjY"/>
+                        <viewControllerLayoutGuide type="bottom" id="tHW-4h-awQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Plo-vc-bGn">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NWn-VU-cha">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="Home" id="dKk-NP-ywQ">
+                                        <barButtonItem key="leftBarButtonItem" image="reveal-icon" id="g8B-C8-Isj"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Ef-si-dDy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4377" y="3134"/>
+        </scene>
+        <!--Ratings View Controller-->
+        <scene sceneID="x5Y-7Z-eaq">
+            <objects>
+                <viewController id="zOH-5b-ahR" customClass="RatingsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="d4O-tU-jXZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="yVs-re-utP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gwu-ap-bSg">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tbq-IC-yxH">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="Ratings" id="ghF-vv-hnX">
+                                        <barButtonItem key="leftBarButtonItem" image="reveal-icon" id="1mj-0R-BUH"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cYw-yM-UNt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5115" y="3134"/>
         </scene>
         <!--Reveal View Controller-->
         <scene sceneID="u2O-9F-B6V">
@@ -566,6 +650,9 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="zOH-5b-ahR" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="LHS-AE-xH6"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Diq-Ic-pFZ">
                                 <rect key="frame" x="-34" y="342" width="600" height="30"/>
@@ -573,6 +660,9 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="hDk-cC-mX7" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="iNi-xh-1z9"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pAn-ps-Hmx">
                                 <rect key="frame" x="-34" y="380" width="600" height="30"/>
@@ -580,6 +670,9 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="9Af-6I-8Nu" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="oS6-np-nQD"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b6h-bB-djE">
                                 <rect key="frame" x="-34" y="418" width="600" height="30"/>
@@ -620,7 +713,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="agi-JB-Liv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3483" y="1900"/>
+            <point key="canvasLocation" x="4755" y="2402"/>
         </scene>
         <!--Create Event-->
         <scene sceneID="UQR-u6-MJ1">
@@ -718,15 +811,15 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cXM-1H-MHg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4229" y="1124"/>
+            <point key="canvasLocation" x="5471" y="1098"/>
         </scene>
     </scenes>
     <resources>
         <image name="reveal-icon" width="22" height="17"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="AwY-ct-UPY"/>
         <segue reference="qpx-p6-vYw"/>
-        <segue reference="ov6-2E-tyj"/>
+        <segue reference="tfM-nc-QPw"/>
+        <segue reference="AwY-ct-UPY"/>
     </inferredMetricsTieBreakers>
 </document>
