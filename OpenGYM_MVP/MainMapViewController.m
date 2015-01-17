@@ -60,8 +60,6 @@
            self.addressString = object[@"address"];
            NSString *new = [self.addressString stringByAppendingString:@" Chicago, IL"];
            
-           NSLog(@"%@", object[@"address"]);
-           
            NSString *location = new;
            CLGeocoder *geocoder = [[CLGeocoder alloc] init];
            [geocoder geocodeAddressString:location completionHandler:^(NSArray *placemarks, NSError *error)

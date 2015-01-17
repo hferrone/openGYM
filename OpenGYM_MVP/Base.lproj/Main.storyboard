@@ -469,6 +469,37 @@
             </objects>
             <point key="canvasLocation" x="3483" y="1124"/>
         </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="Rc6-gC-Aee">
+            <objects>
+                <viewController id="6ae-tn-5Kd" customClass="ProfileViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WcS-2Z-quK"/>
+                        <viewControllerLayoutGuide type="bottom" id="hyM-G9-qDZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="86p-AO-hfQ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6oc-nZ-U1h">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <items>
+                                    <navigationItem id="G7V-1Y-dn0">
+                                        <barButtonItem key="leftBarButtonItem" image="reveal-icon" id="A84-rG-FZV"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="sidebarButton" destination="A84-rG-FZV" id="ocD-AI-lWo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YYs-CF-oNH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3483" y="2592"/>
+        </scene>
         <!--Reveal View Controller-->
         <scene sceneID="u2O-9F-B6V">
             <objects>
@@ -522,6 +553,9 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="6ae-tn-5Kd" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="O5I-o3-tLb"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kbF-wv-QyF">
                                 <rect key="frame" x="0.0" y="304" width="600" height="30"/>
