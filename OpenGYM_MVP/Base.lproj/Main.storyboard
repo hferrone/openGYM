@@ -331,6 +331,9 @@
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="TWf-vs-PAJ">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BBl-Wp-Hjs" id="xUb-hR-Sbg"/>
+                                </connections>
                             </mapView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BpO-q7-GYF">
                                 <rect key="frame" x="600" y="0.0" width="600" height="600"/>
@@ -463,6 +466,7 @@
                         <outlet property="mapView" destination="TWf-vs-PAJ" id="Rkm-ei-Zlx"/>
                         <outlet property="sidebarButton" destination="P95-E3-uR6" id="9Dr-nI-OiL"/>
                         <outlet property="sportSelectionPopoverView" destination="BpO-q7-GYF" id="tFk-eD-d2x"/>
+                        <segue destination="LAQ-ND-Km5" kind="show" identifier="pinDetailSegueID" id="n8x-6K-wsh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U3c-TC-h80" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -481,7 +485,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6oc-nZ-U1h">
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6oc-nZ-U1h">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                 <items>
                                     <navigationItem title="Profile" id="G7V-1Y-dn0">
@@ -491,6 +495,11 @@
                             </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6oc-nZ-U1h" firstAttribute="leading" secondItem="86p-AO-hfQ" secondAttribute="leading" id="46m-Or-nhR"/>
+                            <constraint firstAttribute="trailing" secondItem="6oc-nZ-U1h" secondAttribute="trailing" id="NwN-Yl-BAw"/>
+                            <constraint firstItem="6oc-nZ-U1h" firstAttribute="top" secondItem="86p-AO-hfQ" secondAttribute="top" id="XlH-XB-RkI"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="sidebarButton" destination="A84-rG-FZV" id="ocD-AI-lWo"/>
@@ -512,7 +521,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i9m-y4-j8J">
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i9m-y4-j8J">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                 <items>
                                     <navigationItem title="My Games" id="ZCT-RT-dap">
@@ -522,7 +531,15 @@
                             </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="i9m-y4-j8J" firstAttribute="leading" secondItem="o4C-I0-rdv" secondAttribute="leading" id="8Ha-El-1uP"/>
+                            <constraint firstAttribute="trailing" secondItem="i9m-y4-j8J" secondAttribute="trailing" id="iX0-jr-n1d"/>
+                            <constraint firstItem="i9m-y4-j8J" firstAttribute="top" secondItem="o4C-I0-rdv" secondAttribute="top" id="lso-s0-7ce"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="sidebarButton" destination="ODx-Ki-PO4" id="XNk-37-ukY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rdr-5c-5kt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -540,7 +557,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NWn-VU-cha">
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NWn-VU-cha">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                 <items>
                                     <navigationItem title="Home" id="dKk-NP-ywQ">
@@ -550,7 +567,15 @@
                             </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="NWn-VU-cha" firstAttribute="top" secondItem="Plo-vc-bGn" secondAttribute="top" id="2qY-CW-VxR"/>
+                            <constraint firstAttribute="trailing" secondItem="NWn-VU-cha" secondAttribute="trailing" id="LTj-wM-UVn"/>
+                            <constraint firstItem="NWn-VU-cha" firstAttribute="leading" secondItem="Plo-vc-bGn" secondAttribute="leading" id="p4o-mt-uBZ"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="sidebarButton" destination="g8B-C8-Isj" id="fHL-Jv-YD9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Ef-si-dDy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -568,7 +593,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tbq-IC-yxH">
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tbq-IC-yxH">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                 <items>
                                     <navigationItem title="Ratings" id="ghF-vv-hnX">
@@ -578,7 +603,15 @@
                             </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="tbq-IC-yxH" secondAttribute="trailing" id="03y-zW-Bix"/>
+                            <constraint firstItem="tbq-IC-yxH" firstAttribute="top" secondItem="gwu-ap-bSg" secondAttribute="top" id="3Nk-tz-wxa"/>
+                            <constraint firstItem="tbq-IC-yxH" firstAttribute="leading" secondItem="gwu-ap-bSg" secondAttribute="leading" id="zEP-73-xhv"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="sidebarButton" destination="1mj-0R-BUH" id="MVh-mt-Zcq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cYw-yM-UNt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -811,7 +844,40 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cXM-1H-MHg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5471" y="1098"/>
+            <point key="canvasLocation" x="5437" y="566"/>
+        </scene>
+        <!--Directions-->
+        <scene sceneID="1n8-XW-b1p">
+            <objects>
+                <viewController title="Directions" id="LAQ-ND-Km5" customClass="MapAnnotationDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gqs-VA-58G"/>
+                        <viewControllerLayoutGuide type="bottom" id="mja-Fe-5B3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eYW-Ld-ubl">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MTr-NT-BZU">
+                                <rect key="frame" x="256" y="326" width="88" height="30"/>
+                                <state key="normal" title="Back to Map">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BBl-Wp-Hjs" kind="show" id="vS4-Df-oBh"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="mja-Fe-5B3" firstAttribute="top" secondItem="MTr-NT-BZU" secondAttribute="bottom" constant="244" id="6kd-PO-fmu"/>
+                            <constraint firstItem="MTr-NT-BZU" firstAttribute="centerX" secondItem="eYW-Ld-ubl" secondAttribute="centerX" id="TOc-13-eKm"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sjt-14-9gU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5437" y="1350"/>
         </scene>
     </scenes>
     <resources>
@@ -820,6 +886,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="qpx-p6-vYw"/>
         <segue reference="tfM-nc-QPw"/>
-        <segue reference="AwY-ct-UPY"/>
+        <segue reference="vS4-Df-oBh"/>
     </inferredMetricsTieBreakers>
 </document>

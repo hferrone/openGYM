@@ -37,6 +37,7 @@
 		4A3B729F1A5F86E900D893E6 /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A3B729C1A5F86E900D893E6 /* TwitterKit.framework */; };
 		4A3B72A01A5F86E900D893E6 /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4A3B729D1A5F86E900D893E6 /* TwitterKitResources.bundle */; };
 		4A3B72A11A5F86E900D893E6 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A3B729E1A5F86E900D893E6 /* Fabric.framework */; };
+		4A3F14711A6ECD77007C1BAB /* MapAnnotationDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A3F14701A6ECD77007C1BAB /* MapAnnotationDetailViewController.m */; };
 		4A65CECA1A5F164700C9BC3C /* PasswordRecoveryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A65CEC91A5F164700C9BC3C /* PasswordRecoveryViewController.m */; };
 		4AACB0131A647AF7005F4331 /* CreateEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AACB0121A647AF7005F4331 /* CreateEventViewController.m */; };
 		4ABABA3D1A5F70A700693BE0 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ABABA3C1A5F70A700693BE0 /* FacebookSDK.framework */; };
@@ -101,6 +102,8 @@
 		4A3B729C1A5F86E900D893E6 /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TwitterKit.framework; path = OpenGYM_MVP/TwitterKit.framework; sourceTree = "<group>"; };
 		4A3B729D1A5F86E900D893E6 /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = OpenGYM_MVP/TwitterKitResources.bundle; sourceTree = "<group>"; };
 		4A3B729E1A5F86E900D893E6 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = OpenGYM_MVP/Fabric.framework; sourceTree = "<group>"; };
+		4A3F146F1A6ECD77007C1BAB /* MapAnnotationDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapAnnotationDetailViewController.h; sourceTree = "<group>"; };
+		4A3F14701A6ECD77007C1BAB /* MapAnnotationDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapAnnotationDetailViewController.m; sourceTree = "<group>"; };
 		4A65CEC81A5F164700C9BC3C /* PasswordRecoveryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswordRecoveryViewController.h; sourceTree = "<group>"; };
 		4A65CEC91A5F164700C9BC3C /* PasswordRecoveryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordRecoveryViewController.m; sourceTree = "<group>"; };
 		4AACB0111A647AF7005F4331 /* CreateEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateEventViewController.h; sourceTree = "<group>"; };
@@ -192,6 +195,8 @@
 				4AC2802A1A64508900092C0B /* MainMapViewController.m */,
 				4AACB0111A647AF7005F4331 /* CreateEventViewController.h */,
 				4AACB0121A647AF7005F4331 /* CreateEventViewController.m */,
+				4A3F146F1A6ECD77007C1BAB /* MapAnnotationDetailViewController.h */,
+				4A3F14701A6ECD77007C1BAB /* MapAnnotationDetailViewController.m */,
 				4AD7827F1A69F423001C8774 /* RevealViewController.h */,
 				4AD782801A69F423001C8774 /* RevealViewController.m */,
 				4A1A08DC1A69FB2E0096FDF1 /* ProfileViewController.h */,
@@ -401,6 +406,7 @@
 				4A1073921A5C5C950089F080 /* AppDelegate.m in Sources */,
 				4AD7827E1A69F375001C8774 /* SWRevealViewController.m in Sources */,
 				4A18D6E91A6AD3B000842E19 /* MyGamesViewController.m in Sources */,
+				4A3F14711A6ECD77007C1BAB /* MapAnnotationDetailViewController.m in Sources */,
 				4A1073BA1A5C5CC90089F080 /* RegistrationViewController.m in Sources */,
 				4A1A08DE1A69FB2E0096FDF1 /* ProfileViewController.m in Sources */,
 				4A10738F1A5C5C950089F080 /* main.m in Sources */,

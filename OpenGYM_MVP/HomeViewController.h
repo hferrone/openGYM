@@ -10,4 +10,11 @@
 
 @interface HomeViewController : UIViewController
 
+@property NSMutableArray *allEvents;
+@property NSMutableArray *basketballEventArray;
+@property NSMutableArray *soccerEventArray;
+@property NSMutableArray *baseballEventArray;
+@property NSMutableArray *tennisEventArray;
+@property NSMutableArray *footballEventArray;
+
 @end

@@ -8,6 +8,9 @@
 
 #import "MainMapViewController.h"
 #import "SWRevealViewController.h"
+#import "HomeViewController.h"
+#import "MapAnnotationDetailViewController.h"
+
 #import <Parse/Parse.h>
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
@@ -35,6 +38,8 @@
 @property NSMutableArray *footballEventArray;
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
+
+@property CLLocationCoordinate2D *detailAnnotation;
 
 @end
 
@@ -106,6 +111,29 @@
     }];
 }
 
+-(MKAnnotationView *)mapView:(MKMapView*)mapView viewForAnnotation:(id<MKAnnotation>)annotation
+{
+    MKPinAnnotationView *pin = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:nil];
+    pin.canShowCallout = YES;
+    pin.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+    
+    return pin;
+}
+
+- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
+{
+    [self performSegueWithIdentifier:@"pinDetailSegueID" sender:self];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+//    if([segue.identifier isEqualToString:@"pinDetailSegueID"])
+//    {
+//        MapAnnotationDetailViewController *detailVC = segue.destinationViewController;
+//        detailVC.annotationView = self.detailAnnotation;
+//    }
+}
+
 -(void)queryBySportSelected
 {
     NSArray *allPoints = self.mapView.annotations;
@@ -124,8 +152,6 @@
          {
              self.addressString = object[@"address"];
              NSString *new = [self.addressString stringByAppendingString:@" Chicago, IL"];
-
-             NSLog(@"%@", object[@"address"]);
              
              NSString *location = new;
              CLGeocoder *geocoder = [[CLGeocoder alloc] init];
@@ -141,6 +167,11 @@
                                   {
                                       self.basketballEventArray = [NSMutableArray arrayWithObject:annotation];
                                       [self.mapView addAnnotations:self.basketballEventArray];
+                                      
+                                      NSArray *test = [NSArray arrayWithObject:object[@"address"]];
+                                      PFObject *arrayTest = [PFObject objectWithClassName:@"arrayTest"];
+                                      arrayTest[@"address"] = test;
+                                      [arrayTest saveInBackground];
                                   }
                                   else if([self.sportSelected isEqualToString:@"Soccer"])
                                   {
