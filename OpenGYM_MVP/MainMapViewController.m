@@ -35,6 +35,7 @@
 @property NSMutableArray *footballEventArray;
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *rightReveal;
 
 @end
 
@@ -49,7 +50,9 @@
     {
         [self.sidebarButton setTarget: self.revealViewController];
         [self.sidebarButton setAction: @selector( revealToggle: )];
-        [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+        
+        [self.rightReveal setTarget:self.revealViewController];
+        [self.rightReveal setAction:@selector(rightRevealToggle:)];
     }
     
     PFQuery *query = [PFQuery queryWithClassName:@"Event"];
