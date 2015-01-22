@@ -7,8 +7,10 @@
 //
 
 #import "RevealViewController.h"
+#import <Parse/Parse.h>
 
 @interface RevealViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *userFullNameLabel;
 
 @end
 
@@ -17,6 +19,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    PFUser *user = [PFUser currentUser];
+    self.userFullNameLabel.text = user.username;
     
 }
 

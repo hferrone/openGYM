@@ -572,11 +572,25 @@
                                 <rect key="frame" x="61" y="44" width="539" height="556"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="homeCellID" id="MCW-lf-jdd">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="homeCellID" textLabel="UuE-Jj-mCB" detailTextLabel="5Wc-Rv-iHf" style="IBUITableViewCellStyleSubtitle" id="MCW-lf-jdd">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MCW-lf-jdd" id="kpz-iO-k23">
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UuE-Jj-mCB">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5Wc-Rv-iHf">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
@@ -593,6 +607,9 @@
                             <constraint firstItem="NWn-VU-cha" firstAttribute="leading" secondItem="Plo-vc-bGn" secondAttribute="leading" id="p4o-mt-uBZ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="acL-sX-IL6" id="ax5-6W-h3r"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Ef-si-dDy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -745,6 +762,9 @@
                             <constraint firstItem="jER-bc-nK1" firstAttribute="top" secondItem="Ym0-UG-lpu" secondAttribute="bottom" constant="8" symbolic="YES" id="rMN-Mt-Brv"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="userFullNameLabel" destination="F87-Xv-rz7" id="cum-Tw-Qd0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="agi-JB-Liv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -888,6 +908,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="qpx-p6-vYw"/>
         <segue reference="tfM-nc-QPw"/>
-        <segue reference="sog-iJ-UoY"/>
+        <segue reference="jcd-kU-yhC"/>
     </inferredMetricsTieBreakers>
 </document>

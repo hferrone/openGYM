@@ -13,6 +13,9 @@
 
 @interface HomeViewController () <UITableViewDataSource, UITableViewDelegate>
 
+@property NSArray *storedEvents;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
 @end
 
 @implementation HomeViewController
@@ -20,7 +23,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self parseDataQuery];
+}
 
+-(void)parseDataQuery
+{
+    PFQuery *query = [PFQuery queryWithClassName:@"Event"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
+     {
+         self.storedEvents = [[NSArray alloc] initWithArray:objects];
+         [self.tableView reloadData];
+     }];
 }
 
 //hide status bar per design
@@ -31,13 +44,16 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 3;
+    return self.storedEvents.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *homeCell = [tableView dequeueReusableCellWithIdentifier:@"homeCellID"];
-    homeCell.textLabel.text = [NSString stringWithFormat:@"Test Row %ld", (long)indexPath.row];
+    PFObject *event = [self.storedEvents objectAtIndex:indexPath.row];
+    
+    homeCell.textLabel.text = [event objectForKey:@"title"];
+    homeCell.detailTextLabel.text = [event objectForKey:@"sport"];
     
     return homeCell;
 }
