@@ -298,7 +298,6 @@
         <!--Reveal View Controller-->
         <scene sceneID="w2T-Ml-0vw">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="C5G-e4-ijW" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="sF1-ce-JCv" customClass="SWRevealViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ceP-zi-cKH"/>
@@ -315,6 +314,7 @@
                         <segue destination="hDk-cC-mX7" kind="custom" identifier="sw_right" customClass="SWRevealViewControllerSegueSetController" id="GMX-a5-LAq"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C5G-e4-ijW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3971" y="1098"/>
         </scene>
@@ -553,7 +553,7 @@
         <!--Home View Controller-->
         <scene sceneID="s61-cW-P8i">
             <objects>
-                <viewController modalPresentationStyle="currentContext" id="hDk-cC-mX7" customClass="HomeViewController" sceneMemberID="viewController">
+                <viewController id="hDk-cC-mX7" customClass="HomeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lLX-eA-OjY"/>
                         <viewControllerLayoutGuide type="bottom" id="tHW-4h-awQ"/>

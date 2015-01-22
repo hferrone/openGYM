@@ -27,8 +27,6 @@
 #import <QuartzCore/QuartzCore.h>
 
 #import "SWRevealViewController.h"
-#import "HomeViewController.h"
-#import "RatingsViewController.h"
 
 
 #pragma mark - StatusBar Helper Function
@@ -210,7 +208,7 @@ static CGFloat scaledValue( CGFloat v1, CGFloat min2, CGFloat max2, CGFloat min1
     // setup front view shadow path if needed (front view loaded and not removed)
     UIViewController *frontViewController = _c.frontViewController;
     BOOL viewLoaded = frontViewController != nil && frontViewController.isViewLoaded;
-    BOOL viewNotRemoved = position < FrontViewPositionLeftSideMostRemoved && position < FrontViewPositionRightMostRemoved;
+    BOOL viewNotRemoved = position > FrontViewPositionLeftSideMostRemoved && position < FrontViewPositionRightMostRemoved;
     CGRect shadowBounds = viewLoaded && viewNotRemoved  ? _frontView.bounds : CGRectZero;
     
     UIBezierPath *shadowPath = [UIBezierPath bezierPathWithRect:shadowBounds];
@@ -630,7 +628,7 @@ const int FrontViewPositionNone = 0xff;
     _rearViewRevealDisplacement = 40.0f;
     _rightViewRevealWidth = 315.0f;
     _rightViewRevealOverdraw = 60.0f;
-    _rightViewRevealDisplacement = 0;
+    _rightViewRevealDisplacement = 40.0f;
     _bounceBackOnOverdraw = YES;
     _bounceBackOnLeftOverdraw = YES;
     _stableDragOnOverdraw = NO;
