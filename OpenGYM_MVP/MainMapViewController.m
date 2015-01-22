@@ -38,6 +38,7 @@
 @property NSMutableArray *footballEventArray;
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *dashboardButton;
 
 @property CLLocationCoordinate2D *detailAnnotation;
 
@@ -48,14 +49,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    SWRevealViewController *revealViewController = self.revealViewController;
-    if ( revealViewController )
-    {
+
         [self.sidebarButton setTarget: self.revealViewController];
         [self.sidebarButton setAction: @selector( revealToggle: )];
-        [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
-    }
+        //[self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+        
+        [self.dashboardButton setTarget: self.revealViewController];
+        [self.dashboardButton setAction: @selector( rightRevealToggle: )];
+        //[self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+    
     
     PFQuery *query = [PFQuery queryWithClassName:@"Event"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)

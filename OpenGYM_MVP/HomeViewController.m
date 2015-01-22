@@ -9,9 +9,9 @@
 #import "HomeViewController.h"
 #import "SWRevealViewController.h"
 
-@interface HomeViewController ()
+#import <Parse/Parse.h>
 
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
+@interface HomeViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @end
 
@@ -20,22 +20,26 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    SWRevealViewController *revealViewController = self.revealViewController;
-    if ( revealViewController )
-    {
-        [self.sidebarButton setTarget: self.revealViewController];
-        [self.sidebarButton setAction: @selector( revealToggle: )];
-        [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
-    }
-    
-    NSLog(@"%@", self.basketballEventArray);
+
 }
 
 //hide status bar per design
 -(BOOL)prefersStatusBarHidden
 {
     return true;
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 3;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *homeCell = [tableView dequeueReusableCellWithIdentifier:@"homeCellID"];
+    homeCell.textLabel.text = [NSString stringWithFormat:@"Test Row %ld", (long)indexPath.row];
+    
+    return homeCell;
 }
 
 @end
