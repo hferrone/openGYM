@@ -45,6 +45,7 @@
 		4AD09AF21A5F7D7800B46FA0 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AD09AF11A5F7D7800B46FA0 /* Social.framework */; };
 		4AD09AF41A5F7D8000B46FA0 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AD09AF31A5F7D8000B46FA0 /* Twitter.framework */; };
 		4AD09AF61A5F7D8900B46FA0 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AD09AF51A5F7D8900B46FA0 /* Accounts.framework */; };
+		4AD7827E1A69F375001C8774 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AD7827D1A69F375001C8774 /* SWRevealViewController.m */; };
 		4AD782811A69F423001C8774 /* RevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AD782801A69F423001C8774 /* RevealViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -113,6 +114,8 @@
 		4AD09AF11A5F7D7800B46FA0 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		4AD09AF31A5F7D8000B46FA0 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		4AD09AF51A5F7D8900B46FA0 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		4AD7827C1A69F375001C8774 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		4AD7827D1A69F375001C8774 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		4AD7827F1A69F423001C8774 /* RevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RevealViewController.h; sourceTree = "<group>"; };
 		4AD782801A69F423001C8774 /* RevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RevealViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -155,13 +158,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4A08D6041A709EE1000D2A61 /* SWReveal Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "SWReveal Controller";
-			sourceTree = "<group>";
-		};
 		4A1073801A5C5C950089F080 = {
 			isa = PBXGroup;
 			children = (
@@ -184,7 +180,7 @@
 		4A10738B1A5C5C950089F080 /* OpenGYM_MVP */ = {
 			isa = PBXGroup;
 			children = (
-				4A08D6041A709EE1000D2A61 /* SWReveal Controller */,
+				4AD7827B1A69F363001C8774 /* SWRevealController */,
 				4A1073901A5C5C950089F080 /* AppDelegate.h */,
 				4A1073911A5C5C950089F080 /* AppDelegate.m */,
 				4A1073B51A5C5CC00089F080 /* LoginViewController.h */,
@@ -271,6 +267,15 @@
 				4A1073BB1A5C5E930089F080 /* Bolts.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4AD7827B1A69F363001C8774 /* SWRevealController */ = {
+			isa = PBXGroup;
+			children = (
+				4AD7827C1A69F375001C8774 /* SWRevealViewController.h */,
+				4AD7827D1A69F375001C8774 /* SWRevealViewController.m */,
+			);
+			name = SWRevealController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -399,6 +404,7 @@
 				4AACB0131A647AF7005F4331 /* CreateEventViewController.m in Sources */,
 				4A18D6E31A6AD1D800842E19 /* RatingsViewController.m in Sources */,
 				4A1073921A5C5C950089F080 /* AppDelegate.m in Sources */,
+				4AD7827E1A69F375001C8774 /* SWRevealViewController.m in Sources */,
 				4A18D6E91A6AD3B000842E19 /* MyGamesViewController.m in Sources */,
 				4A3F14711A6ECD77007C1BAB /* MapAnnotationDetailViewController.m in Sources */,
 				4A1073BA1A5C5CC90089F080 /* RegistrationViewController.m in Sources */,
