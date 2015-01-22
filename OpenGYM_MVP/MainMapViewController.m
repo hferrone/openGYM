@@ -8,9 +8,6 @@
 
 #import "MainMapViewController.h"
 #import "SWRevealViewController.h"
-#import "HomeViewController.h"
-#import "MapAnnotationDetailViewController.h"
-
 #import <Parse/Parse.h>
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
@@ -38,9 +35,6 @@
 @property NSMutableArray *footballEventArray;
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *dashboardButton;
-
-@property CLLocationCoordinate2D *detailAnnotation;
 
 @end
 
@@ -49,15 +43,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    
+    SWRevealViewController *revealViewController = self.revealViewController;
+    if ( revealViewController )
+    {
         [self.sidebarButton setTarget: self.revealViewController];
         [self.sidebarButton setAction: @selector( revealToggle: )];
-        //[self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
-        
-        [self.dashboardButton setTarget: self.revealViewController];
-        [self.dashboardButton setAction: @selector( rightRevealToggle: )];
-        //[self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
-    
+        [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+    }
     
     PFQuery *query = [PFQuery queryWithClassName:@"Event"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
@@ -66,6 +59,8 @@
        {
            self.addressString = object[@"address"];
            NSString *new = [self.addressString stringByAppendingString:@" Chicago, IL"];
+           
+           NSLog(@"%@", object[@"address"]);
            
            NSString *location = new;
            CLGeocoder *geocoder = [[CLGeocoder alloc] init];
@@ -113,29 +108,6 @@
     }];
 }
 
--(MKAnnotationView *)mapView:(MKMapView*)mapView viewForAnnotation:(id<MKAnnotation>)annotation
-{
-    MKPinAnnotationView *pin = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:nil];
-    pin.canShowCallout = YES;
-    pin.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-    
-    return pin;
-}
-
-- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
-{
-    [self performSegueWithIdentifier:@"pinDetailSegueID" sender:self];
-}
-
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-//    if([segue.identifier isEqualToString:@"pinDetailSegueID"])
-//    {
-//        MapAnnotationDetailViewController *detailVC = segue.destinationViewController;
-//        detailVC.annotationView = self.detailAnnotation;
-//    }
-}
-
 -(void)queryBySportSelected
 {
     NSArray *allPoints = self.mapView.annotations;
@@ -154,6 +126,8 @@
          {
              self.addressString = object[@"address"];
              NSString *new = [self.addressString stringByAppendingString:@" Chicago, IL"];
+
+             NSLog(@"%@", object[@"address"]);
              
              NSString *location = new;
              CLGeocoder *geocoder = [[CLGeocoder alloc] init];
@@ -169,11 +143,6 @@
                                   {
                                       self.basketballEventArray = [NSMutableArray arrayWithObject:annotation];
                                       [self.mapView addAnnotations:self.basketballEventArray];
-                                      
-                                      NSArray *test = [NSArray arrayWithObject:object[@"address"]];
-                                      PFObject *arrayTest = [PFObject objectWithClassName:@"arrayTest"];
-                                      arrayTest[@"address"] = test;
-                                      [arrayTest saveInBackground];
                                   }
                                   else if([self.sportSelected isEqualToString:@"Soccer"])
                                   {

@@ -29,15 +29,10 @@
 		4A1073DC1A5C60B10089F080 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A1073DB1A5C60B10089F080 /* SystemConfiguration.framework */; };
 		4A1073DE1A5C60C30089F080 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A1073DD1A5C60C30089F080 /* libsqlite3.dylib */; };
 		4A1073E71A5C897E0089F080 /* SelectSportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A1073E61A5C897E0089F080 /* SelectSportViewController.m */; };
-		4A18D6E31A6AD1D800842E19 /* RatingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A18D6E21A6AD1D800842E19 /* RatingsViewController.m */; };
-		4A18D6E61A6AD2CF00842E19 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A18D6E51A6AD2CF00842E19 /* HomeViewController.m */; };
-		4A18D6E91A6AD3B000842E19 /* MyGamesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A18D6E81A6AD3B000842E19 /* MyGamesViewController.m */; };
-		4A1A08DE1A69FB2E0096FDF1 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A1A08DD1A69FB2E0096FDF1 /* ProfileViewController.m */; };
 		4A2C3CD21A6306C70069BED1 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A2C3CD11A6306C70069BED1 /* MapKit.framework */; };
 		4A3B729F1A5F86E900D893E6 /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A3B729C1A5F86E900D893E6 /* TwitterKit.framework */; };
 		4A3B72A01A5F86E900D893E6 /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4A3B729D1A5F86E900D893E6 /* TwitterKitResources.bundle */; };
 		4A3B72A11A5F86E900D893E6 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A3B729E1A5F86E900D893E6 /* Fabric.framework */; };
-		4A3F14711A6ECD77007C1BAB /* MapAnnotationDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A3F14701A6ECD77007C1BAB /* MapAnnotationDetailViewController.m */; };
 		4A65CECA1A5F164700C9BC3C /* PasswordRecoveryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A65CEC91A5F164700C9BC3C /* PasswordRecoveryViewController.m */; };
 		4AACB0131A647AF7005F4331 /* CreateEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AACB0121A647AF7005F4331 /* CreateEventViewController.m */; };
 		4ABABA3D1A5F70A700693BE0 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ABABA3C1A5F70A700693BE0 /* FacebookSDK.framework */; };
@@ -90,20 +85,10 @@
 		4A1073DD1A5C60C30089F080 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		4A1073E51A5C897E0089F080 /* SelectSportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectSportViewController.h; sourceTree = "<group>"; };
 		4A1073E61A5C897E0089F080 /* SelectSportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectSportViewController.m; sourceTree = "<group>"; };
-		4A18D6E11A6AD1D800842E19 /* RatingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RatingsViewController.h; sourceTree = "<group>"; };
-		4A18D6E21A6AD1D800842E19 /* RatingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RatingsViewController.m; sourceTree = "<group>"; };
-		4A18D6E41A6AD2CF00842E19 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
-		4A18D6E51A6AD2CF00842E19 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
-		4A18D6E71A6AD3B000842E19 /* MyGamesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyGamesViewController.h; sourceTree = "<group>"; };
-		4A18D6E81A6AD3B000842E19 /* MyGamesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyGamesViewController.m; sourceTree = "<group>"; };
-		4A1A08DC1A69FB2E0096FDF1 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
-		4A1A08DD1A69FB2E0096FDF1 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		4A2C3CD11A6306C70069BED1 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		4A3B729C1A5F86E900D893E6 /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TwitterKit.framework; path = OpenGYM_MVP/TwitterKit.framework; sourceTree = "<group>"; };
 		4A3B729D1A5F86E900D893E6 /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = OpenGYM_MVP/TwitterKitResources.bundle; sourceTree = "<group>"; };
 		4A3B729E1A5F86E900D893E6 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = OpenGYM_MVP/Fabric.framework; sourceTree = "<group>"; };
-		4A3F146F1A6ECD77007C1BAB /* MapAnnotationDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapAnnotationDetailViewController.h; sourceTree = "<group>"; };
-		4A3F14701A6ECD77007C1BAB /* MapAnnotationDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapAnnotationDetailViewController.m; sourceTree = "<group>"; };
 		4A65CEC81A5F164700C9BC3C /* PasswordRecoveryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswordRecoveryViewController.h; sourceTree = "<group>"; };
 		4A65CEC91A5F164700C9BC3C /* PasswordRecoveryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordRecoveryViewController.m; sourceTree = "<group>"; };
 		4AACB0111A647AF7005F4331 /* CreateEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateEventViewController.h; sourceTree = "<group>"; };
@@ -195,18 +180,8 @@
 				4AC2802A1A64508900092C0B /* MainMapViewController.m */,
 				4AACB0111A647AF7005F4331 /* CreateEventViewController.h */,
 				4AACB0121A647AF7005F4331 /* CreateEventViewController.m */,
-				4A3F146F1A6ECD77007C1BAB /* MapAnnotationDetailViewController.h */,
-				4A3F14701A6ECD77007C1BAB /* MapAnnotationDetailViewController.m */,
 				4AD7827F1A69F423001C8774 /* RevealViewController.h */,
 				4AD782801A69F423001C8774 /* RevealViewController.m */,
-				4A1A08DC1A69FB2E0096FDF1 /* ProfileViewController.h */,
-				4A1A08DD1A69FB2E0096FDF1 /* ProfileViewController.m */,
-				4A18D6E11A6AD1D800842E19 /* RatingsViewController.h */,
-				4A18D6E21A6AD1D800842E19 /* RatingsViewController.m */,
-				4A18D6E41A6AD2CF00842E19 /* HomeViewController.h */,
-				4A18D6E51A6AD2CF00842E19 /* HomeViewController.m */,
-				4A18D6E71A6AD3B000842E19 /* MyGamesViewController.h */,
-				4A18D6E81A6AD3B000842E19 /* MyGamesViewController.m */,
 				4A1073961A5C5C950089F080 /* Main.storyboard */,
 				4A1073991A5C5C950089F080 /* Images.xcassets */,
 				4A10739B1A5C5C950089F080 /* LaunchScreen.xib */,
@@ -402,16 +377,11 @@
 				4A1073E71A5C897E0089F080 /* SelectSportViewController.m in Sources */,
 				4AC2802B1A64508900092C0B /* MainMapViewController.m in Sources */,
 				4AACB0131A647AF7005F4331 /* CreateEventViewController.m in Sources */,
-				4A18D6E31A6AD1D800842E19 /* RatingsViewController.m in Sources */,
 				4A1073921A5C5C950089F080 /* AppDelegate.m in Sources */,
 				4AD7827E1A69F375001C8774 /* SWRevealViewController.m in Sources */,
-				4A18D6E91A6AD3B000842E19 /* MyGamesViewController.m in Sources */,
-				4A3F14711A6ECD77007C1BAB /* MapAnnotationDetailViewController.m in Sources */,
 				4A1073BA1A5C5CC90089F080 /* RegistrationViewController.m in Sources */,
-				4A1A08DE1A69FB2E0096FDF1 /* ProfileViewController.m in Sources */,
 				4A10738F1A5C5C950089F080 /* main.m in Sources */,
 				4A1073B71A5C5CC00089F080 /* LoginViewController.m in Sources */,
-				4A18D6E61A6AD2CF00842E19 /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
