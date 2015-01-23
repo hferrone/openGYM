@@ -31,7 +31,6 @@
     
 }
 
-//hide status bar per design
 -(BOOL)prefersStatusBarHidden
 {
     return true;
