@@ -15,7 +15,9 @@
 @interface HomeViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property NSArray *storedEvents;
+
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property NSString *sportFilterSelected;
 
 @end
 
@@ -24,12 +26,23 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self parseDataQuery];
+    [self parseDataQueryAll];
 }
 
--(void)parseDataQuery
+-(void)parseDataQueryAll
 {
     PFQuery *query = [PFQuery queryWithClassName:@"Event"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
+     {
+         self.storedEvents = [[NSArray alloc] initWithArray:objects];
+         [self.tableView reloadData];
+     }];
+}
+
+-(void)parseDataQueryWithFilter: (NSString*) filter
+{
+    PFQuery *query = [PFQuery queryWithClassName:@"Event"];
+    [query whereKey:@"sport" equalTo:filter];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
      {
          self.storedEvents = [[NSArray alloc] initWithArray:objects];
@@ -41,6 +54,41 @@
 -(BOOL)prefersStatusBarHidden
 {
     return true;
+}
+
+- (IBAction)allEventsFilter:(UIButton *)sender
+{
+    [self parseDataQueryAll];
+}
+
+- (IBAction)basketballFilter:(UIButton *)sender
+{
+    self.sportFilterSelected = @"Basketball";
+    [self parseDataQueryWithFilter:self.sportFilterSelected];
+}
+
+- (IBAction)soccerFilter:(UIButton *)sender
+{
+    self.sportFilterSelected = @"Soccer";
+    [self parseDataQueryWithFilter:self.sportFilterSelected];
+}
+
+- (IBAction)baseballFilter:(UIButton *)sender
+{
+    self.sportFilterSelected = @"Baseball";
+    [self parseDataQueryWithFilter:self.sportFilterSelected];
+}
+
+- (IBAction)tennisFilter:(UIButton *)sender
+{
+    self.sportFilterSelected = @"Tennis";
+    [self parseDataQueryWithFilter:self.sportFilterSelected];
+}
+
+- (IBAction)footballFilter:(UIButton *)sender
+{
+    self.sportFilterSelected = @"Football";
+    [self parseDataQueryWithFilter:self.sportFilterSelected];
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
