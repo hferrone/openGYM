@@ -64,7 +64,7 @@
     {
        for(PFObject *object in objects)
        {
-           self.addressString = object[@"address"];
+           self.addressString = object[@"location"];
            NSString *new = [self.addressString stringByAppendingString:@" Chicago, IL"];
            
            NSString *location = new;
@@ -75,7 +75,7 @@
                {
                    MKPointAnnotation *annotation = [MKPointAnnotation new];
                    annotation.coordinate = place.location.coordinate;
-                   annotation.title = object[@"title"];
+                   annotation.title = object[@"description"];
                    self.allEvents = [NSMutableArray arrayWithObject:annotation];
                    [self.mapView addAnnotations:self.allEvents];
                }
@@ -152,7 +152,7 @@
      {
          for(PFObject *object in objects)
          {
-             self.addressString = object[@"address"];
+             self.addressString = object[@"location"];
              NSString *new = [self.addressString stringByAppendingString:@" Chicago, IL"];
              
              NSString *location = new;
@@ -163,17 +163,12 @@
                               {
                                   MKPointAnnotation *annotation = [MKPointAnnotation new];
                                   annotation.coordinate = place.location.coordinate;
-                                  annotation.title = object[@"title"];
+                                  annotation.title = object[@"description"];
                                   
                                   if([self.sportSelected isEqualToString:@"Basketball"])
                                   {
                                       self.basketballEventArray = [NSMutableArray arrayWithObject:annotation];
                                       [self.mapView addAnnotations:self.basketballEventArray];
-                                      
-                                      NSArray *test = [NSArray arrayWithObject:object[@"address"]];
-                                      PFObject *arrayTest = [PFObject objectWithClassName:@"arrayTest"];
-                                      arrayTest[@"address"] = test;
-                                      [arrayTest saveInBackground];
                                   }
                                   else if([self.sportSelected isEqualToString:@"Soccer"])
                                   {

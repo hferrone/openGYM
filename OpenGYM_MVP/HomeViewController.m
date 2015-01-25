@@ -52,7 +52,7 @@
     UITableViewCell *homeCell = [tableView dequeueReusableCellWithIdentifier:@"homeCellID"];
     PFObject *event = [self.storedEvents objectAtIndex:indexPath.row];
     
-    homeCell.textLabel.text = [event objectForKey:@"title"];
+    homeCell.textLabel.text = [event objectForKey:@"description"];
     homeCell.detailTextLabel.text = [event objectForKey:@"sport"];
     
     return homeCell;

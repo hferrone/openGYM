@@ -9,6 +9,7 @@
 #import "CreateEventViewController.h"
 
 @interface CreateEventViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *sportTextField;
 
 @property (weak, nonatomic) IBOutlet UITextField *locationTextField;
 @property (weak, nonatomic) IBOutlet UITextField *dateTimeTextField;
@@ -74,25 +75,20 @@
 
 - (IBAction)createEventOnButtonTapped:(UIButton *)sender
 {
-    
+    PFObject *event = [PFObject objectWithClassName:@"Event"];
+    event[@"sport"] = self.sportTextField.text;
+    event[@"location"] = self.locationTextField.text;
+    event[@"date"] = self.dateTimeTextField.text;
+    event[@"description"] = self.descriptionTextField.text;
+    event[@"players"] = self.numberOfPlayersLabel.text;
+    [event saveInBackground];
 }
 
-//event creation information to Parse
-- (IBAction)submitEventOnButtonTapped:(UIButton *)sender
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-//    PFObject *event = [PFObject objectWithClassName:@"Event"];
-//    event[@"sport"] = self.eventSport.text;
-//    event[@"title"] = self.eventName.text;
-//    event[@"address"] = self.eventAddress.text;
-//    event[@"date"] = self.eventDateTime.date;
-//    [event saveInBackground];
+    self.locationTextField.text = nil;
+    self.dateTimeTextField.text = nil;
+    self.descriptionTextField.text = nil;
 }
-
-//-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
-//{
-//    self.locationTextField.text = nil;
-//    self.dateTimeTextField.text = nil;
-//    self.descriptionTextField.text = nil;
-//}
 
 @end
