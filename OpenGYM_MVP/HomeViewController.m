@@ -8,6 +8,7 @@
 
 #import "HomeViewController.h"
 #import "SWRevealViewController.h"
+#import "CustomHomeFeedTableViewCell.h"
 
 #import <Parse/Parse.h>
 
@@ -49,11 +50,12 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *homeCell = [tableView dequeueReusableCellWithIdentifier:@"homeCellID"];
+    CustomHomeFeedTableViewCell *homeCell = [tableView dequeueReusableCellWithIdentifier:@"homeCellID"];
     PFObject *event = [self.storedEvents objectAtIndex:indexPath.row];
     
-    homeCell.textLabel.text = [event objectForKey:@"description"];
-    homeCell.detailTextLabel.text = [event objectForKey:@"sport"];
+    homeCell.cellTitleLabel.text = [event objectForKey:@"description"];
+    homeCell.cellTimeLabel.text = [event objectForKey:@"date"];
+    homeCell.cellNumberPlayersLabel.text = [event objectForKey:@"players"];
     
     return homeCell;
 }
