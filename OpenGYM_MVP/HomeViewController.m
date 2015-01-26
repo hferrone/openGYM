@@ -9,6 +9,7 @@
 #import "HomeViewController.h"
 #import "SWRevealViewController.h"
 #import "CustomHomeFeedTableViewCell.h"
+#import "EventDetailViewController.h"
 
 #import <Parse/Parse.h>
 
@@ -106,6 +107,11 @@
     homeCell.cellNumberPlayersLabel.text = [event objectForKey:@"players"];
     
     return homeCell;
+}
+
+-(void)tableView:(UITableViewCell *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
 }
 
 @end

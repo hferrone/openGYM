@@ -11,7 +11,10 @@
 
 @interface ProfileViewController ()
 
+@property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
+@property (weak, nonatomic) IBOutlet UITextView *profileTextView;
+@property (weak, nonatomic) IBOutlet UILabel *profileUsernameLabel;
 
 @end
 
@@ -28,6 +31,9 @@
         [self.sidebarButton setAction: @selector( rightRevealToggle: )];
         [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     }
+    
+    PFUser *user = [PFUser currentUser];
+    self.profileUsernameLabel.text = user.username;
 }
 
 //hide status bar per design

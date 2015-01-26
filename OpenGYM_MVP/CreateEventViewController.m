@@ -82,6 +82,8 @@
     event[@"description"] = self.descriptionTextField.text;
     event[@"players"] = self.numberOfPlayersLabel.text;
     [event saveInBackground];
+    
+    [self performSegueWithIdentifier:@"mapSegueID" sender:self];
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event

@@ -48,6 +48,7 @@
 		4AD7827E1A69F375001C8774 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AD7827D1A69F375001C8774 /* SWRevealViewController.m */; };
 		4AD782811A69F423001C8774 /* RevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AD782801A69F423001C8774 /* RevealViewController.m */; };
 		4AFB8F751A7594E0003E61A1 /* CustomHomeFeedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFB8F741A7594E0003E61A1 /* CustomHomeFeedTableViewCell.m */; };
+		4AFB8F781A75A201003E61A1 /* EventDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFB8F771A75A201003E61A1 /* EventDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +122,8 @@
 		4AD782801A69F423001C8774 /* RevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RevealViewController.m; sourceTree = "<group>"; };
 		4AFB8F731A7594E0003E61A1 /* CustomHomeFeedTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomHomeFeedTableViewCell.h; sourceTree = "<group>"; };
 		4AFB8F741A7594E0003E61A1 /* CustomHomeFeedTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomHomeFeedTableViewCell.m; sourceTree = "<group>"; };
+		4AFB8F761A75A201003E61A1 /* EventDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventDetailViewController.h; sourceTree = "<group>"; };
+		4AFB8F771A75A201003E61A1 /* EventDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +215,8 @@
 				4A18D6E81A6AD3B000842E19 /* MyGamesViewController.m */,
 				4AFB8F731A7594E0003E61A1 /* CustomHomeFeedTableViewCell.h */,
 				4AFB8F741A7594E0003E61A1 /* CustomHomeFeedTableViewCell.m */,
+				4AFB8F761A75A201003E61A1 /* EventDetailViewController.h */,
+				4AFB8F771A75A201003E61A1 /* EventDetailViewController.m */,
 				4A1073961A5C5C950089F080 /* Main.storyboard */,
 				4A1073991A5C5C950089F080 /* Images.xcassets */,
 				4A10739B1A5C5C950089F080 /* LaunchScreen.xib */,
@@ -418,6 +423,7 @@
 				4A10738F1A5C5C950089F080 /* main.m in Sources */,
 				4A1073B71A5C5CC00089F080 /* LoginViewController.m in Sources */,
 				4A18D6E61A6AD2CF00842E19 /* HomeViewController.m in Sources */,
+				4AFB8F781A75A201003E61A1 /* EventDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
