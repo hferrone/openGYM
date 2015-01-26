@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *confirmedPlayersLabel;
 @property (weak, nonatomic) IBOutlet UILabel *locationLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timeDateLabel;
+
 @property (weak, nonatomic) IBOutlet UILabel *remainingPlayersLabel;
 
 @end
