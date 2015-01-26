@@ -21,6 +21,7 @@
 @property NSString *sportFilterSelected;
 
 @property PFObject *eventObject;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
 
 @end
 
@@ -30,6 +31,14 @@
 {
     [super viewDidLoad];
     [self parseDataQueryAll];
+    
+    SWRevealViewController *revealViewController = self.revealViewController;
+    if ( revealViewController )
+    {
+        [self.sidebarButton setTarget: self.revealViewController];
+        [self.sidebarButton setAction: @selector( rightRevealToggle: )];
+        [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+    }
 }
 
 -(void)parseDataQueryAll

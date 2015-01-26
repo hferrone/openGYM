@@ -8,10 +8,13 @@
 
 #import "MyGamesViewController.h"
 #import "SWRevealViewController.h"
+#import "CustomGamesFeedTableViewCell.h"
 
-@interface MyGamesViewController ()
+@interface MyGamesViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
+@property NSArray *favoritedGames;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -21,6 +24,14 @@
 {
     [super viewDidLoad];
     
+    PFQuery *query = [PFQuery queryWithClassName:@"Event"];
+    [query whereKey:@"favorite" equalTo:@"yes"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
+    {
+        self.favoritedGames = [[NSArray alloc] initWithArray:objects];
+        [self.tableView reloadData];
+    }];
+        
     SWRevealViewController *revealViewController = self.revealViewController;
     if ( revealViewController )
     {
@@ -35,4 +46,22 @@
 {
     return true;
 }
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.favoritedGames.count;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    CustomGamesFeedTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"gamesCellID"];
+    PFObject *event = [self.favoritedGames objectAtIndex:indexPath.row];
+    
+    cell.gameFeedTitleLabel.text = [event objectForKey:@"description"];
+    cell.gameFeedTimeLabel.text = [event objectForKey:@"date"];
+    cell.gameFeedPlayersLabel.text = [event objectForKey:@"players"];
+    
+    return cell;
+}
+
 @end
