@@ -519,16 +519,6 @@
                                 <color key="textColor" red="1" green="0.5544606527" blue="0.075866345469999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5aO-EY-4qg">
-                                <rect key="frame" x="0.0" y="254" width="600" height="59"/>
-                                <color key="backgroundColor" red="0.3158627236887252" green="0.60077335858585856" blue="0.4920773318270697" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="59" id="kJr-C1-sa2"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yoQ-cS-o1w">
                                 <rect key="frame" x="16" y="269" width="35" height="30"/>
                                 <state key="normal" title="Feed">
@@ -550,8 +540,18 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5aO-EY-4qg">
+                                <rect key="frame" x="0.0" y="254" width="600" height="59"/>
+                                <color key="backgroundColor" red="0.18201625756238504" green="0.34619633838383834" blue="0.28356012803433006" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="59" id="kJr-C1-sa2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.21567495119999999" green="0.41021543560000001" blue="0.33599645210000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.08907435507" green="0.16773200760000001" blue="0.13807731509999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="t2C-6s-qmj" firstAttribute="trailing" secondItem="6oc-nZ-U1h" secondAttribute="trailing" id="0DP-cV-ShK"/>
                             <constraint firstItem="6oc-nZ-U1h" firstAttribute="leading" secondItem="86p-AO-hfQ" secondAttribute="leading" id="46m-Or-nhR"/>
@@ -823,10 +823,10 @@
             </objects>
             <point key="canvasLocation" x="5437" y="1290"/>
         </scene>
-        <!--View Controller-->
+        <!--Event Detail View Controller-->
         <scene sceneID="2YY-hW-IJZ">
             <objects>
-                <viewController id="M5l-Ap-MnT" sceneMemberID="viewController">
+                <viewController id="M5l-Ap-MnT" customClass="EventDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8gI-R9-Xfg"/>
                         <viewControllerLayoutGuide type="bottom" id="PWz-Mv-NTt"/>
@@ -834,7 +834,36 @@
                     <view key="view" contentMode="scaleToFill" id="E7U-XM-FBW">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Apa-u8-gBL">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <color key="barTintColor" red="1" green="0.5544606527" blue="0.075866345469999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <items>
+                                    <navigationItem id="ikL-ok-YBm">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="rewind" id="CIa-ZO-ZJj">
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <connections>
+                                                <segue destination="hDk-cC-mX7" kind="show" id="Gr2-Lo-f88"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cEf-S9-e4v">
+                                <rect key="frame" x="0.0" y="44" width="600" height="128"/>
+                                <color key="backgroundColor" red="0.15617841293120763" green="0.29705255681818177" blue="0.24330777569027282" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.08907435507" green="0.16773200760000001" blue="0.13807731509999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Apa-u8-gBL" firstAttribute="top" secondItem="E7U-XM-FBW" secondAttribute="top" id="6yr-j3-fnP"/>
+                            <constraint firstItem="PWz-Mv-NTt" firstAttribute="top" secondItem="cEf-S9-e4v" secondAttribute="bottom" constant="379" id="9hY-1g-bxh"/>
+                            <constraint firstItem="Apa-u8-gBL" firstAttribute="trailing" secondItem="cEf-S9-e4v" secondAttribute="trailing" id="ADA-r7-wah"/>
+                            <constraint firstItem="cEf-S9-e4v" firstAttribute="leading" secondItem="Apa-u8-gBL" secondAttribute="leading" id="XUc-vV-gf2"/>
+                            <constraint firstAttribute="trailing" secondItem="Apa-u8-gBL" secondAttribute="trailing" id="gbl-B7-Sme"/>
+                            <constraint firstItem="cEf-S9-e4v" firstAttribute="top" secondItem="Apa-u8-gBL" secondAttribute="bottom" id="hi3-wi-Gs6"/>
+                            <constraint firstItem="Apa-u8-gBL" firstAttribute="leading" secondItem="E7U-XM-FBW" secondAttribute="leading" id="ux6-t9-smg"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Yk-JM-ioi" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1286,6 +1315,7 @@
         <segue reference="tfM-nc-QPw"/>
         <segue reference="qpx-p6-vYw"/>
         <segue reference="Os5-jC-VHH"/>
-        <segue reference="sog-iJ-UoY"/>
+        <segue reference="jcd-kU-yhC"/>
+        <segue reference="Gr2-Lo-f88"/>
     </inferredMetricsTieBreakers>
 </document>

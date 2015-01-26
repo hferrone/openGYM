@@ -18,6 +18,12 @@
 {
     [super viewDidLoad];
     
+    NSLog(@"%@", self.eventObject);
+}
+
+-(BOOL)prefersStatusBarHidden
+{
+    return YES;
 }
 
 @end

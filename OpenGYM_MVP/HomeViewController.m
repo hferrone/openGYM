@@ -20,6 +20,8 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property NSString *sportFilterSelected;
 
+@property PFObject *eventObject;
+
 @end
 
 @implementation HomeViewController
@@ -109,9 +111,16 @@
     return homeCell;
 }
 
--(void)tableView:(UITableViewCell *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+-(void)tableView:(UITableViewCell *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    self.eventObject = [self.storedEvents objectAtIndex:indexPath.row];
+    [self performSegueWithIdentifier:@"eventDetailSegueID" sender:self];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    EventDetailViewController *evc = segue.destinationViewController;
+    evc.eventObject = self.eventObject;
 }
 
 @end
