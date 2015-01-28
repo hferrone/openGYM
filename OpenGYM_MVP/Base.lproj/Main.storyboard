@@ -1204,9 +1204,6 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <action selector="shareAppOnButtonTapped:" destination="O4K-YK-HuJ" eventType="touchUpInside" id="sAP-Mq-AAf"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.08907435507192199" green="0.16773200757575757" blue="0.13807731509204438" alpha="1" colorSpace="calibratedRGB"/>
@@ -1522,10 +1519,10 @@
         <image name="weblogo" width="980" height="230"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="sog-iJ-UoY"/>
+        <segue reference="Yrc-nS-ZnK"/>
+        <segue reference="rxg-iN-mfG"/>
         <segue reference="tfM-nc-QPw"/>
         <segue reference="qpx-p6-vYw"/>
-        <segue reference="Yrc-nS-ZnK"/>
-        <segue reference="jcd-kU-yhC"/>
-        <segue reference="oS6-np-nQD"/>
     </inferredMetricsTieBreakers>
 </document>

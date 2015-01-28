@@ -9,19 +9,9 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
-		<key>ShareAppExtension.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>1</integer>
-		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>4A0988281A795383006DF008</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>4A1073881A5C5C950089F080</key>
 		<dict>
 			<key>primary</key>

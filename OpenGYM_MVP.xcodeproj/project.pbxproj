@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4A0988341A795383006DF008 /* ShareAppExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4A0988291A795383006DF008 /* ShareAppExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		4A10738F1A5C5C950089F080 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A10738E1A5C5C950089F080 /* main.m */; };
 		4A1073921A5C5C950089F080 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A1073911A5C5C950089F080 /* AppDelegate.m */; };
 		4A1073981A5C5C950089F080 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A1073961A5C5C950089F080 /* Main.storyboard */; };
@@ -55,13 +54,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		4A0988321A795383006DF008 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4A1073811A5C5C950089F080 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4A0988281A795383006DF008;
-			remoteInfo = ShareAppExtension;
-		};
 		4A1073A31A5C5C950089F080 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4A1073811A5C5C950089F080 /* Project object */;
@@ -71,22 +63,7 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		4A0988381A795383006DF008 /* Embed App Extensions */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 13;
-			files = (
-				4A0988341A795383006DF008 /* ShareAppExtension.appex in Embed App Extensions */,
-			);
-			name = "Embed App Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
-		4A0988291A795383006DF008 /* ShareAppExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ShareAppExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A1073891A5C5C950089F080 /* OpenGYM_MVP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenGYM_MVP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A10738D1A5C5C950089F080 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A10738E1A5C5C950089F080 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -155,13 +132,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		4A0988261A795383006DF008 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		4A1073861A5C5C950089F080 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -214,7 +184,6 @@
 			children = (
 				4A1073891A5C5C950089F080 /* OpenGYM_MVP.app */,
 				4A1073A21A5C5C950089F080 /* OpenGYM_MVPTests.xctest */,
-				4A0988291A795383006DF008 /* ShareAppExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -330,23 +299,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4A0988281A795383006DF008 /* ShareAppExtension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4A0988371A795383006DF008 /* Build configuration list for PBXNativeTarget "ShareAppExtension" */;
-			buildPhases = (
-				4A0988251A795383006DF008 /* Sources */,
-				4A0988261A795383006DF008 /* Frameworks */,
-				4A0988271A795383006DF008 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = ShareAppExtension;
-			productName = ShareAppExtension;
-			productReference = 4A0988291A795383006DF008 /* ShareAppExtension.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
 		4A1073881A5C5C950089F080 /* OpenGYM_MVP */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4A1073AC1A5C5C950089F080 /* Build configuration list for PBXNativeTarget "OpenGYM_MVP" */;
@@ -355,12 +307,10 @@
 				4A1073861A5C5C950089F080 /* Frameworks */,
 				4A1073871A5C5C950089F080 /* Resources */,
 				4A3B72A21A5F8A6800D893E6 /* ShellScript */,
-				4A0988381A795383006DF008 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				4A0988331A795383006DF008 /* PBXTargetDependency */,
 			);
 			name = OpenGYM_MVP;
 			productName = OpenGYM_MVP;
@@ -394,10 +344,6 @@
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "Harrison Ferrone";
 				TargetAttributes = {
-					4A0988281A795383006DF008 = {
-						CreatedOnToolsVersion = 6.1.1;
-						DevelopmentTeam = 7864Y9RXSY;
-					};
 					4A1073881A5C5C950089F080 = {
 						CreatedOnToolsVersion = 6.1.1;
 						DevelopmentTeam = 7864Y9RXSY;
@@ -423,19 +369,11 @@
 			targets = (
 				4A1073881A5C5C950089F080 /* OpenGYM_MVP */,
 				4A1073A11A5C5C950089F080 /* OpenGYM_MVPTests */,
-				4A0988281A795383006DF008 /* ShareAppExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		4A0988271A795383006DF008 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		4A1073871A5C5C950089F080 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -474,13 +412,6 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		4A0988251A795383006DF008 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		4A1073851A5C5C950089F080 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -517,11 +448,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		4A0988331A795383006DF008 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 4A0988281A795383006DF008 /* ShareAppExtension */;
-			targetProxy = 4A0988321A795383006DF008 /* PBXContainerItemProxy */;
-		};
 		4A1073A41A5C5C950089F080 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 4A1073881A5C5C950089F080 /* OpenGYM_MVP */;
@@ -549,32 +475,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		4A0988351A795383006DF008 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = ShareAppExtension/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		4A0988361A795383006DF008 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				INFOPLIST_FILE = ShareAppExtension/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
 		4A1073AA1A5C5C950089F080 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -727,14 +627,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4A0988371A795383006DF008 /* Build configuration list for PBXNativeTarget "ShareAppExtension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4A0988351A795383006DF008 /* Debug */,
-				4A0988361A795383006DF008 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-		};
 		4A1073841A5C5C950089F080 /* Build configuration list for PBXProject "OpenGYM_MVP" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
