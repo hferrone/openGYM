@@ -28,7 +28,7 @@
     if ( revealViewController )
     {
         [self.sidebarButton setTarget: self.revealViewController];
-        [self.sidebarButton setAction: @selector( rightRevealToggle: )];
+        [self.sidebarButton setAction: @selector( revealToggle: )];
         [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     }
     

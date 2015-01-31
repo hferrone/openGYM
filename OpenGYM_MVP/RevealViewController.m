@@ -31,4 +31,12 @@
     return true;
 }
 
+- (IBAction)shareAppOnButtonTapped:(UIButton *)sender
+{
+    NSURL *shareURL = [NSURL URLWithString:@""];
+    
+    UIActivityViewController *avc = [[UIActivityViewController alloc] initWithActivityItems:@[shareURL] applicationActivities:nil];
+    [self presentViewController:avc animated:YES completion:nil];
+}
+
 @end
