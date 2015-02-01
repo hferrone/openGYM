@@ -8,6 +8,8 @@
 
 #import "RevealViewController.h"
 #import <Parse/Parse.h>
+#import <Social/Social.h>
+#import <MobileCoreServices/MobileCoreServices.h>
 
 @interface RevealViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *userFullNameLabel;
@@ -33,7 +35,7 @@
 
 - (IBAction)shareAppOnButtonTapped:(UIButton *)sender
 {
-    NSURL *shareURL = [NSURL URLWithString:@""];
+    NSURL *shareURL = [NSURL URLWithString:@"www.rottentomatoes.com"];
     
     UIActivityViewController *avc = [[UIActivityViewController alloc] initWithActivityItems:@[shareURL] applicationActivities:nil];
     [self presentViewController:avc animated:YES completion:nil];
