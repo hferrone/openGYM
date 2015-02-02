@@ -42,6 +42,9 @@
 		4A3F14711A6ECD77007C1BAB /* MapAnnotationDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A3F14701A6ECD77007C1BAB /* MapAnnotationDetailViewController.m */; };
 		4A65CECA1A5F164700C9BC3C /* PasswordRecoveryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A65CEC91A5F164700C9BC3C /* PasswordRecoveryViewController.m */; };
 		4AACB0131A647AF7005F4331 /* CreateEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AACB0121A647AF7005F4331 /* CreateEventViewController.m */; };
+		4AB80EA21A800A0F00878611 /* PickASportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB80EA11A800A0F00878611 /* PickASportViewController.m */; };
+		4AB80EA51A800A1A00878611 /* PickATeamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB80EA41A800A1A00878611 /* PickATeamViewController.m */; };
+		4AB80EA81A800A2200878611 /* PlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB80EA71A800A2200878611 /* PlayViewController.m */; };
 		4ABABA3D1A5F70A700693BE0 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ABABA3C1A5F70A700693BE0 /* FacebookSDK.framework */; };
 		4AC2802B1A64508900092C0B /* MainMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC2802A1A64508900092C0B /* MainMapViewController.m */; };
 		4AD09AF21A5F7D7800B46FA0 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AD09AF11A5F7D7800B46FA0 /* Social.framework */; };
@@ -115,6 +118,12 @@
 		4A65CEC91A5F164700C9BC3C /* PasswordRecoveryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordRecoveryViewController.m; sourceTree = "<group>"; };
 		4AACB0111A647AF7005F4331 /* CreateEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateEventViewController.h; sourceTree = "<group>"; };
 		4AACB0121A647AF7005F4331 /* CreateEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateEventViewController.m; sourceTree = "<group>"; };
+		4AB80EA01A800A0F00878611 /* PickASportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickASportViewController.h; sourceTree = "<group>"; };
+		4AB80EA11A800A0F00878611 /* PickASportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickASportViewController.m; sourceTree = "<group>"; };
+		4AB80EA31A800A1A00878611 /* PickATeamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickATeamViewController.h; sourceTree = "<group>"; };
+		4AB80EA41A800A1A00878611 /* PickATeamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickATeamViewController.m; sourceTree = "<group>"; };
+		4AB80EA61A800A2200878611 /* PlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayViewController.h; sourceTree = "<group>"; };
+		4AB80EA71A800A2200878611 /* PlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayViewController.m; sourceTree = "<group>"; };
 		4ABABA3C1A5F70A700693BE0 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		4AC280291A64508900092C0B /* MainMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMapViewController.h; sourceTree = "<group>"; };
 		4AC2802A1A64508900092C0B /* MainMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMapViewController.m; sourceTree = "<group>"; };
@@ -194,6 +203,12 @@
 				4AD7827B1A69F363001C8774 /* SWRevealController */,
 				4A1073901A5C5C950089F080 /* AppDelegate.h */,
 				4A1073911A5C5C950089F080 /* AppDelegate.m */,
+				4AB80EA01A800A0F00878611 /* PickASportViewController.h */,
+				4AB80EA11A800A0F00878611 /* PickASportViewController.m */,
+				4AB80EA31A800A1A00878611 /* PickATeamViewController.h */,
+				4AB80EA41A800A1A00878611 /* PickATeamViewController.m */,
+				4AB80EA61A800A2200878611 /* PlayViewController.h */,
+				4AB80EA71A800A2200878611 /* PlayViewController.m */,
 				4A1073B51A5C5CC00089F080 /* LoginViewController.h */,
 				4A1073B61A5C5CC00089F080 /* LoginViewController.m */,
 				4A1073B81A5C5CC90089F080 /* RegistrationViewController.h */,
@@ -419,14 +434,17 @@
 				4A65CECA1A5F164700C9BC3C /* PasswordRecoveryViewController.m in Sources */,
 				4AD782811A69F423001C8774 /* RevealViewController.m in Sources */,
 				4A1073E71A5C897E0089F080 /* SelectSportViewController.m in Sources */,
+				4AB80EA21A800A0F00878611 /* PickASportViewController.m in Sources */,
 				4AFB8F751A7594E0003E61A1 /* CustomHomeFeedTableViewCell.m in Sources */,
 				4AC2802B1A64508900092C0B /* MainMapViewController.m in Sources */,
+				4AB80EA51A800A1A00878611 /* PickATeamViewController.m in Sources */,
 				4AACB0131A647AF7005F4331 /* CreateEventViewController.m in Sources */,
 				4A18D6E31A6AD1D800842E19 /* RatingsViewController.m in Sources */,
 				4A1073921A5C5C950089F080 /* AppDelegate.m in Sources */,
 				4A1A620F1A76D93A00DA3326 /* CustomGamesFeedTableViewCell.m in Sources */,
 				4AD7827E1A69F375001C8774 /* SWRevealViewController.m in Sources */,
 				4A18D6E91A6AD3B000842E19 /* MyGamesViewController.m in Sources */,
+				4AB80EA81A800A2200878611 /* PlayViewController.m in Sources */,
 				4A3F14711A6ECD77007C1BAB /* MapAnnotationDetailViewController.m in Sources */,
 				4A1073BA1A5C5CC90089F080 /* RegistrationViewController.m in Sources */,
 				4A1A08DE1A69FB2E0096FDF1 /* ProfileViewController.m in Sources */,
