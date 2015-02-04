@@ -117,6 +117,27 @@
     homeCell.cellTimeLabel.text = [event objectForKey:@"date"];
     homeCell.cellNumberPlayersLabel.text = [event objectForKey:@"players"];
     
+    if([[event objectForKey:@"sport"] isEqualToString:@"Basketball"])
+    {
+        homeCell.cellImageView.image = [UIImage imageNamed:@"OGsportbasketballICON"];
+    }
+    else if([[event objectForKey:@"sport"] isEqualToString:@"Baseball"])
+    {
+        homeCell.cellImageView.image = [UIImage imageNamed:@"OGsportbaseballICON"];
+    }
+    else if([[event objectForKey:@"sport"] isEqualToString:@"Tennis"])
+    {
+        homeCell.cellImageView.image = [UIImage imageNamed:@"OGsporttennisICON"];
+    }
+    else if([[event objectForKey:@"sport"] isEqualToString:@"Soccer"])
+    {
+        homeCell.cellImageView.image = [UIImage imageNamed:@"OGsportsoccerICON"];
+    }
+    else if([[event objectForKey:@"sport"] isEqualToString:@"Football"])
+    {
+        homeCell.cellImageView.image = [UIImage imageNamed:@"OGsportfootballICON"];
+    }
+
     return homeCell;
 }
 
