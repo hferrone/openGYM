@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="oS5-yD-cOz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
@@ -21,6 +21,10 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PickASport" translatesAutoresizingMaskIntoConstraints="NO" id="IDX-HN-7tt">
                                 <rect key="frame" x="-6" y="-6" width="615" height="614"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="gBM-2c-VlX" appends="YES" id="te9-VK-XiC"/>
+                                </connections>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -33,6 +37,11 @@
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="50M-qq-HbH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="gBM-2c-VlX">
+                    <connections>
+                        <segue destination="pO2-rt-ujO" kind="presentation" id="Xhw-kR-jCk"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="447" y="8"/>
         </scene>
@@ -50,6 +59,10 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PickATeam" translatesAutoresizingMaskIntoConstraints="NO" id="Dru-Um-WFF">
                                 <rect key="frame" x="-7" y="-8" width="620" height="618"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="8tw-co-j3q" appends="YES" id="jPG-KS-5cb"/>
+                                </connections>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -62,6 +75,11 @@
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rdz-ph-o0e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="8tw-co-j3q">
+                    <connections>
+                        <segue destination="trg-YQ-qOB" kind="presentation" id="RfT-ri-F8v"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1167" y="8"/>
         </scene>
@@ -79,6 +97,10 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Play" translatesAutoresizingMaskIntoConstraints="NO" id="O3n-GH-nBt">
                                 <rect key="frame" x="-6" y="-6" width="615" height="613"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="vhI-fV-Sh9" appends="YES" id="Hx4-mG-PXQ"/>
+                                </connections>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -91,6 +113,11 @@
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a1c-4P-bY8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="vhI-fV-Sh9">
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="presentation" id="fxu-WB-lCk"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1899" y="8"/>
         </scene>
@@ -1460,6 +1487,21 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="rNk-se-d0T">
+                                <rect key="frame" x="182" y="390" width="238" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="238" id="60s-yF-jtY"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Male"/>
+                                    <segment title="Female"/>
+                                    <segment title="Co-Ed"/>
+                                </segments>
+                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="genderSelectedOnButtonTapped:" destination="zcK-A9-Bnm" eventType="valueChanged" id="ti7-5t-Ib1"/>
+                                </connections>
+                            </segmentedControl>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lKJ-VY-cJt">
                                 <rect key="frame" x="17" y="320" width="568" height="30"/>
                                 <constraints>
@@ -1546,6 +1588,7 @@
                         </subviews>
                         <color key="backgroundColor" white="0.92585834703947367" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="rNk-se-d0T" firstAttribute="top" secondItem="lKJ-VY-cJt" secondAttribute="bottom" constant="40" id="6iz-bn-7fb"/>
                             <constraint firstItem="Az6-iA-S4D" firstAttribute="leading" secondItem="K3j-ws-oUG" secondAttribute="leadingMargin" id="8i1-II-lwa"/>
                             <constraint firstItem="BAQ-F8-BMO" firstAttribute="top" secondItem="m9A-Fi-ClC" secondAttribute="bottom" constant="25" id="AOm-zz-voL"/>
                             <constraint firstItem="lKJ-VY-cJt" firstAttribute="top" secondItem="YKR-BZ-b9y" secondAttribute="bottom" constant="8" symbolic="YES" id="BOM-PQ-mAG"/>
@@ -1562,6 +1605,7 @@
                             <constraint firstItem="Az6-iA-S4D" firstAttribute="top" secondItem="k7U-5O-Lni" secondAttribute="bottom" constant="6" id="Lfi-Gf-bjH"/>
                             <constraint firstItem="evJ-Ih-BgY" firstAttribute="leading" secondItem="Az6-iA-S4D" secondAttribute="leading" id="Lwc-1b-AfC"/>
                             <constraint firstItem="DpE-Cj-WKM" firstAttribute="trailing" secondItem="BAQ-F8-BMO" secondAttribute="trailing" id="M3c-GR-2Iv"/>
+                            <constraint firstItem="rNk-se-d0T" firstAttribute="centerX" secondItem="lKJ-VY-cJt" secondAttribute="centerX" id="NaY-Va-xvr"/>
                             <constraint firstItem="RnJ-4P-bQB" firstAttribute="top" secondItem="evJ-Ih-BgY" secondAttribute="top" constant="-4" id="Ogs-R6-mOh"/>
                             <constraint firstItem="vUJ-vu-lk5" firstAttribute="leading" secondItem="Az6-iA-S4D" secondAttribute="leading" id="Pjd-kQ-AjO"/>
                             <constraint firstItem="IJE-2a-UEQ" firstAttribute="top" secondItem="Az6-iA-S4D" secondAttribute="bottom" constant="8" symbolic="YES" id="S2H-qa-EJZ"/>
@@ -1597,6 +1641,7 @@
                         <outlet property="datePickerOverlayView" destination="m9A-Fi-ClC" id="gQe-ys-KWd"/>
                         <outlet property="dateTimeTextField" destination="evJ-Ih-BgY" id="Af3-0c-D7V"/>
                         <outlet property="descriptionTextField" destination="lKJ-VY-cJt" id="P03-LU-Fln"/>
+                        <outlet property="genderSegmentedController" destination="rNk-se-d0T" id="s7Z-9X-f2R"/>
                         <outlet property="locationTextField" destination="Az6-iA-S4D" id="fvx-px-puR"/>
                         <outlet property="numberOfPlayersLabel" destination="Gq2-ef-STl" id="0Nh-xr-rgY"/>
                         <outlet property="sportTextField" destination="DpE-Cj-WKM" id="PCY-2u-gQu"/>
@@ -1615,10 +1660,10 @@
         <image name="weblogo" width="980" height="230"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="oS6-np-nQD"/>
-        <segue reference="qDd-sB-gW0"/>
+        <segue reference="Os5-jC-VHH"/>
         <segue reference="jcd-kU-yhC"/>
-        <segue reference="tfM-nc-QPw"/>
-        <segue reference="qpx-p6-vYw"/>
+        <segue reference="oS6-np-nQD"/>
+        <segue reference="8Qw-1r-dRP"/>
+        <segue reference="fxu-WB-lCk"/>
     </inferredMetricsTieBreakers>
 </document>

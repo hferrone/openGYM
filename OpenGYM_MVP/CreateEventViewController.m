@@ -17,6 +17,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *numberOfPlayersLabel;
 @property (weak, nonatomic) IBOutlet UIView *datePickerOverlayView;
 @property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *genderSegmentedController;
+@property NSString *eventGender;
 
 @end
 
@@ -73,6 +75,22 @@
     }
 }
 
+- (IBAction)genderSelectedOnButtonTapped:(UISegmentedControl *)sender
+{
+    if(self.genderSegmentedController.selectedSegmentIndex == 0)
+    {
+        self.eventGender = @"Male";
+    }
+    else if(self.genderSegmentedController.selectedSegmentIndex == 1)
+    {
+        self.eventGender = @"Female";
+    }
+    else if(self.genderSegmentedController.selectedSegmentIndex == 2)
+    {
+        self.eventGender = @"Co-Ed";
+    }
+}
+
 - (IBAction)createEventOnButtonTapped:(UIButton *)sender
 {
     PFObject *event = [PFObject objectWithClassName:@"Event"];
@@ -81,6 +99,7 @@
     event[@"date"] = self.dateTimeTextField.text;
     event[@"description"] = self.descriptionTextField.text;
     event[@"players"] = self.numberOfPlayersLabel.text;
+    event[@"gender"] = self.eventGender;
     [event saveInBackground];
     
     [self performSegueWithIdentifier:@"mapSegueID" sender:self];
