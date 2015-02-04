@@ -65,7 +65,7 @@
          if(!error)
          {
              NSLog(@"User logged in");
-             [self performSegueWithIdentifier:@"loginSegueID" sender:self];
+             [self performSegueWithIdentifier:@"loginSuccessSegueID" sender:self];
              
              _loginUsernameInput.text = nil;
              _loginPasswordInput.text = nil;
@@ -75,16 +75,6 @@
              [loginErrorAlert show];
          }
      }];
-}
-
-//keep me signed in code, working and tested
--(void)viewDidAppear:(BOOL)animated
-{
-    PFUser *user = [PFUser currentUser];
-    if(user.username != nil)
-    {
-        [self performSegueWithIdentifier:@"loginSegueID" sender:self];
-    }
 }
 
 //password overlay animation
