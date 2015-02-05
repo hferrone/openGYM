@@ -1272,126 +1272,15 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> parent of 9c7c8d0... Revert
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="zHP-Ui-HLx">
-                                <rect key="frame" x="-8" y="136" width="618" height="29"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <segments>
-                                    <segment title="Today"/>
-                                    <segment title="Week"/>
-                                    <segment title="Month"/>
-                                </segments>
-                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </segmentedControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q3r-Ni-ZGe">
-                                <rect key="frame" x="279" y="107" width="42" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="42" id="3HO-UL-jHd"/>
-                                    <constraint firstAttribute="height" constant="21" id="js3-Fg-VYl"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bdE-xp-zGo">
-                                <rect key="frame" x="288" y="71" width="25" height="28"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="28" id="YZy-U0-3kC"/>
-                                    <constraint firstAttribute="width" constant="25" id="uUf-SM-rUN"/>
-                                </constraints>
-                            </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kdX-wR-BP1">
-                                <rect key="frame" x="0.0" y="227" width="600" height="373"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-=======
->>>>>>> parent of 2b51293... Ratings page UI implemented and working
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-<<<<<<< HEAD
-                            <constraint firstItem="kdX-wR-BP1" firstAttribute="bottom" secondItem="yVs-re-utP" secondAttribute="top" id="5j6-RW-tCP"/>
-                            <constraint firstItem="tbq-IC-yxH" firstAttribute="top" secondItem="gwu-ap-bSg" secondAttribute="top" id="Ak1-Ca-RKt"/>
-                            <constraint firstAttribute="trailing" secondItem="tbq-IC-yxH" secondAttribute="trailing" id="MQw-m7-9Lo"/>
-                            <constraint firstItem="tbq-IC-yxH" firstAttribute="trailing" secondItem="kdX-wR-BP1" secondAttribute="trailing" id="RNb-5L-WAf"/>
-                            <constraint firstItem="zHP-Ui-HLx" firstAttribute="top" secondItem="q3r-Ni-ZGe" secondAttribute="bottom" constant="8" symbolic="YES" id="TRa-Ol-yVb"/>
-                            <constraint firstItem="bdE-xp-zGo" firstAttribute="centerX" secondItem="tbq-IC-yxH" secondAttribute="centerX" id="Tc1-uB-tk4"/>
-                            <constraint firstItem="kdX-wR-BP1" firstAttribute="leading" secondItem="gwu-ap-bSg" secondAttribute="leading" id="UId-zc-2zv"/>
-                            <constraint firstItem="q3r-Ni-ZGe" firstAttribute="top" secondItem="bdE-xp-zGo" secondAttribute="bottom" constant="8" symbolic="YES" id="hte-59-SbG"/>
-                            <constraint firstItem="kdX-wR-BP1" firstAttribute="top" secondItem="zHP-Ui-HLx" secondAttribute="bottom" constant="63" id="iCx-PB-5lj"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="zHP-Ui-HLx" secondAttribute="trailing" constant="-26" id="leP-ie-bg2"/>
-                            <constraint firstItem="bdE-xp-zGo" firstAttribute="centerX" secondItem="q3r-Ni-ZGe" secondAttribute="centerX" id="qnP-VO-cPk"/>
-                            <constraint firstItem="bdE-xp-zGo" firstAttribute="top" secondItem="tbq-IC-yxH" secondAttribute="bottom" constant="27" id="vzq-rV-19R"/>
-                            <constraint firstItem="zHP-Ui-HLx" firstAttribute="leading" secondItem="gwu-ap-bSg" secondAttribute="leadingMargin" constant="-24" id="xLR-YS-xWZ"/>
-                            <constraint firstItem="kdX-wR-BP1" firstAttribute="leading" secondItem="tbq-IC-yxH" secondAttribute="leading" id="zNP-qd-eJZ"/>
-=======
-                            <constraint firstAttribute="trailing" secondItem="tbq-IC-yxH" secondAttribute="trailing" id="03y-zW-Bix"/>
-                            <constraint firstItem="tbq-IC-yxH" firstAttribute="top" secondItem="gwu-ap-bSg" secondAttribute="top" id="3Nk-tz-wxa"/>
-                            <constraint firstItem="tbq-IC-yxH" firstAttribute="leading" secondItem="gwu-ap-bSg" secondAttribute="leading" id="zEP-73-xhv"/>
->>>>>>> parent of 2b51293... Ratings page UI implemented and working
-=======
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-=======
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
->>>>>>> parent of 2b51293... Ratings page UI implemented and working
-<<<<<<< HEAD
-=======
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
->>>>>>> parent of 2b51293... Ratings page UI implemented and working
-=======
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
->>>>>>> parent of 2b51293... Ratings page UI implemented and working
-=======
->>>>>>> parent of 9c7c8d0... Revert
-=======
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
->>>>>>> parent of 2b51293... Ratings page UI implemented and working
-=======
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
->>>>>>> parent of 2b51293... Ratings page UI implemented and working
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="tbq-IC-yxH" secondAttribute="trailing" id="03y-zW-Bix"/>
                             <constraint firstItem="tbq-IC-yxH" firstAttribute="top" secondItem="gwu-ap-bSg" secondAttribute="top" id="3Nk-tz-wxa"/>
                             <constraint firstItem="tbq-IC-yxH" firstAttribute="leading" secondItem="gwu-ap-bSg" secondAttribute="leading" id="zEP-73-xhv"/>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> parent of 2b51293... Ratings page UI implemented and working
-=======
->>>>>>> parent of 2b51293... Ratings page UI implemented and working
-=======
-=======
->>>>>>> parent of 9c7c8d0... Revert
->>>>>>> parent of 2b51293... Ratings page UI implemented and working
-=======
->>>>>>> parent of 2b51293... Ratings page UI implemented and working
-=======
->>>>>>> parent of 2b51293... Ratings page UI implemented and working
-=======
->>>>>>> parent of 2b51293... Ratings page UI implemented and working
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="ratingsView" destination="kdX-wR-BP1" id="tiv-P1-Fqw"/>
                         <outlet property="sidebarButton" destination="1mj-0R-BUH" id="MVh-mt-Zcq"/>
                     </connections>
                 </viewController>

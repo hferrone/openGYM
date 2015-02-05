@@ -538,7 +538,6 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -574,7 +573,6 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -594,22 +592,6 @@
 				);
 				INFOPLIST_FILE = OpenGYM_MVP/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-<<<<<<< HEAD
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/OpenGYM_MVP",
-				);
-				OTHER_LDFLAGS = "";
-
-=======
->>>>>>> parent of 2b51293... Ratings page UI implemented and working
-=======
->>>>>>> parent of 2b51293... Ratings page UI implemented and working
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -628,19 +610,6 @@
 				);
 				INFOPLIST_FILE = OpenGYM_MVP/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/OpenGYM_MVP",
-				);
-				OTHER_LDFLAGS = "";
-
-=======
->>>>>>> parent of 2b51293... Ratings page UI implemented and working
-=======
->>>>>>> parent of 2b51293... Ratings page UI implemented and working
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "9e37bd34-306e-4b38-98f7-d5af7c11fa09";
 				TARGETED_DEVICE_FAMILY = 1;
