@@ -41,11 +41,8 @@
 		4A3B72A11A5F86E900D893E6 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A3B729E1A5F86E900D893E6 /* Fabric.framework */; };
 		4A3F14711A6ECD77007C1BAB /* MapAnnotationDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A3F14701A6ECD77007C1BAB /* MapAnnotationDetailViewController.m */; };
 		4A65CECA1A5F164700C9BC3C /* PasswordRecoveryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A65CEC91A5F164700C9BC3C /* PasswordRecoveryViewController.m */; };
-<<<<<<< HEAD
 		4A76615D1A83EF0200D31348 /* libCorePlot-CocoaTouch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A76615C1A83EF0200D31348 /* libCorePlot-CocoaTouch.a */; };
 		4A76615F1A83F48600D31348 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A76615E1A83F48600D31348 /* UIKit.framework */; };
-=======
->>>>>>> parent of 2b51293... Ratings page UI implemented and working
 		4AACB0131A647AF7005F4331 /* CreateEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AACB0121A647AF7005F4331 /* CreateEventViewController.m */; };
 		4ABABA3D1A5F70A700693BE0 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ABABA3C1A5F70A700693BE0 /* FacebookSDK.framework */; };
 		4AC2802B1A64508900092C0B /* MainMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC2802A1A64508900092C0B /* MainMapViewController.m */; };
@@ -121,7 +118,6 @@
 		4A3F14701A6ECD77007C1BAB /* MapAnnotationDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapAnnotationDetailViewController.m; sourceTree = "<group>"; };
 		4A65CEC81A5F164700C9BC3C /* PasswordRecoveryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswordRecoveryViewController.h; sourceTree = "<group>"; };
 		4A65CEC91A5F164700C9BC3C /* PasswordRecoveryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordRecoveryViewController.m; sourceTree = "<group>"; };
-<<<<<<< HEAD
 		4A76610E1A83EF0200D31348 /* CorePlot-CocoaTouch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CorePlot-CocoaTouch.h"; sourceTree = "<group>"; };
 		4A76610F1A83EF0200D31348 /* CPTAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPTAnimation.h; sourceTree = "<group>"; };
 		4A7661101A83EF0200D31348 /* CPTAnimationOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPTAnimationOperation.h; sourceTree = "<group>"; };
@@ -202,8 +198,6 @@
 		4A76615B1A83EF0200D31348 /* NSNumberExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSNumberExtensions.h; sourceTree = "<group>"; };
 		4A76615C1A83EF0200D31348 /* libCorePlot-CocoaTouch.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libCorePlot-CocoaTouch.a"; sourceTree = "<group>"; };
 		4A76615E1A83F48600D31348 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-=======
->>>>>>> parent of 2b51293... Ratings page UI implemented and working
 		4AACB0111A647AF7005F4331 /* CreateEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateEventViewController.h; sourceTree = "<group>"; };
 		4AACB0121A647AF7005F4331 /* CreateEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateEventViewController.m; sourceTree = "<group>"; };
 		4ABABA3C1A5F70A700693BE0 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
@@ -254,10 +248,7 @@
 				4A1073BC1A5C5E930089F080 /* Bolts.framework in Frameworks */,
 				4ABABA3D1A5F70A700693BE0 /* FacebookSDK.framework in Frameworks */,
 				4A3B729F1A5F86E900D893E6 /* TwitterKit.framework in Frameworks */,
-<<<<<<< HEAD
 				4A76615D1A83EF0200D31348 /* libCorePlot-CocoaTouch.a in Frameworks */,
-=======
->>>>>>> parent of 2b51293... Ratings page UI implemented and working
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,10 +362,7 @@
 		4A1073B41A5C5CAB0089F080 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< HEAD
 				4A76615E1A83F48600D31348 /* UIKit.framework */,
-=======
->>>>>>> parent of 2b51293... Ratings page UI implemented and working
 				4A2C3CD11A6306C70069BED1 /* MapKit.framework */,
 				4A3B729E1A5F86E900D893E6 /* Fabric.framework */,
 				4A3B729C1A5F86E900D893E6 /* TwitterKit.framework */,
@@ -403,16 +391,12 @@
 		4A72BE1E1A81D11900547BB4 /* CorePlot */ = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< HEAD
 				4A76610D1A83EF0200D31348 /* CorePlotHeaders */,
 				4A76615C1A83EF0200D31348 /* libCorePlot-CocoaTouch.a */,
-=======
->>>>>>> parent of 2b51293... Ratings page UI implemented and working
 			);
 			name = CorePlot;
 			sourceTree = "<group>";
 		};
-<<<<<<< HEAD
 		4A76610D1A83EF0200D31348 /* CorePlotHeaders */ = {
 			isa = PBXGroup;
 			children = (
@@ -498,8 +482,6 @@
 			path = CorePlotHeaders;
 			sourceTree = "<group>";
 		};
-=======
->>>>>>> parent of 2b51293... Ratings page UI implemented and working
 		4AD7827B1A69F363001C8774 /* SWRevealController */ = {
 			isa = PBXGroup;
 			children = (
@@ -782,14 +764,11 @@
 				);
 				INFOPLIST_FILE = OpenGYM_MVP/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-<<<<<<< HEAD
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/OpenGYM_MVP",
 				);
 				OTHER_LDFLAGS = "";
-=======
->>>>>>> parent of 2b51293... Ratings page UI implemented and working
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -808,14 +787,11 @@
 				);
 				INFOPLIST_FILE = OpenGYM_MVP/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-<<<<<<< HEAD
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/OpenGYM_MVP",
 				);
 				OTHER_LDFLAGS = "";
-=======
->>>>>>> parent of 2b51293... Ratings page UI implemented and working
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "9e37bd34-306e-4b38-98f7-d5af7c11fa09";
 				TARGETED_DEVICE_FAMILY = 1;
