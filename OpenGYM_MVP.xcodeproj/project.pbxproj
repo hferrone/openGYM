@@ -598,25 +598,13 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 
-=======
 <<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> parent of 9c7c8d0... Revert
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/OpenGYM_MVP",
 				);
 				OTHER_LDFLAGS = "";
-<<<<<<< HEAD
 
-=======
-=======
->>>>>>> parent of 2b51293... Ratings page UI implemented and working
-=======
->>>>>>> parent of 2b51293... Ratings page UI implemented and working
->>>>>>> parent of 9c7c8d0... Revert
-=======
->>>>>>> parent of 2b51293... Ratings page UI implemented and working
 =======
 >>>>>>> parent of 2b51293... Ratings page UI implemented and working
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -638,28 +626,13 @@
 				INFOPLIST_FILE = OpenGYM_MVP/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 <<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> parent of 9c7c8d0... Revert
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/OpenGYM_MVP",
 				);
 				OTHER_LDFLAGS = "";
-<<<<<<< HEAD
 
-=======
-=======
->>>>>>> parent of 2b51293... Ratings page UI implemented and working
-=======
->>>>>>> parent of 2b51293... Ratings page UI implemented and working
->>>>>>> parent of 9c7c8d0... Revert
-=======
->>>>>>> parent of 2b51293... Ratings page UI implemented and working
 =======
 >>>>>>> parent of 2b51293... Ratings page UI implemented and working
 				PRODUCT_NAME = "$(TARGET_NAME)";
