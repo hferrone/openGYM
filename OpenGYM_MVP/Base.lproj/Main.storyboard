@@ -1324,6 +1324,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="ratingsView" destination="kdX-wR-BP1" id="tiv-P1-Fqw"/>
                         <outlet property="sidebarButton" destination="1mj-0R-BUH" id="MVh-mt-Zcq"/>
                     </connections>
                 </viewController>
