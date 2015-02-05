@@ -9,10 +9,9 @@
 #import "RatingsViewController.h"
 #import "SWRevealViewController.h"
 
-@interface RatingsViewController () <CPTPlotDataSource>
+@interface RatingsViewController ()
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
-@property (nonatomic, strong) CPTGraphHostingView *hostView;
 
 @end
 
@@ -35,15 +34,6 @@
 -(BOOL)prefersStatusBarHidden
 {
     return true;
-}
-
-#pragma mark - CPTPlotDataSource methods
--(NSUInteger)numberOfRecordsForPlot:(CPTPlot *)plot {
-    return 0;
-}
-
--(NSNumber *)numberForPlot:(CPTPlot *)plot field:(NSUInteger)fieldEnum recordIndex:(NSUInteger)index {
-    return [NSDecimalNumber zero];
 }
 
 @end
