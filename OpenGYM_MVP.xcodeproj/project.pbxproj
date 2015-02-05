@@ -256,13 +256,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4A0E6D471A83D83600D68DE1 /* CorePlot */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = CorePlot;
-			sourceTree = "<group>";
-		};
 		4A1073801A5C5C950089F080 = {
 			isa = PBXGroup;
 			children = (
@@ -285,7 +278,6 @@
 		4A10738B1A5C5C950089F080 /* OpenGYM_MVP */ = {
 			isa = PBXGroup;
 			children = (
-				4A0E6D471A83D83600D68DE1 /* CorePlot */,
 				4AD7827B1A69F363001C8774 /* SWRevealController */,
 				4A1073901A5C5C950089F080 /* AppDelegate.h */,
 				4A1073911A5C5C950089F080 /* AppDelegate.m */,
