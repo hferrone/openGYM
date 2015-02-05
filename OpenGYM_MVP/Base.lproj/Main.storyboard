@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="zOH-5b-ahR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AAj-Ei-ewA">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
@@ -1272,6 +1272,7 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+<<<<<<< HEAD
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="zHP-Ui-HLx">
                                 <rect key="frame" x="-8" y="136" width="618" height="29"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -1304,9 +1305,12 @@
                                 <rect key="frame" x="0.0" y="227" width="600" height="373"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+=======
+>>>>>>> parent of 2b51293... Ratings page UI implemented and working
                         </subviews>
-                        <color key="backgroundColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+<<<<<<< HEAD
                             <constraint firstItem="kdX-wR-BP1" firstAttribute="bottom" secondItem="yVs-re-utP" secondAttribute="top" id="5j6-RW-tCP"/>
                             <constraint firstItem="tbq-IC-yxH" firstAttribute="top" secondItem="gwu-ap-bSg" secondAttribute="top" id="Ak1-Ca-RKt"/>
                             <constraint firstAttribute="trailing" secondItem="tbq-IC-yxH" secondAttribute="trailing" id="MQw-m7-9Lo"/>
@@ -1321,6 +1325,11 @@
                             <constraint firstItem="bdE-xp-zGo" firstAttribute="top" secondItem="tbq-IC-yxH" secondAttribute="bottom" constant="27" id="vzq-rV-19R"/>
                             <constraint firstItem="zHP-Ui-HLx" firstAttribute="leading" secondItem="gwu-ap-bSg" secondAttribute="leadingMargin" constant="-24" id="xLR-YS-xWZ"/>
                             <constraint firstItem="kdX-wR-BP1" firstAttribute="leading" secondItem="tbq-IC-yxH" secondAttribute="leading" id="zNP-qd-eJZ"/>
+=======
+                            <constraint firstAttribute="trailing" secondItem="tbq-IC-yxH" secondAttribute="trailing" id="03y-zW-Bix"/>
+                            <constraint firstItem="tbq-IC-yxH" firstAttribute="top" secondItem="gwu-ap-bSg" secondAttribute="top" id="3Nk-tz-wxa"/>
+                            <constraint firstItem="tbq-IC-yxH" firstAttribute="leading" secondItem="gwu-ap-bSg" secondAttribute="leading" id="zEP-73-xhv"/>
+>>>>>>> parent of 2b51293... Ratings page UI implemented and working
                         </constraints>
                     </view>
                     <connections>
