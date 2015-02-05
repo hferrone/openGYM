@@ -1324,7 +1324,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="graphView" destination="kdX-wR-BP1" id="SUl-YI-JQ4"/>
                         <outlet property="sidebarButton" destination="1mj-0R-BUH" id="MVh-mt-Zcq"/>
                     </connections>
                 </viewController>
