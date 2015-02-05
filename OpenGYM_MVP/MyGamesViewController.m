@@ -61,6 +61,27 @@
     cell.gameFeedTimeLabel.text = [event objectForKey:@"date"];
     cell.gameFeedPlayersLabel.text = [event objectForKey:@"players"];
     
+    if([[event objectForKey:@"sport"] isEqualToString:@"Basketball"])
+    {
+        cell.gameFeedImage.image = [UIImage imageNamed:@"OGsportbasketballICON"];
+    }
+    else if([[event objectForKey:@"sport"] isEqualToString:@"Baseball"])
+    {
+        cell.gameFeedImage.image = [UIImage imageNamed:@"OGsportbaseballICON"];
+    }
+    else if([[event objectForKey:@"sport"] isEqualToString:@"Tennis"])
+    {
+        cell.gameFeedImage.image = [UIImage imageNamed:@"OGsporttennisICON"];
+    }
+    else if([[event objectForKey:@"sport"] isEqualToString:@"Soccer"])
+    {
+        cell.gameFeedImage.image = [UIImage imageNamed:@"OGsportsoccerICON"];
+    }
+    else if([[event objectForKey:@"sport"] isEqualToString:@"Football"])
+    {
+        cell.gameFeedImage.image = [UIImage imageNamed:@"OGsportfootballICON"];
+    }
+    
     return cell;
 }
 

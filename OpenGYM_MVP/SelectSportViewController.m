@@ -10,6 +10,7 @@
 
 @interface SelectSportViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *sportSelectButton;
+@property (weak, nonatomic) IBOutlet UIButton *logoutButton;
 
 @end
 
@@ -23,6 +24,10 @@
     _sportSelectButton.layer.borderColor = [UIColor whiteColor].CGColor;
     _sportSelectButton.layer.borderWidth = 2.0;
     _sportSelectButton.layer.cornerRadius = 100;
+    
+    _logoutButton.layer.borderColor = [UIColor whiteColor].CGColor;
+    _logoutButton.layer.borderWidth = 2;
+    _logoutButton.layer.cornerRadius = 5;
 }
 
 //hide status bar per design

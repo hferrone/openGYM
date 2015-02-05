@@ -10,6 +10,9 @@
 
 @interface RegistrationViewController ()
 
+@property (weak, nonatomic) IBOutlet UIButton *registerButton;
+
+
 @end
 
 @implementation RegistrationViewController
@@ -17,7 +20,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+ 
+    self.registerButton.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.registerButton.layer.borderWidth = 2;
+    self.registerButton.layer.cornerRadius = 5;
 }
 
 //hide status bar per design

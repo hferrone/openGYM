@@ -12,6 +12,8 @@
 @interface PasswordRecoveryViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextField *passwordRecoveryEmail;
+@property (weak, nonatomic) IBOutlet UIButton *recoverButton;
+
 
 @end
 
@@ -21,6 +23,9 @@
 {
     [super viewDidLoad];
     
+    self.recoverButton.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.recoverButton.layer.borderWidth = 2;
+    self.recoverButton.layer.cornerRadius = 5;
 }
 
 //hide status bar per design
@@ -36,19 +41,19 @@
 }
 
 //Parse password recovery
-- (IBAction)recoveryPasswordOnButtonTapped:(UIButton *)sender
+- (IBAction)recoverPasswordOnButtonTapped:(UIButton *)sender
 {
     [PFUser requestPasswordResetForEmailInBackground:_passwordRecoveryEmail.text block:^(BOOL succeeded, NSError *error)
-    {
-       if(error)
-       {
-           UIAlertView *emptyFieldsAlert = [[UIAlertView alloc] initWithTitle:@"Stop!!!" message:@"Invalid email, please re-enter your email." delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
-           [emptyFieldsAlert show];
-       }
-       else{
-           [self performSegueWithIdentifier:@"passwordRecoverySuccessSegueID" sender:self];
-       }
-    }];
+     {
+         if(error)
+         {
+             UIAlertView *emptyFieldsAlert = [[UIAlertView alloc] initWithTitle:@"Stop!!!" message:@"Invalid email, please re-enter your email." delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
+             [emptyFieldsAlert show];
+         }
+         else{
+             [self performSegueWithIdentifier:@"passwordRecoverySuccessSegueID" sender:self];
+         }
+     }];
 }
 
 @end
