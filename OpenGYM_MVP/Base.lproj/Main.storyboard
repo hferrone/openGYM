@@ -1277,6 +1277,10 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 9c7c8d0... Revert
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="zHP-Ui-HLx">
                                 <rect key="frame" x="-8" y="136" width="618" height="29"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -1341,10 +1345,17 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
 >>>>>>> parent of 2b51293... Ratings page UI implemented and working
+<<<<<<< HEAD
 =======
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
 >>>>>>> parent of 2b51293... Ratings page UI implemented and working
+=======
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+>>>>>>> parent of 2b51293... Ratings page UI implemented and working
+=======
+>>>>>>> parent of 9c7c8d0... Revert
 =======
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1356,8 +1367,14 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> parent of 2b51293... Ratings page UI implemented and working
 =======
+>>>>>>> parent of 2b51293... Ratings page UI implemented and working
+=======
+=======
+>>>>>>> parent of 9c7c8d0... Revert
 >>>>>>> parent of 2b51293... Ratings page UI implemented and working
 =======
 >>>>>>> parent of 2b51293... Ratings page UI implemented and working
