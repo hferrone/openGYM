@@ -596,11 +596,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/OpenGYM_MVP",
 				);
 				OTHER_LDFLAGS = "";
+=======
+>>>>>>> parent of 2b51293... Ratings page UI implemented and working
 =======
 >>>>>>> parent of 2b51293... Ratings page UI implemented and working
 =======
@@ -625,11 +628,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/OpenGYM_MVP",
 				);
 				OTHER_LDFLAGS = "";
+=======
+>>>>>>> parent of 2b51293... Ratings page UI implemented and working
 =======
 >>>>>>> parent of 2b51293... Ratings page UI implemented and working
 =======
