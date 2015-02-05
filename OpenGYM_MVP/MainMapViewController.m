@@ -15,8 +15,6 @@
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
 
-#define METERS_PER_MILE 1609.344
-
 @interface MainMapViewController ()
 
 @property (weak, nonatomic) IBOutlet UIView *sportSelectionPopoverView;
