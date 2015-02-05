@@ -1273,6 +1273,7 @@
                                 </items>
                             </navigationBar>
 <<<<<<< HEAD
+<<<<<<< HEAD
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="zHP-Ui-HLx">
                                 <rect key="frame" x="-8" y="136" width="618" height="29"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -1326,6 +1327,14 @@
                             <constraint firstItem="zHP-Ui-HLx" firstAttribute="leading" secondItem="gwu-ap-bSg" secondAttribute="leadingMargin" constant="-24" id="xLR-YS-xWZ"/>
                             <constraint firstItem="kdX-wR-BP1" firstAttribute="leading" secondItem="tbq-IC-yxH" secondAttribute="leading" id="zNP-qd-eJZ"/>
 =======
+                            <constraint firstAttribute="trailing" secondItem="tbq-IC-yxH" secondAttribute="trailing" id="03y-zW-Bix"/>
+                            <constraint firstItem="tbq-IC-yxH" firstAttribute="top" secondItem="gwu-ap-bSg" secondAttribute="top" id="3Nk-tz-wxa"/>
+                            <constraint firstItem="tbq-IC-yxH" firstAttribute="leading" secondItem="gwu-ap-bSg" secondAttribute="leading" id="zEP-73-xhv"/>
+>>>>>>> parent of 2b51293... Ratings page UI implemented and working
+=======
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
                             <constraint firstAttribute="trailing" secondItem="tbq-IC-yxH" secondAttribute="trailing" id="03y-zW-Bix"/>
                             <constraint firstItem="tbq-IC-yxH" firstAttribute="top" secondItem="gwu-ap-bSg" secondAttribute="top" id="3Nk-tz-wxa"/>
                             <constraint firstItem="tbq-IC-yxH" firstAttribute="leading" secondItem="gwu-ap-bSg" secondAttribute="leading" id="zEP-73-xhv"/>
