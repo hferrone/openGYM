@@ -35,7 +35,7 @@
 #pragma mark - UIViewController lifecycle methods
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    //[self initPlot];
+    [self initPlot];
 }
 
 #pragma mark - Chart behavior
