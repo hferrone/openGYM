@@ -125,15 +125,6 @@
     [self performSegueWithIdentifier:@"pinDetailSegueID" sender:self];
 }
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-//    if([segue.identifier isEqualToString:@"pinDetailSegueID"])
-//    {
-//        MapAnnotationDetailViewController *detailVC = segue.destinationViewController;
-//        detailVC.annotationView = self.detailAnnotation;
-//    }
-}
-
 -(void)queryBySportSelected
 {
     NSArray *allPoints = self.mapView.annotations;
@@ -197,31 +188,31 @@
 
 - (IBAction)basketballSelected:(UIButton *)sender
 {
-    self.sportSelected = sender.currentTitle;
+    self.sportSelected = @"Basketball";
     [self queryBySportSelected];
 }
 
 - (IBAction)soccerSelected:(UIButton *)sender
 {
-    self.sportSelected = sender.currentTitle;
+    self.sportSelected = @"Soccer";
     [self queryBySportSelected];
 }
 
 - (IBAction)baseballSelected:(UIButton *)sender
 {
-    self.sportSelected = sender.currentTitle;
+    self.sportSelected = @"Baseball";
     [self queryBySportSelected];
 }
 
 - (IBAction)tennisSelected:(UIButton *)sender
 {
-    self.sportSelected = sender.currentTitle;
+    self.sportSelected = @"Tennis";
     [self queryBySportSelected];
 }
 
 - (IBAction)footballSelected:(UIButton *)sender
 {
-    self.sportSelected = sender.currentTitle;
+    self.sportSelected = @"Football";
     [self queryBySportSelected];
 }
 
