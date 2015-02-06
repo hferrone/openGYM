@@ -8,11 +8,13 @@
 
 #import "RevealViewController.h"
 #import <Parse/Parse.h>
+#import <FacebookSDK/FacebookSDK.h>
 #import <Social/Social.h>
 #import <MobileCoreServices/MobileCoreServices.h>
 
 @interface RevealViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *userFullNameLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *dashboardProfilePic;
 
 @end
 
@@ -24,7 +26,6 @@
     
     PFUser *user = [PFUser currentUser];
     self.userFullNameLabel.text = user.username;
-    
 }
 
 //hide status bar per design

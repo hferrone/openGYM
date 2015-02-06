@@ -9,12 +9,14 @@
 #import "ProfileViewController.h"
 #import "SWRevealViewController.h"
 
-@interface ProfileViewController ()
+@interface ProfileViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
 @property (weak, nonatomic) IBOutlet UITextView *profileTextView;
 @property (weak, nonatomic) IBOutlet UILabel *profileUsernameLabel;
+@property (weak, nonatomic) UIImage *profilePicture;
+@property (strong, nonatomic) UIImagePickerController *imagePickerController;
 
 @end
 
@@ -40,6 +42,26 @@
 -(BOOL)prefersStatusBarHidden
 {
     return true;
+}
+
+- (IBAction)selectProfileImageOnButtonTapped:(UIButton *)sender
+{
+    self.imagePickerController = [UIImagePickerController new];
+    self.imagePickerController.delegate = self;
+    [self.imagePickerController setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+    [self presentViewController:self.imagePickerController animated:YES completion:nil];
+}
+
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    self.profilePicture = info[UIImagePickerControllerOriginalImage];
+    [self.profileImageView setImage:self.profilePicture];
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end
