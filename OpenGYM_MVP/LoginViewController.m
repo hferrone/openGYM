@@ -13,6 +13,7 @@
 @interface LoginViewController ()
 
 @property (weak, nonatomic) IBOutlet UIButton *btn;
+@property (weak, nonatomic) IBOutlet FBLoginView *facebookButton;
 
 @end
 
@@ -39,7 +40,7 @@
             NSLog(@"error: %@", [error localizedDescription]);
         }
                                      }];
-    logInButton.frame = CGRectMake(75, 525, 215, 40);
+    logInButton.frame = CGRectMake(self.view.frame.origin.x + self.facebookButton.frame.size.width/4 + 25, self.facebookButton.frame.origin.y + 115, self.facebookButton.frame.size.width, self.facebookButton.frame.size.height);
     [self.view addSubview:logInButton];
 }
 
