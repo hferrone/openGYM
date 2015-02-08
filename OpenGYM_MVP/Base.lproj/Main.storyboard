@@ -519,8 +519,8 @@
                                 <rect key="frame" x="1000" y="0.0" width="600" height="600"/>
                                 <subviews>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UcV-lp-gjT">
-                                        <rect key="frame" x="354" y="412" width="17" height="22"/>
-                                        <state key="normal" image="OGsportsoccerICON">
+                                        <rect key="frame" x="350" y="392" width="44" height="44"/>
+                                        <state key="normal" image="OGchooseSoccer">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -529,8 +529,8 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="76Z-kF-ZdB">
-                                        <rect key="frame" x="230" y="412" width="17" height="22"/>
-                                        <state key="normal" image="OGsportbaseballICON">
+                                        <rect key="frame" x="202" y="392" width="44" height="44"/>
+                                        <state key="normal" image="OGchooseBaseball">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -538,19 +538,9 @@
                                             <action selector="baseballSelected:" destination="BBl-Wp-Hjs" eventType="touchUpInside" id="wDv-P9-a7y"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rqV-vE-dLX">
-                                        <rect key="frame" x="405" y="457" width="17" height="22"/>
-                                        <state key="normal" image="OGsporttennisICON">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="tennisSelected:" destination="BBl-Wp-Hjs" eventType="touchUpInside" id="Nzb-KG-Q0n"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xpr-Ir-5v5">
-                                        <rect key="frame" x="176" y="457" width="17" height="22"/>
-                                        <state key="normal" image="OGsportfootballICON">
+                                        <rect key="frame" x="144" y="446" width="44" height="44"/>
+                                        <state key="normal" image="OGchooseFootball">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -559,8 +549,8 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wb4-hM-aBN">
-                                        <rect key="frame" x="292" y="388" width="17" height="22"/>
-                                        <state key="normal" image="OGsportbasketballICON">
+                                        <rect key="frame" x="275" y="365" width="44" height="44"/>
+                                        <state key="normal" image="OGchooseBasketball">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -569,7 +559,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BPp-EZ-IRy">
-                                        <rect key="frame" x="230" y="475" width="141" height="38"/>
+                                        <rect key="frame" x="227" y="455" width="141" height="38"/>
                                         <state key="normal" image="OGcreateGame">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -578,47 +568,33 @@
                                             <segue destination="zcK-A9-Bnm" kind="show" id="2I7-nS-8jy"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rqV-vE-dLX">
+                                        <rect key="frame" x="405" y="446" width="44" height="44"/>
+                                        <state key="normal" image="OGchooseGolf">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="tennisSelected:" destination="BBl-Wp-Hjs" eventType="touchUpInside" id="Nzb-KG-Q0n"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.58999999999999997" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="rqV-vE-dLX" firstAttribute="top" secondItem="76Z-kF-ZdB" secondAttribute="bottom" constant="23" id="2Xt-b1-5wa"/>
-                                    <constraint firstItem="xpr-Ir-5v5" firstAttribute="centerX" secondItem="rqV-vE-dLX" secondAttribute="centerX" constant="-229" id="C2R-RC-opS"/>
-                                    <constraint firstItem="76Z-kF-ZdB" firstAttribute="centerX" secondItem="rqV-vE-dLX" secondAttribute="centerX" constant="-175" id="IbE-Wf-xqF"/>
-                                    <constraint firstItem="Wb4-hM-aBN" firstAttribute="top" secondItem="BpO-q7-GYF" secondAttribute="top" constant="388" id="Jyc-jF-0sp"/>
-                                    <constraint firstItem="BPp-EZ-IRy" firstAttribute="centerX" secondItem="xpr-Ir-5v5" secondAttribute="centerX" constant="116" id="MiH-Vf-znB"/>
-                                    <constraint firstItem="Wb4-hM-aBN" firstAttribute="centerX" secondItem="UcV-lp-gjT" secondAttribute="centerX" constant="-62" id="Ogl-Bb-sHP"/>
-                                    <constraint firstItem="UcV-lp-gjT" firstAttribute="centerX" secondItem="76Z-kF-ZdB" secondAttribute="centerX" constant="124" id="UDg-Rv-79v"/>
-                                    <constraint firstItem="BPp-EZ-IRy" firstAttribute="top" secondItem="xpr-Ir-5v5" secondAttribute="bottom" constant="-4" id="VhJ-zx-xOf"/>
-                                    <constraint firstItem="xpr-Ir-5v5" firstAttribute="top" secondItem="rqV-vE-dLX" secondAttribute="bottom" constant="-22" id="Y6p-j5-SYe"/>
-                                    <constraint firstItem="UcV-lp-gjT" firstAttribute="centerX" secondItem="BpO-q7-GYF" secondAttribute="centerX" constant="62.5" id="f6I-BK-UuC"/>
-                                    <constraint firstItem="76Z-kF-ZdB" firstAttribute="top" secondItem="UcV-lp-gjT" secondAttribute="bottom" constant="-22" id="kF9-fS-SbL"/>
-                                    <constraint firstItem="UcV-lp-gjT" firstAttribute="top" secondItem="Wb4-hM-aBN" secondAttribute="bottom" constant="2" id="rgi-33-C8e"/>
+                                    <constraint firstAttribute="bottom" secondItem="xpr-Ir-5v5" secondAttribute="bottom" constant="110" id="4YM-tS-e2a"/>
+                                    <constraint firstItem="76Z-kF-ZdB" firstAttribute="top" secondItem="UcV-lp-gjT" secondAttribute="top" id="7gL-AB-j0k"/>
+                                    <constraint firstItem="BPp-EZ-IRy" firstAttribute="centerX" secondItem="Wb4-hM-aBN" secondAttribute="centerX" id="826-ca-5GV"/>
+                                    <constraint firstItem="rqV-vE-dLX" firstAttribute="leading" secondItem="BPp-EZ-IRy" secondAttribute="trailing" constant="37" id="9oj-Ha-hV3"/>
+                                    <constraint firstItem="xpr-Ir-5v5" firstAttribute="top" secondItem="rqV-vE-dLX" secondAttribute="top" id="IGG-ya-OxL"/>
+                                    <constraint firstAttribute="bottom" secondItem="BPp-EZ-IRy" secondAttribute="bottom" constant="107" id="X8Z-ok-s11"/>
+                                    <constraint firstItem="UcV-lp-gjT" firstAttribute="leading" secondItem="Wb4-hM-aBN" secondAttribute="trailing" constant="31" id="giR-3h-VrS"/>
+                                    <constraint firstItem="BPp-EZ-IRy" firstAttribute="leading" secondItem="xpr-Ir-5v5" secondAttribute="trailing" constant="39" id="iVC-00-QQj"/>
+                                    <constraint firstItem="BPp-EZ-IRy" firstAttribute="top" secondItem="76Z-kF-ZdB" secondAttribute="bottom" constant="19" id="lqS-E4-qaA"/>
+                                    <constraint firstItem="Wb4-hM-aBN" firstAttribute="leading" secondItem="76Z-kF-ZdB" secondAttribute="trailing" constant="29" id="m9h-Kn-TIX"/>
+                                    <constraint firstItem="Wb4-hM-aBN" firstAttribute="centerX" secondItem="BpO-q7-GYF" secondAttribute="centerX" constant="-3" id="mAB-mD-355"/>
+                                    <constraint firstItem="BPp-EZ-IRy" firstAttribute="top" secondItem="Wb4-hM-aBN" secondAttribute="bottom" constant="46" id="xIX-wE-tOy"/>
                                 </constraints>
                             </view>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LHG-oL-TIh">
-                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
-                                <color key="barTintColor" red="1" green="0.5544606527" blue="0.075866345469999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <items>
-                                    <navigationItem id="3mb-Lf-1ma">
-                                        <nil key="title"/>
-                                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="YDO-bG-rsm">
-                                            <rect key="frame" x="285" y="7" width="30" height="30"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="30" id="gIG-X9-VdI"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="49"/>
-                                            <state key="normal" title="+">
-                                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                            </state>
-                                            <connections>
-                                                <action selector="overlayOnButtonTapped:" destination="BBl-Wp-Hjs" eventType="touchUpInside" id="Tho-9y-Le8"/>
-                                            </connections>
-                                        </button>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kko-ck-jJV">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                 <color key="barTintColor" red="1" green="0.5544606527" blue="0.075866345469999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -643,14 +619,37 @@
                                     <constraint firstAttribute="height" constant="32" id="LGb-BS-Rud"/>
                                 </constraints>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="OGchoosesportFooter" translatesAutoresizingMaskIntoConstraints="NO" id="yx3-BT-UBy">
+                                <rect key="frame" x="0.0" y="526" width="600" height="74"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="74" id="3hE-dP-hpB"/>
+                                    <constraint firstAttribute="width" secondItem="yx3-BT-UBy" secondAttribute="height" multiplier="300:37" id="NUU-J0-4MS"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YDO-bG-rsm">
+                                <rect key="frame" x="279" y="543" width="42" height="39"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="39" id="ADB-KF-EBI"/>
+                                    <constraint firstAttribute="width" constant="42" id="ctJ-uV-OTZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="49"/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="overlayOnButtonTapped:" destination="BBl-Wp-Hjs" eventType="touchUpInside" id="Tho-9y-Le8"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="YDO-bG-rsm" firstAttribute="centerX" secondItem="yx3-BT-UBy" secondAttribute="centerX" id="1Yy-Vy-sCz"/>
                             <constraint firstItem="Kko-ck-jJV" firstAttribute="leading" secondItem="BpO-q7-GYF" secondAttribute="leading" constant="-1000" id="4k9-5P-1LD"/>
                             <constraint firstItem="Kko-ck-jJV" firstAttribute="top" secondItem="BpO-q7-GYF" secondAttribute="top" id="587-lj-54r"/>
-                            <constraint firstItem="LHG-oL-TIh" firstAttribute="bottom" secondItem="Jgf-Zw-zsK" secondAttribute="top" id="5Ty-3D-lFl"/>
+                            <constraint firstItem="yx3-BT-UBy" firstAttribute="trailing" secondItem="Kko-ck-jJV" secondAttribute="trailing" id="8Vx-4y-7Ck"/>
                             <constraint firstItem="TWf-vs-PAJ" firstAttribute="trailing" secondItem="BpO-q7-GYF" secondAttribute="trailing" constant="-1000" id="Gcw-Lf-kYO"/>
-                            <constraint firstItem="LHG-oL-TIh" firstAttribute="trailing" secondItem="TWf-vs-PAJ" secondAttribute="trailing" id="MUQ-0l-A6r"/>
+                            <constraint firstItem="Jgf-Zw-zsK" firstAttribute="top" secondItem="YDO-bG-rsm" secondAttribute="bottom" constant="18" id="Jgm-J7-Nbo"/>
                             <constraint firstAttribute="trailing" secondItem="BpO-q7-GYF" secondAttribute="trailing" constant="-1000" id="Qmi-ct-VNv"/>
                             <constraint firstItem="TWf-vs-PAJ" firstAttribute="top" secondItem="BpO-q7-GYF" secondAttribute="top" id="S9r-fX-ulb"/>
                             <constraint firstItem="TWf-vs-PAJ" firstAttribute="leading" secondItem="CTd-ZI-iYL" secondAttribute="leading" id="Srb-Ty-KBI"/>
@@ -658,10 +657,11 @@
                             <constraint firstItem="BpO-q7-GYF" firstAttribute="trailing" secondItem="Kko-ck-jJV" secondAttribute="trailing" constant="1000" id="ccy-DJ-eqf"/>
                             <constraint firstItem="Kko-ck-jJV" firstAttribute="top" secondItem="CTd-ZI-iYL" secondAttribute="top" id="ddJ-rd-Osd"/>
                             <constraint firstItem="ulX-c8-vwb" firstAttribute="centerX" secondItem="Kko-ck-jJV" secondAttribute="centerX" id="j3z-Cd-hyF"/>
-                            <constraint firstItem="LHG-oL-TIh" firstAttribute="leading" secondItem="Kko-ck-jJV" secondAttribute="leading" id="jJB-tp-ZRs"/>
                             <constraint firstItem="BpO-q7-GYF" firstAttribute="bottom" secondItem="Jgf-Zw-zsK" secondAttribute="top" id="kVm-Fm-I4a"/>
                             <constraint firstItem="ulX-c8-vwb" firstAttribute="top" secondItem="CTd-ZI-iYL" secondAttribute="topMargin" constant="6" id="sQE-sH-vYT"/>
                             <constraint firstItem="TWf-vs-PAJ" firstAttribute="bottom" secondItem="Jgf-Zw-zsK" secondAttribute="top" id="vhk-Da-g0h"/>
+                            <constraint firstItem="yx3-BT-UBy" firstAttribute="leading" secondItem="Kko-ck-jJV" secondAttribute="leading" id="xsK-Bo-PPn"/>
+                            <constraint firstItem="yx3-BT-UBy" firstAttribute="bottom" secondItem="Jgf-Zw-zsK" secondAttribute="top" id="zkE-lK-lOM"/>
                         </constraints>
                     </view>
                     <connections>
@@ -688,21 +688,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ua-zB-Qna">
-                                <rect key="frame" x="0.0" y="44" width="600" height="210"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="210" id="3Mb-1q-9Xm"/>
-                                    <constraint firstAttribute="width" constant="600" id="9eI-Ve-ZaX"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                <state key="normal">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="selectProfileImageOnButtonTapped:" destination="6ae-tn-5Kd" eventType="touchUpInside" id="vUW-9r-63W"/>
-                                </connections>
-                            </button>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6oc-nZ-U1h">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                 <color key="barTintColor" red="1" green="0.5544606527" blue="0.075866345469999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -719,7 +704,7 @@
                             </navigationBar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="t2C-6s-qmj">
                                 <rect key="frame" x="0.0" y="44" width="600" height="210"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6K6-Q0-AIg">
                                 <rect key="frame" x="16" y="215" width="120" height="31"/>
@@ -727,8 +712,8 @@
                                     <constraint firstAttribute="height" constant="31" id="TzU-XA-Afq"/>
                                     <constraint firstAttribute="width" constant="120" id="nTj-qc-GDX"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="0.5544606527" blue="0.075866345469999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yoQ-cS-o1w">
@@ -762,6 +747,21 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ua-zB-Qna">
+                                <rect key="frame" x="247" y="222" width="106" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="3Mb-1q-9Xm"/>
+                                    <constraint firstAttribute="width" constant="106" id="9eI-Ve-ZaX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <state key="normal" title="Choose Photo">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="selectProfileImageOnButtonTapped:" destination="6ae-tn-5Kd" eventType="touchUpInside" id="vUW-9r-63W"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.08907435507" green="0.16773200760000001" blue="0.13807731509999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -778,7 +778,7 @@
                             <constraint firstItem="yqa-ni-bK5" firstAttribute="leading" secondItem="86p-AO-hfQ" secondAttribute="leadingMargin" constant="30" id="aVg-mL-jjT"/>
                             <constraint firstItem="t2C-6s-qmj" firstAttribute="leading" secondItem="6oc-nZ-U1h" secondAttribute="leading" id="bEm-Cw-f3y"/>
                             <constraint firstItem="hyM-G9-qDZ" firstAttribute="top" secondItem="t2C-6s-qmj" secondAttribute="bottom" constant="346" id="gUQ-cq-WFw"/>
-                            <constraint firstItem="5aO-EY-4qg" firstAttribute="top" secondItem="9Ua-zB-Qna" secondAttribute="bottom" id="iE5-z0-2tC"/>
+                            <constraint firstItem="5aO-EY-4qg" firstAttribute="top" secondItem="9Ua-zB-Qna" secondAttribute="bottom" constant="1" id="iE5-z0-2tC"/>
                             <constraint firstAttribute="trailingMargin" secondItem="OkN-eZ-eHV" secondAttribute="trailing" constant="-8" id="jT6-vw-OZd"/>
                             <constraint firstItem="yoQ-cS-o1w" firstAttribute="top" secondItem="t2C-6s-qmj" secondAttribute="bottom" constant="15" id="lig-oN-Txd"/>
                             <constraint firstItem="5aO-EY-4qg" firstAttribute="centerX" secondItem="yqa-ni-bK5" secondAttribute="centerX" id="uJT-2s-t3c"/>
@@ -1838,6 +1838,12 @@
     </scenes>
     <resources>
         <image name="OGbackground" width="320" height="578"/>
+        <image name="OGchooseBaseball" width="44" height="44"/>
+        <image name="OGchooseBasketball" width="44" height="44"/>
+        <image name="OGchooseFootball" width="44" height="44"/>
+        <image name="OGchooseGolf" width="44" height="44"/>
+        <image name="OGchooseSoccer" width="44" height="44"/>
+        <image name="OGchoosesportFooter" width="320" height="63"/>
         <image name="OGcreateGame" width="141" height="38"/>
         <image name="OGcrest" width="113" height="113"/>
         <image name="OGfeedicon" width="35" height="20"/>
