@@ -70,7 +70,7 @@
                {
                    MKPointAnnotation *annotation = [MKPointAnnotation new];
                    annotation.coordinate = place.location.coordinate;
-                   annotation.title = object[@"description"];
+                   annotation.title = object[@"title"];
                    self.allEvents = [NSMutableArray arrayWithObject:annotation];
                    [self.mapView addAnnotations:self.allEvents];
                }
@@ -149,7 +149,7 @@
                               {
                                   MKPointAnnotation *annotation = [MKPointAnnotation new];
                                   annotation.coordinate = place.location.coordinate;
-                                  annotation.title = object[@"description"];
+                                  annotation.title = object[@"title"];
                                   
                                   if([self.sportSelected isEqualToString:@"Basketball"])
                                   {

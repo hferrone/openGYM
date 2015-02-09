@@ -12,10 +12,10 @@
 @interface EventDetailViewController ()
 
 @property (weak, nonatomic) IBOutlet UINavigationItem *eventDetailTitle;
+
 @property (weak, nonatomic) IBOutlet UILabel *confirmedPlayersLabel;
 @property (weak, nonatomic) IBOutlet UILabel *locationLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timeDateLabel;
-
 @property (weak, nonatomic) IBOutlet UILabel *remainingPlayersLabel;
 
 @end
@@ -26,7 +26,7 @@
 {
     [super viewDidLoad];
     
-    self.eventDetailTitle.title = self.eventObject[@"description"];
+    self.eventDetailTitle.title = self.eventObject[@"title"];
     
     //self.confirmedPlayersLabel.text = self.eventObject[@"players"];
     self.locationLabel.text = self.eventObject[@"location"];

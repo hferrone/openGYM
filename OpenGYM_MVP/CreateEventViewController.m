@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *locationTextField;
 @property (weak, nonatomic) IBOutlet UITextField *dateTimeTextField;
 @property (weak, nonatomic) IBOutlet UITextField *descriptionTextField;
+@property (weak, nonatomic) IBOutlet UITextField *titleTextField;
 
 @property (weak, nonatomic) IBOutlet UILabel *numberOfPlayersLabel;
 @property (weak, nonatomic) IBOutlet UIView *datePickerOverlayView;
@@ -33,6 +34,8 @@
 {
     [super viewDidLoad];
     
+    self.sportTextField.text = nil;
+    self.titleTextField.text = nil;
     self.locationTextField.text = nil;
     self.dateTimeTextField.text = nil;
     self.descriptionTextField.text = nil;
@@ -118,6 +121,7 @@
 {
     PFObject *event = [PFObject objectWithClassName:@"Event"];
     event[@"sport"] = self.sportTextField.text;
+    event[@"title"] = self.titleTextField.text;
     event[@"location"] = self.locationTextField.text;
     event[@"dateComparison"] = self.dateAndTimeComparisonString;
     event[@"date"] = self.dateString;
@@ -128,13 +132,6 @@
     [event saveInBackground];
     
     [self performSegueWithIdentifier:@"mapSegueID" sender:self];
-}
-
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
-{
-    self.locationTextField.text = nil;
-    self.dateTimeTextField.text = nil;
-    self.descriptionTextField.text = nil;
 }
 
 @end

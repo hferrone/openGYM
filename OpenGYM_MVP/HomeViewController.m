@@ -113,7 +113,7 @@
     CustomHomeFeedTableViewCell *homeCell = [tableView dequeueReusableCellWithIdentifier:@"homeCellID"];
     PFObject *event = [self.storedEvents objectAtIndex:indexPath.row];
     
-    homeCell.cellTitleLabel.text = [event objectForKey:@"description"];
+    homeCell.cellTitleLabel.text = [event objectForKey:@"title"];
     homeCell.cellTimeLabel.text = [event objectForKey:@"date"];
     homeCell.cellNumberPlayersLabel.text = [event objectForKey:@"players"];
     
