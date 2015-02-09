@@ -9,15 +9,20 @@
 #import "CreateEventViewController.h"
 
 @interface CreateEventViewController ()
-@property (weak, nonatomic) IBOutlet UITextField *sportTextField;
 
+@property (weak, nonatomic) IBOutlet UITextField *sportTextField;
 @property (weak, nonatomic) IBOutlet UITextField *locationTextField;
 @property (weak, nonatomic) IBOutlet UITextField *dateTimeTextField;
 @property (weak, nonatomic) IBOutlet UITextField *descriptionTextField;
+
 @property (weak, nonatomic) IBOutlet UILabel *numberOfPlayersLabel;
 @property (weak, nonatomic) IBOutlet UIView *datePickerOverlayView;
 @property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *genderSegmentedController;
+
+@property NSString *dateAndTimeComparisonString;
+@property NSString *dateString;
+@property NSString *timeString;
 @property NSString *eventGender;
 
 @end
@@ -31,7 +36,6 @@
     self.locationTextField.text = nil;
     self.dateTimeTextField.text = nil;
     self.descriptionTextField.text = nil;
-    
 }
 
 -(BOOL)prefersStatusBarHidden
@@ -41,6 +45,9 @@
 
 - (IBAction)pickDateAndTimeOnButtonTapped:(UIButton *)sender
 {
+    self.datePicker.date = [[ NSDate alloc ] initWithTimeIntervalSinceNow: (NSTimeInterval) 2 ];
+    self.datePicker.minimumDate = [[ NSDate alloc ] initWithTimeIntervalSinceNow: (NSTimeInterval) 0 ];
+    
     [UIView animateWithDuration:0.3 animations:^{
         self.datePickerOverlayView.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y + 95, self.view.frame.size.width, 425);
     }];
@@ -48,7 +55,23 @@
 
 - (IBAction)saveDateAndTimeOnButtonTapped:(UIButton *)sender
 {
-    self.dateTimeTextField.text = [NSString stringWithFormat:@"%@", self.datePicker.date];
+    //time formatter
+    NSDateFormatter *timeFormat = [[NSDateFormatter alloc] init];
+    [timeFormat setDateFormat:@"h:mm a, zzz"];
+    self.timeString = [timeFormat stringFromDate:self.datePicker.date];
+    NSLog(@"%@", self.timeString);
+    
+    //date formatter
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"EEEE MMMM d, YYYY"];
+    self.dateString = [dateFormat stringFromDate:self.datePicker.date];
+    NSLog(@"%@", self.dateString);
+    
+    //date and time comparison formatter
+    self.dateAndTimeComparisonString = [NSString stringWithFormat:@"%@", self.datePicker.date];
+    NSLog(@"%@", self.dateAndTimeComparisonString);
+    
+    self.dateTimeTextField.text = [NSString stringWithFormat:@"%@ - %@", self.dateString, self.timeString];
     
     [UIView animateWithDuration:0.3 animations:^{
         self.datePickerOverlayView.frame = CGRectMake(600, 600, 5, 5);
@@ -96,7 +119,9 @@
     PFObject *event = [PFObject objectWithClassName:@"Event"];
     event[@"sport"] = self.sportTextField.text;
     event[@"location"] = self.locationTextField.text;
-    event[@"date"] = self.dateTimeTextField.text;
+    event[@"dateComparison"] = self.dateAndTimeComparisonString;
+    event[@"date"] = self.dateString;
+    event[@"time"] = self.timeString;
     event[@"description"] = self.descriptionTextField.text;
     event[@"players"] = self.numberOfPlayersLabel.text;
     event[@"gender"] = self.eventGender;

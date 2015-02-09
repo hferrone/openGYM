@@ -8,6 +8,7 @@
 
 #import "ProfileViewController.h"
 #import "SWRevealViewController.h"
+#import <Parse/Parse.h>
 
 @interface ProfileViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
@@ -26,6 +27,14 @@
 {
     [super viewDidLoad];
     
+    PFUser *user = [PFUser currentUser];
+    self.profileUsernameLabel.text = user.username;
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSData *imageData = [defaults dataForKey:@"profilePic"];
+    UIImage *profilePic = [UIImage imageWithData:imageData];
+    self.profileImageView.image = profilePic;
+    
     SWRevealViewController *revealViewController = self.revealViewController;
     if ( revealViewController )
     {
@@ -33,9 +42,6 @@
         [self.sidebarButton setAction: @selector( revealToggle: )];
         [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     }
-    
-    PFUser *user = [PFUser currentUser];
-    self.profileUsernameLabel.text = user.username;
 }
 
 //hide status bar per design
@@ -56,6 +62,12 @@
 {
     self.profilePicture = info[UIImagePickerControllerOriginalImage];
     [self.profileImageView setImage:self.profilePicture];
+    
+    NSData *savedProfilePicture = UIImageJPEGRepresentation(self.profilePicture, 10);
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:savedProfilePicture forKey:@"profilePic"];
+    [defaults synchronize];
+    
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

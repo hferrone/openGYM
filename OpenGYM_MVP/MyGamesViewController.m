@@ -58,7 +58,7 @@
     PFObject *event = [self.favoritedGames objectAtIndex:indexPath.row];
     
     cell.gameFeedTitleLabel.text = [event objectForKey:@"description"];
-    cell.gameFeedTimeLabel.text = [event objectForKey:@"date"];
+    cell.gameFeedTimeLabel.text = [event objectForKey:@"time"];
     cell.gameFeedPlayersLabel.text = [event objectForKey:@"players"];
     
     if([[event objectForKey:@"sport"] isEqualToString:@"Basketball"])
