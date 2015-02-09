@@ -8,10 +8,12 @@
 
 #import "RatingsViewController.h"
 #import "SWRevealViewController.h"
+#import <Parse/Parse.h>
 
 @interface RatingsViewController ()
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
+@property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
 
 @end
 
@@ -28,6 +30,14 @@
         [self.sidebarButton setAction: @selector( revealToggle: )];
         [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     }
+    
+    PFUser *user = [PFUser currentUser];
+    self.usernameLabel.text = user.username;
+}
+
+-(BOOL)prefersStatusBarHidden
+{
+    return YES;
 }
 
 @end

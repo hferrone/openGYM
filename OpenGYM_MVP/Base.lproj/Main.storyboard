@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AAj-Ei-ewA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="zOH-5b-ahR">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
@@ -798,7 +798,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YYs-CF-oNH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5511" y="3140"/>
+            <point key="canvasLocation" x="5511" y="3182"/>
         </scene>
         <!--My Games View Controller-->
         <scene sceneID="j5o-yQ-gvs">
@@ -1402,21 +1402,65 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="vci-ek-QWt">
+                                <rect key="frame" x="-8" y="189" width="616" height="29"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <segments>
+                                    <segment title="Today"/>
+                                    <segment title="Week"/>
+                                    <segment title="Month"/>
+                                </segments>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </segmentedControl>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bPj-CX-tnn">
+                                <rect key="frame" x="0.0" y="216" width="600" height="384"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7VD-be-ebb">
+                                <rect key="frame" x="262" y="75" width="77" height="71"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="77" id="1UW-II-6O9"/>
+                                    <constraint firstAttribute="height" constant="71" id="4Xt-ig-u6D"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bXd-nO-LGT">
+                                <rect key="frame" x="248" y="154" width="105" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="105" id="ITq-j3-wCP"/>
+                                    <constraint firstAttribute="height" constant="21" id="NOU-Mu-qwy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="tbq-IC-yxH" secondAttribute="trailing" id="03y-zW-Bix"/>
                             <constraint firstItem="tbq-IC-yxH" firstAttribute="top" secondItem="gwu-ap-bSg" secondAttribute="top" id="3Nk-tz-wxa"/>
+                            <constraint firstItem="bPj-CX-tnn" firstAttribute="top" secondItem="vci-ek-QWt" secondAttribute="bottom" constant="-1" id="3qr-WO-Vak"/>
+                            <constraint firstItem="bXd-nO-LGT" firstAttribute="centerX" secondItem="vci-ek-QWt" secondAttribute="centerX" id="AjW-En-swi"/>
+                            <constraint firstItem="vci-ek-QWt" firstAttribute="leading" secondItem="gwu-ap-bSg" secondAttribute="leadingMargin" constant="-24" id="IqR-MZ-XO1"/>
+                            <constraint firstItem="bXd-nO-LGT" firstAttribute="centerX" secondItem="7VD-be-ebb" secondAttribute="centerX" id="KgL-Tj-fwd"/>
+                            <constraint firstItem="vci-ek-QWt" firstAttribute="top" secondItem="bXd-nO-LGT" secondAttribute="bottom" constant="14" id="N2c-nS-0OG"/>
+                            <constraint firstItem="bXd-nO-LGT" firstAttribute="top" secondItem="7VD-be-ebb" secondAttribute="bottom" constant="8" symbolic="YES" id="emR-xH-c6s"/>
+                            <constraint firstItem="7VD-be-ebb" firstAttribute="centerX" secondItem="tbq-IC-yxH" secondAttribute="centerX" id="gFr-JN-VPC"/>
+                            <constraint firstItem="bPj-CX-tnn" firstAttribute="trailing" secondItem="tbq-IC-yxH" secondAttribute="trailing" id="hcR-pz-EMa"/>
+                            <constraint firstItem="bPj-CX-tnn" firstAttribute="leading" secondItem="tbq-IC-yxH" secondAttribute="leading" id="sR0-CL-667"/>
                             <constraint firstItem="tbq-IC-yxH" firstAttribute="leading" secondItem="gwu-ap-bSg" secondAttribute="leading" id="zEP-73-xhv"/>
+                            <constraint firstItem="7VD-be-ebb" firstAttribute="top" secondItem="tbq-IC-yxH" secondAttribute="bottom" constant="31" id="zNQ-i3-krK"/>
+                            <constraint firstItem="bPj-CX-tnn" firstAttribute="bottom" secondItem="yVs-re-utP" secondAttribute="top" id="zXG-Qu-LCV"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="sidebarButton" destination="1mj-0R-BUH" id="MVh-mt-Zcq"/>
+                        <outlet property="usernameLabel" destination="bXd-nO-LGT" id="gUw-il-gJv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cYw-yM-UNt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4755" y="3140"/>
+            <point key="canvasLocation" x="4755" y="3182"/>
         </scene>
         <!--Reveal View Controller-->
         <scene sceneID="u2O-9F-B6V">
@@ -1914,10 +1958,10 @@
         <image name="weblogo" width="980" height="230"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="2bN-4P-yvE"/>
         <segue reference="ZXu-eG-Xfk"/>
-        <segue reference="jcd-kU-yhC"/>
+        <segue reference="ov6-2E-tyj"/>
+        <segue reference="rxg-iN-mfG"/>
         <segue reference="qDd-sB-gW0"/>
-        <segue reference="oS6-np-nQD"/>
+        <segue reference="sog-iJ-UoY"/>
     </inferredMetricsTieBreakers>
 </document>
