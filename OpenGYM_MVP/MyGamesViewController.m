@@ -13,7 +13,7 @@
 @interface MyGamesViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
-@property NSArray *favoritedGames;
+@property NSMutableArray *favoritedGames;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
@@ -28,7 +28,7 @@
     [query whereKey:@"favorite" equalTo:@"yes"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
     {
-        self.favoritedGames = [[NSArray alloc] initWithArray:objects];
+        self.favoritedGames = [[NSMutableArray alloc] initWithArray:objects];
         [self.tableView reloadData];
     }];
         
@@ -37,7 +37,6 @@
     {
         [self.sidebarButton setTarget: self.revealViewController];
         [self.sidebarButton setAction: @selector( revealToggle: )];
-        [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     }
 }
 
@@ -83,6 +82,21 @@
     }
     
     return cell;
+}
+
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return  YES;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    PFObject *event = [self.favoritedGames objectAtIndex:indexPath.row];
+    event[@"favorite"] = @"no";
+    [event saveInBackground];
+    
+    [self.favoritedGames removeObjectAtIndex:indexPath.row];
+    [self.tableView reloadData];
 }
 
 @end

@@ -14,6 +14,7 @@
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *ratingsImageView;
 
 @end
 
@@ -33,6 +34,11 @@
     
     PFUser *user = [PFUser currentUser];
     self.usernameLabel.text = user.username;
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSData *imageData = [defaults dataForKey:@"dashboardPic"];
+    UIImage *ratingsViewPic = [UIImage imageWithData:imageData];
+    self.ratingsImageView.image = ratingsViewPic;
 }
 
 -(BOOL)prefersStatusBarHidden
