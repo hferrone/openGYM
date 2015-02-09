@@ -47,8 +47,10 @@
 
 - (IBAction)joinEventOnButtonTapped:(UIButton *)sender
 {
-    self.eventObject[@"favorite"] = @"yes";
-    [self.eventObject saveInBackground];
+    PFUser *user = [PFUser currentUser];
+    PFRelation *myGames = [user relationForKey:@"joinedEvents"];
+    [myGames addObject:self.eventObject];
+    [user saveInBackground];
     
     [self performSegueWithIdentifier:@"myGamesSegueID" sender:self];
 }
