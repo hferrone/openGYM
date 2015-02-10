@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *locationLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timeDateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *remainingPlayersLabel;
+@property NSMutableArray *myGamesArray;
 
 @end
 
@@ -47,8 +48,10 @@
 
 - (IBAction)joinEventOnButtonTapped:(UIButton *)sender
 {
-    self.eventObject[@"favorite"] = @"yes";
-    [self.eventObject saveInBackground];
+    PFObject *user = [PFUser currentUser];
+    PFRelation *relation = [user relationForKey:@"myGames"];
+    [relation addObject:self.eventObject];
+    [user saveInBackground];
     
     [self performSegueWithIdentifier:@"myGamesSegueID" sender:self];
 }

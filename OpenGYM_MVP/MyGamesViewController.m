@@ -13,8 +13,8 @@
 @interface MyGamesViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
-@property NSMutableArray *favoritedGames;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property NSMutableArray *myGamesArray;
 
 @end
 
@@ -23,14 +23,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    PFQuery *query = [PFQuery queryWithClassName:@"Event"];
-    [query whereKey:@"favorite" equalTo:@"yes"];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
-    {
-        self.favoritedGames = [[NSMutableArray alloc] initWithArray:objects];
-        [self.tableView reloadData];
-    }];
+    [self queryMyGames];
         
     SWRevealViewController *revealViewController = self.revealViewController;
     if ( revealViewController )
@@ -38,6 +31,18 @@
         [self.sidebarButton setTarget: self.revealViewController];
         [self.sidebarButton setAction: @selector( revealToggle: )];
     }
+}
+
+-(void)queryMyGames
+{
+    PFUser *user = [PFUser currentUser];
+    PFRelation *relation = [user relationForKey:@"myGames"];
+    PFQuery *query = [relation query];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
+     {
+         self.myGamesArray = [[NSMutableArray alloc] initWithArray:objects];
+         [self.tableView reloadData];
+     }];
 }
 
 //hide status bar per design
@@ -48,15 +53,15 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.favoritedGames.count;
+    return self.myGamesArray.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     CustomGamesFeedTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"gamesCellID"];
-    PFObject *event = [self.favoritedGames objectAtIndex:indexPath.row];
+    PFObject *event = [self.myGamesArray objectAtIndex:indexPath.row];
     
-    cell.gameFeedTitleLabel.text = [event objectForKey:@"description"];
+    cell.gameFeedTitleLabel.text = [event objectForKey:@"title"];
     cell.gameFeedTimeLabel.text = [event objectForKey:@"time"];
     cell.gameFeedPlayersLabel.text = [event objectForKey:@"players"];
     
@@ -90,12 +95,13 @@
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    PFObject *event = [self.favoritedGames objectAtIndex:indexPath.row];
-    event[@"favorite"] = @"no";
-    [event saveInBackground];
+{    
+    PFObject *user = [PFUser currentUser];
+    PFRelation *relation = [user relationForKey:@"myGames"];
+    [relation removeObject:[self.myGamesArray objectAtIndex:indexPath.row]];
+    [user saveInBackground];
     
-    [self.favoritedGames removeObjectAtIndex:indexPath.row];
+    [self.myGamesArray removeObjectAtIndex:indexPath.row];
     [self.tableView reloadData];
 }
 

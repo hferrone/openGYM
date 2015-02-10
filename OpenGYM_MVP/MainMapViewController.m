@@ -96,7 +96,7 @@
     zoomLocation.latitude = 41.850033;
     zoomLocation.longitude= -87.650052;
     
-    MKCoordinateRegion viewRegion = MKCoordinateRegionMake(zoomLocation, MKCoordinateSpanMake(0.4, 0.4));
+    MKCoordinateRegion viewRegion = MKCoordinateRegionMake(zoomLocation, MKCoordinateSpanMake(0.2, 0.2));
     
     [_mapView setRegion:viewRegion animated:YES];
 }
