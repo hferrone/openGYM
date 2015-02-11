@@ -23,6 +23,8 @@
 @property PFObject *eventObject;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
 
+@property(readonly) NSTimeInterval timeIntervalSinceNow;
+
 @end
 
 @implementation HomeViewController
