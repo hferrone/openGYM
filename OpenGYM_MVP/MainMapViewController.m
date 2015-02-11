@@ -10,6 +10,7 @@
 #import "SWRevealViewController.h"
 #import "HomeViewController.h"
 #import "MapAnnotationDetailViewController.h"
+#import "EventDetailViewController.h"
 
 #import <Parse/Parse.h>
 #import <MapKit/MapKit.h>
@@ -23,6 +24,7 @@
 
 @property (weak, nonatomic) NSString *sportSelected;
 @property (weak, nonatomic) NSString *addressString;
+@property (weak, nonatomic) NSString *selectedPinString;
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) CLPlacemark *topResult;
@@ -39,6 +41,8 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *dashboardButton;
 
 @property CLLocationCoordinate2D *detailAnnotation;
+
+@property PFObject *eventObject;
 
 @end
 
@@ -120,6 +124,29 @@
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
 {
     [self performSegueWithIdentifier:@"pinDetailSegueID" sender:self];
+}
+
+- (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view
+{
+    MKPointAnnotation *selectedAnnotation = view.annotation;
+    self.selectedPinString = selectedAnnotation.title;
+    
+    [self parseDataQueryForAnnotationSelected:self.selectedPinString];
+    NSLog(@"%@", self.eventObject);
+}
+
+-(void)parseDataQueryForAnnotationSelected: (NSString*) filter
+{
+    PFQuery *query = [PFQuery queryWithClassName:@"Event"];
+    [query whereKey:@"title" equalTo:filter];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
+     {
+         for (PFObject *object in objects)
+         {
+             self.eventObject = object;
+             NSLog(@"%@", self.eventObject);
+         }
+     }];
 }
 
 -(void)queryBySportSelected
@@ -211,6 +238,15 @@
 {
     self.sportSelected = @"Football";
     [self queryBySportSelected];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([segue.identifier isEqualToString:@"pinDetailSegueID"])
+    {
+        EventDetailViewController *evc = segue.destinationViewController;
+        evc.eventObject = self.eventObject;
+    }
 }
 
 @end

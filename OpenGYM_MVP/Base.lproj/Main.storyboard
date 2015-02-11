@@ -695,6 +695,7 @@
                         <outlet property="mapView" destination="TWf-vs-PAJ" id="Rkm-ei-Zlx"/>
                         <outlet property="sidebarButton" destination="P95-E3-uR6" id="9Dr-nI-OiL"/>
                         <outlet property="sportSelectionPopoverView" destination="BpO-q7-GYF" id="tFk-eD-d2x"/>
+                        <segue destination="M5l-Ap-MnT" kind="show" identifier="pinDetailSegueID" id="4hV-CL-eaR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U3c-TC-h80" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -704,7 +705,6 @@
         <!--Profile View Controller-->
         <scene sceneID="Rc6-gC-Aee">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YYs-CF-oNH" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="6ae-tn-5Kd" customClass="ProfileViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="WcS-2Z-quK"/>
@@ -893,6 +893,7 @@
                         <outlet property="userLocationLabel" destination="PWs-g9-nuT" id="WPZ-3c-sTL"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YYs-CF-oNH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5511" y="3182"/>
         </scene>
@@ -2101,10 +2102,11 @@
         <image name="weblogo" width="980" height="230"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="2bN-4P-yvE"/>
         <segue reference="8Qw-1r-dRP"/>
-        <segue reference="qDd-sB-gW0"/>
-        <segue reference="oS6-np-nQD"/>
+        <segue reference="2bN-4P-yvE"/>
+        <segue reference="Yrc-nS-ZnK"/>
+        <segue reference="4hV-CL-eaR"/>
         <segue reference="jcd-kU-yhC"/>
+        <segue reference="oS6-np-nQD"/>
     </inferredMetricsTieBreakers>
 </document>
