@@ -1399,6 +1399,7 @@
                                 </items>
                             </navigationBar>
 <<<<<<< HEAD
+<<<<<<< HEAD
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirmed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v4c-cg-Oeh">
                                 <rect key="frame" x="6" y="328" width="81" height="21"/>
                                 <constraints>
@@ -1423,6 +1424,8 @@
                                 <rect key="frame" x="272" y="319" width="56" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 =======
+=======
+>>>>>>> parent of b80bc2b... Game profile page UI work
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cEf-S9-e4v">
                                 <rect key="frame" x="0.0" y="44" width="600" height="83"/>
                                 <subviews>
@@ -1498,6 +1501,9 @@
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.15617841293120763" green="0.29705255681818177" blue="0.24330777569027282" alpha="1" colorSpace="calibratedRGB"/>
+<<<<<<< HEAD
+>>>>>>> parent of b80bc2b... Game profile page UI work
+=======
 >>>>>>> parent of b80bc2b... Game profile page UI work
                                 <constraints>
                                     <constraint firstItem="eRN-ER-Rbu" firstAttribute="trailing" secondItem="oj0-ER-0gx" secondAttribute="trailing" id="3O4-I5-XWc"/>
@@ -1520,6 +1526,7 @@
                                     <constraint firstAttribute="bottom" secondItem="v4c-cg-Oeh" secondAttribute="bottom" constant="6" id="yoW-IG-lga"/>
                                     <constraint firstItem="Jbl-2N-rem" firstAttribute="top" secondItem="eRN-ER-Rbu" secondAttribute="bottom" constant="2" id="zip-Tc-CYW"/>
                                 </constraints>
+<<<<<<< HEAD
 <<<<<<< HEAD
                                 <state key="normal" title="Join">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -1630,6 +1637,12 @@
                         </subviews>
                         <color key="backgroundColor" red="0.08907435507" green="0.16773200760000001" blue="0.13807731509999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+=======
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.08907435507" green="0.16773200760000001" blue="0.13807731509999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+>>>>>>> parent of b80bc2b... Game profile page UI work
                             <constraint firstItem="Apa-u8-gBL" firstAttribute="leading" secondItem="cEf-S9-e4v" secondAttribute="leading" id="41h-aa-Jsa"/>
                             <constraint firstItem="cEf-S9-e4v" firstAttribute="trailing" secondItem="Apa-u8-gBL" secondAttribute="trailing" id="LzT-q0-jQh"/>
                             <constraint firstItem="PWz-Mv-NTt" firstAttribute="top" secondItem="cEf-S9-e4v" secondAttribute="bottom" constant="473" id="ddh-e9-nUm"/>
@@ -1637,6 +1650,9 @@
                             <constraint firstItem="Apa-u8-gBL" firstAttribute="top" secondItem="E7U-XM-FBW" secondAttribute="top" id="fVl-jW-wn4"/>
                             <constraint firstItem="cEf-S9-e4v" firstAttribute="top" secondItem="Apa-u8-gBL" secondAttribute="bottom" id="gaq-HT-W13"/>
                             <constraint firstItem="cEf-S9-e4v" firstAttribute="leading" secondItem="E7U-XM-FBW" secondAttribute="leading" id="m6R-zn-mul"/>
+<<<<<<< HEAD
+>>>>>>> parent of b80bc2b... Game profile page UI work
+=======
 >>>>>>> parent of b80bc2b... Game profile page UI work
                         </constraints>
                     </view>
