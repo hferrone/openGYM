@@ -884,11 +884,14 @@
                                 </constraints>
                             </view>
 <<<<<<< HEAD
+<<<<<<< HEAD
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="t2C-6s-qmj">
                                 <rect key="frame" x="0.0" y="44" width="600" height="210"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
 >>>>>>> parent of 434df20... Revert "Game profile page UI work"
+=======
+>>>>>>> parent of b80bc2b... Game profile page UI work
 =======
 >>>>>>> parent of b80bc2b... Game profile page UI work
                         </subviews>
