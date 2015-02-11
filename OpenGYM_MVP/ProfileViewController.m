@@ -18,6 +18,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *profileUsernameLabel;
 @property (weak, nonatomic) UIImage *profilePicture;
 @property (strong, nonatomic) UIImagePickerController *imagePickerController;
+@property (weak, nonatomic) IBOutlet UILabel *userLocationLabel;
+@property (weak, nonatomic) IBOutlet UILabel *userAgeLabel;
 
 @end
 
@@ -29,6 +31,8 @@
     
     PFUser *user = [PFUser currentUser];
     self.profileUsernameLabel.text = user.username;
+    self.userAgeLabel.text = [NSString stringWithFormat:@"%@ years", user[@"age"]];
+    self.userLocationLabel.text = user[@"location"];
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSData *imageData = [defaults dataForKey:@"profilePic"];
@@ -42,6 +46,12 @@
         [self.sidebarButton setAction: @selector( revealToggle: )];
         [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     }
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    PFUser *user = [PFUser currentUser];
+    self.profileTextView.text = user[@"aboutme"];
 }
 
 //hide status bar per design
@@ -74,6 +84,15 @@
 -(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
 {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self.profileTextView resignFirstResponder];
+    
+    PFUser *user = [PFUser currentUser];
+    user[@"aboutme"] = self.profileTextView.text;
+    [user saveInBackground];
 }
 
 @end

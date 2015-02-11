@@ -66,6 +66,8 @@
     newUser.username = _registerUsernameInput.text;
     newUser.email = _registerEmailInput.text;
     newUser.password = _registerPasswordInput.text;
+    newUser[@"age"] = _registerAge.text;
+    newUser[@"location"] = _registerCityState.text;
     
     [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
     {

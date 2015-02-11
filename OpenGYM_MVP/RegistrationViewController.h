@@ -14,5 +14,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *registerUsernameInput;
 @property (weak, nonatomic) IBOutlet UITextField *registerEmailInput;
 @property (weak, nonatomic) IBOutlet UITextField *registerPasswordInput;
+@property (weak, nonatomic) IBOutlet UITextField *registerAge;
+@property (weak, nonatomic) IBOutlet UITextField *registerCityState;
 
 @end

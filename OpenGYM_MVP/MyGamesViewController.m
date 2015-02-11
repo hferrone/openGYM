@@ -23,14 +23,18 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self queryMyGames];
-        
+    
     SWRevealViewController *revealViewController = self.revealViewController;
     if ( revealViewController )
     {
         [self.sidebarButton setTarget: self.revealViewController];
         [self.sidebarButton setAction: @selector( revealToggle: )];
     }
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [self queryMyGames];
 }
 
 -(void)queryMyGames
