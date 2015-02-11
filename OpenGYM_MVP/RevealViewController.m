@@ -18,7 +18,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *dashboardProfilePic;
 @property (strong, nonatomic) UIImagePickerController *imagePickerController;
 @property (weak, nonatomic) UIImage *dashboardPicture;
-@property (weak, nonatomic) IBOutlet UIView *imagePickerPopoverView;
 
 @end
 
@@ -39,32 +38,9 @@
 
 - (IBAction)selectImageOnButtonTapped:(UIButton *)sender
 {
-    [UIView animateWithDuration:0.3 animations:^{
-        self.imagePickerPopoverView.frame = CGRectMake(self.view.frame.origin.x + 100, self.view.frame.origin.y + 150, self.imagePickerPopoverView.frame.size.width, self.imagePickerPopoverView.frame.size.height);
-    }];
-}
-
-- (IBAction)selectImageFromPhotoLibrary:(UIButton*)sender
-{
-    [UIView animateWithDuration:0.3 animations:^{
-        self.imagePickerPopoverView.frame = CGRectMake(600, 600, 5, 5);
-    }];
-    
     self.imagePickerController = [UIImagePickerController new];
     self.imagePickerController.delegate = self;
     [self.imagePickerController setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
-    [self presentViewController:self.imagePickerController animated:YES completion:nil];
-}
-
-- (IBAction)selectImageFromCamera:(UIButton*)sender
-{
-    [UIView animateWithDuration:0.3 animations:^{
-        self.imagePickerPopoverView.frame = CGRectMake(600, 600, 5, 5);
-    }];
-    
-    self.imagePickerController = [UIImagePickerController new];
-    self.imagePickerController.delegate = self;
-    [self.imagePickerController setSourceType:UIImagePickerControllerSourceTypeCamera];
     [self presentViewController:self.imagePickerController animated:YES completion:nil];
 }
 
@@ -98,13 +74,6 @@
     
     UIActivityViewController *avc = [[UIActivityViewController alloc] initWithActivityItems:@[shareURL] applicationActivities:nil];
     [self presentViewController:avc animated:YES completion:nil];
-}
-
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
-{
-    [UIView animateWithDuration:0.3 animations:^{
-        self.imagePickerPopoverView.frame = CGRectMake(600, 600, 5, 5);
-    }];
 }
 
 @end
