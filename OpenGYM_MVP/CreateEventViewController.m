@@ -62,17 +62,14 @@
     NSDateFormatter *timeFormat = [[NSDateFormatter alloc] init];
     [timeFormat setDateFormat:@"h:mm a, zzz"];
     self.timeString = [timeFormat stringFromDate:self.datePicker.date];
-    NSLog(@"%@", self.timeString);
     
     //date formatter
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
     [dateFormat setDateFormat:@"EEEE MMMM d, YYYY"];
     self.dateString = [dateFormat stringFromDate:self.datePicker.date];
-    NSLog(@"%@", self.dateString);
     
     //date and time comparison formatter
     self.dateAndTimeComparisonString = [NSString stringWithFormat:@"%@", self.datePicker.date];
-    NSLog(@"%@", self.dateAndTimeComparisonString);
     
     self.dateTimeTextField.text = [NSString stringWithFormat:@"%@ - %@", self.dateString, self.timeString];
     
@@ -127,7 +124,8 @@
     event[@"date"] = self.dateString;
     event[@"time"] = self.timeString;
     event[@"description"] = self.descriptionTextField.text;
-    event[@"players"] = self.numberOfPlayersLabel.text;
+    event[@"playersNeeded"] = self.numberOfPlayersLabel.text;
+    event[@"playersRegistered"] = @"1";
     event[@"gender"] = self.eventGender;
     [event saveInBackground];
     

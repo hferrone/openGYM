@@ -29,10 +29,10 @@
     
     self.eventDetailTitle.title = self.eventObject[@"title"];
     
-    //self.confirmedPlayersLabel.text = self.eventObject[@"players"];
     self.locationLabel.text = self.eventObject[@"location"];
     self.timeDateLabel.text = self.eventObject[@"date"];
-    self.remainingPlayersLabel.text = self.eventObject[@"players"];
+    self.remainingPlayersLabel.text = self.eventObject[@"playersNeeded"];
+    self.confirmedPlayersLabel.text = self.eventObject[@"playersRegistered"];
     
     self.remainingPlayersLabel.layer.borderColor = [UIColor whiteColor].CGColor;
     self.remainingPlayersLabel.layer.borderWidth = 2;
@@ -52,6 +52,16 @@
     PFRelation *relation = [user relationForKey:@"myGames"];
     [relation addObject:self.eventObject];
     [user saveInBackground];
+    
+    int playersNeeded = [self.eventObject[@"playersNeeded"] intValue];
+    int playersRegistered = [self.eventObject[@"playersRegistered"]intValue];
+    
+    playersNeeded--;
+    playersRegistered++;
+    
+    self.eventObject[@"playersNeeded"] = [NSString stringWithFormat:@"%d", playersNeeded];
+    self.eventObject[@"playersRegistered"] = [NSString stringWithFormat:@"%d", playersRegistered];
+    [self.eventObject saveInBackground];
     
     [self performSegueWithIdentifier:@"myGamesSegueID" sender:self];
 }
