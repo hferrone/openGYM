@@ -53,7 +53,7 @@
          for (PFObject *object in self.storedEvents)
          {
              NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-             [dateFormatter setDateFormat:@"YYYY-MM-dd"];
+             [dateFormatter setDateFormat:@"YYYY-MM-dd, h:mm"];
              NSDate *startingDate = [dateFormatter dateFromString:object[@"dateComparison"]];
              NSDate *endingDate = [NSDate date];
              
@@ -67,8 +67,6 @@
              
              NSString *countdownText = [NSString stringWithFormat:@"%ld Days %ld Hours %ld Minutes", (long)days, (long)hours, (long)minutes];
              NSLog(@"%@", countdownText);
-             
-             //[self performSelector:@selector(updateCountdown) withObject:nil afterDelay:1];
          }
          
          [self.tableView reloadData];

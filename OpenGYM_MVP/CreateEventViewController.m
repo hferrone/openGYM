@@ -73,7 +73,7 @@
     self.dateString = [dateFormat stringFromDate:self.datePicker.date];
     
     NSDateFormatter *dateAndTimeFormat = [[NSDateFormatter alloc] init];
-    [dateAndTimeFormat setDateFormat:@"EEEE YYYY-MM-dd"];
+    [dateAndTimeFormat setDateFormat:@"YYYY-MM-dd, h:mm"];
     [dateAndTimeFormat setLocale:[NSLocale currentLocale]];
     self.dateAndTimeComparisonString = [dateAndTimeFormat stringFromDate:self.datePicker.date];
     
