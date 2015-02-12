@@ -52,19 +52,23 @@
          
          for (PFObject *object in self.storedEvents)
          {
-             NSDate *currentDate = [NSDate date];
+             NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+             [dateFormatter setDateFormat:@"YYYY-MM-dd"];
+             NSDate *startingDate = [dateFormatter dateFromString:object[@"dateComparison"]];
+             NSDate *endingDate = [NSDate date];
              
-             NSDateFormatter *dateAndTimeFormat = [[NSDateFormatter alloc] init];
-             [dateAndTimeFormat setDateFormat:@"EEEE MMMM d, YYYY h:mm a, zzz"];
-             [dateAndTimeFormat setLocale:[NSLocale currentLocale]];
-             NSDate *eventDate = [dateAndTimeFormat dateFromString:object[@"NSDate"]];
-             NSLog(@"Event Date: %@", eventDate);
+             NSCalendar *calendar = [NSCalendar currentCalendar];
+             NSUInteger unitFlags = NSCalendarUnitDay|NSCalendarUnitHour|NSCalendarUnitMinute;
+             NSDateComponents *dateComponents = [calendar components:unitFlags fromDate:endingDate toDate:startingDate options:0];
              
-             NSCalendar *sysCalendar = [NSCalendar currentCalendar];
-             unsigned int unitFlags = NSCalendarUnitHour;
-             NSDateComponents *breakdownInfo = [sysCalendar components:unitFlags fromDate:currentDate  toDate:eventDate options:0];
-             int hours = [breakdownInfo hour];
-             NSLog(@"Hours %d", hours);
+             NSInteger days     = [dateComponents day];
+             NSInteger hours    = [dateComponents hour];
+             NSInteger minutes  = [dateComponents minute];
+             
+             NSString *countdownText = [NSString stringWithFormat:@"%ld Days %ld Hours %ld Minutes", (long)days, (long)hours, (long)minutes];
+             NSLog(@"%@", countdownText);
+             
+             //[self performSelector:@selector(updateCountdown) withObject:nil afterDelay:1];
          }
          
          [self.tableView reloadData];
