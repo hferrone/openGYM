@@ -26,6 +26,8 @@
 @property NSString *timeString;
 @property NSString *eventGender;
 
+@property NSDate *eventDate;
+
 @end
 
 @implementation CreateEventViewController
@@ -61,17 +63,21 @@
     //time formatter
     NSDateFormatter *timeFormat = [[NSDateFormatter alloc] init];
     [timeFormat setDateFormat:@"h:mm a, zzz"];
+    [timeFormat setLocale:[NSLocale currentLocale]];
     self.timeString = [timeFormat stringFromDate:self.datePicker.date];
-    
+
     //date formatter
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
     [dateFormat setDateFormat:@"EEEE MMMM d, YYYY"];
+    [dateFormat setLocale:[NSLocale currentLocale]];
     self.dateString = [dateFormat stringFromDate:self.datePicker.date];
     
-    //date and time comparison formatter
-    self.dateAndTimeComparisonString = [NSString stringWithFormat:@"%@", self.datePicker.date];
+    NSDateFormatter *dateAndTimeFormat = [[NSDateFormatter alloc] init];
+    [dateAndTimeFormat setDateFormat:@"EEEE MMMM d, YYYY h:mm a, zzz"];
+    [dateAndTimeFormat setLocale:[NSLocale currentLocale]];
+    self.dateAndTimeComparisonString = [dateAndTimeFormat stringFromDate:self.datePicker.date];
     
-    self.dateTimeTextField.text = [NSString stringWithFormat:@"%@ - %@", self.dateString, self.timeString];
+    self.dateTimeTextField.text = self.dateAndTimeComparisonString;
     
     [UIView animateWithDuration:0.3 animations:^{
         self.datePickerOverlayView.frame = CGRectMake(600, 600, 5, 5);

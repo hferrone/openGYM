@@ -49,6 +49,24 @@
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
      {
          self.storedEvents = [[NSArray alloc] initWithArray:objects];
+         
+         for (PFObject *object in self.storedEvents)
+         {
+             NSDate *currentDate = [NSDate date];
+             
+             NSDateFormatter *dateAndTimeFormat = [[NSDateFormatter alloc] init];
+             [dateAndTimeFormat setDateFormat:@"EEEE MMMM d, YYYY h:mm a, zzz"];
+             [dateAndTimeFormat setLocale:[NSLocale currentLocale]];
+             NSDate *eventDate = [dateAndTimeFormat dateFromString:object[@"NSDate"]];
+             NSLog(@"Event Date: %@", eventDate);
+             
+             NSCalendar *sysCalendar = [NSCalendar currentCalendar];
+             unsigned int unitFlags = NSCalendarUnitHour;
+             NSDateComponents *breakdownInfo = [sysCalendar components:unitFlags fromDate:currentDate  toDate:eventDate options:0];
+             int hours = [breakdownInfo hour];
+             NSLog(@"Hours %d", hours);
+         }
+         
          [self.tableView reloadData];
      }];
 }
