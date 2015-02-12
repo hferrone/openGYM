@@ -25,6 +25,8 @@
 @property (weak, nonatomic) IBOutlet UIImageView *eventDetailPictureView;
 @property (weak, nonatomic) IBOutlet UIView *photoEventPopoverView;
 
+
+
 @property UIImage *eventDetailPicture;
 
 @end
@@ -45,11 +47,6 @@
     
     self.joinEventButton.layer.borderColor = [UIColor whiteColor].CGColor;
     self.joinEventButton.layer.borderWidth = 1;
-    
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSData *imageData = [defaults dataForKey:@"eventPic"];
-    UIImage *eventPic = [UIImage imageWithData:imageData];
-    self.eventDetailPictureView.image = eventPic;
 }
 
 -(BOOL)prefersStatusBarHidden
@@ -60,7 +57,7 @@
 - (IBAction)choosePhotoOnButtonTapped:(UIButton *)sender
 {
     [UIView animateWithDuration:0.3 animations:^{
-        self.photoEventPopoverView.frame = CGRectMake(self.view.frame.origin.x + 100, self.view.frame.origin.y + 150, self.photoEventPopoverView.frame.size.width, self.photoEventPopoverView.frame.size.height);
+        self.photoEventPopoverView.frame = CGRectMake(self.view.frame.origin.x + 100, self.view.frame.origin.y + 125, self.photoEventPopoverView.frame.size.width, self.photoEventPopoverView.frame.size.height);
     }];
 }
 
@@ -76,7 +73,7 @@
     [self presentViewController:self.imagePickerController animated:YES completion:nil];
 }
 
-- (IBAction)selectPhotoFromCamera:(UIButton *)sender
+- (IBAction)selectPhotoFromCamer:(UIButton *)sender
 {
     [UIView animateWithDuration:0.3 animations:^{
         self.photoEventPopoverView.frame = CGRectMake(600, 600, 5, 5);
@@ -94,9 +91,15 @@
     [self.eventDetailPictureView setImage:self.eventDetailPicture];
     
     NSData *savedEventPicture = UIImageJPEGRepresentation(self.eventDetailPicture, 10);
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:savedEventPicture forKey:@"profilePic"];
-    [defaults synchronize];
+    PFFile *imageFile = [PFFile fileWithData:savedEventPicture];
+    [imageFile saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
+    {
+        if(!error)
+        {
+            self.eventObject[@"eventImage"] = imageFile;
+            [self.eventObject saveInBackground];
+        }
+    }];
     
     [self dismissViewControllerAnimated:YES completion:nil];
 }
@@ -124,6 +127,13 @@
     [self.eventObject saveInBackground];
     
     [self performSegueWithIdentifier:@"myGamesSegueID" sender:self];
+}
+
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [UIView animateWithDuration:0.3 animations:^{
+        self.photoEventPopoverView.frame = CGRectMake(600, 600, 5, 5);
+    }];
 }
 
 @end

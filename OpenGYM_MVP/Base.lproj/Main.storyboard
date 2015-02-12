@@ -1495,20 +1495,52 @@
                                     <action selector="choosePhotoOnButtonTapped:" destination="M5l-Ap-MnT" eventType="touchUpInside" id="njq-EV-kJ2"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rKx-zB-qbp">
-                                <rect key="frame" x="1000" y="91" width="181" height="117"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mrt-WZ-7Xf">
+                                <rect key="frame" x="1000" y="89" width="186" height="121"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6pD-V4-Xba">
+                                        <rect key="frame" x="47" y="27" width="93" height="30"/>
+                                        <state key="normal" title="Photo Library">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="selectImageFromPhotoLibrary:" destination="6ae-tn-5Kd" eventType="touchUpInside" id="jyV-10-svD"/>
+                                            <action selector="selectPhotoFromLibrary:" destination="M5l-Ap-MnT" eventType="touchUpInside" id="mjD-4t-fw9"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TEk-MD-TwH">
+                                        <rect key="frame" x="66" y="65" width="54" height="30"/>
+                                        <state key="normal" title="Camera">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="selectImageFromCamera:" destination="6ae-tn-5Kd" eventType="touchUpInside" id="6Wv-Mr-V4O"/>
+                                            <action selector="selectPhotoFromCamer:" destination="M5l-Ap-MnT" eventType="touchUpInside" id="fKc-jZ-EEp"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="6pD-V4-Xba" firstAttribute="centerX" secondItem="Mrt-WZ-7Xf" secondAttribute="centerX" id="Ml5-61-1v0"/>
+                                    <constraint firstItem="6pD-V4-Xba" firstAttribute="top" secondItem="Mrt-WZ-7Xf" secondAttribute="top" constant="27" id="Mm7-GU-1xj"/>
+                                    <constraint firstAttribute="bottom" secondItem="TEk-MD-TwH" secondAttribute="bottom" constant="26" id="Shw-Cm-bXc"/>
+                                    <constraint firstItem="6pD-V4-Xba" firstAttribute="centerX" secondItem="TEk-MD-TwH" secondAttribute="centerX" id="bHp-UL-9sL"/>
+                                    <constraint firstItem="6pD-V4-Xba" firstAttribute="leading" secondItem="Mrt-WZ-7Xf" secondAttribute="leading" constant="47" id="mjD-SJ-itE"/>
+                                    <constraint firstItem="TEk-MD-TwH" firstAttribute="top" secondItem="6pD-V4-Xba" secondAttribute="bottom" constant="8" symbolic="YES" id="qoN-1m-yKq"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.08907435507" green="0.16773200760000001" blue="0.13807731509999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="aiH-9x-3yp" firstAttribute="centerX" secondItem="Tq3-wa-5X9" secondAttribute="centerX" id="0D4-zC-NXG"/>
+                            <constraint firstItem="aiH-9x-3yp" firstAttribute="top" secondItem="Mrt-WZ-7Xf" secondAttribute="bottom" constant="16" id="3Mw-8D-U5Z"/>
                             <constraint firstItem="kuc-k2-Yv7" firstAttribute="top" secondItem="Apa-u8-gBL" secondAttribute="bottom" id="6Ea-xA-MAF"/>
                             <constraint firstItem="Tq3-wa-5X9" firstAttribute="top" secondItem="aiH-9x-3yp" secondAttribute="bottom" constant="8" symbolic="YES" id="7TB-lV-OXy"/>
                             <constraint firstItem="eRN-ER-Rbu" firstAttribute="centerX" secondItem="Jbl-2N-rem" secondAttribute="centerX" id="8I4-O0-qkB"/>
                             <constraint firstItem="eRN-ER-Rbu" firstAttribute="trailing" secondItem="Tq3-wa-5X9" secondAttribute="trailing" id="99m-bf-R7c"/>
                             <constraint firstItem="Apa-u8-gBL" firstAttribute="trailing" secondItem="kuc-k2-Yv7" secondAttribute="trailing" id="AIi-CT-Vmu"/>
                             <constraint firstItem="7QR-sc-yiQ" firstAttribute="top" secondItem="v4c-cg-Oeh" secondAttribute="bottom" constant="8" symbolic="YES" id="Ay0-wr-vWS"/>
+                            <constraint firstItem="Mrt-WZ-7Xf" firstAttribute="centerX" secondItem="aiH-9x-3yp" secondAttribute="centerX" constant="793" id="DIk-9e-ogj"/>
                             <constraint firstItem="Apa-u8-gBL" firstAttribute="top" secondItem="E7U-XM-FBW" secondAttribute="top" id="EEv-h8-VaH"/>
                             <constraint firstItem="v4c-cg-Oeh" firstAttribute="firstBaseline" secondItem="lfS-Et-OCX" secondAttribute="firstBaseline" id="EvD-hI-X7W"/>
                             <constraint firstAttribute="trailingMargin" secondItem="4cB-xJ-qWm" secondAttribute="trailing" constant="14" id="FMB-aI-9KY"/>
@@ -1518,22 +1550,18 @@
                             <constraint firstItem="lfS-Et-OCX" firstAttribute="baseline" secondItem="v4c-cg-Oeh" secondAttribute="baseline" id="Kuu-G4-WRS"/>
                             <constraint firstItem="v4c-cg-Oeh" firstAttribute="leading" secondItem="E7U-XM-FBW" secondAttribute="leadingMargin" constant="7" id="Nh4-dd-vRX"/>
                             <constraint firstAttribute="trailing" secondItem="Apa-u8-gBL" secondAttribute="trailing" id="Ntl-5O-QeI"/>
-                            <constraint firstItem="rKx-zB-qbp" firstAttribute="top" secondItem="E7U-XM-FBW" secondAttribute="topMargin" constant="91" id="QVq-dY-srm"/>
                             <constraint firstItem="v4c-cg-Oeh" firstAttribute="top" secondItem="T0Z-3N-uaM" secondAttribute="bottom" constant="8" symbolic="YES" id="SNd-GW-evV"/>
                             <constraint firstItem="4cB-xJ-qWm" firstAttribute="top" secondItem="T0Z-3N-uaM" secondAttribute="top" id="SfT-yV-jBe"/>
                             <constraint firstAttribute="trailingMargin" secondItem="lfS-Et-OCX" secondAttribute="trailing" constant="7" id="TLe-Dh-oq0"/>
                             <constraint firstAttribute="bottom" secondItem="7QR-sc-yiQ" secondAttribute="bottom" constant="20" symbolic="YES" id="Ubg-eK-c6H"/>
                             <constraint firstItem="mLN-nh-sar" firstAttribute="centerX" secondItem="4cB-xJ-qWm" secondAttribute="centerX" id="VgL-Ds-HQW"/>
                             <constraint firstItem="Tq3-wa-5X9" firstAttribute="top" secondItem="kuc-k2-Yv7" secondAttribute="bottom" constant="8" symbolic="YES" id="WH2-22-eby"/>
-                            <constraint firstAttribute="bottom" secondItem="rKx-zB-qbp" secondAttribute="bottom" constant="392" id="X2j-Df-IqB"/>
                             <constraint firstItem="7QR-sc-yiQ" firstAttribute="leading" secondItem="E7U-XM-FBW" secondAttribute="leadingMargin" id="Y4I-JC-NNp"/>
                             <constraint firstItem="7QR-sc-yiQ" firstAttribute="centerX" secondItem="Jbl-2N-rem" secondAttribute="centerX" id="bK8-Gj-bx5"/>
                             <constraint firstItem="mLN-nh-sar" firstAttribute="baseline" secondItem="CJx-Qa-7zZ" secondAttribute="baseline" id="bvN-CS-OWO"/>
                             <constraint firstItem="eRN-ER-Rbu" firstAttribute="centerY" secondItem="E7U-XM-FBW" secondAttribute="centerY" id="c2J-FC-2ji"/>
-                            <constraint firstAttribute="trailing" secondItem="rKx-zB-qbp" secondAttribute="trailing" constant="-581" id="cmV-vX-zhq"/>
                             <constraint firstItem="v4c-cg-Oeh" firstAttribute="top" secondItem="CJx-Qa-7zZ" secondAttribute="bottom" constant="16" id="eIV-Ae-MYJ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="mLN-nh-sar" secondAttribute="trailing" constant="25" id="eaK-M8-AcA"/>
-                            <constraint firstItem="rKx-zB-qbp" firstAttribute="leading" secondItem="E7U-XM-FBW" secondAttribute="leading" constant="1000" id="gVV-xB-iam"/>
                             <constraint firstItem="CJx-Qa-7zZ" firstAttribute="centerX" secondItem="T0Z-3N-uaM" secondAttribute="centerX" id="gaO-7V-z9e"/>
                             <constraint firstItem="T0Z-3N-uaM" firstAttribute="top" secondItem="kuc-k2-Yv7" secondAttribute="bottom" constant="58" id="hEM-PG-9uL"/>
                             <constraint firstItem="mLN-nh-sar" firstAttribute="firstBaseline" secondItem="CJx-Qa-7zZ" secondAttribute="firstBaseline" id="meG-kx-J1j"/>
@@ -1557,7 +1585,7 @@
                         <outlet property="eventDetailTitle" destination="ikL-ok-YBm" id="N1m-w0-WzH"/>
                         <outlet property="joinEventButton" destination="Jbl-2N-rem" id="Ghn-TB-Qjk"/>
                         <outlet property="locationLabel" destination="Tq3-wa-5X9" id="aPd-Pr-kNk"/>
-                        <outlet property="photoEventPopoverView" destination="rKx-zB-qbp" id="ccX-1H-ZNu"/>
+                        <outlet property="photoEventPopoverView" destination="Mrt-WZ-7Xf" id="yOu-Rq-KFD"/>
                         <outlet property="remainingPlayersLabel" destination="mLN-nh-sar" id="ltc-En-j8t"/>
                         <outlet property="timeDateLabel" destination="eRN-ER-Rbu" id="Ywd-ql-xBO"/>
                     </connections>
