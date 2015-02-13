@@ -25,6 +25,8 @@
 
 @property UIImage *eventDetailPicture;
 
+@property BOOL userAlreadyRegistered;
+
 @end
 
 @implementation EventDetailViewController
@@ -52,26 +54,55 @@
 
 - (IBAction)joinEventOnButtonTapped:(UIButton *)sender
 {
-    PFObject *user = [PFUser currentUser];
-    PFRelation *relation = [user relationForKey:@"myGames"];
-    [relation addObject:self.eventObject];
-    [user saveInBackground];
+    //set bool to false by default
+    self.userAlreadyRegistered = false;
     
-    PFRelation *relation2 = [self.eventObject relationForKey:@"usersRegistered"];
-    [relation2 addObject:user];
-    [self.eventObject saveInBackground];
+    //set up current user and PFRelation
+    PFUser *user = [PFUser currentUser];
+    PFRelation *usersToEvents = [self.eventObject relationForKey:@"usersRegistered"];
     
-    int playersNeeded = [self.eventObject[@"playersNeeded"] intValue];
-    int playersRegistered = [self.eventObject[@"playersRegistered"]intValue];
+    //check if current user is already registered for the selected event
+    PFQuery *userQuery = [usersToEvents query];
+    [userQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
+    {
+        for (PFUser *usersRegistered in objects)
+        {
+            if ([usersRegistered.username isEqualToString:user.username])
+            {
+                self.userAlreadyRegistered = true;
+                NSLog(@"You're already registered!");
+            }
+        }
+    }];
     
-    playersNeeded--;
-    playersRegistered++;
-    
-    self.eventObject[@"playersNeeded"] = [NSString stringWithFormat:@"%d", playersNeeded];
-    self.eventObject[@"playersRegistered"] = [NSString stringWithFormat:@"%d", playersRegistered];
-    [self.eventObject saveInBackground];
-    
-    [self performSegueWithIdentifier:@"myGamesSegueID" sender:self];
+    //if user is not registered, add user to selected event and event to current user
+    if (!self.userAlreadyRegistered)
+    {
+        int playersNeeded = [self.eventObject[@"playersNeeded"] intValue];
+        int playersRegistered = [self.eventObject[@"playersRegistered"]intValue];
+        
+        if (playersNeeded > 0)
+        {
+            playersNeeded--;
+            playersRegistered++;
+            
+            self.eventObject[@"playersNeeded"] = [NSString stringWithFormat:@"%d", playersNeeded];
+            self.eventObject[@"playersRegistered"] = [NSString stringWithFormat:@"%d", playersRegistered];
+            [self.eventObject saveInBackground];
+        }
+        else{
+            NSLog(@"Event is full");
+        }
+        
+        PFRelation *eventsToUsers = [user relationForKey:@"myGames"];
+        [eventsToUsers addObject:self.eventObject];
+        [user saveInBackground];
+        
+        [usersToEvents addObject:user];
+        [self.eventObject saveInBackground];
+        
+        [self performSegueWithIdentifier:@"myGamesSegueID" sender:self];
+    }
 }
 
 @end
