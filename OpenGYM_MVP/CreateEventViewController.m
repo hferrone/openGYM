@@ -156,27 +156,27 @@
 - (IBAction)createEventOnButtonTapped:(UIButton *)sender
 {
     PFObject *event = [PFObject objectWithClassName:@"Event"];
+    event[@"sport"] = self.sportTextField.text;
+    event[@"title"] = self.titleTextField.text;
+    event[@"location"] = self.locationTextField.text;
+    event[@"dateComparison"] = self.dateAndTimeComparisonString;
+    event[@"date"] = self.dateString;
+    event[@"time"] = self.timeString;
+    event[@"description"] = self.descriptionTextField.text;
+    event[@"playersNeeded"] = self.numberOfPlayersLabel.text;
+    event[@"playersRegistered"] = @"1";
+    event[@"gender"] = self.eventGender;
+    [event saveInBackground];
     
-    NSData *savedEventPicture = UIImageJPEGRepresentation(self.eventDetailPicture, 10);
-    PFFile *imageFile = [PFFile fileWithData:savedEventPicture];
-    [imageFile saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
-     {
-         if(!error)
-         {
-             event[@"eventImage"] = imageFile;
-             event[@"sport"] = self.sportTextField.text;
-             event[@"title"] = self.titleTextField.text;
-             event[@"location"] = self.locationTextField.text;
-             event[@"dateComparison"] = self.dateAndTimeComparisonString;
-             event[@"date"] = self.dateString;
-             event[@"time"] = self.timeString;
-             event[@"description"] = self.descriptionTextField.text;
-             event[@"playersNeeded"] = self.numberOfPlayersLabel.text;
-             event[@"playersRegistered"] = @"1";
-             event[@"gender"] = self.eventGender;
-             [event saveInBackground];
-         }
-     }];
+//    NSData *savedEventPicture = UIImageJPEGRepresentation(self.eventDetailPicture, 10);
+//    PFFile *imageFile = [PFFile fileWithData:savedEventPicture];
+//    [imageFile saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
+//     {
+//         if(!error)
+//         {
+//             event[@"eventImage"] = imageFile;
+//         }
+//     }];
     
     [self performSegueWithIdentifier:@"mapSegueID" sender:self];
     
