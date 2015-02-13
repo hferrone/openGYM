@@ -1389,7 +1389,7 @@
                                         <barButtonItem key="leftBarButtonItem" systemItem="rewind" id="CIa-ZO-ZJj">
                                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <connections>
-                                                <segue destination="sF1-ce-JCv" kind="show" id="Yrc-nS-ZnK"/>
+                                                <segue destination="sF1-ce-JCv" kind="show" identifier="" id="Yrc-nS-ZnK"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -1442,7 +1442,6 @@
                                 </state>
                                 <connections>
                                     <action selector="joinEventOnButtonTapped:" destination="M5l-Ap-MnT" eventType="touchUpInside" id="y3I-dv-uwN"/>
-                                    <segue destination="9Af-6I-8Nu" kind="show" identifier="myGamesSegueID" id="rxg-iN-mfG"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tq3-wa-5X9">
@@ -1534,6 +1533,8 @@
                         <outlet property="locationLabel" destination="Tq3-wa-5X9" id="aPd-Pr-kNk"/>
                         <outlet property="remainingPlayersLabel" destination="mLN-nh-sar" id="ltc-En-j8t"/>
                         <outlet property="timeDateLabel" destination="eRN-ER-Rbu" id="Ywd-ql-xBO"/>
+                        <segue destination="sF1-ce-JCv" kind="show" identifier="backToMapSegueID" id="gkT-qd-aiE"/>
+                        <segue destination="9Af-6I-8Nu" kind="show" identifier="myGamesSegueID" id="sLv-ZE-4ZR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Yk-JM-ioi" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2309,12 +2310,12 @@
         <image name="weblogo" width="980" height="230"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="8Qw-1r-dRP"/>
-        <segue reference="2bN-4P-yvE"/>
-        <segue reference="Os5-jC-VHH"/>
-        <segue reference="yUP-Dp-JRA"/>
+        <segue reference="Yrc-nS-ZnK"/>
         <segue reference="PaF-Jh-wvj"/>
-        <segue reference="rxg-iN-mfG"/>
-        <segue reference="jcd-kU-yhC"/>
+        <segue reference="sLv-ZE-4ZR"/>
+        <segue reference="sog-iJ-UoY"/>
+        <segue reference="2bN-4P-yvE"/>
+        <segue reference="8Qw-1r-dRP"/>
+        <segue reference="yUP-Dp-JRA"/>
     </inferredMetricsTieBreakers>
 </document>

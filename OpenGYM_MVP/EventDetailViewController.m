@@ -9,7 +9,7 @@
 #import "EventDetailViewController.h"
 #import "MyGamesViewController.h"
 
-@interface EventDetailViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface EventDetailViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIAlertViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UINavigationItem *eventDetailTitle;
 
@@ -70,7 +70,10 @@
             if ([usersRegistered.username isEqualToString:user.username])
             {
                 self.userAlreadyRegistered = true;
-                NSLog(@"You're already registered!");
+                
+                UIAlertView *userAlreadyRegisteredAlert = [[UIAlertView alloc] initWithTitle:@"Stop!!!" message:@"You're already registered for this event." delegate:self cancelButtonTitle:@"Back To Map" otherButtonTitles:nil];
+                userAlreadyRegisteredAlert.tag = 1;
+                [userAlreadyRegisteredAlert show];
             }
         }
     }];
@@ -89,19 +92,34 @@
             self.eventObject[@"playersNeeded"] = [NSString stringWithFormat:@"%d", playersNeeded];
             self.eventObject[@"playersRegistered"] = [NSString stringWithFormat:@"%d", playersRegistered];
             [self.eventObject saveInBackground];
+            
+            PFRelation *eventsToUsers = [user relationForKey:@"myGames"];
+            [eventsToUsers addObject:self.eventObject];
+            [user saveInBackground];
+            
+            [usersToEvents addObject:user];
+            [self.eventObject saveInBackground];
+            
+            [self performSegueWithIdentifier:@"myGamesSegueID" sender:self];
         }
-        else{
-            NSLog(@"Event is full");
+        else
+        {
+            UIAlertView *eventFullAlert = [[UIAlertView alloc] initWithTitle:@"Sorry..." message:@"This event is already full." delegate:self cancelButtonTitle:@"Back To Map" otherButtonTitles:nil];
+            eventFullAlert.tag = 2;
+            [eventFullAlert show];
         }
-        
-        PFRelation *eventsToUsers = [user relationForKey:@"myGames"];
-        [eventsToUsers addObject:self.eventObject];
-        [user saveInBackground];
-        
-        [usersToEvents addObject:user];
-        [self.eventObject saveInBackground];
-        
-        [self performSegueWithIdentifier:@"myGamesSegueID" sender:self];
+    }
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (alertView.tag == 1 && buttonIndex == alertView.cancelButtonIndex)
+    {
+        [self performSegueWithIdentifier:@"backToMapSegueID" sender:self];
+    }
+    else if(alertView.tag == 2 && buttonIndex == alertView.cancelButtonIndex)
+    {
+        [self performSegueWithIdentifier:@"backToMapSegueID" sender:self];
     }
 }
 
