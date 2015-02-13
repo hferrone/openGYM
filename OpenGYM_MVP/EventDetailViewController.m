@@ -21,11 +21,7 @@
 @property NSMutableArray *myGamesArray;
 @property (weak, nonatomic) IBOutlet UIButton *joinEventButton;
 @property (weak, nonatomic) IBOutlet UITextView *eventDescription;
-@property (strong, nonatomic) UIImagePickerController *imagePickerController;
 @property (weak, nonatomic) IBOutlet UIImageView *eventDetailPictureView;
-@property (weak, nonatomic) IBOutlet UIView *photoEventPopoverView;
-
-
 
 @property UIImage *eventDetailPicture;
 
@@ -54,61 +50,6 @@
     return YES;
 }
 
-- (IBAction)choosePhotoOnButtonTapped:(UIButton *)sender
-{
-    [UIView animateWithDuration:0.3 animations:^{
-        self.photoEventPopoverView.frame = CGRectMake(self.view.frame.origin.x + 100, self.view.frame.origin.y + 125, self.photoEventPopoverView.frame.size.width, self.photoEventPopoverView.frame.size.height);
-    }];
-}
-
-- (IBAction)selectPhotoFromLibrary:(UIButton *)sender
-{
-    [UIView animateWithDuration:0.3 animations:^{
-        self.photoEventPopoverView.frame = CGRectMake(600, 600, 5, 5);
-    }];
-    
-    self.imagePickerController = [UIImagePickerController new];
-    self.imagePickerController.delegate = self;
-    [self.imagePickerController setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
-    [self presentViewController:self.imagePickerController animated:YES completion:nil];
-}
-
-- (IBAction)selectPhotoFromCamer:(UIButton *)sender
-{
-    [UIView animateWithDuration:0.3 animations:^{
-        self.photoEventPopoverView.frame = CGRectMake(600, 600, 5, 5);
-    }];
-    
-    self.imagePickerController = [UIImagePickerController new];
-    self.imagePickerController.delegate = self;
-    [self.imagePickerController setSourceType:UIImagePickerControllerSourceTypeCamera];
-    [self presentViewController:self.imagePickerController animated:YES completion:nil];
-}
-
--(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
-{
-    self.eventDetailPicture = info[UIImagePickerControllerOriginalImage];
-    [self.eventDetailPictureView setImage:self.eventDetailPicture];
-    
-    NSData *savedEventPicture = UIImageJPEGRepresentation(self.eventDetailPicture, 10);
-    PFFile *imageFile = [PFFile fileWithData:savedEventPicture];
-    [imageFile saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
-    {
-        if(!error)
-        {
-            self.eventObject[@"eventImage"] = imageFile;
-            [self.eventObject saveInBackground];
-        }
-    }];
-    
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
--(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
-{
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
 - (IBAction)joinEventOnButtonTapped:(UIButton *)sender
 {
     PFObject *user = [PFUser currentUser];
@@ -127,13 +68,6 @@
     [self.eventObject saveInBackground];
     
     [self performSegueWithIdentifier:@"myGamesSegueID" sender:self];
-}
-
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
-{
-    [UIView animateWithDuration:0.3 animations:^{
-        self.photoEventPopoverView.frame = CGRectMake(600, 600, 5, 5);
-    }];
 }
 
 @end

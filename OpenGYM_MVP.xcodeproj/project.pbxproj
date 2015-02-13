@@ -34,6 +34,7 @@
 		4A18D6E91A6AD3B000842E19 /* MyGamesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A18D6E81A6AD3B000842E19 /* MyGamesViewController.m */; };
 		4A1A08DE1A69FB2E0096FDF1 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A1A08DD1A69FB2E0096FDF1 /* ProfileViewController.m */; };
 		4A1A620F1A76D93A00DA3326 /* CustomGamesFeedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A1A620E1A76D93A00DA3326 /* CustomGamesFeedTableViewCell.m */; };
+		4A2098561A8D8A58007EEB59 /* ChooseEventPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A2098551A8D8A58007EEB59 /* ChooseEventPictureViewController.m */; };
 		4A254C711A76FD6000709625 /* weblogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A254C701A76FD6000709625 /* weblogo.png */; };
 		4A2C3CD21A6306C70069BED1 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A2C3CD11A6306C70069BED1 /* MapKit.framework */; };
 		4A3B729F1A5F86E900D893E6 /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A3B729C1A5F86E900D893E6 /* TwitterKit.framework */; };
@@ -109,6 +110,8 @@
 		4A1A08DD1A69FB2E0096FDF1 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		4A1A620D1A76D93A00DA3326 /* CustomGamesFeedTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomGamesFeedTableViewCell.h; sourceTree = "<group>"; };
 		4A1A620E1A76D93A00DA3326 /* CustomGamesFeedTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomGamesFeedTableViewCell.m; sourceTree = "<group>"; };
+		4A2098541A8D8A58007EEB59 /* ChooseEventPictureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseEventPictureViewController.h; sourceTree = "<group>"; };
+		4A2098551A8D8A58007EEB59 /* ChooseEventPictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseEventPictureViewController.m; sourceTree = "<group>"; };
 		4A254C701A76FD6000709625 /* weblogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weblogo.png; sourceTree = "<group>"; };
 		4A2C3CD11A6306C70069BED1 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		4A3B729C1A5F86E900D893E6 /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TwitterKit.framework; path = OpenGYM_MVP/TwitterKit.framework; sourceTree = "<group>"; };
@@ -306,6 +309,8 @@
 				4AC2802A1A64508900092C0B /* MainMapViewController.m */,
 				4AACB0111A647AF7005F4331 /* CreateEventViewController.h */,
 				4AACB0121A647AF7005F4331 /* CreateEventViewController.m */,
+				4A2098541A8D8A58007EEB59 /* ChooseEventPictureViewController.h */,
+				4A2098551A8D8A58007EEB59 /* ChooseEventPictureViewController.m */,
 				4A3F146F1A6ECD77007C1BAB /* MapAnnotationDetailViewController.h */,
 				4A3F14701A6ECD77007C1BAB /* MapAnnotationDetailViewController.m */,
 				4AD7827F1A69F423001C8774 /* RevealViewController.h */,
@@ -624,6 +629,7 @@
 				4AEF2C481A81F2CB00D66357 /* IntroScreen3ViewController.m in Sources */,
 				4AD7827E1A69F375001C8774 /* SWRevealViewController.m in Sources */,
 				4A18D6E91A6AD3B000842E19 /* MyGamesViewController.m in Sources */,
+				4A2098561A8D8A58007EEB59 /* ChooseEventPictureViewController.m in Sources */,
 				4A3F14711A6ECD77007C1BAB /* MapAnnotationDetailViewController.m in Sources */,
 				4A1073BA1A5C5CC90089F080 /* RegistrationViewController.m in Sources */,
 				4A1A08DE1A69FB2E0096FDF1 /* ProfileViewController.m in Sources */,

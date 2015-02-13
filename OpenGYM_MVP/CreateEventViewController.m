@@ -8,7 +8,7 @@
 
 #import "CreateEventViewController.h"
 
-@interface CreateEventViewController ()
+@interface CreateEventViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *sportTextField;
 @property (weak, nonatomic) IBOutlet UITextField *locationTextField;
@@ -25,8 +25,12 @@
 @property NSString *dateString;
 @property NSString *timeString;
 @property NSString *eventGender;
+@property (weak, nonatomic) IBOutlet UIView *photoEventPopoverView;
 
 @property NSDate *eventDate;
+
+@property (strong, nonatomic) UIImagePickerController *imagePickerController;
+@property UIImage *eventDetailPicture;
 
 @end
 
@@ -35,17 +39,46 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    self.sportTextField.text = nil;
-    self.titleTextField.text = nil;
-    self.locationTextField.text = nil;
-    self.dateTimeTextField.text = nil;
-    self.descriptionTextField.text = nil;
 }
 
 -(BOOL)prefersStatusBarHidden
 {
     return true;
+}
+- (IBAction)chooseEventPhotoOnButtonTapped:(UIButton *)sender
+{
+    [UIView animateWithDuration:0.3 animations:^{
+        self.photoEventPopoverView.frame = CGRectMake(self.view.frame.origin.x + 100, self.view.frame.origin.y + 125, self.photoEventPopoverView.frame.size.width, self.photoEventPopoverView.frame.size.height);
+    }];
+}
+- (IBAction)selectPhotoFromLibrary:(UIButton *)sender
+{
+    self.imagePickerController = [UIImagePickerController new];
+    self.imagePickerController.delegate = self;
+    [self.imagePickerController setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+    [self presentViewController:self.imagePickerController animated:YES completion:nil];
+}
+- (IBAction)selectPhotoFromCamera:(UIButton *)sender
+{
+    [UIView animateWithDuration:0.3 animations:^{
+        self.photoEventPopoverView.frame = CGRectMake(600, 600, 5, 5);
+    }];
+    
+    self.imagePickerController = [UIImagePickerController new];
+    self.imagePickerController.delegate = self;
+    [self.imagePickerController setSourceType:UIImagePickerControllerSourceTypeCamera];
+    [self presentViewController:self.imagePickerController animated:YES completion:nil];
+}
+
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    self.eventDetailPicture = info[UIImagePickerControllerOriginalImage];
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)pickDateAndTimeOnButtonTapped:(UIButton *)sender
@@ -76,9 +109,6 @@
     [dateAndTimeFormat setDateFormat:@"YYYY-MM-dd, h:mm"];
     [dateAndTimeFormat setLocale:[NSLocale currentLocale]];
     self.dateAndTimeComparisonString = [dateAndTimeFormat stringFromDate:self.datePicker.date];
-    
-//    NSDate *eventDate = self.datePicker.date;
-//    NSLog(@"%@", eventDate);
     
     self.dateTimeTextField.text = self.dateAndTimeComparisonString;
     
@@ -126,19 +156,42 @@
 - (IBAction)createEventOnButtonTapped:(UIButton *)sender
 {
     PFObject *event = [PFObject objectWithClassName:@"Event"];
-    event[@"sport"] = self.sportTextField.text;
-    event[@"title"] = self.titleTextField.text;
-    event[@"location"] = self.locationTextField.text;
-    event[@"dateComparison"] = self.dateAndTimeComparisonString;
-    event[@"date"] = self.dateString;
-    event[@"time"] = self.timeString;
-    event[@"description"] = self.descriptionTextField.text;
-    event[@"playersNeeded"] = self.numberOfPlayersLabel.text;
-    event[@"playersRegistered"] = @"1";
-    event[@"gender"] = self.eventGender;
-    [event saveInBackground];
+    
+    NSData *savedEventPicture = UIImageJPEGRepresentation(self.eventDetailPicture, 10);
+    PFFile *imageFile = [PFFile fileWithData:savedEventPicture];
+    [imageFile saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
+     {
+         if(!error)
+         {
+             event[@"eventImage"] = imageFile;
+             event[@"sport"] = self.sportTextField.text;
+             event[@"title"] = self.titleTextField.text;
+             event[@"location"] = self.locationTextField.text;
+             event[@"dateComparison"] = self.dateAndTimeComparisonString;
+             event[@"date"] = self.dateString;
+             event[@"time"] = self.timeString;
+             event[@"description"] = self.descriptionTextField.text;
+             event[@"playersNeeded"] = self.numberOfPlayersLabel.text;
+             event[@"playersRegistered"] = @"1";
+             event[@"gender"] = self.eventGender;
+             [event saveInBackground];
+         }
+     }];
     
     [self performSegueWithIdentifier:@"mapSegueID" sender:self];
+    
+    self.sportTextField.text = nil;
+    self.titleTextField.text = nil;
+    self.locationTextField.text = nil;
+    self.dateTimeTextField.text = nil;
+    self.descriptionTextField.text = nil;
+}
+
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [UIView animateWithDuration:0.3 animations:^{
+        self.photoEventPopoverView.frame = CGRectMake(600, 600, 5, 5);
+    }];
 }
 
 @end
