@@ -1388,9 +1388,6 @@
                                     <navigationItem title="EVENT DETAIL" id="ikL-ok-YBm">
                                         <barButtonItem key="leftBarButtonItem" systemItem="rewind" id="CIa-ZO-ZJj">
                                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <connections>
-                                                <segue destination="sF1-ce-JCv" kind="show" id="Yrc-nS-ZnK"/>
-                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -1442,7 +1439,6 @@
                                 </state>
                                 <connections>
                                     <action selector="joinEventOnButtonTapped:" destination="M5l-Ap-MnT" eventType="touchUpInside" id="y3I-dv-uwN"/>
-                                    <segue destination="9Af-6I-8Nu" kind="show" identifier="myGamesSegueID" id="rxg-iN-mfG"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tq3-wa-5X9">
@@ -1534,6 +1530,8 @@
                         <outlet property="locationLabel" destination="Tq3-wa-5X9" id="aPd-Pr-kNk"/>
                         <outlet property="remainingPlayersLabel" destination="mLN-nh-sar" id="ltc-En-j8t"/>
                         <outlet property="timeDateLabel" destination="eRN-ER-Rbu" id="Ywd-ql-xBO"/>
+                        <segue destination="9Af-6I-8Nu" kind="show" identifier="myGamesSegueID" id="OoX-i4-h9X"/>
+                        <segue destination="sF1-ce-JCv" kind="show" identifier="backToMapSegueID" id="H22-cH-G1f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Yk-JM-ioi" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2311,10 +2309,10 @@
     <inferredMetricsTieBreakers>
         <segue reference="8Qw-1r-dRP"/>
         <segue reference="2bN-4P-yvE"/>
-        <segue reference="Os5-jC-VHH"/>
         <segue reference="yUP-Dp-JRA"/>
         <segue reference="PaF-Jh-wvj"/>
-        <segue reference="rxg-iN-mfG"/>
-        <segue reference="jcd-kU-yhC"/>
+        <segue reference="H22-cH-G1f"/>
+        <segue reference="sog-iJ-UoY"/>
+        <segue reference="OoX-i4-h9X"/>
     </inferredMetricsTieBreakers>
 </document>

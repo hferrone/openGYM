@@ -15,7 +15,7 @@
 
 @interface HomeViewController () <UITableViewDataSource, UITableViewDelegate>
 
-@property NSArray *storedEvents;
+@property NSMutableArray *storedEvents;
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property NSString *sportFilterSelected;
@@ -48,7 +48,7 @@
     PFQuery *query = [PFQuery queryWithClassName:@"Event"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
      {
-         self.storedEvents = [[NSArray alloc] initWithArray:objects];
+         self.storedEvents = [[NSMutableArray alloc] initWithArray:objects];
          
          for (PFObject *object in self.storedEvents)
          {
@@ -65,6 +65,11 @@
              NSInteger hours    = [dateComponents hour];
              NSInteger minutes  = [dateComponents minute];
              
+             if (days >= 0 && hours >= 0 && minutes >= 0)
+             {
+                 [self.storedEvents removeObject:object];
+             }
+             
              NSString *countdownText = [NSString stringWithFormat:@"%ld Days %ld Hours %ld Minutes", (long)days, (long)hours, (long)minutes];
              NSLog(@"%@", countdownText);
          }
@@ -79,7 +84,7 @@
     [query whereKey:@"sport" equalTo:filter];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
      {
-         self.storedEvents = [[NSArray alloc] initWithArray:objects];
+         self.storedEvents = [[NSMutableArray alloc] initWithArray:objects];
          [self.tableView reloadData];
      }];
 }
