@@ -24,7 +24,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *eventDetailPictureView;
 
 @property UIImage *eventDetailPicture;
-
 @property BOOL userAlreadyRegistered;
 
 @end
@@ -54,9 +53,6 @@
 
 - (IBAction)joinEventOnButtonTapped:(UIButton *)sender
 {
-    //set bool to false by default
-    self.userAlreadyRegistered = false;
-    
     //pull down player numbers
     int playersNeeded = [self.eventObject[@"playersNeeded"] intValue];
     int playersRegistered = [self.eventObject[@"playersRegistered"]intValue];
