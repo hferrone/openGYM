@@ -49,6 +49,7 @@
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
      {
          self.storedEvents = [[NSMutableArray alloc] initWithArray:objects];
+         NSLog(@"%@", self.storedEvents);
          
          for (PFObject *object in self.storedEvents)
          {
