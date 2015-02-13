@@ -57,6 +57,10 @@
     [relation addObject:self.eventObject];
     [user saveInBackground];
     
+    PFRelation *relation2 = [self.eventObject relationForKey:@"usersRegistered"];
+    [relation2 addObject:user];
+    [self.eventObject saveInBackground];
+    
     int playersNeeded = [self.eventObject[@"playersNeeded"] intValue];
     int playersRegistered = [self.eventObject[@"playersRegistered"]intValue];
     
