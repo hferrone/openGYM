@@ -157,12 +157,8 @@
 {
     PFUser *user = [PFUser currentUser];
     PFObject *event = [PFObject objectWithClassName:@"Event"];
-    
     PFRelation *usersToEvents = [event relationForKey:@"usersRegistered"];
-    PFRelation *eventsToUsers = [user relationForKey:@"myGames"];
-    
     [usersToEvents addObject:user];
-    [eventsToUsers addObject:event];
     
     event[@"sport"] = self.sportTextField.text;
     event[@"title"] = self.titleTextField.text;
