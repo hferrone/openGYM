@@ -100,7 +100,11 @@
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {    
-    PFObject *user = [PFUser currentUser];
+    PFUser *user = [PFUser currentUser];
+    
+    PFRelation *usersToEvents = [[self.myGamesArray objectAtIndex:indexPath.row] relationForKey:@"usersRegistered"];
+    [usersToEvents removeObject:user];
+    
     PFRelation *relation = [user relationForKey:@"myGames"];
     [relation removeObject:[self.myGamesArray objectAtIndex:indexPath.row]];
     [user saveInBackground];
