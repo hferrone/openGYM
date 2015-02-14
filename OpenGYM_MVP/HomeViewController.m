@@ -67,12 +67,12 @@
              
              if (days <= 0 && hours <= 0 && minutes <= 0)
              {
-                 //remove the past event from event array, then re-save the updated event array back to parse
-                 NSLog(@"%@", object);
+                 [self.storedEvents removeObject:object];
+                 [object deleteInBackground];
              }
              
-//             NSString *countdownText = [NSString stringWithFormat:@"%ld Days %ld Hours %ld Minutes", (long)days, (long)hours, (long)minutes];
-//             NSLog(@"%@", countdownText);
+             NSString *countdownText = [NSString stringWithFormat:@"%ld Days %ld Hours %ld Minutes", (long)days, (long)hours, (long)minutes];
+             NSLog(@"%@", countdownText);
          }
          
          [self.tableView reloadData];
