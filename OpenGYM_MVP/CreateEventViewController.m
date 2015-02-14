@@ -155,7 +155,11 @@
 
 - (IBAction)createEventOnButtonTapped:(UIButton *)sender
 {
+    PFUser *user = [PFUser currentUser];
     PFObject *event = [PFObject objectWithClassName:@"Event"];
+    PFRelation *usersToEvents = [event relationForKey:@"usersRegistered"];
+    [usersToEvents addObject:user];
+    
     event[@"sport"] = self.sportTextField.text;
     event[@"title"] = self.titleTextField.text;
     event[@"location"] = self.locationTextField.text;
