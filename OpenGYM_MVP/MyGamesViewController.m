@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property NSMutableArray *myGamesArray;
+@property NSString *timeCountdownString;
 
 @end
 
@@ -45,6 +46,31 @@
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
      {
          self.myGamesArray = [[NSMutableArray alloc] initWithArray:objects];
+         
+         for (PFObject *object in self.myGamesArray)
+         {
+             NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+             [dateFormatter setDateFormat:@"YYYY-MM-dd, h:mm"];
+             NSDate *startingDate = [dateFormatter dateFromString:object[@"dateComparison"]];
+             NSDate *endingDate = [NSDate date];
+             
+             NSCalendar *calendar = [NSCalendar currentCalendar];
+             NSUInteger unitFlags = NSCalendarUnitDay|NSCalendarUnitHour|NSCalendarUnitMinute;
+             NSDateComponents *dateComponents = [calendar components:unitFlags fromDate:endingDate toDate:startingDate options:0];
+             
+             NSInteger days     = [dateComponents day];
+             NSInteger hours    = [dateComponents hour];
+             NSInteger minutes  = [dateComponents minute];
+             
+             if (days < 1 && hours <= 24 && minutes <= 60)
+             {
+                 self.timeCountdownString = [NSString stringWithFormat:@"%ld hrs %ld min", hours, (long)minutes];
+             }
+             
+             NSString *countdownText = [NSString stringWithFormat:@"%ld Days %ld Hours %ld Minutes", (long)days, (long)hours, (long)minutes];
+             NSLog(@"%@", countdownText);
+         }
+
          [self.tableView reloadData];
      }];
 }
@@ -66,8 +92,8 @@
     PFObject *event = [self.myGamesArray objectAtIndex:indexPath.row];
     
     cell.gameFeedTitleLabel.text = [event objectForKey:@"title"];
-    cell.gameFeedTimeLabel.text = [event objectForKey:@"time"];
-    cell.gameFeedPlayersLabel.text = [event objectForKey:@"players"];
+    cell.gameFeedTimeLabel.text = self.timeCountdownString;
+    cell.gameFeedPlayersLabel.text = [event objectForKey:@"playersNeeded"];
     
     if([[event objectForKey:@"sport"] isEqualToString:@"Basketball"])
     {
@@ -101,9 +127,14 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {    
     PFObject *user = [PFUser currentUser];
-    PFRelation *relation = [user relationForKey:@"myGames"];
-    [relation removeObject:[self.myGamesArray objectAtIndex:indexPath.row]];
+    
+    PFRelation *eventsToUsers = [user relationForKey:@"myGames"];
+    [eventsToUsers removeObject:[self.myGamesArray objectAtIndex:indexPath.row]];
     [user saveInBackground];
+    
+    PFRelation *usersToEvents = [[self.myGamesArray objectAtIndex:indexPath.row] relationForKey:@"usersRegistered"];
+    [usersToEvents removeObject:user];
+    [[self.myGamesArray objectAtIndex:indexPath.row] saveInBackground];
     
     [self.myGamesArray removeObjectAtIndex:indexPath.row];
     [self.tableView reloadData];

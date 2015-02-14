@@ -70,9 +70,6 @@
                  [self.storedEvents removeObject:object];
                  [object deleteInBackground];
              }
-             
-             NSString *countdownText = [NSString stringWithFormat:@"%ld Days %ld Hours %ld Minutes", (long)days, (long)hours, (long)minutes];
-             NSLog(@"%@", countdownText);
          }
          
          [self.tableView reloadData];
@@ -142,8 +139,8 @@
     PFObject *event = [self.storedEvents objectAtIndex:indexPath.row];
     
     homeCell.cellTitleLabel.text = [event objectForKey:@"title"];
-    homeCell.cellTimeLabel.text = [event objectForKey:@"date"];
-    homeCell.cellNumberPlayersLabel.text = [event objectForKey:@"players"];
+    homeCell.cellTimeLabel.text = [event objectForKey:@"time"];
+    homeCell.cellNumberPlayersLabel.text = [event objectForKey:@"playersNeeded"];
     
     if([[event objectForKey:@"sport"] isEqualToString:@"Basketball"])
     {

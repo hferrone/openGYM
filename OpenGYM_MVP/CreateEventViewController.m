@@ -39,6 +39,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.genderSegmentedController.selectedSegmentIndex = 0;
 }
 
 -(BOOL)prefersStatusBarHidden
@@ -157,6 +159,7 @@
 {
     PFUser *user = [PFUser currentUser];
     PFObject *event = [PFObject objectWithClassName:@"Event"];
+    
     PFRelation *usersToEvents = [event relationForKey:@"usersRegistered"];
     [usersToEvents addObject:user];
     
@@ -171,6 +174,10 @@
     event[@"playersRegistered"] = @"1";
     event[@"gender"] = self.eventGender;
     [event saveInBackground];
+    
+    PFRelation *eventsToUsers = [user relationForKey:@"myGames"];
+    [eventsToUsers addObject:event];
+    [user saveInBackground];
     
 //    NSData *savedEventPicture = UIImageJPEGRepresentation(self.eventDetailPicture, 10);
 //    PFFile *imageFile = [PFFile fileWithData:savedEventPicture];
