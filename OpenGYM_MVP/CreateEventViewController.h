@@ -11,4 +11,6 @@
 
 @interface CreateEventViewController : UIViewController
 
+@property UIImage *eventImage;
+
 @end

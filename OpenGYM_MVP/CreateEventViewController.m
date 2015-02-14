@@ -157,9 +157,12 @@
 
 - (IBAction)createEventOnButtonTapped:(UIButton *)sender
 {
-    PFUser *user = [PFUser currentUser];
+    NSData *imageData = UIImageJPEGRepresentation(self.eventImage, 50);
+    PFFile *imageFile = [PFFile fileWithName:@"EventImage.png" data:imageData];
     PFObject *event = [PFObject objectWithClassName:@"Event"];
+    [event setObject:imageFile forKey:@"eventPic"];
     
+    PFUser *user = [PFUser currentUser];
     PFRelation *usersToEvents = [event relationForKey:@"usersRegistered"];
     [usersToEvents addObject:user];
     
@@ -178,16 +181,6 @@
     PFRelation *eventsToUsers = [user relationForKey:@"myGames"];
     [eventsToUsers addObject:event];
     [user saveInBackground];
-    
-//    NSData *savedEventPicture = UIImageJPEGRepresentation(self.eventDetailPicture, 10);
-//    PFFile *imageFile = [PFFile fileWithData:savedEventPicture];
-//    [imageFile saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
-//     {
-//         if(!error)
-//         {
-//             event[@"eventImage"] = imageFile;
-//         }
-//     }];
     
     [self performSegueWithIdentifier:@"mapSegueID" sender:self];
     

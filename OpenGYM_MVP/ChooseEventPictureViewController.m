@@ -7,31 +7,65 @@
 //
 
 #import "ChooseEventPictureViewController.h"
+#import "CreateEventViewController.h"
 
-@interface ChooseEventPictureViewController ()
+@interface ChooseEventPictureViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+
+@property (weak, nonatomic) IBOutlet UIImageView *EventPicSelectedImageView;
+@property (strong, nonatomic) UIImagePickerController *imagePickerController;
+
+@property UIImage *eventPicture;
 
 @end
 
 @implementation ChooseEventPictureViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(BOOL)prefersStatusBarHidden
+{
+    return  YES;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (IBAction)selectPhotoFromLibrary:(UIButton *)sender
+{
+    self.imagePickerController = [UIImagePickerController new];
+    self.imagePickerController.delegate = self;
+    [self.imagePickerController setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+    [self presentViewController:self.imagePickerController animated:YES completion:nil];
 }
-*/
+
+- (IBAction)selectPhotoFromCamera:(UIButton *)sender
+{
+    self.imagePickerController = [UIImagePickerController new];
+    self.imagePickerController.delegate = self;
+    [self.imagePickerController setSourceType:UIImagePickerControllerSourceTypeCamera];
+    [self presentViewController:self.imagePickerController animated:YES completion:nil];
+}
+
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    self.eventPicture = info[UIImagePickerControllerOriginalImage];
+    [self.EventPicSelectedImageView setImage:self.eventPicture];
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"backToCreateEvent"])
+    {
+        CreateEventViewController *cevc = segue.destinationViewController;
+        cevc.eventImage = self.eventPicture;
+    }
+}
 
 @end

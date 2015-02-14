@@ -9,6 +9,7 @@
 #import "MyGamesViewController.h"
 #import "SWRevealViewController.h"
 #import "CustomGamesFeedTableViewCell.h"
+#import "EventDetailViewController.h"
 
 @interface MyGamesViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -16,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property NSMutableArray *myGamesArray;
 @property NSString *timeCountdownString;
+@property PFObject *eventObject;
 
 @end
 
@@ -138,6 +140,18 @@
     
     [self.myGamesArray removeObjectAtIndex:indexPath.row];
     [self.tableView reloadData];
+}
+
+-(void)tableView:(UITableViewCell *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    self.eventObject = [self.myGamesArray objectAtIndex:indexPath.row];
+    [self performSegueWithIdentifier:@"eventDetailSegueID" sender:self];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    EventDetailViewController *evc = segue.destinationViewController;
+    evc.eventObject = self.eventObject;
 }
 
 @end

@@ -9,6 +9,8 @@
 #import "EventDetailViewController.h"
 #import "MyGamesViewController.h"
 
+#import <Parse/Parse.h>
+
 @interface EventDetailViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIAlertViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UINavigationItem *eventDetailTitle;
@@ -46,6 +48,22 @@
     
     self.joinEventButton.layer.borderColor = [UIColor whiteColor].CGColor;
     self.joinEventButton.layer.borderWidth = 1;
+    
+    PFFile *imageFile = [self.eventObject objectForKey:@"eventPic"];
+    
+    if(imageFile != NULL)
+    {
+        [imageFile getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
+            
+            UIImage *thumbnailImage = [UIImage imageWithData:imageData];
+            self.eventDetailPictureView.image = thumbnailImage;
+            
+        }];
+    }
+    else
+    {
+        self.eventDetailPictureView.image = [UIImage imageNamed:@"PASbackground.png"];
+    }
 }
 
 -(BOOL)prefersStatusBarHidden

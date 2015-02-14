@@ -1130,6 +1130,7 @@
                     <connections>
                         <outlet property="sidebarButton" destination="ODx-Ki-PO4" id="XNk-37-ukY"/>
                         <outlet property="tableView" destination="l8s-Kf-BS8" id="5KF-IJ-4Pa"/>
+                        <segue destination="M5l-Ap-MnT" kind="show" identifier="eventDetailSegueID" id="QlH-9Z-W9M"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rdr-5c-5kt" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1419,7 +1420,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kuc-k2-Yv7">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kuc-k2-Yv7" customClass="PF">
                                 <rect key="frame" x="0.0" y="44" width="600" height="212"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
@@ -2219,10 +2220,10 @@
             </objects>
             <point key="canvasLocation" x="5437" y="574"/>
         </scene>
-        <!--View Controller-->
+        <!--Choose Event Picture View Controller-->
         <scene sceneID="07F-zb-rAZ">
             <objects>
-                <viewController id="yTt-Yw-gkR" sceneMemberID="viewController">
+                <viewController id="yTt-Yw-gkR" customClass="ChooseEventPictureViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pQk-oO-Fkp"/>
                         <viewControllerLayoutGuide type="bottom" id="LgY-sl-TEd"/>
@@ -2236,12 +2237,18 @@
                                 <state key="normal" title="Camera">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="selectPhotoFromCamera:" destination="yTt-Yw-gkR" eventType="touchUpInside" id="yYX-7h-TvE"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3HM-yj-Asw">
                                 <rect key="frame" x="254" y="39" width="93" height="30"/>
                                 <state key="normal" title="Photo Library">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="selectPhotoFromLibrary:" destination="yTt-Yw-gkR" eventType="touchUpInside" id="KWz-If-k7m"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hdE-LW-Toh">
                                 <rect key="frame" x="122" y="134" width="356" height="331"/>
@@ -2255,7 +2262,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="zcK-A9-Bnm" kind="showDetail" id="yUP-Dp-JRA"/>
+                                    <segue destination="zcK-A9-Bnm" kind="showDetail" identifier="backToCreateEvent" id="yUP-Dp-JRA"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -2272,6 +2279,9 @@
                             <constraint firstItem="3HM-yj-Asw" firstAttribute="centerX" secondItem="YcX-al-Ajb" secondAttribute="centerX" id="nip-N8-S15"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="EventPicSelectedImageView" destination="hdE-LW-Toh" id="tLR-5q-HB9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dRq-mF-joh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2310,12 +2320,12 @@
         <image name="weblogo" width="980" height="230"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Yrc-nS-ZnK"/>
-        <segue reference="PaF-Jh-wvj"/>
-        <segue reference="sLv-ZE-4ZR"/>
-        <segue reference="sog-iJ-UoY"/>
-        <segue reference="2bN-4P-yvE"/>
         <segue reference="8Qw-1r-dRP"/>
+        <segue reference="2bN-4P-yvE"/>
+        <segue reference="sLv-ZE-4ZR"/>
+        <segue reference="QlH-9Z-W9M"/>
+        <segue reference="Yrc-nS-ZnK"/>
+        <segue reference="sog-iJ-UoY"/>
         <segue reference="yUP-Dp-JRA"/>
     </inferredMetricsTieBreakers>
 </document>
