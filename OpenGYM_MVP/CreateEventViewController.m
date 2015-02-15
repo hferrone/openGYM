@@ -25,7 +25,6 @@
 @property NSString *dateString;
 @property NSString *timeString;
 @property NSString *eventGender;
-@property (weak, nonatomic) IBOutlet UIView *photoEventPopoverView;
 
 @property NSDate *eventDate;
 
@@ -46,41 +45,6 @@
 -(BOOL)prefersStatusBarHidden
 {
     return true;
-}
-- (IBAction)chooseEventPhotoOnButtonTapped:(UIButton *)sender
-{
-    [UIView animateWithDuration:0.3 animations:^{
-        self.photoEventPopoverView.frame = CGRectMake(self.view.frame.origin.x + 100, self.view.frame.origin.y + 125, self.photoEventPopoverView.frame.size.width, self.photoEventPopoverView.frame.size.height);
-    }];
-}
-- (IBAction)selectPhotoFromLibrary:(UIButton *)sender
-{
-    self.imagePickerController = [UIImagePickerController new];
-    self.imagePickerController.delegate = self;
-    [self.imagePickerController setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
-    [self presentViewController:self.imagePickerController animated:YES completion:nil];
-}
-- (IBAction)selectPhotoFromCamera:(UIButton *)sender
-{
-    [UIView animateWithDuration:0.3 animations:^{
-        self.photoEventPopoverView.frame = CGRectMake(600, 600, 5, 5);
-    }];
-    
-    self.imagePickerController = [UIImagePickerController new];
-    self.imagePickerController.delegate = self;
-    [self.imagePickerController setSourceType:UIImagePickerControllerSourceTypeCamera];
-    [self presentViewController:self.imagePickerController animated:YES completion:nil];
-}
-
--(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
-{
-    self.eventDetailPicture = info[UIImagePickerControllerOriginalImage];
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
--(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
-{
-    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)pickDateAndTimeOnButtonTapped:(UIButton *)sender
@@ -163,7 +127,7 @@
     [event setObject:imageFile forKey:@"eventPic"];
     
     PFUser *user = [PFUser currentUser];
-    PFRelation *usersToEvents = [event relationForKey:@"usersRegistered"];
+    PFRelation *usersToEvents = [event relationForKey:@"registeredUsers"];
     [usersToEvents addObject:user];
     
     event[@"sport"] = self.sportTextField.text;
@@ -176,26 +140,20 @@
     event[@"playersNeeded"] = self.numberOfPlayersLabel.text;
     event[@"playersRegistered"] = @"1";
     event[@"gender"] = self.eventGender;
-    [event saveInBackground];
-    
-    PFRelation *eventsToUsers = [user relationForKey:@"myGames"];
-    [eventsToUsers addObject:event];
-    [user saveInBackground];
+    [event saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
+    {
+        PFRelation *eventsToUsers = [user relationForKey:@"myEvents"];
+        [eventsToUsers addObject:event];
+        [user saveInBackground];
+    }];
     
     [self performSegueWithIdentifier:@"mapSegueID" sender:self];
-    
+
     self.sportTextField.text = nil;
     self.titleTextField.text = nil;
     self.locationTextField.text = nil;
     self.dateTimeTextField.text = nil;
     self.descriptionTextField.text = nil;
-}
-
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
-{
-    [UIView animateWithDuration:0.3 animations:^{
-        self.photoEventPopoverView.frame = CGRectMake(600, 600, 5, 5);
-    }];
 }
 
 @end

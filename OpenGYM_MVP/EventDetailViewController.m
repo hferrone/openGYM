@@ -9,8 +9,6 @@
 #import "EventDetailViewController.h"
 #import "MyGamesViewController.h"
 
-#import <Parse/Parse.h>
-
 @interface EventDetailViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIAlertViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UINavigationItem *eventDetailTitle;
@@ -37,6 +35,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    //set bools to false by default
+    self.userAlreadyRegistered = false;
+    self.eventFull = false;
     
     self.eventDetailTitle.title = self.eventObject[@"title"];
     
@@ -73,13 +75,9 @@
 
 - (IBAction)joinEventOnButtonTapped:(UIButton *)sender
 {
-    //set bools to false by default
-    self.userAlreadyRegistered = false;
-    self.eventFull = false;
-    
     //set up current user and PFRelation
     PFUser *user = [PFUser currentUser];
-    PFRelation *usersToEvents = [self.eventObject relationForKey:@"usersRegistered"];
+    PFRelation *usersToEvents = [self.eventObject relationForKey:@"registeredUsers"];
     
     int playersNeeded = [self.eventObject[@"playersNeeded"] intValue];
     int playersRegistered = [self.eventObject[@"playersRegistered"]intValue];
@@ -94,8 +92,7 @@
             {
                 self.userAlreadyRegistered = true;
             }
-            
-            if (playersNeeded < 1)
+            else if (playersNeeded < 1)
             {
                 self.eventFull = true;
             }
@@ -124,7 +121,7 @@
         self.eventObject[@"playersRegistered"] = [NSString stringWithFormat:@"%d", playersRegistered];
         [self.eventObject saveInBackground];
         
-        PFRelation *eventsToUsers = [user relationForKey:@"myGames"];
+        PFRelation *eventsToUsers = [user relationForKey:@"myEvents"];
         [eventsToUsers addObject:self.eventObject];
         [user saveInBackground];
         

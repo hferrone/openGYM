@@ -43,7 +43,7 @@
 -(void)queryMyGames
 {
     PFUser *user = [PFUser currentUser];
-    PFRelation *relation = [user relationForKey:@"myGames"];
+    PFRelation *relation = [user relationForKey:@"myEvents"];
     PFQuery *query = [relation query];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
      {
@@ -127,11 +127,11 @@
 {    
     PFObject *user = [PFUser currentUser];
     
-    PFRelation *eventsToUsers = [user relationForKey:@"myGames"];
+    PFRelation *eventsToUsers = [user relationForKey:@"myEvents"];
     [eventsToUsers removeObject:[self.myGamesArray objectAtIndex:indexPath.row]];
     [user saveInBackground];
     
-    PFRelation *usersToEvents = [[self.myGamesArray objectAtIndex:indexPath.row] relationForKey:@"usersRegistered"];
+    PFRelation *usersToEvents = [[self.myGamesArray objectAtIndex:indexPath.row] relationForKey:@"registeredUsers"];
     [usersToEvents removeObject:user];
     [[self.myGamesArray objectAtIndex:indexPath.row] saveInBackground];
     

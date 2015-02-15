@@ -2142,7 +2142,6 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="chooseEventPhotoOnButtonTapped:" destination="zcK-A9-Bnm" eventType="touchUpInside" id="oup-ZC-tBf"/>
                                     <segue destination="yTt-Yw-gkR" kind="showDetail" id="OOc-Mf-jlp"/>
                                 </connections>
                             </button>
@@ -2320,12 +2319,12 @@
         <image name="weblogo" width="980" height="230"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="yUP-Dp-JRA"/>
+        <segue reference="Os5-jC-VHH"/>
+        <segue reference="sog-iJ-UoY"/>
         <segue reference="8Qw-1r-dRP"/>
         <segue reference="2bN-4P-yvE"/>
-        <segue reference="sLv-ZE-4ZR"/>
         <segue reference="QlH-9Z-W9M"/>
-        <segue reference="Yrc-nS-ZnK"/>
-        <segue reference="sog-iJ-UoY"/>
-        <segue reference="yUP-Dp-JRA"/>
+        <segue reference="sLv-ZE-4ZR"/>
     </inferredMetricsTieBreakers>
 </document>
