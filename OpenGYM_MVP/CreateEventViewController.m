@@ -40,6 +40,7 @@
     [super viewDidLoad];
     
     self.genderSegmentedController.selectedSegmentIndex = 0;
+    self.eventGender = @"Male";
 }
 
 -(BOOL)prefersStatusBarHidden
