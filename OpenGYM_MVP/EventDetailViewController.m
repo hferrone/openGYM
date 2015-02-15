@@ -81,38 +81,41 @@
     PFUser *user = [PFUser currentUser];
     PFRelation *usersToEvents = [self.eventObject relationForKey:@"usersRegistered"];
     
-    //check if event is full
     int playersNeeded = [self.eventObject[@"playersNeeded"] intValue];
     int playersRegistered = [self.eventObject[@"playersRegistered"]intValue];
-    
-    if (playersNeeded < 1)
-    {
-        self.eventFull = true;
-        
-        UIAlertView *eventFullAlert = [[UIAlertView alloc] initWithTitle:@"Sorry..." message:@"This event is already full." delegate:self cancelButtonTitle:@"Back To Map" otherButtonTitles:nil];
-        eventFullAlert.tag = 2;
-        [eventFullAlert show];
-    }
     
     //check if current user is already registered for the selected event
     PFQuery *userQuery = [usersToEvents query];
     [userQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
-    {
+     {
         for (PFUser *usersRegistered in objects)
         {
             if ([usersRegistered.username isEqualToString:user.username])
             {
                 self.userAlreadyRegistered = true;
-                
-                UIAlertView *userAlreadyRegisteredAlert = [[UIAlertView alloc] initWithTitle:@"Stop!!!" message:@"You're already registered for this event." delegate:self cancelButtonTitle:@"Back To Map" otherButtonTitles:nil];
-                userAlreadyRegisteredAlert.tag = 1;
-                [userAlreadyRegisteredAlert show];
+            }
+            
+            if (playersNeeded < 1)
+            {
+                self.eventFull = true;
             }
         }
     }];
     
-    //if user is not registered, add user to selected event and event to current user
-    if (!self.userAlreadyRegistered && !self.eventFull)
+    //check which UIAlert needs to be presented
+    if(self.userAlreadyRegistered)
+    {
+        UIAlertView *userAlreadyRegisteredAlert = [[UIAlertView alloc] initWithTitle:@"Stop!!!" message:@"You're already registered for this event." delegate:self cancelButtonTitle:@"Back To Map" otherButtonTitles:nil];
+        userAlreadyRegisteredAlert.tag = 1;
+        [userAlreadyRegisteredAlert show];
+    }
+    else if(self.eventFull)
+    {
+        UIAlertView *eventFullAlert = [[UIAlertView alloc] initWithTitle:@"Sorry..." message:@"This event is already full." delegate:self cancelButtonTitle:@"Back To Map" otherButtonTitles:nil];
+        eventFullAlert.tag = 2;
+        [eventFullAlert show];
+    }
+    else if(!self.userAlreadyRegistered && !self.eventFull)
     {
         playersNeeded--;
         playersRegistered++;
@@ -130,9 +133,7 @@
         
         [self performSegueWithIdentifier:@"myGamesSegueID" sender:self];
     }
-    
-    //check if both event is full and user is already registered
-    if (self.userAlreadyRegistered && self.eventFull)
+    else if (self.userAlreadyRegistered && self.eventFull)
     {
         UIAlertView *userAlreadyRegisteredAlert = [[UIAlertView alloc] initWithTitle:@"Hold Up!" message:@"Then event is full and you are already registered!" delegate:self cancelButtonTitle:@"Back To Map" otherButtonTitles:nil];
         userAlreadyRegisteredAlert.tag = 3;

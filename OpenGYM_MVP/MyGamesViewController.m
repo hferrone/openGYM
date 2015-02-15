@@ -68,9 +68,6 @@
              {
                  self.timeCountdownString = [NSString stringWithFormat:@"%ld hrs %ld min", hours, (long)minutes];
              }
-             
-             NSString *countdownText = [NSString stringWithFormat:@"%ld Days %ld Hours %ld Minutes", (long)days, (long)hours, (long)minutes];
-             NSLog(@"%@", countdownText);
          }
 
          [self.tableView reloadData];
@@ -150,8 +147,11 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    EventDetailViewController *evc = segue.destinationViewController;
-    evc.eventObject = self.eventObject;
+    if ([segue.identifier isEqualToString:@"eventDetailSegueID"])
+    {
+        EventDetailViewController *evc = segue.destinationViewController;
+        evc.eventObject = self.eventObject;
+    }
 }
 
 @end
