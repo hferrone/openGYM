@@ -157,15 +157,18 @@
 
 - (IBAction)createEventOnButtonTapped:(UIButton *)sender
 {
+    //image is saved and added to event created
     NSData *imageData = UIImageJPEGRepresentation(self.eventImage, 50);
     PFFile *imageFile = [PFFile fileWithName:@"EventImage.png" data:imageData];
     PFObject *event = [PFObject objectWithClassName:@"Event"];
     [event setObject:imageFile forKey:@"eventPic"];
     
+    //current user is added to event relationship "registeredUsers"
     PFUser *user = [PFUser currentUser];
-    PFRelation *usersToEvents = [event relationForKey:@"usersRegistered"];
+    PFRelation *usersToEvents = [event relationForKey:@"registeredUsers"];
     [usersToEvents addObject:user];
     
+    //event fields are created from user input
     event[@"sport"] = self.sportTextField.text;
     event[@"title"] = self.titleTextField.text;
     event[@"location"] = self.locationTextField.text;
@@ -176,11 +179,16 @@
     event[@"playersNeeded"] = self.numberOfPlayersLabel.text;
     event[@"playersRegistered"] = @"1";
     event[@"gender"] = self.eventGender;
-    [event saveInBackground];
-    
-    PFRelation *eventsToUsers = [user relationForKey:@"myGames"];
-    [eventsToUsers addObject:event];
-    [user saveInBackground];
+    [event saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
+    {
+        if (succeeded)
+        {
+            //created event is added to current users "myEvents" relationship
+            PFRelation *eventsToUsers = [user relationForKey:@"myEvents"];
+            [eventsToUsers addObject:event];
+            [user saveInBackground];
+        }
+    }];
     
     [self performSegueWithIdentifier:@"mapSegueID" sender:self];
     

@@ -79,7 +79,7 @@
     
     //set up current user and PFRelation
     PFUser *user = [PFUser currentUser];
-    PFRelation *usersToEvents = [self.eventObject relationForKey:@"usersRegistered"];
+    PFRelation *usersToEvents = [self.eventObject relationForKey:@"registeredUsers"];
     
     int playersNeeded = [self.eventObject[@"playersNeeded"] intValue];
     int playersRegistered = [self.eventObject[@"playersRegistered"]intValue];
@@ -124,7 +124,7 @@
         self.eventObject[@"playersRegistered"] = [NSString stringWithFormat:@"%d", playersRegistered];
         [self.eventObject saveInBackground];
         
-        PFRelation *eventsToUsers = [user relationForKey:@"myGames"];
+        PFRelation *eventsToUsers = [user relationForKey:@"myEvents"];
         [eventsToUsers addObject:self.eventObject];
         [user saveInBackground];
         
