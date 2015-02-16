@@ -125,7 +125,7 @@
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {    
-    PFObject *user = [PFUser currentUser];
+    PFUser *user = [PFUser currentUser];
     
     PFRelation *eventsToUsers = [user relationForKey:@"myEvents"];
     [eventsToUsers removeObject:[self.myGamesArray objectAtIndex:indexPath.row]];
@@ -134,6 +134,19 @@
     PFRelation *usersToEvents = [[self.myGamesArray objectAtIndex:indexPath.row] relationForKey:@"registeredUsers"];
     [usersToEvents removeObject:user];
     [[self.myGamesArray objectAtIndex:indexPath.row] saveInBackground];
+    
+    //subtract from players registered and add back to players needed
+    PFObject *eventObject = [self.myGamesArray objectAtIndex:indexPath.row];
+    
+    int playersNeeded = [eventObject[@"playersNeeded"] intValue];
+    int playersRegistered = [eventObject[@"playersRegistered"]intValue];
+    
+    playersNeeded++;
+    playersRegistered--;
+    
+    eventObject[@"playersNeeded"] = [NSString stringWithFormat:@"%d", playersNeeded];
+    eventObject[@"playersRegistered"] = [NSString stringWithFormat:@"%d", playersRegistered];
+    [eventObject saveInBackground];
     
     [self.myGamesArray removeObjectAtIndex:indexPath.row];
     [self.tableView reloadData];
