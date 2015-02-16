@@ -135,6 +135,8 @@
     [usersToEvents removeObject:user];
     [[self.myGamesArray objectAtIndex:indexPath.row] saveInBackground];
     
+    //subtract from players registered and add back to players needed
+    
     [self.myGamesArray removeObjectAtIndex:indexPath.row];
     [self.tableView reloadData];
 }
