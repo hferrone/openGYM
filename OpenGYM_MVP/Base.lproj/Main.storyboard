@@ -119,21 +119,11 @@
                                     <constraint firstAttribute="width" constant="123" id="pMB-Yn-Aqv"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EbH-qJ-5cn" customClass="TWTRLogInButton">
-                                <rect key="frame" x="200" y="488" width="200" height="40"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.55446065274154654" blue="0.075866345468679652" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="aiP-Ge-qUq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="20p-uj-Y99"/>
-                            <constraint firstItem="EbH-qJ-5cn" firstAttribute="leading" secondItem="P0f-Qx-1Lb" secondAttribute="leading" id="3mU-Hn-NCe"/>
                             <constraint firstItem="arn-1E-Mt6" firstAttribute="trailing" secondItem="BCb-4Y-XiS" secondAttribute="trailing" constant="8" id="6pL-FN-zPy"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="EbH-qJ-5cn" secondAttribute="bottom" constant="72" id="AKk-qp-aLy"/>
                             <constraint firstItem="Qg6-lu-k2o" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="49" id="IW1-9L-tHr"/>
                             <constraint firstItem="P0f-Qx-1Lb" firstAttribute="trailing" secondItem="BCb-4Y-XiS" secondAttribute="trailing" constant="5" id="K3E-6T-KHQ"/>
                             <constraint firstItem="Qg6-lu-k2o" firstAttribute="centerX" secondItem="hHi-Jt-TAf" secondAttribute="centerX" id="KeA-Bs-LDh"/>
@@ -150,11 +140,9 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="arn-1E-Mt6" secondAttribute="bottom" constant="173" id="ZDr-7D-X5d"/>
                             <constraint firstItem="BCb-4Y-XiS" firstAttribute="centerX" secondItem="yD3-bh-UQL" secondAttribute="centerX" id="cSs-BX-BoC"/>
                             <constraint firstItem="hHi-Jt-TAf" firstAttribute="leading" secondItem="yD3-bh-UQL" secondAttribute="leading" id="d6O-LE-9Aa"/>
-                            <constraint firstItem="EbH-qJ-5cn" firstAttribute="top" secondItem="P0f-Qx-1Lb" secondAttribute="bottom" constant="13" id="e5H-Rv-bH0"/>
                             <constraint firstItem="aiP-Ge-qUq" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="edm-hW-hMU"/>
                             <constraint firstItem="BCb-4Y-XiS" firstAttribute="top" secondItem="yD3-bh-UQL" secondAttribute="bottom" constant="29" id="lyZ-D1-9mN"/>
                             <constraint firstItem="arn-1E-Mt6" firstAttribute="top" secondItem="mgS-78-zSY" secondAttribute="bottom" constant="3" id="ocn-8q-D6m"/>
-                            <constraint firstItem="EbH-qJ-5cn" firstAttribute="trailing" secondItem="P0f-Qx-1Lb" secondAttribute="trailing" id="sUb-Mp-Ps6"/>
                             <constraint firstItem="yD3-bh-UQL" firstAttribute="top" secondItem="hHi-Jt-TAf" secondAttribute="bottom" constant="19" id="zB9-CR-dIP"/>
                         </constraints>
                     </view>
@@ -163,13 +151,12 @@
                         <outlet property="facebookButton" destination="P0f-Qx-1Lb" id="hOV-pq-HMG"/>
                         <outlet property="loginPasswordInput" destination="yD3-bh-UQL" id="jKH-Tz-VAS"/>
                         <outlet property="loginUsernameInput" destination="hHi-Jt-TAf" id="sGW-ja-veG"/>
-                        <outlet property="twitterButton" destination="EbH-qJ-5cn" id="qaP-gR-96N"/>
                         <segue destination="NHa-LQ-a0o" kind="show" identifier="loginSuccessSegueID" id="Dj7-n6-mMF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="479" y="1098"/>
+            <point key="canvasLocation" x="479.5" y="1098"/>
         </scene>
         <!--Password Recovery-->
         <scene sceneID="eMw-7e-QKd">
@@ -2338,6 +2325,7 @@
         <image name="weblogo" width="980" height="230"/>
     </resources>
     <inferredMetricsTieBreakers>
+<<<<<<< HEAD
         <segue reference="Dj7-n6-mMF"/>
         <segue reference="2bN-4P-yvE"/>
         <segue reference="sLv-ZE-4ZR"/>
@@ -2345,5 +2333,14 @@
         <segue reference="hbY-9W-gkA"/>
         <segue reference="2I7-nS-8jy"/>
         <segue reference="gkT-qd-aiE"/>
+=======
+        <segue reference="yUP-Dp-JRA"/>
+        <segue reference="Os5-jC-VHH"/>
+        <segue reference="sog-iJ-UoY"/>
+        <segue reference="8Qw-1r-dRP"/>
+        <segue reference="2bN-4P-yvE"/>
+        <segue reference="QlH-9Z-W9M"/>
+        <segue reference="sLv-ZE-4ZR"/>
+>>>>>>> parent of 2585903... UI cleanup done
     </inferredMetricsTieBreakers>
 </document>
