@@ -31,6 +31,8 @@
 @property (strong, nonatomic) UIImagePickerController *imagePickerController;
 @property UIImage *eventDetailPicture;
 
+@property BOOL allFieldsComplete;
+
 @end
 
 @implementation CreateEventViewController
@@ -41,6 +43,7 @@
     
     self.genderSegmentedController.selectedSegmentIndex = 0;
     self.eventGender = @"Male";
+    self.allFieldsComplete = false;
 }
 
 -(BOOL)prefersStatusBarHidden
@@ -122,39 +125,57 @@
 
 - (IBAction)createEventOnButtonTapped:(UIButton *)sender
 {
-    NSData *imageData = UIImageJPEGRepresentation(self.eventImage, 50);
-    PFFile *imageFile = [PFFile fileWithName:@"EventImage.png" data:imageData];
     PFObject *event = [PFObject objectWithClassName:@"Event"];
-    [event setObject:imageFile forKey:@"eventPic"];
-    
-    PFUser *user = [PFUser currentUser];
-    PFRelation *usersToEvents = [event relationForKey:@"registeredUsers"];
-    [usersToEvents addObject:user];
-    
-    event[@"sport"] = self.sportTextField.text;
-    event[@"title"] = self.titleTextField.text;
-    event[@"location"] = self.locationTextField.text;
-    event[@"dateComparison"] = self.dateAndTimeComparisonString;
-    event[@"date"] = self.dateString;
-    event[@"time"] = self.timeString;
-    event[@"description"] = self.descriptionTextField.text;
-    event[@"playersNeeded"] = self.numberOfPlayersLabel.text;
-    event[@"playersRegistered"] = @"1";
-    event[@"gender"] = self.eventGender;
-    [event saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
-    {
-        PFRelation *eventsToUsers = [user relationForKey:@"myEvents"];
-        [eventsToUsers addObject:event];
-        [user saveInBackground];
-    }];
-    
-    [self performSegueWithIdentifier:@"mapSegueID" sender:self];
 
-    self.sportTextField.text = nil;
-    self.titleTextField.text = nil;
-    self.locationTextField.text = nil;
-    self.dateTimeTextField.text = nil;
-    self.descriptionTextField.text = nil;
+    if([self.sportTextField.text isEqualToString:@""]|| [self.titleTextField.text isEqualToString:@""]|| [self.locationTextField.text isEqualToString:@""] || [self.dateAndTimeComparisonString isEqualToString:@""]|| [self.descriptionTextField.text isEqualToString:@""])
+    {
+        UIAlertView *fieldCompletionFalse = [[UIAlertView alloc] initWithTitle:@"Wait!" message:@"All event information fields have not been filled out." delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles: nil];
+        [fieldCompletionFalse show];
+    }
+    else
+    {
+        if (self.eventImage != NULL)
+        {
+            NSData *imageData = UIImageJPEGRepresentation(self.eventImage, 10);
+            PFFile *imageFile = [PFFile fileWithName:@"EventImage.png" data:imageData];
+            [event setObject:imageFile forKey:@"eventPic"];
+        }
+        else
+        {
+            NSData *imageData = UIImageJPEGRepresentation([UIImage imageNamed:@"PASbackground.png"], 10);
+            PFFile *imageFile = [PFFile fileWithName:@"EventImage.png" data:imageData];
+            [event setObject: imageFile forKey:@"eventPic"];
+        }
+        
+        PFUser *user = [PFUser currentUser];
+        PFRelation *usersToEvents = [event relationForKey:@"registeredUsers"];
+        [usersToEvents addObject:user];
+        
+        event[@"sport"] = self.sportTextField.text;
+        event[@"title"] = self.titleTextField.text;
+        event[@"location"] = self.locationTextField.text;
+        event[@"dateComparison"] = self.dateAndTimeComparisonString;
+        event[@"date"] = self.dateString;
+        event[@"time"] = self.timeString;
+        event[@"description"] = self.descriptionTextField.text;
+        event[@"playersNeeded"] = self.numberOfPlayersLabel.text;
+        event[@"playersRegistered"] = @"1";
+        event[@"gender"] = self.eventGender;
+        [event saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
+         {
+             PFRelation *eventsToUsers = [user relationForKey:@"myEvents"];
+             [eventsToUsers addObject:event];
+             [user saveInBackground];
+         }];
+        
+        [self performSegueWithIdentifier:@"mapSegueID" sender:self];
+        
+        self.sportTextField.text = nil;
+        self.titleTextField.text = nil;
+        self.locationTextField.text = nil;
+        self.dateTimeTextField.text = nil;
+        self.descriptionTextField.text = nil;
+    }
 }
 
 @end
