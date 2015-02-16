@@ -1961,11 +1961,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iQV-p1-WQG">
-                                <rect key="frame" x="555" y="511" width="30" height="30"/>
+                                <rect key="frame" x="554" y="511" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="3Ar-ay-0Tr"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <state key="normal" title="+">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -1991,22 +1991,10 @@
                                     <constraint firstAttribute="height" constant="26" id="M54-uh-Or6"/>
                                     <constraint firstAttribute="width" constant="46" id="uyE-sC-I9f"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BAQ-F8-BMO">
-                                <rect key="frame" x="16" y="539" width="568" height="53"/>
-                                <color key="backgroundColor" red="1" green="0.5544606527" blue="0.075866345469999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="Place Game">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="createEventOnButtonTapped:" destination="zcK-A9-Bnm" eventType="touchUpInside" id="gTk-dL-1ET"/>
-                                </connections>
-                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Az6-iA-S4D">
                                 <rect key="frame" x="15" y="250" width="569" height="30"/>
                                 <constraints>
@@ -2158,16 +2146,28 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BAQ-F8-BMO">
+                                <rect key="frame" x="-15" y="542" width="631" height="58"/>
+                                <color key="backgroundColor" red="1" green="0.5544606527" blue="0.075866345469999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Place Game">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="createEventOnButtonTapped:" destination="zcK-A9-Bnm" eventType="touchUpInside" id="gTk-dL-1ET"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.92585834703947367" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="DpE-Cj-WKM" firstAttribute="top" secondItem="Qgf-OU-KVT" secondAttribute="bottom" constant="8" symbolic="YES" id="5Tp-yq-Ay3"/>
                             <constraint firstItem="rNk-se-d0T" firstAttribute="top" secondItem="lKJ-VY-cJt" secondAttribute="bottom" constant="37" id="6iz-bn-7fb"/>
                             <constraint firstItem="Az6-iA-S4D" firstAttribute="leading" secondItem="K3j-ws-oUG" secondAttribute="leadingMargin" constant="-1" id="8i1-II-lwa"/>
-                            <constraint firstItem="BAQ-F8-BMO" firstAttribute="top" secondItem="m9A-Fi-ClC" secondAttribute="bottom" constant="15" id="AOm-zz-voL"/>
+                            <constraint firstItem="BAQ-F8-BMO" firstAttribute="top" secondItem="m9A-Fi-ClC" secondAttribute="bottom" constant="18" id="AOm-zz-voL"/>
                             <constraint firstItem="lKJ-VY-cJt" firstAttribute="top" secondItem="YKR-BZ-b9y" secondAttribute="bottom" constant="8" symbolic="YES" id="BOM-PQ-mAG"/>
                             <constraint firstItem="MWp-Dm-lxm" firstAttribute="leading" secondItem="CV5-6O-fgQ" secondAttribute="leading" id="CXR-yc-L9D"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="iQV-p1-WQG" secondAttribute="trailing" constant="-1" id="Chf-SN-5lT"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="iQV-p1-WQG" secondAttribute="trailing" id="Chf-SN-5lT"/>
                             <constraint firstItem="evJ-Ih-BgY" firstAttribute="top" secondItem="IJE-2a-UEQ" secondAttribute="bottom" constant="8" id="D64-4A-P7J"/>
                             <constraint firstItem="YKR-BZ-b9y" firstAttribute="leading" secondItem="IJE-2a-UEQ" secondAttribute="leading" id="DNI-fX-Cr1"/>
                             <constraint firstItem="D1f-E8-yax" firstAttribute="top" secondItem="z5X-vN-XFQ" secondAttribute="bottom" constant="-8" id="E3u-j6-Q0R"/>
@@ -2177,10 +2177,10 @@
                             <constraint firstItem="p4K-Pj-cJg" firstAttribute="top" secondItem="lKJ-VY-cJt" secondAttribute="bottom" constant="8" symbolic="YES" id="G0w-bK-CJh"/>
                             <constraint firstItem="CV5-6O-fgQ" firstAttribute="leading" secondItem="z5X-vN-XFQ" secondAttribute="leading" id="He1-Cr-7lj"/>
                             <constraint firstItem="DpE-Cj-WKM" firstAttribute="leading" secondItem="K3j-ws-oUG" secondAttribute="leadingMargin" constant="-1" id="IQ9-Ko-cSZ"/>
-                            <constraint firstItem="lKJ-VY-cJt" firstAttribute="trailing" secondItem="BAQ-F8-BMO" secondAttribute="trailing" id="JlZ-q1-Kp6"/>
+                            <constraint firstItem="lKJ-VY-cJt" firstAttribute="trailing" secondItem="BAQ-F8-BMO" secondAttribute="trailing" constant="-32" id="JlZ-q1-Kp6"/>
                             <constraint firstItem="Az6-iA-S4D" firstAttribute="top" secondItem="k7U-5O-Lni" secondAttribute="bottom" constant="6" id="Lfi-Gf-bjH"/>
                             <constraint firstItem="evJ-Ih-BgY" firstAttribute="leading" secondItem="Az6-iA-S4D" secondAttribute="leading" id="Lwc-1b-AfC"/>
-                            <constraint firstItem="DpE-Cj-WKM" firstAttribute="trailing" secondItem="BAQ-F8-BMO" secondAttribute="trailing" id="M3c-GR-2Iv"/>
+                            <constraint firstItem="DpE-Cj-WKM" firstAttribute="trailing" secondItem="BAQ-F8-BMO" secondAttribute="trailing" constant="-32" id="M3c-GR-2Iv"/>
                             <constraint firstItem="rNk-se-d0T" firstAttribute="centerX" secondItem="lKJ-VY-cJt" secondAttribute="centerX" constant="-1" id="NaY-Va-xvr"/>
                             <constraint firstItem="RnJ-4P-bQB" firstAttribute="top" secondItem="evJ-Ih-BgY" secondAttribute="top" constant="-4" id="Ogs-R6-mOh"/>
                             <constraint firstItem="vUJ-vu-lk5" firstAttribute="leading" secondItem="Az6-iA-S4D" secondAttribute="leading" constant="1" id="Pjd-kQ-AjO"/>
@@ -2196,7 +2196,7 @@
                             <constraint firstItem="DpE-Cj-WKM" firstAttribute="top" secondItem="vUJ-vu-lk5" secondAttribute="bottom" constant="8" symbolic="YES" id="bdv-2z-X32"/>
                             <constraint firstItem="Gq2-ef-STl" firstAttribute="centerX" secondItem="evJ-Ih-BgY" secondAttribute="centerX" constant="1" id="cFS-hE-bOW"/>
                             <constraint firstItem="lKJ-VY-cJt" firstAttribute="trailing" secondItem="evJ-Ih-BgY" secondAttribute="trailing" id="cVm-pP-c1E"/>
-                            <constraint firstItem="BAQ-F8-BMO" firstAttribute="top" secondItem="iQV-p1-WQG" secondAttribute="bottom" constant="-2" id="cmP-Wh-bjc"/>
+                            <constraint firstItem="BAQ-F8-BMO" firstAttribute="top" secondItem="iQV-p1-WQG" secondAttribute="bottom" constant="1" id="cmP-Wh-bjc"/>
                             <constraint firstItem="k7U-5O-Lni" firstAttribute="top" secondItem="DpE-Cj-WKM" secondAttribute="bottom" constant="75" id="e1V-JP-wHC"/>
                             <constraint firstItem="7R5-bb-5yx" firstAttribute="centerX" secondItem="lKJ-VY-cJt" secondAttribute="centerX" id="gXJ-m4-nfO"/>
                             <constraint firstItem="7R5-bb-5yx" firstAttribute="top" secondItem="K3j-ws-oUG" secondAttribute="top" id="lDs-NE-Yqi"/>
@@ -2211,9 +2211,9 @@
                             <constraint firstItem="YKR-BZ-b9y" firstAttribute="top" secondItem="evJ-Ih-BgY" secondAttribute="bottom" constant="8" symbolic="YES" id="shm-k9-bdb"/>
                             <constraint firstItem="D1f-E8-yax" firstAttribute="top" secondItem="iQV-p1-WQG" secondAttribute="top" constant="-11" id="tPg-7A-l7Q"/>
                             <constraint firstItem="CV5-6O-fgQ" firstAttribute="top" secondItem="MWp-Dm-lxm" secondAttribute="bottom" constant="8" symbolic="YES" id="vHz-2b-vxk"/>
-                            <constraint firstAttribute="bottom" secondItem="BAQ-F8-BMO" secondAttribute="bottom" constant="8" id="vQx-zN-wS0"/>
+                            <constraint firstAttribute="bottom" secondItem="BAQ-F8-BMO" secondAttribute="bottom" id="vQx-zN-wS0"/>
                             <constraint firstItem="k7U-5O-Lni" firstAttribute="top" secondItem="7R5-bb-5yx" secondAttribute="bottom" constant="158" id="vni-bO-Nsg"/>
-                            <constraint firstItem="BAQ-F8-BMO" firstAttribute="leading" secondItem="D1f-E8-yax" secondAttribute="leading" constant="-1" id="wKa-4f-Fhc"/>
+                            <constraint firstItem="BAQ-F8-BMO" firstAttribute="leading" secondItem="D1f-E8-yax" secondAttribute="leading" constant="-32" id="wKa-4f-Fhc"/>
                         </constraints>
                     </view>
                     <connections>
