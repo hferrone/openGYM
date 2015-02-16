@@ -57,7 +57,7 @@
     self.datePicker.minimumDate = [[ NSDate alloc ] initWithTimeIntervalSinceNow: (NSTimeInterval) 0 ];
     
     [UIView animateWithDuration:0.3 animations:^{
-        self.datePickerOverlayView.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y + 95, self.view.frame.size.width, 425);
+        self.datePickerOverlayView.frame = self.view.frame;
     }];
 }
 
