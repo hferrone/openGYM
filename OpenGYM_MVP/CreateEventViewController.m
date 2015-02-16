@@ -42,8 +42,11 @@
     [super viewDidLoad];
     
     self.genderSegmentedController.selectedSegmentIndex = 0;
+<<<<<<< HEAD
     self.eventGender = @"Male";
     self.allFieldsComplete = false;
+=======
+>>>>>>> parent of 0f87f2a... Default value work
 }
 
 -(BOOL)prefersStatusBarHidden
