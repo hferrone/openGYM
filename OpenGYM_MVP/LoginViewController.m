@@ -14,7 +14,6 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *btn;
 @property (weak, nonatomic) IBOutlet FBLoginView *facebookButton;
-@property (weak, nonatomic) IBOutlet TWTRLogInButton *twitterButton;
 
 @end
 
@@ -30,7 +29,7 @@
     _btn.layer.cornerRadius = 5;
     
     //Twitter login
-    self.twitterButton =  [TWTRLogInButton buttonWithLogInCompletion:^(TWTRSession* session, NSError* error)
+    TWTRLogInButton* logInButton =  [TWTRLogInButton buttonWithLogInCompletion:^(TWTRSession* session, NSError* error)
     {
         if (session)
         {
@@ -40,7 +39,9 @@
         } else{
             NSLog(@"error: %@", [error localizedDescription]);
         }
-    }];
+                                     }];
+    logInButton.frame = CGRectMake(self.view.frame.origin.x + self.facebookButton.frame.size.width/4 + 25, self.facebookButton.frame.origin.y + 115, self.facebookButton.frame.size.width, self.facebookButton.frame.size.height);
+    [self.view addSubview:logInButton];
 }
 
 //hide status bar per design
