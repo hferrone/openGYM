@@ -64,7 +64,7 @@
 - (IBAction)selectProfileImageOnButtonTapped:(UIButton *)sender
 {
     [UIView animateWithDuration:0.3 animations:^{
-        self.imagePickerPopoverView.frame = CGRectMake(self.view.frame.origin.x + 100, self.view.frame.origin.y + 150, self.imagePickerPopoverView.frame.size.width, self.imagePickerPopoverView.frame.size.height);
+        self.imagePickerPopoverView.frame = self.view.frame;
     }];
 }
 
@@ -112,11 +112,11 @@
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    [self.profileTextView resignFirstResponder];
-    
     PFUser *user = [PFUser currentUser];
     user[@"aboutme"] = self.profileTextView.text;
     [user saveInBackground];
+    
+    [self.profileTextView resignFirstResponder];
     
     [UIView animateWithDuration:0.3 animations:^{
         self.imagePickerPopoverView.frame = CGRectMake(600, 600, 5, 5);

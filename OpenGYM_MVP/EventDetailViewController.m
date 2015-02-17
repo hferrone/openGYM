@@ -27,6 +27,8 @@
 
 @property BOOL userAlreadyRegistered;
 @property BOOL eventFull;
+@property (weak, nonatomic) IBOutlet UIImageView *detailSportImage;
+@property (weak, nonatomic) IBOutlet UIImageView *detailGenderImage;
 
 @end
 
@@ -39,6 +41,40 @@
     //set bools to false by default
     self.userAlreadyRegistered = false;
     self.eventFull = false;
+    
+    if([[self.eventObject objectForKey:@"sport"] isEqualToString:@"Basketball"])
+    {
+        self.detailSportImage.image = [UIImage imageNamed:@"OGsportbasketballICON"];
+    }
+    else if([[self.eventObject  objectForKey:@"sport"] isEqualToString:@"Baseball"])
+    {
+        self.detailSportImage.image  = [UIImage imageNamed:@"OGsportbaseballICON"];
+    }
+    else if([[self.eventObject  objectForKey:@"sport"] isEqualToString:@"Tennis"])
+    {
+        self.detailSportImage.image  = [UIImage imageNamed:@"OGsporttennisICON"];
+    }
+    else if([[self.eventObject  objectForKey:@"sport"] isEqualToString:@"Soccer"])
+    {
+        self.detailSportImage.image  = [UIImage imageNamed:@"OGsportsoccerICON"];
+    }
+    else if([[self.eventObject  objectForKey:@"sport"] isEqualToString:@"Football"])
+    {
+        self.detailSportImage.image  = [UIImage imageNamed:@"OGsportfootballICON"];
+    }
+    
+    if ([[self.eventObject objectForKey:@"gender"] isEqualToString:@"Male"])
+    {
+        self.detailGenderImage.image = [UIImage imageNamed:@"maleicon.png"];
+    }
+    else if ([[self.eventObject objectForKey:@"gender"] isEqualToString:@"Female"])
+    {
+        self.detailGenderImage.image = [UIImage imageNamed:@"femaleicon.png"];
+    }
+    else if ([[self.eventObject objectForKey:@"gender"] isEqualToString:@"Co-Ed"])
+    {
+        self.detailGenderImage.image = [UIImage imageNamed:@"co-edicon.png"];
+    }
     
     self.eventDetailTitle.title = self.eventObject[@"title"];
     
@@ -98,13 +134,13 @@
             }
             
             //check which UIAlert needs to be presented
-            if(self.userAlreadyRegistered && !self.eventFull)
+            if(self.userAlreadyRegistered)
             {
                 UIAlertView *userAlreadyRegisteredAlert = [[UIAlertView alloc] initWithTitle:@"Stop!!!" message:@"You're already registered for this event." delegate:self cancelButtonTitle:@"Back To Map" otherButtonTitles:nil];
                 userAlreadyRegisteredAlert.tag = 1;
                 [userAlreadyRegisteredAlert show];
             }
-            else if(self.eventFull && !self.userAlreadyRegistered)
+            else if(self.eventFull)
             {
                 UIAlertView *eventFullAlert = [[UIAlertView alloc] initWithTitle:@"Sorry..." message:@"This event is already full." delegate:self cancelButtonTitle:@"Back To Map" otherButtonTitles:nil];
                 eventFullAlert.tag = 2;
@@ -128,12 +164,12 @@
                 
                 [self performSegueWithIdentifier:@"myGamesSegueID" sender:self];
             }
-            else if (self.userAlreadyRegistered && self.eventFull)
-            {
-                UIAlertView *userAlreadyRegisteredAlert = [[UIAlertView alloc] initWithTitle:@"Hold Up!" message:@"Then event is full and you are already registered!" delegate:self cancelButtonTitle:@"Back To Map" otherButtonTitles:nil];
-                userAlreadyRegisteredAlert.tag = 3;
-                [userAlreadyRegisteredAlert show];
-            }
+//            else if (self.userAlreadyRegistered && self.eventFull)
+//            {
+//                UIAlertView *userAlreadyRegisteredAlert = [[UIAlertView alloc] initWithTitle:@"Hold Up!" message:@"Then event is full and you are already registered!" delegate:self cancelButtonTitle:@"Back To Map" otherButtonTitles:nil];
+//                userAlreadyRegisteredAlert.tag = 3;
+//                [userAlreadyRegisteredAlert show];
+//            }
 
         }
     }];

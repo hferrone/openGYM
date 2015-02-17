@@ -66,7 +66,10 @@
              
              if (days < 1 && hours <= 24 && minutes <= 60)
              {
-                 self.timeCountdownString = [NSString stringWithFormat:@"%ld hrs %ld min", hours, (long)minutes];
+                 self.timeCountdownString = [NSString stringWithFormat:@"%ld hrs %ld min", (long)hours, (long)minutes];
+             }
+             else{
+                 self.timeCountdownString = [NSString stringWithFormat:@"%@", object[@"dateComparison"]];
              }
          }
 
