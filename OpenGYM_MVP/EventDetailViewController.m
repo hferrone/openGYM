@@ -52,7 +52,7 @@
     PFQuery *userQuery = [usersToEvents query];
     [userQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
     {
-        NSString *string = @"";
+        NSString *usersString1 = @"";
         
         for (PFUser *registeredUser in objects)
         {
@@ -61,10 +61,11 @@
         
         for (int i = 0; i < self.usersRegisteredArray.count; i++)
         {
-            string = [string stringByAppendingString:self.usersRegisteredArray[i]];
+            NSString *usersString2 = [NSString stringWithFormat: @"%@ || ", self.usersRegisteredArray[i]];
+            usersString1 = [usersString1 stringByAppendingString:usersString2];
         }
         
-        self.detailMembersGoingTextView.text = string;
+        self.detailMembersGoingTextView.text = usersString1;
 
     }];
     
