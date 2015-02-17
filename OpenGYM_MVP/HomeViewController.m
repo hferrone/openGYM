@@ -24,6 +24,8 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
 
 @property(readonly) NSTimeInterval timeIntervalSinceNow;
+@property (weak, nonatomic) IBOutlet UIView *ratingPopoverView;
+
 
 @end
 
@@ -41,6 +43,13 @@
         [self.sidebarButton setAction: @selector( rightRevealToggle: )];
         [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     }
+}
+
+- (IBAction)eventRatingOnButtonTapped:(UIButton *)sender
+{
+    [UIView animateWithDuration:0.3 animations:^{
+        self.ratingPopoverView.frame = self.view.frame;
+    }];
 }
 
 -(void)parseDataQueryAll
@@ -176,6 +185,13 @@
 {
     EventDetailViewController *evc = segue.destinationViewController;
     evc.eventObject = self.eventObject;
+}
+
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [UIView animateWithDuration:0.3 animations:^{
+        self.ratingPopoverView.frame = CGRectMake(700, 700, 5, 5);
+    }];
 }
 
 @end

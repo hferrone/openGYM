@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
+#import <FacebookSDK/FacebookSDK.h>
 
 @interface ProfileViewController : UIViewController
 

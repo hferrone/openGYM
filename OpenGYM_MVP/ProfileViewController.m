@@ -61,6 +61,23 @@
     return true;
 }
 
+- (IBAction)userLogout:(UIButton *)sender
+{
+    FBSession* session = [FBSession activeSession];
+    [session closeAndClearTokenInformation];
+    [session close];
+    [FBSession setActiveSession:nil];
+    
+    NSHTTPCookieStorage* cookies = [NSHTTPCookieStorage sharedHTTPCookieStorage];
+    NSArray* facebookCookies = [cookies cookiesForURL:[NSURL         URLWithString:@"https://facebook.com/"]];
+    
+    for (NSHTTPCookie* cookie in facebookCookies) {
+        [cookies deleteCookie:cookie];
+    }
+    
+    [PFUser logOut];
+}
+
 - (IBAction)selectProfileImageOnButtonTapped:(UIButton *)sender
 {
     [UIView animateWithDuration:0.3 animations:^{

@@ -35,7 +35,7 @@
         if (session)
         {
             NSLog(@"signed in as %@", [session userName]);
-            [self performSegueWithIdentifier:@"loginSegueID" sender:self];
+            [self performSegueWithIdentifier:@"twitterLoginSegue" sender:self];
 
         } else{
             NSLog(@"error: %@", [error localizedDescription]);
