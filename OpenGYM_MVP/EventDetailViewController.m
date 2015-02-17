@@ -29,6 +29,10 @@
 @property BOOL eventFull;
 @property (weak, nonatomic) IBOutlet UIImageView *detailSportImage;
 @property (weak, nonatomic) IBOutlet UIImageView *detailGenderImage;
+@property (weak, nonatomic) IBOutlet UITextView *detailMembersGoingTextView;
+
+@property NSMutableArray *usersRegisteredArray;
+@property NSMutableString *usersString;
 
 @end
 
@@ -41,6 +45,28 @@
     //set bools to false by default
     self.userAlreadyRegistered = false;
     self.eventFull = false;
+    
+    self.usersRegisteredArray = [NSMutableArray new];
+    
+    PFRelation *usersToEvents = [self.eventObject relationForKey:@"registeredUsers"];
+    PFQuery *userQuery = [usersToEvents query];
+    [userQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
+    {
+        NSString *string = @"";
+        
+        for (PFUser *registeredUser in objects)
+        {
+            [self.usersRegisteredArray addObject:registeredUser.username];
+        }
+        
+        for (int i = 0; i < self.usersRegisteredArray.count; i++)
+        {
+            string = [string stringByAppendingString:self.usersRegisteredArray[i]];
+        }
+        
+        self.detailMembersGoingTextView.text = string;
+
+    }];
     
     if([[self.eventObject objectForKey:@"sport"] isEqualToString:@"Basketball"])
     {
@@ -134,13 +160,13 @@
             }
             
             //check which UIAlert needs to be presented
-            if(self.userAlreadyRegistered)
+            if(self.userAlreadyRegistered && !self.eventFull)
             {
                 UIAlertView *userAlreadyRegisteredAlert = [[UIAlertView alloc] initWithTitle:@"Stop!!!" message:@"You're already registered for this event." delegate:self cancelButtonTitle:@"Back To Map" otherButtonTitles:nil];
                 userAlreadyRegisteredAlert.tag = 1;
                 [userAlreadyRegisteredAlert show];
             }
-            else if(self.eventFull)
+            else if(self.eventFull && !self.userAlreadyRegistered)
             {
                 UIAlertView *eventFullAlert = [[UIAlertView alloc] initWithTitle:@"Sorry..." message:@"This event is already full." delegate:self cancelButtonTitle:@"Back To Map" otherButtonTitles:nil];
                 eventFullAlert.tag = 2;
