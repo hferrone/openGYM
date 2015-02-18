@@ -8,7 +8,7 @@
 
 #import "CreateEventViewController.h"
 
-@interface CreateEventViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface CreateEventViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *sportTextField;
 @property (weak, nonatomic) IBOutlet UITextField *locationTextField;
@@ -44,6 +44,9 @@
     self.genderSegmentedController.selectedSegmentIndex = 0;
     self.eventGender = @"Male";
     self.allFieldsComplete = false;
+    
+    [self.sportTextField setReturnKeyType:UIReturnKeyDone];
+    self.sportTextField.delegate = self;
 }
 
 -(BOOL)prefersStatusBarHidden
