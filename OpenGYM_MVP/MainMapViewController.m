@@ -102,7 +102,7 @@
     zoomLocation.latitude = 41.850033;
     zoomLocation.longitude= -87.650052;
     
-    MKCoordinateRegion viewRegion = MKCoordinateRegionMake(zoomLocation, MKCoordinateSpanMake(0.45, 0.45));
+    MKCoordinateRegion viewRegion = MKCoordinateRegionMake(zoomLocation, MKCoordinateSpanMake(0.15, 0.15));
     
     [_mapView setRegion:viewRegion animated:YES];
 }
@@ -121,9 +121,7 @@
     pin.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
     
     for (CustomPointAnnotation *annotation in self.allEvents)
-    {
-        NSLog(@"%@", annotation.sport);
-        
+    {        
         if ([annotation.sport isEqualToString:@"Basketball"])
         {
             pin.image = [UIImage imageNamed:@"OGsportbasketballICON"];

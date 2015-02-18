@@ -20,6 +20,8 @@
 @property (strong, nonatomic) UIImagePickerController *imagePickerController;
 @property (weak, nonatomic) UIImage *dashboardPicture;
 @property (weak, nonatomic) IBOutlet UIView *imagePickerPopoverView;
+@property (weak, nonatomic) IBOutlet UIButton *selectFromCameraButton;
+@property (weak, nonatomic) IBOutlet UIButton *selectFromLibraryButton;
 
 @end
 
