@@ -146,7 +146,7 @@
     PFObject *event = [self.storedEvents objectAtIndex:indexPath.row];
     
     homeCell.cellTitleLabel.text = [event objectForKey:@"title"];
-    homeCell.cellTimeLabel.text = [event objectForKey:@"dateComparison"];
+    homeCell.cellTimeLabel.text = [NSString stringWithFormat:@"%@",[event objectForKey:@"date"]];
     homeCell.cellNumberPlayersLabel.text = [event objectForKey:@"playersNeeded"];
     
     if([[event objectForKey:@"sport"] isEqualToString:@"Basketball"])

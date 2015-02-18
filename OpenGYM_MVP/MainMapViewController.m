@@ -11,6 +11,7 @@
 #import "HomeViewController.h"
 #import "MapAnnotationDetailViewController.h"
 #import "EventDetailViewController.h"
+#import "CustomPointAnnotation.h"
 
 #import <Parse/Parse.h>
 #import <MapKit/MapKit.h>
@@ -72,9 +73,10 @@
            {
                for(CLPlacemark *place in placemarks)
                {
-                   MKPointAnnotation *annotation = [MKPointAnnotation new];
+                   CustomPointAnnotation *annotation = [CustomPointAnnotation new];
                    annotation.coordinate = place.location.coordinate;
                    annotation.title = object[@"title"];
+                   annotation.sport = object[@"sport"];
                    self.allEvents = [NSMutableArray arrayWithObject:annotation];
                    [self.mapView addAnnotations:self.allEvents];
                }
@@ -117,8 +119,34 @@
     MKPinAnnotationView *pin = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:nil];
     pin.canShowCallout = YES;
     pin.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-    //pin.image = [UIImage imageNamed:@"OGsportbaseballICON"];
     
+    for (CustomPointAnnotation *annotation in self.allEvents)
+    {
+        NSLog(@"%@", annotation.sport);
+        
+        if ([annotation.sport isEqualToString:@"Basketball"])
+        {
+            pin.image = [UIImage imageNamed:@"OGsportbasketballICON"];
+        }
+        else if ([annotation.sport isEqualToString:@"Baseball"])
+        {
+            pin.image = [UIImage imageNamed:@"OGsportbaseballICON"];
+        }
+        else if ([annotation.sport isEqualToString:@"Football"])
+        {
+            pin.image = [UIImage imageNamed:@"OGsportfootballICON"];
+        }
+        else if ([annotation.sport isEqualToString:@"Soccer"])
+        {
+            pin.image = [UIImage imageNamed:@"OGsportsoccerICON"];
+        }
+        else if ([annotation.sport isEqualToString:@"Tennis"])
+        {
+            pin.image = [UIImage imageNamed:@"OGsporttennisICON"];
+        }
+        
+    }
+
     return pin;
 }
 
@@ -145,7 +173,6 @@
          for (PFObject *object in objects)
          {
              self.eventObject = object;
-             NSLog(@"%@", self.eventObject);
          }
      }];
 }

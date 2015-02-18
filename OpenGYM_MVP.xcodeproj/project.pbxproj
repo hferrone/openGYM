@@ -40,6 +40,7 @@
 		4A3B72A01A5F86E900D893E6 /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4A3B729D1A5F86E900D893E6 /* TwitterKitResources.bundle */; };
 		4A3B72A11A5F86E900D893E6 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A3B729E1A5F86E900D893E6 /* Fabric.framework */; };
 		4A3F14711A6ECD77007C1BAB /* MapAnnotationDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A3F14701A6ECD77007C1BAB /* MapAnnotationDetailViewController.m */; };
+		4A408D591A9520A9003F51CC /* CustomPointAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A408D581A9520A9003F51CC /* CustomPointAnnotation.m */; };
 		4A65CECA1A5F164700C9BC3C /* PasswordRecoveryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A65CEC91A5F164700C9BC3C /* PasswordRecoveryViewController.m */; };
 		4A76615D1A83EF0200D31348 /* libCorePlot-CocoaTouch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A76615C1A83EF0200D31348 /* libCorePlot-CocoaTouch.a */; };
 		4A76615F1A83F48600D31348 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A76615E1A83F48600D31348 /* UIKit.framework */; };
@@ -116,6 +117,8 @@
 		4A3B729E1A5F86E900D893E6 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = OpenGYM_MVP/Fabric.framework; sourceTree = "<group>"; };
 		4A3F146F1A6ECD77007C1BAB /* MapAnnotationDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapAnnotationDetailViewController.h; sourceTree = "<group>"; };
 		4A3F14701A6ECD77007C1BAB /* MapAnnotationDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapAnnotationDetailViewController.m; sourceTree = "<group>"; };
+		4A408D571A9520A9003F51CC /* CustomPointAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomPointAnnotation.h; sourceTree = "<group>"; };
+		4A408D581A9520A9003F51CC /* CustomPointAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomPointAnnotation.m; sourceTree = "<group>"; };
 		4A65CEC81A5F164700C9BC3C /* PasswordRecoveryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswordRecoveryViewController.h; sourceTree = "<group>"; };
 		4A65CEC91A5F164700C9BC3C /* PasswordRecoveryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordRecoveryViewController.m; sourceTree = "<group>"; };
 		4A76610E1A83EF0200D31348 /* CorePlot-CocoaTouch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CorePlot-CocoaTouch.h"; sourceTree = "<group>"; };
@@ -302,6 +305,8 @@
 				4A65CEC91A5F164700C9BC3C /* PasswordRecoveryViewController.m */,
 				4AC280291A64508900092C0B /* MainMapViewController.h */,
 				4AC2802A1A64508900092C0B /* MainMapViewController.m */,
+				4A408D571A9520A9003F51CC /* CustomPointAnnotation.h */,
+				4A408D581A9520A9003F51CC /* CustomPointAnnotation.m */,
 				4AACB0111A647AF7005F4331 /* CreateEventViewController.h */,
 				4AACB0121A647AF7005F4331 /* CreateEventViewController.m */,
 				4A2098541A8D8A58007EEB59 /* ChooseEventPictureViewController.h */,
@@ -631,6 +636,7 @@
 				4AEF2C451A81F2C500D66357 /* IntroScreen2ViewController.m in Sources */,
 				4A1073B71A5C5CC00089F080 /* LoginViewController.m in Sources */,
 				4A18D6E61A6AD2CF00842E19 /* HomeViewController.m in Sources */,
+				4A408D591A9520A9003F51CC /* CustomPointAnnotation.m in Sources */,
 				4AFB8F781A75A201003E61A1 /* EventDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
