@@ -28,7 +28,6 @@
 		4A1073DA1A5C60AA0089F080 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A1073D91A5C60AA0089F080 /* StoreKit.framework */; };
 		4A1073DC1A5C60B10089F080 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A1073DB1A5C60B10089F080 /* SystemConfiguration.framework */; };
 		4A1073DE1A5C60C30089F080 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A1073DD1A5C60C30089F080 /* libsqlite3.dylib */; };
-		4A1073E71A5C897E0089F080 /* SelectSportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A1073E61A5C897E0089F080 /* SelectSportViewController.m */; };
 		4A18D6E31A6AD1D800842E19 /* RatingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A18D6E21A6AD1D800842E19 /* RatingsViewController.m */; };
 		4A18D6E61A6AD2CF00842E19 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A18D6E51A6AD2CF00842E19 /* HomeViewController.m */; };
 		4A18D6E91A6AD3B000842E19 /* MyGamesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A18D6E81A6AD3B000842E19 /* MyGamesViewController.m */; };
@@ -98,8 +97,6 @@
 		4A1073D91A5C60AA0089F080 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		4A1073DB1A5C60B10089F080 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		4A1073DD1A5C60C30089F080 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
-		4A1073E51A5C897E0089F080 /* SelectSportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectSportViewController.h; sourceTree = "<group>"; };
-		4A1073E61A5C897E0089F080 /* SelectSportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectSportViewController.m; sourceTree = "<group>"; };
 		4A18D6E11A6AD1D800842E19 /* RatingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RatingsViewController.h; sourceTree = "<group>"; };
 		4A18D6E21A6AD1D800842E19 /* RatingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RatingsViewController.m; sourceTree = "<group>"; };
 		4A18D6E41A6AD2CF00842E19 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
@@ -303,8 +300,6 @@
 				4A1073B91A5C5CC90089F080 /* RegistrationViewController.m */,
 				4A65CEC81A5F164700C9BC3C /* PasswordRecoveryViewController.h */,
 				4A65CEC91A5F164700C9BC3C /* PasswordRecoveryViewController.m */,
-				4A1073E51A5C897E0089F080 /* SelectSportViewController.h */,
-				4A1073E61A5C897E0089F080 /* SelectSportViewController.m */,
 				4AC280291A64508900092C0B /* MainMapViewController.h */,
 				4AC2802A1A64508900092C0B /* MainMapViewController.m */,
 				4AACB0111A647AF7005F4331 /* CreateEventViewController.h */,
@@ -618,7 +613,6 @@
 			files = (
 				4A65CECA1A5F164700C9BC3C /* PasswordRecoveryViewController.m in Sources */,
 				4AD782811A69F423001C8774 /* RevealViewController.m in Sources */,
-				4A1073E71A5C897E0089F080 /* SelectSportViewController.m in Sources */,
 				4AFB8F751A7594E0003E61A1 /* CustomHomeFeedTableViewCell.m in Sources */,
 				4AC2802B1A64508900092C0B /* MainMapViewController.m in Sources */,
 				4AACB0131A647AF7005F4331 /* CreateEventViewController.m in Sources */,

@@ -178,4 +178,13 @@
     }
 }
 
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self.sportTextField resignFirstResponder];
+    [self.locationTextField resignFirstResponder];
+    [self.dateTimeTextField resignFirstResponder];
+    [self.descriptionTextField resignFirstResponder];
+    [self.titleTextField resignFirstResponder];
+}
+
 @end

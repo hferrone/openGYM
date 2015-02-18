@@ -7,6 +7,7 @@
 //
 
 #import "RevealViewController.h"
+#import "SWRevealViewController.h"
 #import <Parse/Parse.h>
 #import <FacebookSDK/FacebookSDK.h>
 #import <Social/Social.h>
@@ -28,13 +29,16 @@
 {
     [super viewDidLoad];
     
+    SWRevealViewController *revealViewController = self.revealViewController;
+    if ( revealViewController )
+    {
+        [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+    }
+
     PFUser *user = [PFUser currentUser];
     self.userFullNameLabel.text = user.username;
     
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSData *imageData = [defaults dataForKey:@"dashboardPic"];
-    UIImage *dashboardPic = [UIImage imageWithData:imageData];
-    self.dashboardProfilePic.image = dashboardPic;
+    self.dashboardProfilePic.image = [UIImage imageNamed:@"defaultuserpic"];
 }
 
 - (IBAction)selectImageOnButtonTapped:(UIButton *)sender

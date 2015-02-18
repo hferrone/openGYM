@@ -87,7 +87,7 @@
 -(void)loginViewShowingLoggedInUser:(FBLoginView *)loginView
 {
     NSLog(@"logged in");
-    [self performSegueWithIdentifier:@"loginSegueID" sender:self];
+    [self performSegueWithIdentifier:@"loginSuccessSegueID" sender:self];
 }
 
 @end
