@@ -25,6 +25,9 @@
     [Parse setApplicationId:@"4cePLYjXMVzUyi0jVuKRCOyVLutniV3Fs9vMhNAK"
                   clientKey:@"NXAVnRKw1ua2DYUvO8FJjA6YglLAUOB9sgpLj8is"];
     
+    //  y6F6R8KYCVacmt8VPxMktjixXWXbvDWCsU5jBuFd
+    //  ZVN2nkUEMoJYXvn5O7CcX8uRK0c3jhcXcHK7mvT9
+    
     // Override point for customization after application launch.
     [FBLoginView class];
     [Fabric with:@[TwitterKit]];
