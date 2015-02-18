@@ -39,6 +39,10 @@
     self.userFullNameLabel.text = user.username;
     
     self.dashboardProfilePic.image = [UIImage imageNamed:@"defaultuserpic"];
+    self.dashboardProfilePic.layer.cornerRadius = self.dashboardProfilePic.frame.size.width / 2;
+    self.dashboardProfilePic.clipsToBounds = YES;
+    self.dashboardProfilePic.layer.borderWidth = 3;
+    self.dashboardProfilePic.layer.borderColor = [UIColor whiteColor].CGColor;
 }
 
 - (IBAction)selectImageOnButtonTapped:(UIButton *)sender
