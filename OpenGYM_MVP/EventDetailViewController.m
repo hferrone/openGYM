@@ -115,20 +115,11 @@
     self.joinEventButton.layer.borderWidth = 1;
     
     PFFile *imageFile = [self.eventObject objectForKey:@"eventPic"];
-    
-    if(imageFile != NULL)
-    {
-        [imageFile getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
-            
-            UIImage *thumbnailImage = [UIImage imageWithData:imageData];
-            self.eventDetailPictureView.image = thumbnailImage;
-            
-        }];
-    }
-    else
-    {
-        self.eventDetailPictureView.image = [UIImage imageNamed:@"PASbackground.png"];
-    }
+    [imageFile getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
+        
+        UIImage *thumbnailImage = [UIImage imageWithData:imageData];
+        self.eventDetailPictureView.image = thumbnailImage;
+    }];
 }
 
 -(BOOL)prefersStatusBarHidden

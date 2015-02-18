@@ -145,9 +145,36 @@
         }
         else
         {
-            NSData *imageData = UIImageJPEGRepresentation([UIImage imageNamed:@"PASbackground.png"], 10);
-            PFFile *imageFile = [PFFile fileWithName:@"EventImage.png" data:imageData];
-            [event setObject: imageFile forKey:@"eventPic"];
+            if ([event[@"sport"] isEqualToString:@"Basketball"])
+            {
+                NSData *imageData = UIImageJPEGRepresentation([UIImage imageNamed:@"PASbackground.png"], 10);
+                PFFile *imageFile = [PFFile fileWithName:@"EventImage.png" data:imageData];
+                [event setObject: imageFile forKey:@"eventPic"];
+            }
+            else if ([event[@"sport"] isEqualToString:@"Baseball"])
+            {
+                NSData *imageData = UIImageJPEGRepresentation([UIImage imageNamed:@"PASbackground.png"], 10);
+                PFFile *imageFile = [PFFile fileWithName:@"EventImage.png" data:imageData];
+                [event setObject: imageFile forKey:@"eventPic"];
+            }
+            else if ([event[@"sport"] isEqualToString:@"Football"])
+            {
+                NSData *imageData = UIImageJPEGRepresentation([UIImage imageNamed:@"PASbackground.png"], 10);
+                PFFile *imageFile = [PFFile fileWithName:@"EventImage.png" data:imageData];
+                [event setObject: imageFile forKey:@"eventPic"];
+            }
+            else if ([event[@"sport"] isEqualToString:@"Soccer"])
+            {
+                NSData *imageData = UIImageJPEGRepresentation([UIImage imageNamed:@"PASbackground.png"], 10);
+                PFFile *imageFile = [PFFile fileWithName:@"EventImage.png" data:imageData];
+                [event setObject: imageFile forKey:@"eventPic"];
+            }
+            else if ([event[@"sport"] isEqualToString:@"Tennis"])
+            {
+                NSData *imageData = UIImageJPEGRepresentation([UIImage imageNamed:@"PASbackground.png"], 10);
+                PFFile *imageFile = [PFFile fileWithName:@"EventImage.png" data:imageData];
+                [event setObject: imageFile forKey:@"eventPic"];
+            }
         }
         
         PFUser *user = [PFUser currentUser];
