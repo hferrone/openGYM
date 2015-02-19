@@ -126,69 +126,69 @@
     pin.canShowCallout = YES;
     pin.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
     
-    for (CustomPointAnnotation *annotation in self.allEvents)
-    {        
-        if ([annotation.sport isEqualToString:@"Basketball"])
-        {
-            pin.image = [UIImage imageNamed:@"OGsportbasketballMAP.png"];
-        }
-        else if ([annotation.sport isEqualToString:@"Baseball"])
-        {
-            pin.image = [UIImage imageNamed:@"OGsportbaseballMAP.png"];
-        }
-        else if ([annotation.sport isEqualToString:@"Football"])
-        {
-            pin.image = [UIImage imageNamed:@"OGsportfootballMAP.png"];
-        }
-        else if ([annotation.sport isEqualToString:@"Soccer"])
-        {
-            pin.image = [UIImage imageNamed:@"OGsportsoccerMAP.png"];
-        }
-        else if ([annotation.sport isEqualToString:@"Tennis"])
-        {
-            pin.image = [UIImage imageNamed:@"OGsporttennisMAP.png"];
-        }
-    }
-    
-    for (CustomPointAnnotation *annotation in self.basketballEventArray)
-    {
-        if ([annotation.sport isEqualToString:@"Basketball"])
-        {
-            pin.image = [UIImage imageNamed:@"OGsportbasketballMAP.png"];
-        }
-    }
-    
-    for (CustomPointAnnotation *annotation in self.baseballEventArray)
-    {
-        if ([annotation.sport isEqualToString:@"Baseball"])
-        {
-            pin.image = [UIImage imageNamed:@"OGsportbaseballMAP.png"];
-        }
-    }
-    
-    for (CustomPointAnnotation *annotation in self.footballEventArray)
-    {
-        if ([annotation.sport isEqualToString:@"Football"])
-        {
-            pin.image = [UIImage imageNamed:@"OGsportfootballMAP.png"];
-        }
-    }
-    
-    for (CustomPointAnnotation *annotation in self.soccerEventArray)
-    {
-        if ([annotation.sport isEqualToString:@"Soccer"])
-        {
-            pin.image = [UIImage imageNamed:@"OGsportsoccerMAP.png"];
-        }
-    }
-    
-    for (CustomPointAnnotation *annotation in self.tennisEventArray)
-    {
-        if ([annotation.sport isEqualToString:@"Tennis"])
-        {
-            pin.image = [UIImage imageNamed:@"OGsporttennisMAP.png"];
-        }
-    }
+//    for (CustomPointAnnotation *annotation in self.allEvents)
+//    {        
+//        if ([annotation.sport isEqualToString:@"Basketball"])
+//        {
+//            pin.image = [UIImage imageNamed:@"OGsportbasketballMAP.png"];
+//        }
+//        else if ([annotation.sport isEqualToString:@"Baseball"])
+//        {
+//            pin.image = [UIImage imageNamed:@"OGsportbaseballMAP.png"];
+//        }
+//        else if ([annotation.sport isEqualToString:@"Football"])
+//        {
+//            pin.image = [UIImage imageNamed:@"OGsportfootballMAP.png"];
+//        }
+//        else if ([annotation.sport isEqualToString:@"Soccer"])
+//        {
+//            pin.image = [UIImage imageNamed:@"OGsportsoccerMAP.png"];
+//        }
+//        else if ([annotation.sport isEqualToString:@"Tennis"])
+//        {
+//            pin.image = [UIImage imageNamed:@"OGsporttennisMAP.png"];
+//        }
+//    }
+//    
+//    for (CustomPointAnnotation *annotation in self.basketballEventArray)
+//    {
+//        if ([annotation.sport isEqualToString:@"Basketball"])
+//        {
+//            pin.image = [UIImage imageNamed:@"OGsportbasketballMAP.png"];
+//        }
+//    }
+//    
+//    for (CustomPointAnnotation *annotation in self.baseballEventArray)
+//    {
+//        if ([annotation.sport isEqualToString:@"Baseball"])
+//        {
+//            pin.image = [UIImage imageNamed:@"OGsportbaseballMAP.png"];
+//        }
+//    }
+//    
+//    for (CustomPointAnnotation *annotation in self.footballEventArray)
+//    {
+//        if ([annotation.sport isEqualToString:@"Football"])
+//        {
+//            pin.image = [UIImage imageNamed:@"OGsportfootballMAP.png"];
+//        }
+//    }
+//    
+//    for (CustomPointAnnotation *annotation in self.soccerEventArray)
+//    {
+//        if ([annotation.sport isEqualToString:@"Soccer"])
+//        {
+//            pin.image = [UIImage imageNamed:@"OGsportsoccerMAP.png"];
+//        }
+//    }
+//    
+//    for (CustomPointAnnotation *annotation in self.tennisEventArray)
+//    {
+//        if ([annotation.sport isEqualToString:@"Tennis"])
+//        {
+//            pin.image = [UIImage imageNamed:@"OGsporttennisMAP.png"];
+//        }
+//    }
 
     return pin;
 }
