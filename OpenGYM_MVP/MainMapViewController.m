@@ -22,6 +22,7 @@
 @property (weak, nonatomic) IBOutlet UIView *sportSelectionPopoverView;
 
 @property (weak, nonatomic) IBOutlet UIButton *basketballSelectedButton;
+@property (weak, nonatomic) IBOutlet UIImageView *bottomImageView;
 
 @property (weak, nonatomic) NSString *sportSelected;
 @property (weak, nonatomic) NSString *addressString;
@@ -112,6 +113,8 @@
     [UIView animateWithDuration:0.3 animations:^{
         self.sportSelectionPopoverView.frame = self.view.frame;
     }];
+    
+    self.bottomImageView.image = [UIImage imageNamed:@"OGchoosesportFooterCLICKED"];
 }
 
 -(MKAnnotationView *)mapView:(MKMapView*)mapView viewForAnnotation:(id<MKAnnotation>)annotation
@@ -216,6 +219,8 @@
 
 -(void)queryBySportSelected
 {
+    self.bottomImageView.image = [UIImage imageNamed:@"OGchoosesportFooter"];
+    
     NSArray *allPoints = self.mapView.annotations;
     [self.mapView removeAnnotations:allPoints];
     
@@ -319,6 +324,8 @@
     [UIView animateWithDuration:0.3 animations:^{
         self.sportSelectionPopoverView.frame = CGRectMake(600, 600, 5, 5);
     }];
+    
+    self.bottomImageView.image = [UIImage imageNamed:@"OGchoosesportFooter"];
 }
 
 @end

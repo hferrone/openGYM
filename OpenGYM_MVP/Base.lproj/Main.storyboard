@@ -589,11 +589,18 @@
                                     <constraint firstAttribute="width" secondItem="yx3-BT-UBy" secondAttribute="height" multiplier="300:37" id="NUU-J0-4MS"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YDO-bG-rsm">
-                                <rect key="frame" x="279" y="543" width="42" height="39"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="weblogo" translatesAutoresizingMaskIntoConstraints="NO" id="ulX-c8-vwb">
+                                <rect key="frame" x="211" y="3" width="179" height="38"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="39" id="ADB-KF-EBI"/>
-                                    <constraint firstAttribute="width" constant="42" id="ctJ-uV-OTZ"/>
+                                    <constraint firstAttribute="width" constant="179" id="BOX-5F-EhN"/>
+                                    <constraint firstAttribute="height" constant="38" id="LGb-BS-Rud"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YDO-bG-rsm">
+                                <rect key="frame" x="260" y="532" width="80" height="61"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="61" id="ADB-KF-EBI"/>
+                                    <constraint firstAttribute="width" constant="80" id="ctJ-uV-OTZ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="49"/>
                                 <state key="normal">
@@ -604,13 +611,6 @@
                                     <action selector="overlayOnButtonTapped:" destination="BBl-Wp-Hjs" eventType="touchUpInside" id="Tho-9y-Le8"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="weblogo" translatesAutoresizingMaskIntoConstraints="NO" id="ulX-c8-vwb">
-                                <rect key="frame" x="211" y="3" width="179" height="38"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="179" id="BOX-5F-EhN"/>
-                                    <constraint firstAttribute="height" constant="38" id="LGb-BS-Rud"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -619,7 +619,7 @@
                             <constraint firstItem="Kko-ck-jJV" firstAttribute="top" secondItem="BpO-q7-GYF" secondAttribute="top" id="587-lj-54r"/>
                             <constraint firstItem="yx3-BT-UBy" firstAttribute="trailing" secondItem="Kko-ck-jJV" secondAttribute="trailing" id="8Vx-4y-7Ck"/>
                             <constraint firstItem="TWf-vs-PAJ" firstAttribute="trailing" secondItem="BpO-q7-GYF" secondAttribute="trailing" constant="-1000" id="Gcw-Lf-kYO"/>
-                            <constraint firstItem="Jgf-Zw-zsK" firstAttribute="top" secondItem="YDO-bG-rsm" secondAttribute="bottom" constant="18" id="Jgm-J7-Nbo"/>
+                            <constraint firstItem="Jgf-Zw-zsK" firstAttribute="top" secondItem="YDO-bG-rsm" secondAttribute="bottom" constant="7" id="Jgm-J7-Nbo"/>
                             <constraint firstAttribute="trailing" secondItem="BpO-q7-GYF" secondAttribute="trailing" constant="-1000" id="Qmi-ct-VNv"/>
                             <constraint firstItem="TWf-vs-PAJ" firstAttribute="top" secondItem="BpO-q7-GYF" secondAttribute="top" id="S9r-fX-ulb"/>
                             <constraint firstItem="TWf-vs-PAJ" firstAttribute="leading" secondItem="CTd-ZI-iYL" secondAttribute="leading" id="Srb-Ty-KBI"/>
@@ -636,6 +636,7 @@
                     </view>
                     <connections>
                         <outlet property="basketballSelectedButton" destination="Wb4-hM-aBN" id="5kk-wI-TN2"/>
+                        <outlet property="bottomImageView" destination="yx3-BT-UBy" id="AZd-eW-3pR"/>
                         <outlet property="dashboardButton" destination="KV8-iu-peE" id="fwg-Dm-ynv"/>
                         <outlet property="mapView" destination="TWf-vs-PAJ" id="Rkm-ei-Zlx"/>
                         <outlet property="sidebarButton" destination="P95-E3-uR6" id="9Dr-nI-OiL"/>
