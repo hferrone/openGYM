@@ -149,23 +149,23 @@
     homeCell.cellTimeLabel.text = [NSString stringWithFormat:@"%@",[event objectForKey:@"date"]];
     homeCell.cellNumberPlayersLabel.text = [event objectForKey:@"playersNeeded"];
     
-    if([[event objectForKey:@"sport"] isEqualToString:@"Basketball"])
+    if([[event objectForKey:@"sport"] isEqualToString:@"Basketball"] || [[event objectForKey:@"sport"] isEqualToString:@"basketball"])
     {
         homeCell.cellImageView.image = [UIImage imageNamed:@"OGsportbasketballICON"];
     }
-    else if([[event objectForKey:@"sport"] isEqualToString:@"Baseball"])
+    else if([[event objectForKey:@"sport"] isEqualToString:@"Baseball"] || [[event objectForKey:@"sport"] isEqualToString:@"baseball"])
     {
         homeCell.cellImageView.image = [UIImage imageNamed:@"OGsportbaseballICON"];
     }
-    else if([[event objectForKey:@"sport"] isEqualToString:@"Tennis"])
+    else if([[event objectForKey:@"sport"] isEqualToString:@"Tennis"] || [[event objectForKey:@"sport"] isEqualToString:@"tennis"])
     {
         homeCell.cellImageView.image = [UIImage imageNamed:@"OGsporttennisICON"];
     }
-    else if([[event objectForKey:@"sport"] isEqualToString:@"Soccer"])
+    else if([[event objectForKey:@"sport"] isEqualToString:@"Soccer"] || [[event objectForKey:@"sport"] isEqualToString:@"soccer"])
     {
         homeCell.cellImageView.image = [UIImage imageNamed:@"OGsportsoccerICON"];
     }
-    else if([[event objectForKey:@"sport"] isEqualToString:@"Football"])
+    else if([[event objectForKey:@"sport"] isEqualToString:@"Football"] || [[event objectForKey:@"sport"] isEqualToString:@"football"])
     {
         homeCell.cellImageView.image = [UIImage imageNamed:@"OGsportfootballICON"];
     }
