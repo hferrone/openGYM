@@ -12,7 +12,6 @@
 #import "EventDetailViewController.h"
 
 @interface MyGamesViewController () <UITableViewDataSource, UITableViewDelegate>
-
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property NSMutableArray *myGamesArray;

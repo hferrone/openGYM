@@ -33,7 +33,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <segue destination="dxN-kX-6De" kind="show" identifier="intro1Segue" id="iO9-XB-byj"/>
+                        <segue destination="dxN-kX-6De" kind="presentation" identifier="intro1Segue" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="iO9-XB-byj"/>
                         <segue destination="sF1-ce-JCv" kind="show" identifier="loginSegueID" id="Qe7-mg-3rR"/>
                     </connections>
                 </viewController>
@@ -276,7 +276,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <segue destination="7mz-Ns-BDl" kind="show" identifier="intro2Segue" id="au2-PQ-eSi"/>
+                        <segue destination="7mz-Ns-BDl" kind="presentation" identifier="intro2Segue" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="au2-PQ-eSi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YM9-do-OUh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -308,7 +308,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="intro3Segue" id="EOD-i0-pbN"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="intro3Segue" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="EOD-i0-pbN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sls-0Z-kDK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -488,48 +488,12 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BpO-q7-GYF">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
-                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UcV-lp-gjT">
-                                        <rect key="frame" x="350" y="392" width="44" height="44"/>
-                                        <state key="normal" image="OGchooseSoccer">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="soccerSelected:" destination="BBl-Wp-Hjs" eventType="touchUpInside" id="IeJ-Ur-pPn"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="76Z-kF-ZdB">
-                                        <rect key="frame" x="202" y="392" width="44" height="44"/>
-                                        <state key="normal" image="OGchooseBaseball">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="baseballSelected:" destination="BBl-Wp-Hjs" eventType="touchUpInside" id="wDv-P9-a7y"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xpr-Ir-5v5">
-                                        <rect key="frame" x="144" y="446" width="44" height="44"/>
-                                        <state key="normal" image="OGchooseFootball">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="footballSelected:" destination="BBl-Wp-Hjs" eventType="touchUpInside" id="ltZ-gA-jei"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wb4-hM-aBN">
-                                        <rect key="frame" x="275" y="365" width="44" height="44"/>
-                                        <state key="normal" image="OGchooseBasketball">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="basketballSelected:" destination="BBl-Wp-Hjs" eventType="touchUpInside" id="t8H-xq-hj1"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BPp-EZ-IRy">
-                                        <rect key="frame" x="227" y="455" width="141" height="38"/>
+                                        <rect key="frame" x="232" y="453" width="136" height="33"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="136" id="5Zy-yP-fws"/>
+                                            <constraint firstAttribute="height" constant="33" id="nxt-WS-r5B"/>
+                                        </constraints>
                                         <state key="normal" image="OGcreateGame">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -538,31 +502,118 @@
                                             <segue destination="zcK-A9-Bnm" kind="show" id="2I7-nS-8jy"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rqV-vE-dLX">
-                                        <rect key="frame" x="405" y="446" width="44" height="44"/>
-                                        <state key="normal" image="OGchooseGolf">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BasketballMapMenu" translatesAutoresizingMaskIntoConstraints="NO" id="RN9-BQ-1Bn">
+                                        <rect key="frame" x="178" y="104" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="E2R-Z0-1j6"/>
+                                            <constraint firstAttribute="width" constant="40" id="LvS-ms-0Gj"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BaseballMapMenu" translatesAutoresizingMaskIntoConstraints="NO" id="8nq-ns-NBP">
+                                        <rect key="frame" x="178" y="170" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="c9P-3N-yjy"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FootballMapMenu" translatesAutoresizingMaskIntoConstraints="NO" id="oKi-c2-hFS">
+                                        <rect key="frame" x="178" y="236" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="Z1d-qr-d7j"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SoccerMapMenu" translatesAutoresizingMaskIntoConstraints="NO" id="rot-l2-gXg">
+                                        <rect key="frame" x="178" y="302" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="7Gs-XK-BlV"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IfU-eo-tTs">
+                                        <rect key="frame" x="226" y="95" width="148" height="58"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="148" id="dW8-Vj-O6u"/>
+                                            <constraint firstAttribute="height" constant="58" id="iDI-aS-HgU"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="Basketball">
+                                            <color key="titleColor" red="1" green="0.5544606527" blue="0.075866345469999999" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <connections>
-                                            <action selector="tennisSelected:" destination="BBl-Wp-Hjs" eventType="touchUpInside" id="Nzb-KG-Q0n"/>
-                                        </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9n4-cF-qok">
+                                        <rect key="frame" x="226" y="161" width="148" height="58"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="Baseball">
+                                            <color key="titleColor" red="1" green="0.5544606527" blue="0.075866345469999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cCy-3W-eD4">
+                                        <rect key="frame" x="226" y="227" width="148" height="58"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="Football">
+                                            <color key="titleColor" red="1" green="0.5544606527" blue="0.075866345469999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MAZ-s6-Rzj">
+                                        <rect key="frame" x="226" y="293" width="148" height="58"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="Soccer">
+                                            <color key="titleColor" red="1" green="0.5544606527" blue="0.075866345469999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="No7-SW-jVF">
+                                        <rect key="frame" x="226" y="359" width="148" height="58"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="Tennis">
+                                            <color key="titleColor" red="1" green="0.5544606527" blue="0.075866345469999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TennisMapMenu" translatesAutoresizingMaskIntoConstraints="NO" id="hxL-Th-cOp">
+                                        <rect key="frame" x="178" y="368" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="xKp-7K-AS5"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.58999999999999997" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="xpr-Ir-5v5" secondAttribute="bottom" constant="110" id="4YM-tS-e2a"/>
-                                    <constraint firstItem="76Z-kF-ZdB" firstAttribute="top" secondItem="UcV-lp-gjT" secondAttribute="top" id="7gL-AB-j0k"/>
-                                    <constraint firstItem="BPp-EZ-IRy" firstAttribute="centerX" secondItem="Wb4-hM-aBN" secondAttribute="centerX" id="826-ca-5GV"/>
-                                    <constraint firstItem="rqV-vE-dLX" firstAttribute="leading" secondItem="BPp-EZ-IRy" secondAttribute="trailing" constant="37" id="9oj-Ha-hV3"/>
-                                    <constraint firstItem="xpr-Ir-5v5" firstAttribute="top" secondItem="rqV-vE-dLX" secondAttribute="top" id="IGG-ya-OxL"/>
-                                    <constraint firstAttribute="bottom" secondItem="BPp-EZ-IRy" secondAttribute="bottom" constant="107" id="X8Z-ok-s11"/>
-                                    <constraint firstItem="UcV-lp-gjT" firstAttribute="leading" secondItem="Wb4-hM-aBN" secondAttribute="trailing" constant="31" id="giR-3h-VrS"/>
-                                    <constraint firstItem="BPp-EZ-IRy" firstAttribute="leading" secondItem="xpr-Ir-5v5" secondAttribute="trailing" constant="39" id="iVC-00-QQj"/>
-                                    <constraint firstItem="BPp-EZ-IRy" firstAttribute="top" secondItem="76Z-kF-ZdB" secondAttribute="bottom" constant="19" id="lqS-E4-qaA"/>
-                                    <constraint firstItem="Wb4-hM-aBN" firstAttribute="leading" secondItem="76Z-kF-ZdB" secondAttribute="trailing" constant="29" id="m9h-Kn-TIX"/>
-                                    <constraint firstItem="Wb4-hM-aBN" firstAttribute="centerX" secondItem="BpO-q7-GYF" secondAttribute="centerX" constant="-3" id="mAB-mD-355"/>
-                                    <constraint firstItem="BPp-EZ-IRy" firstAttribute="top" secondItem="Wb4-hM-aBN" secondAttribute="bottom" constant="46" id="xIX-wE-tOy"/>
+                                    <constraint firstItem="MAZ-s6-Rzj" firstAttribute="leading" secondItem="No7-SW-jVF" secondAttribute="leading" id="0Wh-dY-VXa"/>
+                                    <constraint firstItem="IfU-eo-tTs" firstAttribute="leading" secondItem="9n4-cF-qok" secondAttribute="leading" id="1xm-0n-J0N"/>
+                                    <constraint firstItem="cCy-3W-eD4" firstAttribute="trailing" secondItem="MAZ-s6-Rzj" secondAttribute="trailing" id="21F-b7-E9z"/>
+                                    <constraint firstItem="BPp-EZ-IRy" firstAttribute="top" secondItem="No7-SW-jVF" secondAttribute="bottom" constant="36" id="6mt-0e-omv"/>
+                                    <constraint firstItem="IfU-eo-tTs" firstAttribute="top" secondItem="BpO-q7-GYF" secondAttribute="top" constant="95" id="86d-qb-bKj"/>
+                                    <constraint firstItem="cCy-3W-eD4" firstAttribute="top" secondItem="9n4-cF-qok" secondAttribute="bottom" constant="8" symbolic="YES" id="8z8-VW-jbG"/>
+                                    <constraint firstItem="cCy-3W-eD4" firstAttribute="leading" secondItem="MAZ-s6-Rzj" secondAttribute="leading" id="9YW-8R-wCh"/>
+                                    <constraint firstItem="9n4-cF-qok" firstAttribute="trailing" secondItem="IfU-eo-tTs" secondAttribute="trailing" id="Ded-HI-oOi"/>
+                                    <constraint firstItem="rot-l2-gXg" firstAttribute="leading" secondItem="oKi-c2-hFS" secondAttribute="leading" id="E07-SB-5c6"/>
+                                    <constraint firstItem="MAZ-s6-Rzj" firstAttribute="leading" secondItem="rot-l2-gXg" secondAttribute="trailing" constant="8" symbolic="YES" id="F3T-NS-o03"/>
+                                    <constraint firstItem="IfU-eo-tTs" firstAttribute="centerX" secondItem="BpO-q7-GYF" secondAttribute="centerX" id="Frk-ZT-zGx"/>
+                                    <constraint firstItem="oKi-c2-hFS" firstAttribute="top" secondItem="8nq-ns-NBP" secondAttribute="bottom" constant="26" id="Gpa-kP-DKH"/>
+                                    <constraint firstItem="rot-l2-gXg" firstAttribute="leading" secondItem="hxL-Th-cOp" secondAttribute="leading" id="Iht-SL-xxg"/>
+                                    <constraint firstItem="IfU-eo-tTs" firstAttribute="leading" secondItem="RN9-BQ-1Bn" secondAttribute="trailing" constant="8" symbolic="YES" id="KrV-KB-1QC"/>
+                                    <constraint firstItem="8nq-ns-NBP" firstAttribute="top" secondItem="RN9-BQ-1Bn" secondAttribute="bottom" constant="26" id="PTR-z7-1Jy"/>
+                                    <constraint firstItem="cCy-3W-eD4" firstAttribute="leading" secondItem="oKi-c2-hFS" secondAttribute="trailing" constant="8" symbolic="YES" id="Q8X-j2-Wnu"/>
+                                    <constraint firstItem="BPp-EZ-IRy" firstAttribute="centerX" secondItem="No7-SW-jVF" secondAttribute="centerX" id="Ql9-do-W6i"/>
+                                    <constraint firstItem="8nq-ns-NBP" firstAttribute="leading" secondItem="oKi-c2-hFS" secondAttribute="leading" id="Tgb-0O-JNs"/>
+                                    <constraint firstItem="cCy-3W-eD4" firstAttribute="centerY" secondItem="oKi-c2-hFS" secondAttribute="centerY" id="W0N-Ef-dZG"/>
+                                    <constraint firstItem="cCy-3W-eD4" firstAttribute="leading" secondItem="9n4-cF-qok" secondAttribute="leading" id="WdS-3O-Hho"/>
+                                    <constraint firstItem="8nq-ns-NBP" firstAttribute="centerY" secondItem="9n4-cF-qok" secondAttribute="centerY" id="YKX-Im-eL9"/>
+                                    <constraint firstItem="MAZ-s6-Rzj" firstAttribute="top" secondItem="cCy-3W-eD4" secondAttribute="bottom" constant="8" symbolic="YES" id="Yva-FC-1t2"/>
+                                    <constraint firstItem="MAZ-s6-Rzj" firstAttribute="centerY" secondItem="rot-l2-gXg" secondAttribute="centerY" id="ZmP-eP-z7m"/>
+                                    <constraint firstItem="No7-SW-jVF" firstAttribute="top" secondItem="MAZ-s6-Rzj" secondAttribute="bottom" constant="8" symbolic="YES" id="Zn7-zM-Ll3"/>
+                                    <constraint firstItem="9n4-cF-qok" firstAttribute="leading" secondItem="8nq-ns-NBP" secondAttribute="trailing" constant="8" symbolic="YES" id="bX6-ht-nah"/>
+                                    <constraint firstItem="rot-l2-gXg" firstAttribute="top" secondItem="oKi-c2-hFS" secondAttribute="bottom" constant="26" id="cMO-fp-ZGj"/>
+                                    <constraint firstItem="9n4-cF-qok" firstAttribute="top" secondItem="IfU-eo-tTs" secondAttribute="bottom" constant="8" symbolic="YES" id="cTQ-pa-fmk"/>
+                                    <constraint firstItem="No7-SW-jVF" firstAttribute="leading" secondItem="hxL-Th-cOp" secondAttribute="trailing" constant="8" symbolic="YES" id="gZe-4s-oC4"/>
+                                    <constraint firstItem="9n4-cF-qok" firstAttribute="trailing" secondItem="cCy-3W-eD4" secondAttribute="trailing" id="mH9-5d-iLT"/>
+                                    <constraint firstItem="hxL-Th-cOp" firstAttribute="top" secondItem="rot-l2-gXg" secondAttribute="bottom" constant="26" id="mfU-MW-SSu"/>
+                                    <constraint firstItem="IfU-eo-tTs" firstAttribute="centerY" secondItem="RN9-BQ-1Bn" secondAttribute="centerY" id="na8-ik-AUz"/>
+                                    <constraint firstItem="MAZ-s6-Rzj" firstAttribute="trailing" secondItem="No7-SW-jVF" secondAttribute="trailing" id="pXZ-Gx-E2O"/>
+                                    <constraint firstItem="No7-SW-jVF" firstAttribute="centerY" secondItem="hxL-Th-cOp" secondAttribute="centerY" id="sRN-Fi-sjd"/>
+                                    <constraint firstItem="RN9-BQ-1Bn" firstAttribute="leading" secondItem="8nq-ns-NBP" secondAttribute="leading" id="zVs-k3-18F"/>
                                 </constraints>
                             </view>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kko-ck-jJV">
@@ -635,7 +686,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="basketballSelectedButton" destination="Wb4-hM-aBN" id="5kk-wI-TN2"/>
                         <outlet property="bottomImageView" destination="yx3-BT-UBy" id="AZd-eW-3pR"/>
                         <outlet property="dashboardButton" destination="KV8-iu-peE" id="fwg-Dm-ynv"/>
                         <outlet property="mapView" destination="TWf-vs-PAJ" id="Rkm-ei-Zlx"/>
@@ -717,12 +767,12 @@
                                     <navigationItem title="PROFILE" id="G7V-1Y-dn0">
                                         <barButtonItem key="leftBarButtonItem" title="Item" image="OGbackarrowICON" id="Dea-cV-LIv">
                                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <connections>
-                                                <segue destination="sF1-ce-JCv" kind="show" id="7Jr-aA-Ar8"/>
-                                            </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" systemItem="reply" id="A84-rG-FZV">
                                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <segue destination="sF1-ce-JCv" kind="show" id="YBe-SP-aat"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -871,7 +921,7 @@
                         <outlet property="profileImageView" destination="t2C-6s-qmj" id="7en-MV-0ap"/>
                         <outlet property="profileTextView" destination="yqa-ni-bK5" id="RvJ-Yq-x7d"/>
                         <outlet property="profileUsernameLabel" destination="6K6-Q0-AIg" id="A95-dO-uAb"/>
-                        <outlet property="sidebarButton" destination="A84-rG-FZV" id="ocD-AI-lWo"/>
+                        <outlet property="sidebarButton" destination="Dea-cV-LIv" id="aet-K5-gR7"/>
                         <outlet property="userAgeLabel" destination="VTA-8L-id4" id="ggC-bH-dj8"/>
                         <outlet property="userLocationLabel" destination="PWs-g9-nuT" id="WPZ-3c-sTL"/>
                     </connections>
@@ -902,12 +952,12 @@
                                     <navigationItem title="MY GAMES" id="ZCT-RT-dap">
                                         <barButtonItem key="leftBarButtonItem" image="OGbackarrowICON" id="0wb-gK-pEB">
                                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <connections>
-                                                <segue destination="sF1-ce-JCv" kind="show" id="qDd-sB-gW0"/>
-                                            </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" systemItem="reply" id="ODx-Ki-PO4">
                                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <segue destination="sF1-ce-JCv" kind="show" id="uQY-zV-aQq"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -1067,7 +1117,7 @@
                     </view>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="sidebarButton" destination="ODx-Ki-PO4" id="XNk-37-ukY"/>
+                        <outlet property="sidebarButton" destination="0wb-gK-pEB" id="wnR-Gt-cSX"/>
                         <outlet property="tableView" destination="l8s-Kf-BS8" id="5KF-IJ-4Pa"/>
                         <segue destination="M5l-Ap-MnT" kind="show" identifier="eventDetailSegueID" id="QlH-9Z-W9M"/>
                     </connections>
@@ -2134,13 +2184,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="BaseballMapMenu" width="23" height="23"/>
+        <image name="BasketballMapMenu" width="23" height="23"/>
+        <image name="FootballMapMenu" width="23" height="25"/>
         <image name="OGbackarrowICON" width="8" height="15"/>
         <image name="OGbackground" width="320" height="578"/>
-        <image name="OGchooseBaseball" width="44" height="44"/>
-        <image name="OGchooseBasketball" width="44" height="44"/>
-        <image name="OGchooseFootball" width="44" height="44"/>
-        <image name="OGchooseGolf" width="44" height="44"/>
-        <image name="OGchooseSoccer" width="44" height="44"/>
         <image name="OGchoosesportFooter" width="320" height="63"/>
         <image name="OGcreateGame" width="141" height="38"/>
         <image name="OGcrest" width="113" height="113"/>
@@ -2161,6 +2209,8 @@
         <image name="PickATeam" width="325" height="588"/>
         <image name="PlAYbackground" width="320" height="578"/>
         <image name="Play" width="325" height="588"/>
+        <image name="SoccerMapMenu" width="23" height="23"/>
+        <image name="TennisMapMenu" width="23" height="23"/>
         <image name="reveal-icon" width="22" height="17"/>
         <image name="socialicon" width="30" height="30"/>
         <image name="weblogo" width="980" height="230"/>
@@ -2168,8 +2218,8 @@
     <inferredMetricsTieBreakers>
         <segue reference="gVo-pn-XEa"/>
         <segue reference="yUP-Dp-JRA"/>
-        <segue reference="QlH-9Z-W9M"/>
-        <segue reference="sLv-ZE-4ZR"/>
-        <segue reference="ov6-2E-tyj"/>
+        <segue reference="oS6-np-nQD"/>
+        <segue reference="PaF-Jh-wvj"/>
+        <segue reference="2bN-4P-yvE"/>
     </inferredMetricsTieBreakers>
 </document>
