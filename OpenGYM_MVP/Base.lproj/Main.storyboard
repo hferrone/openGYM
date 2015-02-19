@@ -486,7 +486,7 @@
                                 </connections>
                             </mapView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BpO-q7-GYF">
-                                <rect key="frame" x="1000" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UcV-lp-gjT">
                                         <rect key="frame" x="350" y="392" width="44" height="44"/>
@@ -615,16 +615,16 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="YDO-bG-rsm" firstAttribute="centerX" secondItem="yx3-BT-UBy" secondAttribute="centerX" id="1Yy-Vy-sCz"/>
-                            <constraint firstItem="Kko-ck-jJV" firstAttribute="leading" secondItem="BpO-q7-GYF" secondAttribute="leading" constant="-1000" id="4k9-5P-1LD"/>
+                            <constraint firstItem="Kko-ck-jJV" firstAttribute="leading" secondItem="BpO-q7-GYF" secondAttribute="leading" id="4k9-5P-1LD"/>
                             <constraint firstItem="Kko-ck-jJV" firstAttribute="top" secondItem="BpO-q7-GYF" secondAttribute="top" id="587-lj-54r"/>
                             <constraint firstItem="yx3-BT-UBy" firstAttribute="trailing" secondItem="Kko-ck-jJV" secondAttribute="trailing" id="8Vx-4y-7Ck"/>
-                            <constraint firstItem="TWf-vs-PAJ" firstAttribute="trailing" secondItem="BpO-q7-GYF" secondAttribute="trailing" constant="-1000" id="Gcw-Lf-kYO"/>
+                            <constraint firstItem="TWf-vs-PAJ" firstAttribute="trailing" secondItem="BpO-q7-GYF" secondAttribute="trailing" id="Gcw-Lf-kYO"/>
                             <constraint firstItem="Jgf-Zw-zsK" firstAttribute="top" secondItem="YDO-bG-rsm" secondAttribute="bottom" constant="7" id="Jgm-J7-Nbo"/>
-                            <constraint firstAttribute="trailing" secondItem="BpO-q7-GYF" secondAttribute="trailing" constant="-1000" id="Qmi-ct-VNv"/>
+                            <constraint firstAttribute="trailing" secondItem="BpO-q7-GYF" secondAttribute="trailing" id="Qmi-ct-VNv"/>
                             <constraint firstItem="TWf-vs-PAJ" firstAttribute="top" secondItem="BpO-q7-GYF" secondAttribute="top" id="S9r-fX-ulb"/>
                             <constraint firstItem="TWf-vs-PAJ" firstAttribute="leading" secondItem="CTd-ZI-iYL" secondAttribute="leading" id="Srb-Ty-KBI"/>
                             <constraint firstItem="Kko-ck-jJV" firstAttribute="leading" secondItem="TWf-vs-PAJ" secondAttribute="leading" id="abk-fL-xr0"/>
-                            <constraint firstItem="BpO-q7-GYF" firstAttribute="trailing" secondItem="Kko-ck-jJV" secondAttribute="trailing" constant="1000" id="ccy-DJ-eqf"/>
+                            <constraint firstItem="BpO-q7-GYF" firstAttribute="trailing" secondItem="Kko-ck-jJV" secondAttribute="trailing" id="ccy-DJ-eqf"/>
                             <constraint firstItem="Kko-ck-jJV" firstAttribute="top" secondItem="CTd-ZI-iYL" secondAttribute="top" id="ddJ-rd-Osd"/>
                             <constraint firstItem="ulX-c8-vwb" firstAttribute="centerX" secondItem="Kko-ck-jJV" secondAttribute="centerX" id="j3z-Cd-hyF"/>
                             <constraint firstItem="BpO-q7-GYF" firstAttribute="bottom" secondItem="Jgf-Zw-zsK" secondAttribute="top" id="kVm-Fm-I4a"/>

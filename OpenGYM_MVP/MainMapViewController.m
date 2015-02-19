@@ -53,11 +53,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-        [self.sidebarButton setTarget: self.revealViewController];
-        [self.sidebarButton setAction: @selector( revealToggle: )];
     
-        [self.dashboardButton setTarget: self.revealViewController];
+    self.sportSelectionPopoverView.alpha = 0;
+
+    [self.sidebarButton setTarget: self.revealViewController];
+    [self.sidebarButton setAction: @selector( revealToggle: )];
+    
+    [self.dashboardButton setTarget: self.revealViewController];
     [self.dashboardButton setAction: @selector( rightRevealToggle: )];
     
     PFQuery *query = [PFQuery queryWithClassName:@"Event"];
@@ -110,7 +112,8 @@
 
 - (IBAction)overlayOnButtonTapped:(UIButton *)sender
 {
-    [UIView animateWithDuration:0.3 animations:^{
+    [UIView animateWithDuration:.5 animations:^{
+        self.sportSelectionPopoverView.alpha = 1;
         self.sportSelectionPopoverView.frame = self.view.frame;
     }];
     
@@ -224,8 +227,9 @@
     NSArray *allPoints = self.mapView.annotations;
     [self.mapView removeAnnotations:allPoints];
     
-    [UIView animateWithDuration:0.3 animations:^{
-        self.sportSelectionPopoverView.frame = CGRectMake(600, 600, 5, 5);
+    [UIView animateWithDuration:.5 animations:^{
+        self.sportSelectionPopoverView.alpha = 0;
+        self.sportSelectionPopoverView.frame = self.view.frame;
     }];
     
     PFQuery *query = [PFQuery queryWithClassName:@"Event"];
@@ -321,8 +325,9 @@
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    [UIView animateWithDuration:0.3 animations:^{
-        self.sportSelectionPopoverView.frame = CGRectMake(600, 600, 5, 5);
+    [UIView animateWithDuration:.5 animations:^{
+        self.sportSelectionPopoverView.alpha = 0;
+        self.sportSelectionPopoverView.frame = self.view.frame;
     }];
     
     self.bottomImageView.image = [UIImage imageNamed:@"OGchoosesportFooter"];
