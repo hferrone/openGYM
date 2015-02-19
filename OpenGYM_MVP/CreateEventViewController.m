@@ -137,46 +137,6 @@
     }
     else
     {
-        if (self.eventImage != NULL)
-        {
-            NSData *imageData = UIImageJPEGRepresentation(self.eventImage, 10);
-            PFFile *imageFile = [PFFile fileWithName:@"EventImage.png" data:imageData];
-            [event setObject:imageFile forKey:@"eventPic"];
-        }
-        else
-        {
-            if ([event[@"sport"] isEqualToString:@"Basketball"])
-            {
-                NSData *imageData = UIImageJPEGRepresentation([UIImage imageNamed:@"PASbackground.png"], 10);
-                PFFile *imageFile = [PFFile fileWithName:@"EventImage.png" data:imageData];
-                [event setObject: imageFile forKey:@"eventPic"];
-            }
-            else if ([event[@"sport"] isEqualToString:@"Baseball"])
-            {
-                NSData *imageData = UIImageJPEGRepresentation([UIImage imageNamed:@"PASbackground.png"], 10);
-                PFFile *imageFile = [PFFile fileWithName:@"EventImage.png" data:imageData];
-                [event setObject: imageFile forKey:@"eventPic"];
-            }
-            else if ([event[@"sport"] isEqualToString:@"Football"])
-            {
-                NSData *imageData = UIImageJPEGRepresentation([UIImage imageNamed:@"PASbackground.png"], 10);
-                PFFile *imageFile = [PFFile fileWithName:@"EventImage.png" data:imageData];
-                [event setObject: imageFile forKey:@"eventPic"];
-            }
-            else if ([event[@"sport"] isEqualToString:@"Soccer"])
-            {
-                NSData *imageData = UIImageJPEGRepresentation([UIImage imageNamed:@"PASbackground.png"], 10);
-                PFFile *imageFile = [PFFile fileWithName:@"EventImage.png" data:imageData];
-                [event setObject: imageFile forKey:@"eventPic"];
-            }
-            else if ([event[@"sport"] isEqualToString:@"Tennis"])
-            {
-                NSData *imageData = UIImageJPEGRepresentation([UIImage imageNamed:@"PASbackground.png"], 10);
-                PFFile *imageFile = [PFFile fileWithName:@"EventImage.png" data:imageData];
-                [event setObject: imageFile forKey:@"eventPic"];
-            }
-        }
-        
         PFUser *user = [PFUser currentUser];
         PFRelation *usersToEvents = [event relationForKey:@"registeredUsers"];
         [usersToEvents addObject:user];
@@ -191,6 +151,47 @@
         event[@"playersNeeded"] = self.numberOfPlayersLabel.text;
         event[@"playersRegistered"] = @"1";
         event[@"gender"] = self.eventGender;
+        
+        if (self.eventImage != NULL)
+        {
+            NSData *imageData = UIImageJPEGRepresentation(self.eventImage, 10);
+            PFFile *imageFile = [PFFile fileWithName:@"EventImage.png" data:imageData];
+            [event setObject:imageFile forKey:@"eventPic"];
+        }
+        else
+        {
+            if ([event[@"sport"] isEqualToString:@"Basketball"])
+            {
+                NSData *imageData = UIImageJPEGRepresentation([UIImage imageNamed:@"BGBasketballProfile"], 10);
+                PFFile *imageFile = [PFFile fileWithName:@"EventImage.png" data:imageData];
+                [event setObject: imageFile forKey:@"eventPic"];
+            }
+            else if ([event[@"sport"] isEqualToString:@"Baseball"])
+            {
+                NSData *imageData = UIImageJPEGRepresentation([UIImage imageNamed:@"BGBaseballProfile"], 10);
+                PFFile *imageFile = [PFFile fileWithName:@"EventImage.png" data:imageData];
+                [event setObject: imageFile forKey:@"eventPic"];
+            }
+            else if ([event[@"sport"] isEqualToString:@"Football"])
+            {
+                NSData *imageData = UIImageJPEGRepresentation([UIImage imageNamed:@"BGFootballProfile"], 10);
+                PFFile *imageFile = [PFFile fileWithName:@"EventImage.png" data:imageData];
+                [event setObject: imageFile forKey:@"eventPic"];
+            }
+            else if ([event[@"sport"] isEqualToString:@"Soccer"])
+            {
+                NSData *imageData = UIImageJPEGRepresentation([UIImage imageNamed:@"BGSoccerProfile"], 10);
+                PFFile *imageFile = [PFFile fileWithName:@"EventImage.png" data:imageData];
+                [event setObject: imageFile forKey:@"eventPic"];
+            }
+            else if ([event[@"sport"] isEqualToString:@"Tennis"])
+            {
+                NSData *imageData = UIImageJPEGRepresentation([UIImage imageNamed:@"BGTennisProfile"], 10);
+                PFFile *imageFile = [PFFile fileWithName:@"EventImage.png" data:imageData];
+                [event setObject: imageFile forKey:@"eventPic"];
+            }
+        }
+
         [event saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
          {
              PFRelation *eventsToUsers = [user relationForKey:@"myEvents"];
