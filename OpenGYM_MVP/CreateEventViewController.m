@@ -15,10 +15,10 @@
 @property (weak, nonatomic) IBOutlet UITextField *dateTimeTextField;
 @property (weak, nonatomic) IBOutlet UITextField *descriptionTextField;
 @property (weak, nonatomic) IBOutlet UITextField *titleTextField;
-
-@property (weak, nonatomic) IBOutlet UILabel *numberOfPlayersLabel;
 @property (weak, nonatomic) IBOutlet UIView *datePickerOverlayView;
 @property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
+
+@property (weak, nonatomic) IBOutlet UILabel *numberOfPlayersLabel;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *genderSegmentedController;
 
 @property NSString *dateAndTimeComparisonString;
@@ -64,14 +64,14 @@
     }];
 }
 
-- (IBAction)saveDateAndTimeOnButtonTapped:(UIButton *)sender
+- (IBAction)saveDateAndTime:(UIButton *)sender
 {
     //time formatter
     NSDateFormatter *timeFormat = [[NSDateFormatter alloc] init];
     [timeFormat setDateFormat:@"h:mm a, zzz"];
     [timeFormat setLocale:[NSLocale currentLocale]];
     self.timeString = [timeFormat stringFromDate:self.datePicker.date];
-
+    
     //date formatter
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
     [dateFormat setDateFormat:@"EEEE MMMM d, YYYY"];
