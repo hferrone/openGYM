@@ -124,25 +124,64 @@
     {        
         if ([annotation.sport isEqualToString:@"Basketball"])
         {
-            pin.image = [UIImage imageNamed:@"OGsportbasketballICON"];
+            pin.image = [UIImage imageNamed:@"OGsportbasketballMAP.png"];
         }
         else if ([annotation.sport isEqualToString:@"Baseball"])
         {
-            pin.image = [UIImage imageNamed:@"OGsportbaseballICON"];
+            pin.image = [UIImage imageNamed:@"OGsportbaseballMAP.png"];
         }
         else if ([annotation.sport isEqualToString:@"Football"])
         {
-            pin.image = [UIImage imageNamed:@"OGsportfootballICON"];
+            pin.image = [UIImage imageNamed:@"OGsportfootballMAP.png"];
         }
         else if ([annotation.sport isEqualToString:@"Soccer"])
         {
-            pin.image = [UIImage imageNamed:@"OGsportsoccerICON"];
+            pin.image = [UIImage imageNamed:@"OGsportsoccerMAP.png"];
         }
         else if ([annotation.sport isEqualToString:@"Tennis"])
         {
-            pin.image = [UIImage imageNamed:@"OGsporttennisICON"];
+            pin.image = [UIImage imageNamed:@"OGsporttennisMAP.png"];
         }
-        
+    }
+    
+    for (CustomPointAnnotation *annotation in self.basketballEventArray)
+    {
+        if ([annotation.sport isEqualToString:@"Basketball"])
+        {
+            pin.image = [UIImage imageNamed:@"OGsportbasketballMAP.png"];
+        }
+    }
+    
+    for (CustomPointAnnotation *annotation in self.baseballEventArray)
+    {
+        if ([annotation.sport isEqualToString:@"Baseball"])
+        {
+            pin.image = [UIImage imageNamed:@"OGsportbaseballMAP.png"];
+        }
+    }
+    
+    for (CustomPointAnnotation *annotation in self.footballEventArray)
+    {
+        if ([annotation.sport isEqualToString:@"Football"])
+        {
+            pin.image = [UIImage imageNamed:@"OGsportfootballMAP.png"];
+        }
+    }
+    
+    for (CustomPointAnnotation *annotation in self.soccerEventArray)
+    {
+        if ([annotation.sport isEqualToString:@"Soccer"])
+        {
+            pin.image = [UIImage imageNamed:@"OGsportsoccerMAP.png"];
+        }
+    }
+    
+    for (CustomPointAnnotation *annotation in self.tennisEventArray)
+    {
+        if ([annotation.sport isEqualToString:@"Tennis"])
+        {
+            pin.image = [UIImage imageNamed:@"OGsporttennisMAP.png"];
+        }
     }
 
     return pin;
@@ -180,7 +219,6 @@
     NSArray *allPoints = self.mapView.annotations;
     [self.mapView removeAnnotations:allPoints];
     
-    NSLog(@"%@", self.sportSelected);
     [UIView animateWithDuration:0.3 animations:^{
         self.sportSelectionPopoverView.frame = CGRectMake(600, 600, 5, 5);
     }];
@@ -200,9 +238,10 @@
                           completionHandler:^(NSArray* placemarks, NSError* error){
                               for(CLPlacemark *place in placemarks)
                               {
-                                  MKPointAnnotation *annotation = [MKPointAnnotation new];
+                                  CustomPointAnnotation *annotation = [CustomPointAnnotation new];
                                   annotation.coordinate = place.location.coordinate;
                                   annotation.title = object[@"title"];
+                                  annotation.sport = object[@"sport"];
                                   
                                   if([self.sportSelected isEqualToString:@"Basketball"])
                                   {
@@ -273,6 +312,13 @@
         EventDetailViewController *evc = segue.destinationViewController;
         evc.eventObject = self.eventObject;
     }
+}
+
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [UIView animateWithDuration:0.3 animations:^{
+        self.sportSelectionPopoverView.frame = CGRectMake(600, 600, 5, 5);
+    }];
 }
 
 @end
