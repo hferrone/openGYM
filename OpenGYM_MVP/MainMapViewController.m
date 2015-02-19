@@ -77,7 +77,6 @@
                    annotation.coordinate = place.location.coordinate;
                    annotation.title = object[@"title"];
                    annotation.sport = object[@"sport"];
-                   
                    self.allEvents = [NSMutableArray arrayWithObject:annotation];
                    [self.mapView addAnnotations:self.allEvents];
                }
