@@ -20,10 +20,7 @@
 @interface MainMapViewController ()
 
 @property (weak, nonatomic) IBOutlet UIView *sportSelectionPopoverView;
-
-@property (weak, nonatomic) IBOutlet UIButton *basketballSelectedButton;
 @property (weak, nonatomic) IBOutlet UIImageView *bottomImageView;
-
 @property (weak, nonatomic) NSString *sportSelected;
 @property (weak, nonatomic) NSString *addressString;
 @property (weak, nonatomic) NSString *selectedPinString;
@@ -244,7 +241,8 @@
              NSString *location = new;
              CLGeocoder *geocoder = [[CLGeocoder alloc] init];
              [geocoder geocodeAddressString:location
-                          completionHandler:^(NSArray* placemarks, NSError* error){
+                          completionHandler:^(NSArray* placemarks, NSError* error)
+             {
                               for(CLPlacemark *place in placemarks)
                               {
                                   CustomPointAnnotation *annotation = [CustomPointAnnotation new];
