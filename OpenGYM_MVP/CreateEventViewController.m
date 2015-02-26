@@ -15,10 +15,15 @@
 @property (weak, nonatomic) IBOutlet UITextField *dateTimeTextField;
 @property (weak, nonatomic) IBOutlet UITextField *descriptionTextField;
 @property (weak, nonatomic) IBOutlet UITextField *titleTextField;
+
 @property (weak, nonatomic) IBOutlet UIView *datePickerOverlayView;
+
 @property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
+@property (strong, nonatomic) UIImagePickerController *imagePickerController;
+@property NSDate *eventDate;
 
 @property (weak, nonatomic) IBOutlet UILabel *numberOfPlayersLabel;
+
 @property (weak, nonatomic) IBOutlet UISegmentedControl *genderSegmentedController;
 
 @property NSString *dateAndTimeComparisonString;
@@ -26,9 +31,6 @@
 @property NSString *timeString;
 @property NSString *eventGender;
 
-@property NSDate *eventDate;
-
-@property (strong, nonatomic) UIImagePickerController *imagePickerController;
 @property UIImage *eventDetailPicture;
 
 @property BOOL allFieldsComplete;
@@ -44,9 +46,6 @@
     self.genderSegmentedController.selectedSegmentIndex = 0;
     self.eventGender = @"Male";
     self.allFieldsComplete = false;
-    
-    [self.sportTextField setReturnKeyType:UIReturnKeyDone];
-    self.sportTextField.delegate = self;
 }
 
 -(BOOL)prefersStatusBarHidden
@@ -162,31 +161,31 @@
         {
             if ([event[@"sport"] isEqualToString:@"Basketball"])
             {
-                NSData *imageData = UIImageJPEGRepresentation([UIImage imageNamed:@"BGBasketballProfile"], 10);
+                NSData *imageData = UIImageJPEGRepresentation([UIImage imageNamed:@"BGBasketballProfile.png"], 10);
                 PFFile *imageFile = [PFFile fileWithName:@"EventImage.png" data:imageData];
                 [event setObject: imageFile forKey:@"eventPic"];
             }
             else if ([event[@"sport"] isEqualToString:@"Baseball"])
             {
-                NSData *imageData = UIImageJPEGRepresentation([UIImage imageNamed:@"BGBaseballProfile"], 10);
+                NSData *imageData = UIImageJPEGRepresentation([UIImage imageNamed:@"BGSoftballProfile.png"], 10);
                 PFFile *imageFile = [PFFile fileWithName:@"EventImage.png" data:imageData];
                 [event setObject: imageFile forKey:@"eventPic"];
             }
             else if ([event[@"sport"] isEqualToString:@"Football"])
             {
-                NSData *imageData = UIImageJPEGRepresentation([UIImage imageNamed:@"BGFootballProfile"], 10);
+                NSData *imageData = UIImageJPEGRepresentation([UIImage imageNamed:@"BGFootballProfile.png"], 10);
                 PFFile *imageFile = [PFFile fileWithName:@"EventImage.png" data:imageData];
                 [event setObject: imageFile forKey:@"eventPic"];
             }
             else if ([event[@"sport"] isEqualToString:@"Soccer"])
             {
-                NSData *imageData = UIImageJPEGRepresentation([UIImage imageNamed:@"BGSoccerProfile"], 10);
+                NSData *imageData = UIImageJPEGRepresentation([UIImage imageNamed:@"BGSoccerProfile.png"], 10);
                 PFFile *imageFile = [PFFile fileWithName:@"EventImage.png" data:imageData];
                 [event setObject: imageFile forKey:@"eventPic"];
             }
             else if ([event[@"sport"] isEqualToString:@"Tennis"])
             {
-                NSData *imageData = UIImageJPEGRepresentation([UIImage imageNamed:@"BGTennisProfile"], 10);
+                NSData *imageData = UIImageJPEGRepresentation([UIImage imageNamed:@"BGTennisProfile.png"], 10);
                 PFFile *imageFile = [PFFile fileWithName:@"EventImage.png" data:imageData];
                 [event setObject: imageFile forKey:@"eventPic"];
             }
